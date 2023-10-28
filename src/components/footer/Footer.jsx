@@ -1,7 +1,14 @@
 import React from 'react';
 
 function Footer() {
-  return <div>Footer</div>;
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <div>
+      <div>&copy;{currentYear} jovic-dev. All rights reserved.</div>
+      <div></div>
+    </div>
+  );
 }
 
 export default Footer;
