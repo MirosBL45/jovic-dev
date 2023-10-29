@@ -6,19 +6,23 @@ import Link from 'next/link';
 // data
 import { links } from '@/utils/data';
 
+// style
+import styles from './navbar.module.css';
+
 function Navbar() {
   return (
-    <div>
-      <Link prefetch href={'/'}>
+    <nav className={styles.container}>
+      <Link prefetch href={'/'} className={styles.logo}>
         jovic-dev
       </Link>
-      <div>
+      <div className={styles.links}>
         {links.map((link) => (
-          <Link prefetch key={link.id} href={link.url}>
+          <Link prefetch key={link.id} href={link.url} className={styles.link}>
             {link.title}
           </Link>
         ))}
         <button
+          className={styles.logout}
           onClick={() => {
             console.log('logged out');
           }}
@@ -26,7 +30,7 @@ function Navbar() {
           click
         </button>
       </div>
-    </div>
+    </nav>
   );
 }
 
