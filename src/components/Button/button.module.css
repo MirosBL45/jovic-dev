@@ -3,7 +3,7 @@
   cursor: pointer;
   background: var(--green-color);
   border: none;
-  border-radius: var(--small-border-radius);
+  border-radius: var(--medium-border-radius);
   color: var(--white-color);
   width: max-content;
   transition: var(--transition);

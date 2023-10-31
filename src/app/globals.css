@@ -52,6 +52,20 @@ a {
   justify-content: space-between;
 }
 
+.moveImage {
+  animation: imageMove 3s infinite ease alternate;
+}
+
+@keyframes imageMove {
+  from {
+    transform: translateY(-19px);
+  }
+
+  to {
+    transform: translateY(0px) scale(1.05);
+  }
+}
+
 /* MEDIA QUERIES (large screens) */
 @media screen and (max-width: 1024px) {
   .container {

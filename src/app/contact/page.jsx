@@ -1,7 +1,31 @@
+// react/next stuff
+import Image from 'next/image';
+
+// style
 import styles from './page.module.css';
 
 function Contact() {
-  return <div className={styles.contact}>Contact</div>;
+  return (
+    <div className={styles.container}>
+      <h1>Let's Keep in Touch</h1>
+      <div className={styles.content}>
+        <div className={styles.imgContainer}>
+          <Image
+            className="moveImage"
+            src={'/contact.png'}
+            alt="contact jovic-dev"
+            fill={true}
+          />
+        </div>
+        <form className={styles.sendingForm}>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea placeholder="Your Message" cols="30" rows="10"></textarea>
+          <button>Send</button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default Contact;

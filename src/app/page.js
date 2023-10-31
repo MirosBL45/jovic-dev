@@ -25,7 +25,7 @@ export default function Home() {
         <Button text={'See Our Works'} url={'/portfolio'} />
       </header>
       <div className={styles.item}>
-        <Image src={Hero} alt="jovic-dev hero" className={styles.img} />
+        <Image src={Hero} alt="jovic-dev hero" className='moveImage' />
       </div>
     </main>
   );
