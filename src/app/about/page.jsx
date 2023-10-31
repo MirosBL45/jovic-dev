@@ -1,6 +1,12 @@
 // react/next stuff
 import Image from 'next/image';
 
+//components
+import Button from '@/components/Button/Button';
+
+// data
+import { aboutData } from '@/utils/data';
+
 // style
 import styles from './page.module.css';
 
@@ -8,12 +14,7 @@ function About() {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image
-          src={'/people-working.jpg'}
-          fill={true}
-          alt="jovic-dev"
-          className={styles.img}
-        />
+        <Image src={'/people-working.jpg'} fill={true} alt="jovic-dev" />
         <div className={styles.imgText}>
           <h1>Digital Storytellers</h1>
           <h2>Handcrafting award winning digital expiriences</h2>
@@ -46,6 +47,12 @@ function About() {
             vero quo fugit molestias nisi, nam blanditiis harum consectetur.
             Ullam maiores ipsa voluptatum!
           </p>
+          <ul>
+            {aboutData.map(({ id, text }) => (
+              <li key={id}>{text}</li>
+            ))}
+          </ul>
+          <Button text={'Contact'} url={'/contact'} />
         </div>
       </div>
     </div>

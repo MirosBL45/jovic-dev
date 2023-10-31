@@ -30,3 +30,10 @@ export const links = [
     url: "/dashboard",
   },
 ];
+
+export const aboutData = [
+  { id: 1, text: 'Creative Illustrations' },
+  { id: 2, text: 'Dynamic Websites' },
+  { id: 3, text: 'Fast and Handy Mobile Apps' },
+  { id: 4, text: 'Help with Copywriting' },
+]

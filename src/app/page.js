@@ -5,6 +5,9 @@ import Link from 'next/link';
 // images
 import Hero from 'public/hero.png';
 
+//components
+import Button from '@/components/Button/Button';
+
 // style
 import styles from './page.module.css';
 
@@ -19,9 +22,7 @@ export default function Home() {
           Turning your Idea into Reality. We bring together the teams from the
           global tech industry.
         </p>
-        <Link prefetch href={'/portfolio'} className={styles.button}>
-          See Our Works
-        </Link>
+        <Button text={'See Our Works'} url={'/portfolio'} />
       </header>
       <div className={styles.item}>
         <Image src={Hero} alt="jovic-dev hero" className={styles.img} />
