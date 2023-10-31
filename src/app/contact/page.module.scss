@@ -38,4 +38,75 @@
         font-size: 20px;
         font-weight: bold;
     }
+
+    button {
+        padding: 20px 40px;
+        cursor: pointer;
+        background: var(--green-color);
+        border: none;
+        border-radius: var(--medium-border-radius);
+        color: var(--white-color);
+        width: max-content;
+        transition: var(--transition);
+        display: inline-block;
+        font-size: var(--medium-font);
+
+        &:hover {
+            background: var(--dark-green-color);
+        }
+    }
+}
+
+/* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 900px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .imgContainer {
+        height: 300px;
+    }
+
+    .sendingForm {
+        display: grid;
+        grid-template-columns: 35vw 35vw;
+        justify-content: center;
+
+        textarea {
+            grid-column: 1 / span 2;
+        }
+    }
+}
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+    .container h1 {
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+
+    .sendingForm {
+        display: flex;
+
+        input,
+        textarea {
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: var(--small-font);
+
+            &:hover {
+                background: var(--dark-green-color);
+            }
+        }
+    }
+
+    .imgContainer {
+        height: 200px;
+    }
 }
