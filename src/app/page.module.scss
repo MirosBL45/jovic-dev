@@ -31,6 +31,11 @@
     border-radius: var(--small-border-radius);
     color: var(--white-color);
     width: max-content;
+    transition: var(--transition);
+
+    &:hover {
+        background: var(--dark-green-color);
+    }
 }
 
 .img {

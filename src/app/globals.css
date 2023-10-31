@@ -18,6 +18,8 @@
   --small-font: 0.875rem;
   --medium-font: 1.5rem;
   --big-font: 4.5rem;
+
+  --transition: all 230ms ease;
 }
 
 * {
