@@ -14,10 +14,12 @@
   --gray-color: #bbb;
 
   --small-border-radius: 0.313rem;
+  --sm-border-radius: 0.625rem;
   --medium-border-radius: 0.938rem;
 
   --small-font: 0.875rem;
   --medium-font: 1.5rem;
+  --mb-font: 2.5rem;
   --big-font: 4.5rem;
   --large-font: 6.5rem;
 
