@@ -16,6 +16,14 @@
     gap: 20px;
 }
 
+.link {
+    transition: var(--transition);
+
+    &:hover {
+        color: var(--green-color);
+    }
+}
+
 .logout {
     padding: 5px;
     border: none;
