@@ -18,7 +18,12 @@ function Category({ params }) {
           <Button text={'See More'} url={'#'} />
         </div>
         <div className={styles.imgContainer}>
-          <Image fill={true} src={'/people-working2.jpg'} alt="jovic-dev" />
+          <Image
+            fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            src={'/people-working2.jpg'}
+            alt="jovic-dev"
+          />
         </div>
       </div>
       <div className={styles.item}>
@@ -28,7 +33,12 @@ function Category({ params }) {
           <Button text={'See More'} url={'#'} />
         </div>
         <div className={styles.imgContainer}>
-          <Image fill={true} src={'/people-working2.jpg'} alt="jovic-dev" />
+          <Image
+            fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            src={'/people-working2.jpg'}
+            alt="jovic-dev"
+          />
         </div>
       </div>
     </div>

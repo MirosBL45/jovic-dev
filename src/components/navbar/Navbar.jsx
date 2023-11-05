@@ -6,6 +6,9 @@ import Link from 'next/link';
 // data
 import { links } from '@/utils/data';
 
+// components
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+
 // style
 import styles from './navbar.module.css';
 
@@ -16,6 +19,7 @@ function Navbar() {
         jovic-dev
       </Link>
       <div className={styles.links}>
+        <DarkModeToggle />
         {links.map((link) => (
           <Link prefetch key={link.id} href={link.url} className={styles.link}>
             {link.title}

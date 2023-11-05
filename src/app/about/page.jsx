@@ -14,7 +14,12 @@ function About() {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image src={'/people-working.jpg'} fill={true} alt="jovic-dev" />
+        <Image
+          src={'/people-working.jpg'}
+          fill={true}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          alt="jovic-dev"
+        />
         <div className={styles.imgText}>
           <h1>Digital Storytellers</h1>
           <h2>Handcrafting award winning digital expiriences</h2>

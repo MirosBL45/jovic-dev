@@ -12,10 +12,12 @@
   --dark-green-color: #194c33;
   --white-color: #efefef;
   --gray-color: #bbb;
+  --background: #333;
 
   --small-border-radius: 0.313rem;
   --sm-border-radius: 0.625rem;
   --medium-border-radius: 0.938rem;
+  --big-border-radius: 1.875rem;
 
   --small-font: 0.875rem;
   --medium-font: 1.5rem;
@@ -36,8 +38,24 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+.light {
+  /* --gray-color: #bbb;
+  --background: #333; */
+  background: #bbb;
+  color: #333;
+}
+
+.dark {
   background: #333;
   color: #bbb;
+  /* --gray-color: #333;
+  --background: #bbb; */
+}
+
+.theme {
+  transition: 0.7s all ease;
 }
 
 a {
