@@ -14,7 +14,7 @@
 }
 
 .item {
-  border: 2px solid var(--gray-color);
+  border: 2px solid var(--background);
   border-radius: var(--sm-border-radius);
   width: 300px;
   height: 300px;
@@ -38,4 +38,5 @@
   font-size: var(--mb-font);
   font-weight: bold;
   transition: var(--transition);
+  color: #bbb;
 }

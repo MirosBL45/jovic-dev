@@ -14,7 +14,7 @@ export const ThemeProvider = ({ children }) => {
 
     return (
         <ThemeContext.Provider value={{ toggle, mode }}>
-            <div className={`theme ${mode}`}>{children}</div>
+            <div className={`light ${mode}`}>{children}</div>
         </ThemeContext.Provider>
     )
 }

@@ -18,7 +18,7 @@
 
 .title {
   font-size: var(--big-font);
-  background: linear-gradient(to bottom, var(--dark-green-color), var(--gray-color));
+  background: linear-gradient(to bottom, var(--green-color), var(--gray-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

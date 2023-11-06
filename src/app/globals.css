@@ -1,13 +1,4 @@
 :root {
-  /* --primary-glow: conic-gradient(from 180deg at 50% 50%,
-      #16abff33 0deg,
-      #0885ff33 55deg,
-      #54d6ff33 120deg,
-      #0071ff33 160deg,
-      transparent 360deg);
-  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0)); */
-
   --green-color: #53c28b;
   --dark-green-color: #194c33;
   --white-color: #efefef;
@@ -28,6 +19,19 @@
   --transition: all 270ms ease;
 }
 
+.light {
+  /* background: var(--gray-color); */
+  background: var(--white-color);
+  color: var(--background);
+  transition: 0.7s all ease;
+}
+
+.dark {
+  /* --gray-color: #333; */
+  --white-color: #333;
+  --background: #bbb;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -38,24 +42,6 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-.light {
-  /* --gray-color: #bbb;
-  --background: #333; */
-  background: #bbb;
-  color: #333;
-}
-
-.dark {
-  background: #333;
-  color: #bbb;
-  /* --gray-color: #333;
-  --background: #bbb; */
-}
-
-.theme {
-  transition: 0.7s all ease;
 }
 
 a {
