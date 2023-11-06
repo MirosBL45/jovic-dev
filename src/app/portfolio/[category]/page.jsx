@@ -14,7 +14,11 @@ function Category({ params }) {
       <div className={styles.item}>
         <div className={styles.content}>
           <h3 className={styles.title}>Test</h3>
-          <p className={styles.description}>Desc</p>
+          <p className={styles.description}>
+            Desc Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Debitis voluptatibus animi eum earum saepe deleniti pariatur et,
+            perferendis natus ex ullam necessitatibus? Reiciendis?
+          </p>
           <Button text={'See More'} url={'#'} />
         </div>
         <div className={styles.imgContainer}>
@@ -29,7 +33,10 @@ function Category({ params }) {
       <div className={styles.item}>
         <div className={styles.content}>
           <h3 className={styles.title}>Test</h3>
-          <p className={styles.description}>Desc</p>
+          <p className={styles.description}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consectetur, fugiat. Architecto officia ducimus quaerat doloribus?
+          </p>
           <Button text={'See More'} url={'#'} />
         </div>
         <div className={styles.imgContainer}>

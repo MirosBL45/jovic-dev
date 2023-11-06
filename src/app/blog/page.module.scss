@@ -1,3 +1,30 @@
-.contact {
-    background: red;
+.layoutTitle {
+    margin-bottom: 45px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.imgContainer {
+    border-radius: var(--sm-border-radius);
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.content {
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: var(--ms-font);
+        color: var(--dark-gray-color);
+    }
 }

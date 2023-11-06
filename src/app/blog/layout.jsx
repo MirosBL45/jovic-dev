@@ -1,9 +1,10 @@
-import React from 'react';
+// style
+import styles from './page.module.css';
 
 function BlogLayout({ children }) {
   return (
     <div>
-      <h4>Read My Blog Posts</h4>
+      <h1 className={styles.layoutTitle}>Read My Blog Posts</h1>
       {children}
     </div>
   );

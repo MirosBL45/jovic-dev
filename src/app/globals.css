@@ -4,6 +4,7 @@
   --white-color: #efefef;
   --gray-color: #bbb;
   --background: #333;
+  --dark-gray-color: #999;
 
   --small-border-radius: 0.313rem;
   --sm-border-radius: 0.625rem;
@@ -11,6 +12,7 @@
   --big-border-radius: 1.875rem;
 
   --small-font: 0.875rem;
+  --ms-font: 1.125rem;
   --medium-font: 1.5rem;
   --mb-font: 2.5rem;
   --big-font: 4.5rem;
