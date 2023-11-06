@@ -4,7 +4,7 @@ export default function NotFound() {
     return (
         <div>
             <h2>Not Found</h2>
-            <p>Could not find requested resource</p>
+            <p>Could not find requested resource for you. Hello by Ruby the Cat</p>
             <Link href="/">Return Home</Link>
         </div>
     )

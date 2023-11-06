@@ -5,33 +5,39 @@ import Link from 'next/link';
 // style
 import styles from './page.module.css';
 
-function Blog() {
+// function for catching data
+async function getData() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
+async function Blog() {
+  const data = await getData();
+
   return (
     <div>
-      <Link href={'/blog/testSlug'} className={styles.container}>
-        <div className={styles.imgContainer}>
-          <Image src={'/laptop.jpg'} alt="" width={400} height={250} />
-        </div>
-        <div className={styles.content}>
-          <h1>Test</h1>
-          <p>
-            Desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            repellendus eius.
-          </p>
-        </div>
-      </Link>
-      <Link href={'/blog/testSlug'} className={styles.container}>
-        <div className={styles.imgContainer}>
-          <Image src={'/laptop.jpg'} alt="" width={400} height={250} />
-        </div>
-        <div className={styles.content}>
-          <h2>Test</h2>
-          <p>
-            Desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            repellendus eius.
-          </p>
-        </div>
-      </Link>
+      {data.map((item) => (
+        <Link
+          key={item.id}
+          href={'/blog/testSlug'}
+          className={styles.container}
+        >
+          <div className={styles.imgContainer}>
+            <Image src={'/laptop.jpg'} alt="" width={400} height={250} />
+          </div>
+          <div className={styles.content}>
+            <h1>{item.title}</h1>
+            <p>{item.body}</p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 }
