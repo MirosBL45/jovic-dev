@@ -7,7 +7,7 @@ import styles from './page.module.css';
 
 // function for catching data
 async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  const res = await fetch('http://localhost:3000/api/posts', {
     cache: 'no-store',
   });
 
@@ -26,15 +26,15 @@ async function Blog() {
       {data.map((item) => (
         <Link
           key={item.id}
-          href={'/blog/testSlug'}
+          href={`blog/${item._id}`}
           className={styles.container}
         >
           <div className={styles.imgContainer}>
-            <Image src={'/laptop.jpg'} alt="" width={400} height={250} />
+            <Image src={item.image} alt="" width={400} height={250} />
           </div>
           <div className={styles.content}>
             <h1>{item.title}</h1>
-            <p>{item.body}</p>
+            <p>{item.description}</p>
           </div>
         </Link>
       ))}

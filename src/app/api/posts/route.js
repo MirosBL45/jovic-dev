@@ -3,16 +3,16 @@ import { NextResponse } from "next/server";
 
 // stuff for data
 import connectToDB from "@/utils/db";
-import Postdb from "@/models/Postdb";
+import Post from "@/models/Post";
 
 export const GET = async () => {
     //fetch
     try {
         await connectToDB();
 
-        const postsdb = await Postdb.find();
+        const posts = await Post.find();
 
-        return new NextResponse(postsdb, { status: 200 });
+        return new NextResponse(JSON.stringify(posts), { status: 200 });
 
     } catch (error) {
         return new NextResponse('Database Error', { status: 500 });

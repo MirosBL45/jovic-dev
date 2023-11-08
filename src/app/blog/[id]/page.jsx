@@ -6,13 +6,10 @@ import { notFound } from 'next/navigation';
 import styles from './page.module.css';
 
 // function for catching data
-async function getData(slug) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${slug}`,
-    {
-      cache: 'no-store',
-    }
-  );
+async function getData(id) {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    cache: 'no-store',
+  });
 
   if (!res.ok) {
     return notFound();
@@ -22,7 +19,7 @@ async function getData(slug) {
 }
 
 async function BlogPost({ params }) {
-  const data = await getData(params.slug);
+  const data = await getData(params.id);
   return (
     <div>
       <div className={styles.top}>
