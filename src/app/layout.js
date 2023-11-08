@@ -1,7 +1,7 @@
 // components
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
-import { ThemeProvider } from '../../context/ThemeContext';
+import { ThemeProvider } from '../context/ThemeContext';
 
 // styles
 import { Inter } from 'next/font/google'

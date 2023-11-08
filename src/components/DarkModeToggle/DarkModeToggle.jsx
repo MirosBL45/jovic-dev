@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 
 // context
-import { ThemeContext } from '../../../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 
 // style
 import styles from './darkModeToggle.module.css';
