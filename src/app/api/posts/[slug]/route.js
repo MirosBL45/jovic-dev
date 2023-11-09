@@ -6,14 +6,13 @@ import connectToDB from "@/utils/db";
 import Post from "@/models/Post";
 
 export const GET = async (request, { params }) => {
-    console.log('this is: ', params);
-    const { id } = params;
+    const { slug } = params;
 
     //fetch
     try {
         await connectToDB();
 
-        const post = await Post.findById(id);
+        const post = await Post.findOne({ slug });
 
         return new NextResponse(JSON.stringify(post), { status: 200 });
 

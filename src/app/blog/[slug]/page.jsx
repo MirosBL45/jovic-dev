@@ -19,14 +19,13 @@ async function getData(slug) {
 }
 
 async function BlogPost({ params }) {
-  console.log('paja je: ', params);
   const data = await getData(params.slug);
-  console.log('data je: ', data);
+
   return (
     <div>
       <div className={styles.top}>
         <div className={styles.info}>
-          {/* <h2 className={styles.title}>{data.title}</h2> */}
+          <h2 className={styles.title}>{data?.title}</h2>
           <p className={styles.desc}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
             nobis, atque officiis placeat numquam doloremque dolorum aperiam
