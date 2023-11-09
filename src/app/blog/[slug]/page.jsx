@@ -25,42 +25,31 @@ async function BlogPost({ params }) {
     <div>
       <div className={styles.top}>
         <div className={styles.info}>
-          <h2 className={styles.title}>{data?.title}</h2>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-            nobis, atque officiis placeat numquam doloremque dolorum aperiam
-            magnam iusto.
-          </p>
+          <h2 className={styles.title}>{data.title}</h2>
+          <p className={styles.desc}>{data.description}</p>
           <div className={styles.author}>
             <Image
               className={styles.avatar}
-              src={'/avatar.jpg'}
+              src={data.avatar}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="avatar"
               width={40}
               height={40}
             />
-            <span className={styles.username}>Mike Pajic</span>
+            <span className={styles.username}>{data.username}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image src={'/people-working.jpg'} alt="people" fill={true} />
+          <Image
+            src={data.image}
+            alt="people"
+            fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
       </div>
       <div className={styles.content}>
-        <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem assumenda enim odit magni nihil consequatur dolores
-          dolor! Officiis totam rem nihil nemo similique officia? Officia
-          architecto itaque a quidem voluptas magni qui?
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta qui
-          expedita veniam dicta labore. Minima.
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
-          odit!
-        </p>
+        <p className={styles.text}>{data.content}</p>
       </div>
     </div>
   );
