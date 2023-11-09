@@ -6,8 +6,8 @@ import { notFound } from 'next/navigation';
 import styles from './page.module.css';
 
 // function for catching data
-async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+async function getData(slug) {
+  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
     cache: 'no-store',
   });
 
@@ -19,12 +19,14 @@ async function getData(id) {
 }
 
 async function BlogPost({ params }) {
-  const data = await getData(params.id);
+  console.log('paja je: ', params);
+  const data = await getData(params.slug);
+  console.log('data je: ', data);
   return (
     <div>
       <div className={styles.top}>
         <div className={styles.info}>
-          <h2 className={styles.title}>{data.title}</h2>
+          {/* <h2 className={styles.title}>{data.title}</h2> */}
           <p className={styles.desc}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
             nobis, atque officiis placeat numquam doloremque dolorum aperiam

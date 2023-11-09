@@ -25,8 +25,8 @@ async function Blog() {
     <div>
       {data.map((item) => (
         <Link
-          key={item.id}
-          href={`blog/${item._id}`}
+          key={item._id}
+          href={`blog/${item.slug}`}
           className={styles.container}
         >
           <div className={styles.imgContainer}>
