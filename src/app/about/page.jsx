@@ -10,6 +10,12 @@ import { aboutData } from '@/utils/data';
 // style
 import styles from './page.module.css';
 
+// Static metadata
+export const metadata = {
+  title: 'Jovic-dev About',
+  description: 'About Jovic Miroslav on web',
+};
+
 function About() {
   return (
     <div className={styles.container}>

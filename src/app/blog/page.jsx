@@ -18,6 +18,12 @@ async function getData() {
   return res.json();
 }
 
+// Static metadata
+export const metadata = {
+  title: 'Jovic-dev Blog',
+  description: 'Blog Jovic Miroslav on web',
+};
+
 async function Blog() {
   const data = await getData();
 

@@ -8,6 +8,12 @@ import { portfolioData } from '@/utils/data';
 // style
 import styles from './page.module.css';
 
+// Static metadata
+export const metadata = {
+  title: 'Jovic-dev Portfolio',
+  description: 'Portfolio Jovic Miroslav on web',
+};
+
 function Portfolio() {
   return (
     <div className={styles.container}>
