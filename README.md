@@ -3,7 +3,12 @@ npm run dev
 
 styled with file.module.css and file.module.scss
 
-Fetch data on the client using a third-party library SWR
-Used MongoDB and Mongoose for data on server side
+Fetch data on the client using a third-party library SWR -> https://swr.vercel.app/
 
-Created Schema for User and Post with Mongoose in project
+Used MongoDB and Mongoose for data on server side -> https://www.mongodb.com/
+
+Created Schema for User and Post with Mongoose in project -> https://mongoosejs.com/
+
+For authentication of users is used NextAuth -> https://authjs.dev/
+
+For GoogleProvider used Google Console from -> https://cloud.google.com/
