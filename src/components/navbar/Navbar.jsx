@@ -15,13 +15,13 @@ import styles from './navbar.module.css';
 function Navbar() {
   return (
     <nav className={styles.container}>
-      <Link prefetch href={'/'} className={styles.logo}>
+      <Link href={'/'} className={styles.logo}>
         jovic-dev
       </Link>
       <div className={styles.links}>
         <DarkModeToggle />
         {links.map((link) => (
-          <Link prefetch key={link.id} href={link.url} className={styles.link}>
+          <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}
           </Link>
         ))}

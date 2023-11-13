@@ -1,12 +1,11 @@
 // react/next stuff
 import Image from 'next/image';
-import Link from 'next/link';
 
 // images
 import Hero from 'public/hero.png';
 
 //components
-import Button from '@/components/Button/Button';
+import LinkButton from '@/components/LinkButton/LinkButton';
 
 // style
 import styles from './page.module.css';
@@ -22,7 +21,7 @@ export default function Home() {
           Turning your Idea into Reality. We bring together the teams from the
           global tech industry.
         </p>
-        <Button text={'See Our Works'} url={'/portfolio'} />
+        <LinkButton text={'See Our Works'} url={'/portfolio'} />
       </header>
       <div className={styles.item}>
         <Image src={Hero} alt="jovic-dev hero" className='moveImage' />

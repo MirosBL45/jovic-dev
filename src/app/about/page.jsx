@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 //components
-import Button from '@/components/Button/Button';
+import LinkButton from '@/components/LinkButton/LinkButton';
 
 // data
 import { aboutData } from '@/utils/data';
@@ -63,7 +63,7 @@ function About() {
               <li key={id}>{text}</li>
             ))}
           </ul>
-          <Button text={'Contact'} url={'/contact'} />
+          <LinkButton text={'Contact'} url={'/contact'} />
         </div>
       </div>
     </div>

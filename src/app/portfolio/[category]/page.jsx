@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 // components
-import Button from '@/components/Button/Button';
+import LinkButton from '@/components/LinkButton/LinkButton';
 import { notFound } from 'next/navigation';
 
 // data
@@ -32,7 +32,7 @@ function Category({ params }) {
           <div className={styles.content}>
             <h3 className={styles.title}>{item.title}</h3>
             <p className={styles.description}>{item.desc}</p>
-            <Button text={'See More'} url={'#'} />
+            <LinkButton openInNewTab={true} text={'See More'} url={item.url} />
           </div>
           <div className={styles.imgContainer}>
             <Image
