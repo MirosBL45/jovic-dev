@@ -2,6 +2,7 @@
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
 import { ThemeProvider } from '../context/ThemeContext';
+import AuthProvider from '@/components/AuthProvider/AuthProvider';
 
 // styles
 import { Inter } from 'next/font/google'
@@ -36,19 +37,19 @@ export const metadata = {
   publisher: 'Jovic Miroslav',
   applicationName: 'Jovic-dev',
   authors: [{ name: 'Jovic Miroslav' }],
-  twitter: {
-    title: 'Jovic-dev',
-    description: 'Jovic Miroslav Portfolio WebApp made with NextJS, MongoDB, Mongoose and SWR',
-    creator: 'Jovic Miroslav',
-  },
-  openGraph: {
-    images: '/logoMJ.png',
-    title: 'Jovic-dev',
-    description: 'Jovic Miroslav Portfolio WebApp made with NextJS, MongoDB, Mongoose and SWR',
-    siteName: 'Jovic-dev',
-    type: 'website',
-    authors: ['Jovic Miroslav'],
-  },
+  // twitter: {
+  //   title: 'Jovic-dev',
+  //   description: 'Jovic Miroslav Portfolio WebApp made with NextJS, MongoDB, Mongoose and SWR',
+  //   creator: 'Jovic Miroslav',
+  // },
+  // openGraph: {
+  //   images: '/logoMJ.png',
+  //   title: 'Jovic-dev',
+  //   description: 'Jovic Miroslav Portfolio WebApp made with NextJS, MongoDB, Mongoose and SWR',
+  //   siteName: 'Jovic-dev',
+  //   type: 'website',
+  //   authors: ['Jovic Miroslav'],
+  // },
 }
 
 export default function RootLayout({ children }) {
@@ -56,11 +57,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="container">
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className="container">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
