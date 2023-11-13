@@ -3,6 +3,9 @@
 // react/next stuff
 import Link from 'next/link';
 
+// components
+import ClickButton from '@/components/Buttons/ClickButton';
+
 // style
 import styles from './page.module.css';
 
@@ -28,7 +31,7 @@ function Register() {
           className={styles.input}
           required
         />
-        <button className={styles.button}>Register</button>
+        <ClickButton>{'Register'}</ClickButton>
       </form>
       <Link href={'/dashboard/login'}>Login with an existing account</Link>
     </div>

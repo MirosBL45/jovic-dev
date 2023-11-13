@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 // components
-import LinkButton from '@/components/LinkButton/LinkButton';
+import LinkButton from '@/components/Buttons/LinkButton';
 import { notFound } from 'next/navigation';
 
 // data

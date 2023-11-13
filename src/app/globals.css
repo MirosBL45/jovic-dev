@@ -22,16 +22,16 @@
 }
 
 .light {
-  /* background: var(--gray-color); */
   background: var(--white-color);
   color: var(--background);
   transition: 0.7s all ease;
 }
 
 .dark {
-  /* --gray-color: #333; */
   --white-color: #333;
   --background: #bbb;
+  --green-color: #28714d;
+  --dark-green-color: #51c28a;
 }
 
 * {

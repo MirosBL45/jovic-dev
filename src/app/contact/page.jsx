@@ -1,5 +1,10 @@
+// 'use client';
+
 // react/next stuff
 import Image from 'next/image';
+
+// components
+import ClickButton from '@/components/Buttons/ClickButton';
 
 // style
 import styles from './page.module.css';
@@ -28,7 +33,7 @@ function Contact() {
           <input type="text" placeholder="Your Name" />
           <input type="email" placeholder="Your Email" />
           <textarea placeholder="Your Message" cols="30" rows="10"></textarea>
-          <button>Send</button>
+          <ClickButton>{'Send'}</ClickButton>
         </form>
       </div>
     </div>
