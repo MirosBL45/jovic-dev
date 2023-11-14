@@ -12,3 +12,5 @@ Created Schema for User and Post with Mongoose in project -> https://mongoosejs.
 For authentication of users is used NextAuth -> https://authjs.dev/
 
 For GoogleProvider used Google Console from -> https://cloud.google.com/
+
+For storing passwords as hashed passwords instead of plaintext used bcryptjs -> https://www.npmjs.com/package/bcryptjs

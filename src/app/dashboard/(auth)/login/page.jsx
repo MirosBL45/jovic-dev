@@ -10,12 +10,13 @@ import ClickButton from '@/components/Buttons/ClickButton';
 import styles from './page.module.css';
 
 function Login() {
+  function handleClick() {
+    signIn('google');
+  }
+
   return (
     <div className={styles.container}>
-      <button onClick={() => signIn('google')}>Login with Google</button>
-      {/* <ClickButton onClick={() => signIn('google')}>
-        {'Login with Google'}
-      </ClickButton> */}
+      <ClickButton onClick={handleClick}>{'Login with Google'}</ClickButton>
     </div>
   );
 }

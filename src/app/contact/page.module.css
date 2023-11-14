@@ -38,22 +38,6 @@
   font-weight: bold;
   resize: none;
 }
-.sendingForm button {
-  padding: 20px 40px;
-  cursor: pointer;
-  background: var(--green-color);
-  border: none;
-  border-radius: var(--medium-border-radius);
-  color: var(--white-color);
-  width: max-content;
-  transition: var(--transition);
-  display: inline-block;
-  font-size: var(--medium-font);
-  display: inline-block;
-}
-.sendingForm button:hover {
-  background: var(--dark-green-color);
-}
 
 /* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 900px) {
@@ -87,13 +71,6 @@
   .sendingForm textarea {
     padding: 10px;
     font-size: 15px;
-  }
-  .sendingForm button {
-    padding: 15px 35px;
-    font-size: var(--small-font);
-  }
-  .sendingForm button:hover {
-    background: var(--dark-green-color);
   }
   .imgContainer {
     height: 200px;

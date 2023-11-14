@@ -4,7 +4,8 @@
     background: var(--green-color);
     border: none;
     border-radius: var(--medium-border-radius);
-    color: var(--white-color);
+    color: #efefef;
+    // color: var(--white-color);
     width: max-content;
     transition: var(--transition);
     display: inline-block;
@@ -15,5 +16,13 @@
         // color: var(--background);
         box-shadow: 0 0 0 3px var(--green-color);
         border-color: var(--green-color);
+    }
+}
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+    .button {
+        padding: 15px 35px;
+        font-size: var(--ms-font);
     }
 }

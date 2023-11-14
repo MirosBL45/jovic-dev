@@ -39,24 +39,6 @@
         font-weight: bold;
         resize: none;
     }
-
-    button {
-        padding: 20px 40px;
-        cursor: pointer;
-        background: var(--green-color);
-        border: none;
-        border-radius: var(--medium-border-radius);
-        color: var(--white-color);
-        width: max-content;
-        transition: var(--transition);
-        display: inline-block;
-        font-size: var(--medium-font);
-        display: inline-block;
-
-        &:hover {
-            background: var(--dark-green-color);
-        }
-    }
 }
 
 /* MEDIA QUERIES (medium screens) */
@@ -96,15 +78,6 @@
         textarea {
             padding: 10px;
             font-size: 15px;
-        }
-
-        button {
-            padding: 15px 35px;
-            font-size: var(--small-font);
-
-            &:hover {
-                background: var(--dark-green-color);
-            }
         }
     }
 
