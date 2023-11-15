@@ -1,3 +1,30 @@
-.paja {
-    color: orange;
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+        width: 300px;
+    }
+}
+
+.input {
+    border: none;
+    outline: none;
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid var(--gray-color);
+    border-radius: var(--medium-border-radius);
+    font-size: var(--medium-font);
+    font-weight: bold;
+    color: var(--background);
 }
