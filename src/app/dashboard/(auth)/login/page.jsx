@@ -1,7 +1,9 @@
 'use client';
 
 // react/next stuff
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 // components
 import ClickButton from '@/components/Buttons/ClickButton';
@@ -9,7 +11,22 @@ import ClickButton from '@/components/Buttons/ClickButton';
 // style
 import styles from './page.module.css';
 
+// icons
+import GoogleIcon from 'public/google.svg';
+import EMailIcon from 'public/email.png';
+
 function Login() {
+  const session = useSession();
+  const router = useRouter();
+
+  if (session.status === 'loading') {
+    return <p>Loading User...</p>;
+  }
+
+  if (session.status === 'authenticated') {
+    router?.push('/dashboard');
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     const email = e.target[0].value;
@@ -37,9 +54,15 @@ function Login() {
           className={styles.input}
           required
         />
-        <ClickButton>{'Login'}</ClickButton>
+        <ClickButton title={'Login with Mail'}>
+          {'Login with'}
+          <Image src={EMailIcon} alt="Mail" width={35} height={35} />
+        </ClickButton>
       </form>
-      <ClickButton onClick={handleClick}>{'Login with Google'}</ClickButton>
+      <ClickButton onClick={handleClick} title={'Or login with Google'}>
+        {'Or login with'}
+        <Image src={GoogleIcon} alt="Google" width={35} height={35} />
+      </ClickButton>
     </div>
   );
 }

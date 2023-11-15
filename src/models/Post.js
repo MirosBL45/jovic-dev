@@ -37,3 +37,4 @@ const postSchema = new Schema({
 
 mongoose.models = {}
 export default mongoose.model('Post', postSchema);
+// it makes Post collection in jovicData (name of DB)

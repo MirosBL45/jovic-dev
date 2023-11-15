@@ -4,13 +4,13 @@ import Link from 'next/link';
 // style
 import styles from './button.module.css';
 
-function LinkButton({ text, url, openInNewTab }) {
+function LinkButton({ text, url, openInNewTab, title }) {
   const linkProps = openInNewTab
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : {};
 
   return (
-    <Link href={url} {...linkProps} className={styles.button}>
+    <Link title={title} href={url} {...linkProps} className={styles.button}>
       {text}
     </Link>
   );

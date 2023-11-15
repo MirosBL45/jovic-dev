@@ -30,4 +30,10 @@
   color: #efefef;
   border-radius: var(--small-border-radius);
   cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 0.8px;
+  transition: var(--transition);
+}
+.logout:hover {
+  background: var(--dark-green-color);
 }

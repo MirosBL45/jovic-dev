@@ -7,8 +7,11 @@
   color: #efefef;
   width: max-content;
   transition: var(--transition);
-  display: inline-block;
   font-size: var(--medium-font);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
 }
 .button:hover {
   background: var(--dark-green-color);

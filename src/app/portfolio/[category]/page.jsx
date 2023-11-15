@@ -32,7 +32,12 @@ function Category({ params }) {
           <div className={styles.content}>
             <h3 className={styles.title}>{item.title}</h3>
             <p className={styles.description}>{item.desc}</p>
-            <LinkButton openInNewTab={true} text={'See More'} url={item.url} />
+            <LinkButton
+              title={'Click to see live project'}
+              openInNewTab={true}
+              text={'See More'}
+              url={item.url}
+            />
           </div>
           <div className={styles.imgContainer}>
             <Image

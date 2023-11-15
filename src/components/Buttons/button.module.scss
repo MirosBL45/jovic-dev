@@ -8,8 +8,12 @@
     // color: var(--white-color);
     width: max-content;
     transition: var(--transition);
-    display: inline-block;
+    // display: inline-block;
     font-size: var(--medium-font);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
 
     &:hover {
         background: var(--dark-green-color);

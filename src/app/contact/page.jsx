@@ -33,7 +33,7 @@ function Contact() {
           <input type="text" placeholder="Your Name" />
           <input type="email" placeholder="Your Email" />
           <textarea placeholder="Your Message" cols="30" rows="10"></textarea>
-          <ClickButton>{'Send'}</ClickButton>
+          <ClickButton title={'Send Message'}>{'Send Message'}</ClickButton>
         </form>
       </div>
     </div>

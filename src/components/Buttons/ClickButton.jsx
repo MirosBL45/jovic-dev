@@ -3,9 +3,9 @@
 // style
 import styles from './button.module.css';
 
-function ClickButton({ children, onClick }) {
+function ClickButton({ children, onClick, title }) {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={styles.button} title={title} onClick={onClick}>
       {children}
     </button>
   );
