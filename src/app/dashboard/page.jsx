@@ -20,6 +20,14 @@ function Dashboard() {
   const session = useSession();
   const router = useRouter();
 
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error, isLoading } = useSWR(
+    `/api/posts?username=${session?.data?.user.name}`,
+    fetcher
+  );
+
+  console.log(data);
+
   if (session.status === 'loading') {
     return <p>Loading User...</p>;
   }
@@ -27,14 +35,6 @@ function Dashboard() {
   if (session.status === 'unauthenticated') {
     router?.push('/dashboard/login');
   }
-
-  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // const { data, error, isLoading } = useSWR(
-  //   'https://jsonplaceholder.typicode.com/posts',
-  //   fetcher
-  // );
-
-  // console.log(data);
 
   if (session.status === 'authenticated') {
     return <div>You are in Dashboard</div>;
