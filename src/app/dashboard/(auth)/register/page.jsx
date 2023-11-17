@@ -68,7 +68,7 @@ function Register() {
         />
         <ClickButton>{'Register'}</ClickButton>
       </form>
-      {error && 'Something went wrong!'}
+      {error && 'Something went wrong, there is an error'}
       <Link href={'/dashboard/login'}>Login with an existing account</Link>
     </div>
   );

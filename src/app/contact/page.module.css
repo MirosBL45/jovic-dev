@@ -27,14 +27,14 @@
 }
 .sendingForm input,
 .sendingForm textarea {
-  padding: 20px;
+  padding: var(--ms-font);
   background: transparent;
   border: none;
   outline: none;
   color: var(--background);
   border: 1px solid var(--background);
   border-radius: var(--medium-border-radius);
-  font-size: 20px;
+  font-size: var(--ms-font);
   font-weight: bold;
   resize: none;
 }

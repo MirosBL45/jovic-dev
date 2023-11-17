@@ -9,6 +9,7 @@ import Image from 'next/image';
 
 // components
 import { TabTitle } from '@/utils/GeneralFunctions';
+import ClickButton from '@/components/Buttons/ClickButton';
 
 // style
 import styles from './page.module.css';
@@ -22,12 +23,10 @@ function Dashboard() {
   const router = useRouter();
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR(
+  const { data, mutate, error, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
-
-  console.log(data);
 
   if (session.status === 'loading') {
     return <p>Loading User...</p>;
@@ -46,6 +45,11 @@ function Dashboard() {
     const slug = e.target[4].value;
     const content = e.target[5].value;
 
+    console.log('ovde su targeti');
+    console.log(e.target);
+    console.log('duzina');
+    console.log(e.target.length);
+
     try {
       await fetch('/api/posts', {
         method: 'POST',
@@ -59,8 +63,14 @@ function Dashboard() {
           username: session.data.user.name,
         }),
       });
+      // it reloads page, and show that new post which was created
+      mutate();
     } catch (error) {
       console.log(error);
+    }
+
+    for (let i = 0; i < e.target.length - 1; i++) {
+      e.target[i].value = '';
     }
   }
 
@@ -81,7 +91,9 @@ function Dashboard() {
                     />
                   </div>
                   <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span className={styles.delete}>X</span>
+                  <span title="Delete this post?" className={styles.delete}>
+                    X
+                  </span>
                 </div>
               ))}
         </div>
@@ -93,7 +105,7 @@ function Dashboard() {
           <input type="text" placeholder="Your Avatar" required />
           <input type="text" placeholder="Slug of the post" />
           <textarea placeholder="Content" cols="30" rows="10"></textarea>
-          <button className={styles.button}>Send</button>
+          <ClickButton title={'Send New Post'}>Send New Post</ClickButton>
         </form>
       </div>
     );
