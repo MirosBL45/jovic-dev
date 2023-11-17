@@ -22,3 +22,24 @@ export const GET = async (request) => {
         return new NextResponse('Database Error', { status: 500 });
     }
 }
+
+
+
+
+export const POST = async (request) => {
+    const body = await request.json();
+
+    const newPost = new Post(body);
+
+    //fetch
+    try {
+        await connectToDB();
+
+        await newPost.save();
+
+        return new NextResponse('Post has been created', { status: 201 });
+
+    } catch (error) {
+        return new NextResponse('Database Error', { status: 500 });
+    }
+}
