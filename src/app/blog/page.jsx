@@ -27,6 +27,16 @@ export const metadata = {
 async function Blog() {
   const data = await getData();
 
+  // format date function
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = new Date(dateString).toLocaleDateString(
+      'en-US',
+      options
+    );
+    return formattedDate;
+  }
+
   return (
     <div>
       {data.map((item) => (
@@ -41,6 +51,7 @@ async function Blog() {
           <div className={styles.content}>
             <h1>{item.title}</h1>
             <p>{item.description}</p>
+            <span>{item.createdAt && formatDate(item.createdAt)}</span>
           </div>
         </Link>
       ))}

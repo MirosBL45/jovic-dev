@@ -19,12 +19,12 @@
 }
 
 .content {
-    h2 {
-        margin-bottom: 10px;
-    }
-
     p {
         font-size: var(--ms-font);
+        margin: var(--medium-font) 0;
+    }
+
+    span {
         color: var(--dark-gray-color);
     }
 }

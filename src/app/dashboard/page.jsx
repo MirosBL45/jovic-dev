@@ -45,11 +45,6 @@ function Dashboard() {
     const slug = e.target[4].value;
     const content = e.target[5].value;
 
-    console.log('ovde su targeti');
-    console.log(e.target);
-    console.log('duzina');
-    console.log(e.target.length);
-
     try {
       await fetch('/api/posts', {
         method: 'POST',
@@ -63,14 +58,23 @@ function Dashboard() {
           username: session.data.user.name,
         }),
       });
-      // it reloads page, and show that new post which was created
+      // it reloads page, so we can see that new post which was created
       mutate();
+      e.target.reset();
     } catch (error) {
       console.log(error);
     }
+  }
 
-    for (let i = 0; i < e.target.length - 1; i++) {
-      e.target[i].value = '';
+  async function handleDelete(slug) {
+    try {
+      await fetch(`/api/posts/${slug}`, {
+        method: 'DELETE',
+      });
+      // it reloads page, so we can see it after deleting post
+      mutate();
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -91,7 +95,11 @@ function Dashboard() {
                     />
                   </div>
                   <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span title="Delete this post?" className={styles.delete}>
+                  <span
+                    onClick={() => handleDelete(post.slug)}
+                    title="Delete this post?"
+                    className={styles.delete}
+                  >
                     X
                   </span>
                 </div>

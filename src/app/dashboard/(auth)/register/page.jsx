@@ -40,9 +40,7 @@ function Register() {
     } catch (error) {
       setError(true);
     }
-    e.target[0].value = '';
-    e.target[1].value = '';
-    e.target[2].value = '';
+    e.target.reset();
   }
 
   return (

@@ -17,10 +17,10 @@
   object-fit: cover;
 }
 
-.content h2 {
-  margin-bottom: 10px;
-}
 .content p {
   font-size: var(--ms-font);
+  margin: var(--medium-font) 0;
+}
+.content span {
   color: var(--dark-gray-color);
 }
