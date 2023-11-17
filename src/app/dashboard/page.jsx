@@ -14,7 +14,18 @@ import ClickButton from '@/components/Buttons/ClickButton';
 // style
 import styles from './page.module.css';
 
+// function for catching data to see slugs
+async function getAllPostSlugs() {
+  const response = await fetch('http://localhost:3000/api/posts');
+  const posts = await response.json();
+  const slugs = posts.map((post) => post.slug);
+  return slugs;
+}
+
 function Dashboard() {
+  // const dataForSlugs = await getDataForSlugs();
+  // console.log(dataForSlugs);
+
   useEffect(() => {
     TabTitle('Jovic-dev Dashboard');
   }, []);
@@ -42,8 +53,20 @@ function Dashboard() {
     const description = e.target[1].value;
     const image = e.target[2].value;
     const avatar = e.target[3].value;
-    const slug = e.target[4].value;
+    let slug = e.target[4].value.replace(/\s+/g, '_');
     const content = e.target[5].value;
+
+    // fetch all slugs
+    const existingSlugs = await getAllPostSlugs();
+
+    // if there is the same slug add number
+    if (existingSlugs.includes(slug)) {
+      let counter = 2;
+      while (existingSlugs.includes(slug + counter)) {
+        counter++;
+      }
+      slug = slug + counter;
+    }
 
     try {
       await fetch('/api/posts', {
