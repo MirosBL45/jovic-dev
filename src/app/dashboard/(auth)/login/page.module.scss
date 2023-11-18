@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 180px;
+    gap: 60px;
     align-items: center;
     justify-content: center;
 }
@@ -24,4 +24,13 @@
     font-size: var(--medium-font);
     font-weight: bold;
     color: var(--background);
+}
+
+.withRegister {
+    text-align: center;
+
+    a {
+        margin-top: 20px;
+        display: inline-block;
+    }
 }

@@ -23,9 +23,6 @@ async function getAllPostSlugs() {
 }
 
 function Dashboard() {
-  // const dataForSlugs = await getDataForSlugs();
-  // console.log(dataForSlugs);
-
   useEffect(() => {
     TabTitle('Jovic-dev Dashboard');
   }, []);

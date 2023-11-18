@@ -2,16 +2,21 @@
 
 // react/next stuff
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 // components
 import ClickButton from '@/components/Buttons/ClickButton';
+import { TabTitle } from '@/utils/GeneralFunctions';
 
 // style
 import styles from './page.module.css';
 
 function Register() {
+  useEffect(() => {
+    TabTitle('Jovic-dev Register');
+  }, []);
+
   const [error, setError] = useState(false);
 
   const router = useRouter();
