@@ -102,28 +102,34 @@ function Dashboard() {
     return (
       <div className={styles.container}>
         <div className={styles.posts}>
-          {isLoading
-            ? 'We are loading posts or users, think about it'
-            : data?.map((post) => (
-                <div className={styles.post} key={post._id}>
-                  <div className={styles.imgContainer}>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={200}
-                      height={100}
-                    />
-                  </div>
-                  <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span
-                    onClick={() => handleDelete(post.slug)}
-                    title="Delete this post?"
-                    className={styles.delete}
-                  >
-                    X
-                  </span>
+          {isLoading ? (
+            'We are loading posts or users, think about it'
+          ) : data && data.length ? (
+            data.map((post) => (
+              <div className={styles.post} key={post._id}>
+                <div className={styles.imgContainer}>
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={200}
+                    height={100}
+                  />
                 </div>
-              ))}
+                <h2 className={styles.postTitle}>{post.title}</h2>
+                <span
+                  onClick={() => handleDelete(post.slug)}
+                  title="Delete this post?"
+                  className={styles.delete}
+                >
+                  X
+                </span>
+              </div>
+            ))
+          ) : (
+            <div className={styles.displayed}>
+              When you make a new post, it will appear here.
+            </div>
+          )}
         </div>
         <form className={styles.new} onSubmit={handleSubmit}>
           <h1>Add New Post</h1>
