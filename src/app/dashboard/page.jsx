@@ -65,6 +65,8 @@ function Dashboard() {
       slug = slug + counter;
     }
 
+    slug = slug.toLowerCase();
+
     try {
       await fetch('/api/posts', {
         method: 'POST',
