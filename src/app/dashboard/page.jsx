@@ -22,6 +22,13 @@ async function getAllPostSlugs() {
   return slugs;
 }
 
+// function for catching data to see users
+// async function getAllPostUsers() {
+//   const response = await fetch('http://localhost:3000/api/users');
+//   const users = await response.json();
+//   return users;
+// }
+
 function Dashboard() {
   // for tab title
   useEffect(() => {
@@ -38,15 +45,6 @@ function Dashboard() {
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
-
-  // catch data of users
-  const { dataUser, mutateUser, errorUser, isLoadingUser } = useSWR(
-    `/api/posts`,
-    fetcher
-    // ?name=${session?.data?.user.name}
-  );
-
-  console.log('korisnik je', dataUser);
 
   if (session.status === 'loading') {
     return <p>Loading User...</p>;
@@ -67,6 +65,20 @@ function Dashboard() {
     // const avatar = e.target[3].value;
     let slug = e.target[3].value.replace(/\s+/g, '_');
     const content = e.target[4].value;
+
+    var avatarNew;
+
+    // catch data of users
+    const existingUsers = await getAllPostUsers();
+    console.log('svi useri');
+    console.log(existingUsers);
+    existingUsers.map((user) => {
+      if (user.name === session?.data?.user.name) {
+        console.log('ovde je user');
+        console.log(user);
+        avatarNew = user.avatar;
+      }
+    });
 
     // fetch all slugs
     const existingSlugs = await getAllPostSlugs();
@@ -89,7 +101,8 @@ function Dashboard() {
           title,
           description,
           image,
-          avatar: session.data.user.avatar,
+          // avatar: session.data.user.avatar,
+          avatar: avatarNew,
           slug,
           content,
           username: session.data.user.name,
