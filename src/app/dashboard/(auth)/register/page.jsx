@@ -13,9 +13,13 @@ import { TabTitle } from '@/utils/GeneralFunctions';
 import styles from './page.module.css';
 
 function Register() {
+  // for tab title
   useEffect(() => {
     TabTitle('Jovic-dev Register');
   }, []);
+
+  // for base64 image state
+  const [imageBase64, setImageBase64] = useState('');
 
   const [error, setError] = useState(false);
 

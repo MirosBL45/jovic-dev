@@ -3,7 +3,7 @@
 // react/next stuff
 import useSWR from 'swr';
 import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -23,6 +23,7 @@ async function getAllPostSlugs() {
 }
 
 function Dashboard() {
+  // for tab title
   useEffect(() => {
     TabTitle('Jovic-dev Dashboard');
   }, []);
@@ -44,11 +45,15 @@ function Dashboard() {
     router?.push('/dashboard/login');
   }
 
+  // for base64 image state
+  const [imageBase64, setImageBase64] = useState('');
+
   async function handleSubmit(e) {
     e.preventDefault();
     const title = e.target[0].value;
     const description = e.target[1].value;
-    const image = e.target[2].value;
+    // const image = e.target[2].value;
+    const image = imageBase64;
     const avatar = e.target[3].value;
     let slug = e.target[4].value.replace(/\s+/g, '_');
     const content = e.target[5].value;
@@ -100,6 +105,17 @@ function Dashboard() {
     }
   }
 
+  function convertToBase64(e) {
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () => {
+      setImageBase64(reader.result);
+    };
+    reader.onerror = (err) => {
+      console.log('Error with image: ', err);
+    };
+  }
+
   if (session.status === 'authenticated') {
     return (
       <div className={styles.container}>
@@ -137,7 +153,8 @@ function Dashboard() {
           <h1>Add New Post</h1>
           <input type="text" placeholder="Title" required />
           <input type="text" placeholder="Description" required />
-          <input type="text" placeholder="Image" required />
+          {/* <input type="text" placeholder="Image" required /> */}
+          <input type="file" accept="image/*" onChange={convertToBase64} />
           <input type="text" placeholder="Your Avatar" required />
           <input type="text" placeholder="Slug of the post" />
           <textarea placeholder="Content" cols="30" rows="10"></textarea>
