@@ -29,13 +29,24 @@ function Dashboard() {
   }, []);
 
   const session = useSession();
+  console.log(session);
   const router = useRouter();
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  // catch data of posts
   const { data, mutate, error, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
+
+  // catch data of users
+  const { dataUser, mutateUser, errorUser, isLoadingUser } = useSWR(
+    `/api/posts`,
+    fetcher
+    // ?name=${session?.data?.user.name}
+  );
+
+  console.log('korisnik je', dataUser);
 
   if (session.status === 'loading') {
     return <p>Loading User...</p>;
@@ -52,11 +63,10 @@ function Dashboard() {
     e.preventDefault();
     const title = e.target[0].value;
     const description = e.target[1].value;
-    // const image = e.target[2].value;
     const image = imageBase64;
-    const avatar = e.target[3].value;
-    let slug = e.target[4].value.replace(/\s+/g, '_');
-    const content = e.target[5].value;
+    // const avatar = e.target[3].value;
+    let slug = e.target[3].value.replace(/\s+/g, '_');
+    const content = e.target[4].value;
 
     // fetch all slugs
     const existingSlugs = await getAllPostSlugs();
@@ -79,7 +89,7 @@ function Dashboard() {
           title,
           description,
           image,
-          avatar,
+          avatar: session.data.user.avatar,
           slug,
           content,
           username: session.data.user.name,
@@ -106,8 +116,16 @@ function Dashboard() {
   }
 
   function convertToBase64(e) {
+    const file = e.target.files[0];
+
+    // check file size
+    if (file.size > 5 * 1024 * 1024) {
+      alert('The image is too large. Please select an image smaller than 5MB.');
+      return;
+    }
+
     var reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
+    reader.readAsDataURL(file);
     reader.onload = () => {
       setImageBase64(reader.result);
     };
@@ -153,9 +171,14 @@ function Dashboard() {
           <h1>Add New Post</h1>
           <input type="text" placeholder="Title" required />
           <input type="text" placeholder="Description" required />
-          {/* <input type="text" placeholder="Image" required /> */}
-          <input type="file" accept="image/*" onChange={convertToBase64} />
-          <input type="text" placeholder="Your Avatar" required />
+          <input
+            type="file"
+            accept="image/*"
+            placeholder="Image for post"
+            onChange={convertToBase64}
+            required
+          />
+          {/* <input type="text" placeholder="Your Avatar" required /> */}
           <input type="text" placeholder="Slug of the post" />
           <textarea placeholder="Content" cols="30" rows="10"></textarea>
           <ClickButton title={'Send New Post'}>Send New Post</ClickButton>

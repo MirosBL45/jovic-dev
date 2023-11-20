@@ -19,6 +19,7 @@ import GoogleIcon from 'public/google.svg';
 import EMailIcon from 'public/email.png';
 
 function Login() {
+  // for tab title
   useEffect(() => {
     TabTitle('Jovic-dev Login');
   }, []);

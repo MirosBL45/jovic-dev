@@ -7,7 +7,7 @@ import connectToDB from "@/utils/db";
 import User from "@/models/User";
 
 export const POST = async (request) => {
-    const { name, email, password } = await request.json();
+    const { name, email, password, avatar } = await request.json();
 
     await connectToDB();
 
@@ -17,6 +17,7 @@ export const POST = async (request) => {
         name,
         email,
         password: hashedPassword,
+        avatar,
     });
 
     try {
