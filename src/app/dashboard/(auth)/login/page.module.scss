@@ -32,5 +32,10 @@
     a {
         margin-top: 20px;
         display: inline-block;
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--green-color);
+        }
     }
 }

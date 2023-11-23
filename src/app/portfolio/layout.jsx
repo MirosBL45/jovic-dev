@@ -1,9 +1,10 @@
 // style
 import styles from './page.module.css';
+import '@/app/globals.css';
 
 function Layout({ children }) {
   return (
-    <div>
+    <div className="layoutContainerAll">
       <h1 className={styles.mainTitle}>Our Works</h1>
       {children}
     </div>

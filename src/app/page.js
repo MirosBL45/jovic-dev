@@ -9,10 +9,11 @@ import LinkButton from '@/components/Buttons/LinkButton';
 
 // style
 import styles from './page.module.css';
+import './globals.css'
 
 export default function Home() {
   return (
-    <main className={styles.container}>
+    <main className={`${styles.container} layoutContainerAll`}>
       <header className={styles.item}>
         <h1 className={styles.title}>
           Better design for your digital products.

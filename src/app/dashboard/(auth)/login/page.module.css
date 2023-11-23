@@ -32,4 +32,8 @@
 .withRegister a {
   margin-top: 20px;
   display: inline-block;
+  transition: var(--transition);
+}
+.withRegister a:hover {
+  color: var(--green-color);
 }

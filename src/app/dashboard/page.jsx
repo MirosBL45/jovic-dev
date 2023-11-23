@@ -13,6 +13,7 @@ import ClickButton from '@/components/Buttons/ClickButton';
 
 // style
 import styles from './page.module.css';
+import '@/app/globals.css';
 
 // function for catching data to see slugs
 async function getAllPostSlugs() {
@@ -135,7 +136,7 @@ function Dashboard() {
 
   if (session.status === 'authenticated') {
     return (
-      <div className={styles.container}>
+      <div className={`${styles.container} layoutContainerAll`}>
         <div className={styles.posts}>
           {isLoading ? (
             'We are loading posts or users, think about it'

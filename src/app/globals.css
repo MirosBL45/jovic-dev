@@ -61,6 +61,10 @@ a {
   justify-content: space-between;
 }
 
+.layoutContainerAll {
+  margin-top: 170px;
+}
+
 .moveImage {
   animation: imageMove 3s infinite ease alternate;
 }

@@ -8,6 +8,7 @@ import ClickButton from '@/components/Buttons/ClickButton';
 
 // style
 import styles from './page.module.css';
+import '@/app/globals.css';
 
 // Static metadata
 export const metadata = {
@@ -17,7 +18,7 @@ export const metadata = {
 
 function Contact() {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} layoutContainerAll`}>
       <h1>Let's Keep in Touch</h1>
       <div className={styles.content}>
         <div className={styles.imgContainer}>

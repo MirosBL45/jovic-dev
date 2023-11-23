@@ -11,6 +11,7 @@ import { TabTitle } from '@/utils/GeneralFunctions';
 
 // style
 import styles from './page.module.css';
+import '@/app/globals.css';
 
 function Register() {
   // for tab title
@@ -50,7 +51,8 @@ function Register() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} layoutContainerAll`}>
+      <h1>Register to continue to the dashboard</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"

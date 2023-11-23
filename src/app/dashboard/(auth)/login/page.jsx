@@ -13,6 +13,7 @@ import { TabTitle } from '@/utils/GeneralFunctions';
 
 // style
 import styles from './page.module.css';
+import '@/app/globals.css';
 
 // icons
 import GoogleIcon from 'public/google.svg';
@@ -48,7 +49,7 @@ function Login() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} layoutContainerAll`}>
       <h1>Login to continue to the dashboard</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input

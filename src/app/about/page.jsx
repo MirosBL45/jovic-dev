@@ -9,6 +9,7 @@ import { aboutData } from '@/utils/data';
 
 // style
 import styles from './page.module.css';
+import '@/app/globals.css';
 
 // Static metadata
 export const metadata = {
@@ -18,7 +19,7 @@ export const metadata = {
 
 function About() {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} layoutContainerAll`}>
       <div className={styles.imgContainer}>
         <Image
           src={'/people-working.jpg'}
