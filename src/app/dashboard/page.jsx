@@ -29,8 +29,10 @@ function Dashboard() {
   }, []);
 
   const session = useSession();
-  console.log(session);
   const router = useRouter();
+
+  // button sending text
+  const [buttonSend, setButtonSend] = useState(false);
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // catch data of posts
@@ -51,6 +53,7 @@ function Dashboard() {
   const [imageBase64, setImageBase64] = useState('');
 
   async function handleSubmit(e) {
+    setButtonSend(true);
     e.preventDefault();
     const title = e.target[0].value;
     const description = e.target[1].value;
@@ -87,20 +90,27 @@ function Dashboard() {
       // it reloads page, so we can see that new post which was created
       mutate();
       e.target.reset();
+      setButtonSend(false);
     } catch (error) {
       console.log(error);
     }
   }
 
   async function handleDelete(slug) {
-    try {
-      await fetch(`/api/posts/${slug}`, {
-        method: 'DELETE',
-      });
-      // it reloads page, so we can see it after deleting post
-      mutate();
-    } catch (error) {
-      console.log(error);
+    const userConfirmed = window.confirm('Delete this post?');
+
+    if (userConfirmed) {
+      try {
+        await fetch(`/api/posts/${slug}`, {
+          method: 'DELETE',
+        });
+        // it reloads page, so we can see it after deleting post
+        mutate();
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      alert('Deletion suspended!');
     }
   }
 
@@ -171,7 +181,9 @@ function Dashboard() {
           </div>
           <input type="text" placeholder="Slug of the post" />
           <textarea placeholder="Content" cols="30" rows="10"></textarea>
-          <ClickButton title={'Send New Post'}>Send New Post</ClickButton>
+          <ClickButton title={'Send New Post'}>
+            {buttonSend ? 'Sending This Post...' : 'Send New Post'}
+          </ClickButton>
         </form>
       </div>
     );

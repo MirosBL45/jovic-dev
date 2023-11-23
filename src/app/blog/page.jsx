@@ -2,6 +2,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+// components
+import { formatDate } from '@/utils/GeneralFunctions';
+
 // style
 import styles from './page.module.css';
 
@@ -26,16 +29,6 @@ export const metadata = {
 
 async function Blog() {
   const data = await getData();
-
-  // format date function
-  function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = new Date(dateString).toLocaleDateString(
-      'en-US',
-      options
-    );
-    return formattedDate;
-  }
 
   return (
     <div>

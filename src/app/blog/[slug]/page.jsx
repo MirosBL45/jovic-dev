@@ -2,6 +2,9 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+// components
+import { formatDate } from '@/utils/GeneralFunctions';
+
 // style
 import styles from './page.module.css';
 
@@ -22,7 +25,7 @@ async function getData(slug) {
 export async function generateMetadata({ params }) {
   const post = await getData(params.slug);
   return {
-    title: post.title,
+    title: `Jovic-dev: ${post.title}`,
     description: post.description,
   };
 }
@@ -41,7 +44,9 @@ async function BlogPost({ params }) {
               <h2 className={styles.title}>{data.title}</h2>
               <p className={styles.desc}>{data.description}</p>
               <div className={styles.author}>
-                <span className={styles.username}>{data.username}</span>
+                by
+                <span className={styles.username}>{data.username}</span>from
+                <span>{data.createdAt && formatDate(data.createdAt)}</span>
               </div>
             </div>
             <div className={styles.imageContainer}>
