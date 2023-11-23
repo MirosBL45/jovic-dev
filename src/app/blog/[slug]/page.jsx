@@ -41,14 +41,6 @@ async function BlogPost({ params }) {
               <h2 className={styles.title}>{data.title}</h2>
               <p className={styles.desc}>{data.description}</p>
               <div className={styles.author}>
-                <Image
-                  className={styles.avatar}
-                  src={data.avatar}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  alt="avatar"
-                  width={40}
-                  height={40}
-                />
                 <span className={styles.username}>{data.username}</span>
               </div>
             </div>

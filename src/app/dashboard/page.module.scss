@@ -68,3 +68,13 @@
     margin-top: 150px;
     font-size: var(--mb-font);
 }
+
+.forImage {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    p {
+        color: var(--background);
+    }
+}

@@ -18,28 +18,6 @@ function Register() {
     TabTitle('Jovic-dev Register');
   }, []);
 
-  // for base64 image state
-  const [imageBase64, setImageBase64] = useState('');
-
-  function convertToBase64(e) {
-    const file = e.target.files[0];
-
-    // check file size
-    if (file.size > 5 * 1024 * 1024) {
-      alert('The image is too large. Please select an image smaller than 5MB.');
-      return;
-    }
-
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      setImageBase64(reader.result);
-    };
-    reader.onerror = (err) => {
-      console.log('Error with image: ', err);
-    };
-  }
-
   const [error, setError] = useState(false);
 
   const router = useRouter();
@@ -49,7 +27,6 @@ function Register() {
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-    const avatar = imageBase64;
 
     try {
       const res = await fetch('/api/auth/register', {
@@ -61,7 +38,6 @@ function Register() {
           name,
           email,
           password,
-          avatar,
         }),
       });
 
@@ -92,12 +68,6 @@ function Register() {
           type="password"
           placeholder="password"
           className={styles.input}
-          required
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={convertToBase64}
           required
         />
         <ClickButton>{'Register'}</ClickButton>

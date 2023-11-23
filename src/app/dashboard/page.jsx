@@ -22,13 +22,6 @@ async function getAllPostSlugs() {
   return slugs;
 }
 
-// function for catching data to see users
-// async function getAllPostUsers() {
-//   const response = await fetch('http://localhost:3000/api/users');
-//   const users = await response.json();
-//   return users;
-// }
-
 function Dashboard() {
   // for tab title
   useEffect(() => {
@@ -62,23 +55,8 @@ function Dashboard() {
     const title = e.target[0].value;
     const description = e.target[1].value;
     const image = imageBase64;
-    // const avatar = e.target[3].value;
     let slug = e.target[3].value.replace(/\s+/g, '_');
     const content = e.target[4].value;
-
-    var avatarNew;
-
-    // catch data of users
-    const existingUsers = await getAllPostUsers();
-    console.log('svi useri');
-    console.log(existingUsers);
-    existingUsers.map((user) => {
-      if (user.name === session?.data?.user.name) {
-        console.log('ovde je user');
-        console.log(user);
-        avatarNew = user.avatar;
-      }
-    });
 
     // fetch all slugs
     const existingSlugs = await getAllPostSlugs();
@@ -101,8 +79,6 @@ function Dashboard() {
           title,
           description,
           image,
-          // avatar: session.data.user.avatar,
-          avatar: avatarNew,
           slug,
           content,
           username: session.data.user.name,
@@ -184,14 +160,15 @@ function Dashboard() {
           <h1>Add New Post</h1>
           <input type="text" placeholder="Title" required />
           <input type="text" placeholder="Description" required />
-          <input
-            type="file"
-            accept="image/*"
-            placeholder="Image for post"
-            onChange={convertToBase64}
-            required
-          />
-          {/* <input type="text" placeholder="Your Avatar" required /> */}
+          <div className={styles.forImage}>
+            <p>Add image for the post:</p>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={convertToBase64}
+              required
+            />
+          </div>
           <input type="text" placeholder="Slug of the post" />
           <textarea placeholder="Content" cols="30" rows="10"></textarea>
           <ClickButton title={'Send New Post'}>Send New Post</ClickButton>
