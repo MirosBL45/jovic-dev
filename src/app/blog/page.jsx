@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 // components
 import { formatDate } from '@/utils/GeneralFunctions';
+import ScrollButton from '@/components/ScrollButton/ScrollButton';
 
 // style
 import styles from './page.module.css';
@@ -48,6 +49,7 @@ async function Blog() {
           </div>
         </Link>
       ))}
+      <ScrollButton />
     </div>
   );
 }

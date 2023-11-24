@@ -4,6 +4,7 @@ import Image from 'next/image';
 // components
 import LinkButton from '@/components/Buttons/LinkButton';
 import { notFound } from 'next/navigation';
+import ScrollButton from '@/components/ScrollButton/ScrollButton';
 
 // data
 import { itemsPortfolio } from '@/utils/data';
@@ -49,6 +50,7 @@ function Category({ params }) {
           </div>
         </div>
       ))}
+      <ScrollButton />
     </div>
   );
 }
