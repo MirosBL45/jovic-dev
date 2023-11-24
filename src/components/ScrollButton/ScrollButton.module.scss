@@ -3,4 +3,16 @@
     bottom: 20px;
     right: 20px;
     display: none;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--green-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+
+    &:hover {
+        background: var(--dark-green-color);
+        box-shadow: 0 0 0 3px var(--green-color);
+        border-color: var(--green-color);
+    }
 }

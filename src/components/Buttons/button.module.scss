@@ -5,10 +5,8 @@
     border: none;
     border-radius: var(--medium-border-radius);
     color: #efefef;
-    // color: var(--white-color);
     width: max-content;
     transition: var(--transition);
-    // display: inline-block;
     font-size: var(--medium-font);
     display: flex;
     align-items: center;
@@ -17,7 +15,6 @@
 
     &:hover {
         background: var(--dark-green-color);
-        // color: var(--background);
         box-shadow: 0 0 0 3px var(--green-color);
         border-color: var(--green-color);
     }

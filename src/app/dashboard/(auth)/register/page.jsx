@@ -4,10 +4,14 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 // components
 import ClickButton from '@/components/Buttons/ClickButton';
 import { TabTitle } from '@/utils/GeneralFunctions';
+
+// icons
+import CheckList from 'public/checklist.png';
 
 // style
 import styles from './page.module.css';
@@ -72,7 +76,10 @@ function Register() {
           className={styles.input}
           required
         />
-        <ClickButton>{'Register'}</ClickButton>
+        <ClickButton title={'Register'}>
+          {'Register'}
+          <Image src={CheckList} alt="CheckList" width={35} height={35} />
+        </ClickButton>
       </form>
       {error && 'Something went wrong, there is an error'}
       <Link href={'/dashboard/login'}>Login with an existing account</Link>
