@@ -5,7 +5,7 @@ import '@/app/globals.css';
 function Layout({ children }) {
   return (
     <div className="layoutContainerAll">
-      <h1 className={styles.mainTitle}>Our Works</h1>
+      <h1 className={styles.mainTitle}>My Work</h1>
       {children}
     </div>
   );

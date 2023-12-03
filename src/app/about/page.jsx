@@ -34,7 +34,7 @@ function About() {
       </div>
       <div className={styles.textContainer}>
         <div className={styles.item}>
-          <h2>Who Are We?</h2>
+          <h2>Who Am I?</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
             praesentium labore nostrum maxime voluptatum, quaerat laboriosam
@@ -53,7 +53,7 @@ function About() {
           </p>
         </div>
         <div className={styles.item}>
-          <h2>What We Do</h2>
+          <h2>What I Do?</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
             vero quo fugit molestias nisi, nam blanditiis harum consectetur.
