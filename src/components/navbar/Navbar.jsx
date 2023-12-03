@@ -11,6 +11,9 @@ import { links } from '@/utils/data';
 // components
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
+// logo
+import LogoMJ from 'public/logoMJ.png';
+
 // style
 import styles from './navbar.module.css';
 
@@ -20,7 +23,7 @@ function Navbar() {
   return (
     <nav className={styles.container}>
       <Link href={'/'} className={styles.logo}>
-        jovic-dev
+        <Image src={LogoMJ} alt="LogoMJ" width={50} height={50} />
       </Link>
       <div className={styles.links}>
         <DarkModeToggle />
