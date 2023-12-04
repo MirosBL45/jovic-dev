@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 2px;
-    padding: 3px;
+    padding: 4px;
     cursor: pointer;
     position: relative;
 }
@@ -17,8 +17,8 @@
 }
 
 .ball {
-    width: 16px;
-    height: 16px;
+    width: 19px;
+    height: 19px;
     background: var(--green-color);
     border-radius: 50%;
     position: absolute;
