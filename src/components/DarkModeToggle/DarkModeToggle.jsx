@@ -22,7 +22,7 @@ function DarkModeToggle() {
       <div className={styles.icon}>🔆</div>
       <div
         className={styles.ball}
-        style={mode === 'light' ? { left: '3px' } : { right: '3px' }}
+        style={mode === 'light' ? { left: '4px' } : { right: '3px' }}
       />
     </div>
   );

@@ -50,3 +50,39 @@
         background: var(--dark-green-color);
     }
 }
+
+/* MEDIA QUERIES (medium and small screens) */
+@media screen and (max-width: 704px) {
+    .links {
+        padding-top: 45px;
+        position: absolute;
+        // width: 75vw;
+        width: 200px;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        z-index: 33;
+        flex-direction: column;
+        gap: 35px;
+        background-image: linear-gradient(to bottom left, var(--white-color), var(--dark-gray-color));
+        font-size: var(--medium-font);
+        font-weight: bolder;
+        border-bottom-left-radius: var(--big-border-radius);
+        border-top-left-radius: var(--big-border-radius);
+        overflow: hidden;
+    }
+
+    .link {
+        transform: translateX(100vw);
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    @for $i from 1 through 6 {
+        .link:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.19s;
+        }
+    }
+}
