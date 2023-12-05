@@ -50,9 +50,9 @@ function Navbar() {
               pathname === link.url && styles.activeLink
             } ${isNavShowing && styles.open}`}
           >
-            <a href={link.url} onClick={() => setIsNavShowing(false)}>
+            <Link href={link.url} onClick={() => setIsNavShowing(false)}>
               {link.title}
-            </a>
+            </Link>
           </div>
         ))}
         {session.status === 'authenticated' && (

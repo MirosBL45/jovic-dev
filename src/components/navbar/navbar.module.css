@@ -25,6 +25,7 @@
   align-items: center;
   gap: 20px;
   transition: var(--transition);
+  font-size: var(--ms-font);
 }
 
 .link {
