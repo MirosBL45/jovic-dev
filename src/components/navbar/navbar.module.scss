@@ -55,6 +55,18 @@
     display: none;
 }
 
+.activeLink {
+    background: var(--green-color);
+    color: var(--white-color);
+    padding: 5px 9px;
+    border-radius: var(--small-border-radius);
+    cursor: pointer;
+
+    &:hover a {
+        color: var(--background);
+    }
+}
+
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 850px) {
     .container {

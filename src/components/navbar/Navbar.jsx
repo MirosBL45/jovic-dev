@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 // data
 import { links } from '@/utils/data';
@@ -25,6 +26,7 @@ import styles from './navbar.module.css';
 function Navbar() {
   const [isNavShowing, setIsNavShowing] = useState(false);
   const session = useSession();
+  const pathname = usePathname();
 
   return (
     <nav className={styles.container}>
@@ -42,14 +44,16 @@ function Navbar() {
         }`}
       >
         {links.map((link) => (
-          <Link
-            onClick={() => setIsNavShowing(false)}
+          <div
             key={link.id}
-            href={link.url}
-            className={`${styles.link} ${isNavShowing && styles.open}`}
+            className={`${styles.link} ${
+              pathname === link.url && styles.activeLink
+            } ${isNavShowing && styles.open}`}
           >
-            {link.title}
-          </Link>
+            <a href={link.url} onClick={() => setIsNavShowing(false)}>
+              {link.title}
+            </a>
+          </div>
         ))}
         {session.status === 'authenticated' && (
           <button
