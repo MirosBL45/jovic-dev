@@ -2,13 +2,12 @@
 
 // react/next stuff
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 // style
 import styles from './ScrollButton.module.css';
 
 // icons
-import upArrow from 'public/up-arrow.svg';
+import { FaArrowUpLong } from 'react-icons/fa6';
 
 function ScrollButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,7 +36,7 @@ function ScrollButton() {
       onClick={handleButtonClick}
       title={'Scroll to Top'}
     >
-      <Image src={upArrow} alt="Scroll to Top" width={35} height={35} />
+      <FaArrowUpLong size={35} />
     </button>
   );
 }

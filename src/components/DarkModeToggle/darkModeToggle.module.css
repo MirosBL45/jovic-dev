@@ -1,25 +1,41 @@
 .container {
   width: max-content;
   height: max-content;
-  border: 1.5px solid var(--green-color);
+  border: 2px solid var(--green-color);
   border-radius: var(--big-border-radius);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2px;
-  padding: 4px;
+  gap: 6px;
+  padding: 6px;
   cursor: pointer;
   position: relative;
 }
 
 .icon {
-  font-size: 13px;
+  font-size: 19px;
+  display: flex;
+  place-items: center;
 }
 
 .ball {
-  width: 19px;
-  height: 19px;
+  width: 23px;
+  height: 23px;
   background: var(--green-color);
   border-radius: 50%;
   position: absolute;
+}
+
+/* MEDIA QUERIES (medium and small screens) */
+@media screen and (max-width: 504px) {
+  .container {
+    border: 1.5px solid var(--green-color);
+  }
+  .icon {
+    font-size: 15px;
+  }
+  .ball {
+    width: 19px;
+    height: 19px;
+  }
 }

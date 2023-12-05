@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  transition: var(--transition);
 }
 
 .link {
@@ -34,7 +35,7 @@
 }
 
 .logout {
-  padding: 5px;
+  padding: 5px 9px;
   border: none;
   background: var(--green-color);
   color: #efefef;
@@ -48,47 +49,93 @@
   background: var(--dark-green-color);
 }
 
+.toggleBtn {
+  display: none;
+}
+
 /* MEDIA QUERIES (medium and small screens) */
-@media screen and (max-width: 704px) {
+@media screen and (max-width: 850px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+/* MEDIA QUERIES (medium and small screens) */
+@media screen and (max-width: 745px) {
+  .container {
+    padding: 0 1.1rem;
+  }
+  .show_nav {
+    transition: var(--transition);
+    transform: translateX(0);
+  }
+  .hide_nav {
+    transform: translateX(100vw);
+    transition: var(--transition);
+  }
   .links {
     padding-top: 45px;
     position: absolute;
     width: 200px;
-    height: 100vh;
-    top: 0;
+    height: calc(100vh - 100px);
+    top: 100px;
     right: 0;
     z-index: 33;
     flex-direction: column;
     gap: 35px;
     background-image: linear-gradient(to bottom left, var(--white-color), var(--dark-gray-color));
     font-size: var(--medium-font);
-    font-weight: bolder;
+    font-weight: 500;
     border-bottom-left-radius: var(--big-border-radius);
     border-top-left-radius: var(--big-border-radius);
     overflow: hidden;
   }
-  .link {
+  .logout {
+    padding: 9px 13px;
+    font-weight: 500;
+  }
+  .link,
+  .logout {
     transform: translateX(100vw);
   }
-  .link.open {
+  .link.open,
+  .logout.open {
     transform: translateX(0);
   }
-  .link:nth-child(1) {
-    transition-delay: 0.29s;
+  .open:nth-child(1) {
+    transition-delay: 0.31s;
   }
-  .link:nth-child(2) {
-    transition-delay: 0.39s;
+  .open:nth-child(2) {
+    transition-delay: 0.41s;
   }
-  .link:nth-child(3) {
-    transition-delay: 0.49s;
+  .open:nth-child(3) {
+    transition-delay: 0.51s;
   }
-  .link:nth-child(4) {
-    transition-delay: 0.59s;
+  .open:nth-child(4) {
+    transition-delay: 0.61s;
   }
-  .link:nth-child(5) {
-    transition-delay: 0.69s;
+  .open:nth-child(5) {
+    transition-delay: 0.71s;
   }
-  .link:nth-child(6) {
-    transition-delay: 0.79s;
+  .open:nth-child(6) {
+    transition-delay: 0.81s;
+  }
+  .open:nth-child(7) {
+    transition-delay: 0.91s;
+  }
+  .open:nth-child(8) {
+    transition-delay: 1.01s;
+  }
+  .toggleBtn {
+    outline: none;
+    border: none;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    font-size: 2.2rem;
+    cursor: pointer;
+    padding: 1rem;
+  }
+  .toggleBtn svg {
+    color: var(--green-color);
   }
 }

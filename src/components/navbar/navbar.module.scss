@@ -24,6 +24,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    transition: var(--transition);
 }
 
 .link {
@@ -35,11 +36,10 @@
 }
 
 .logout {
-    padding: 5px;
+    padding: 5px 9px;
     border: none;
     background: var(--green-color);
     color: #efefef;
-    // color: var(--white-color);
     border-radius: var(--small-border-radius);
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -51,28 +51,58 @@
     }
 }
 
+.toggleBtn {
+    display: none;
+}
+
 /* MEDIA QUERIES (medium and small screens) */
-@media screen and (max-width: 704px) {
+@media screen and (max-width: 850px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* MEDIA QUERIES (medium and small screens) */
+@media screen and (max-width: 745px) {
+    .container {
+        padding: 0 1.1rem;
+    }
+
+    .show_nav {
+        transition: var(--transition);
+        transform: translateX(0);
+    }
+
+    .hide_nav {
+        transform: translateX(100vw);
+        transition: var(--transition);
+    }
+
     .links {
         padding-top: 45px;
         position: absolute;
-        // width: 75vw;
         width: 200px;
-        height: 100vh;
-        top: 0;
+        height: calc(100vh - 100px);
+        top: 100px;
         right: 0;
         z-index: 33;
         flex-direction: column;
         gap: 35px;
         background-image: linear-gradient(to bottom left, var(--white-color), var(--dark-gray-color));
         font-size: var(--medium-font);
-        font-weight: bolder;
+        font-weight: 500;
         border-bottom-left-radius: var(--big-border-radius);
         border-top-left-radius: var(--big-border-radius);
         overflow: hidden;
     }
 
-    .link {
+    .logout {
+        padding: 9px 13px;
+        font-weight: 500;
+    }
+
+    .link,
+    .logout {
         transform: translateX(100vw);
 
         &.open {
@@ -80,9 +110,24 @@
         }
     }
 
-    @for $i from 1 through 6 {
-        .link:nth-child(#{$i}) {
-            transition-delay: ($i * 0.1s) + 0.19s;
+    @for $i from 1 through 8 {
+        .open:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.21;
+        }
+    }
+
+    .toggleBtn {
+        outline: none;
+        border: none;
+        display: grid;
+        place-items: center;
+        background: transparent;
+        font-size: 2.2rem;
+        cursor: pointer;
+        padding: 1rem;
+
+        svg {
+            color: var(--green-color);
         }
     }
 }

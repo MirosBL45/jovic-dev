@@ -1,7 +1,9 @@
 npm install
 npm run dev
 
-styled with file.module.css and file.module.scss
+Styled with file.module.css and file.module.scss
+
+Used React Icons
 
 Fetch data on the client using a third-party library SWR -> https://swr.vercel.app/
 
