@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: center;
 }
+.container h1 {
+  text-align: center;
+}
 .container a {
   transition: var(--transition);
 }

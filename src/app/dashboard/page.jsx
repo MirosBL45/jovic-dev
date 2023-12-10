@@ -151,7 +151,7 @@ function Dashboard() {
                     height={100}
                   />
                 </div>
-                <h2 className={styles.postTitle}>{post.title}</h2>
+                <h3>{post.title}</h3>
                 <span
                   onClick={() => handleDelete(post.slug)}
                   title="Delete this post?"
@@ -163,7 +163,7 @@ function Dashboard() {
             ))
           ) : (
             <div className={styles.displayed}>
-              When you make a new post, it will appear here.
+              When you make your first post, it will appear here.
             </div>
           )}
         </div>
@@ -180,8 +180,13 @@ function Dashboard() {
               required
             />
           </div>
-          <input type="text" placeholder="Slug of the post" />
-          <textarea placeholder="Content" cols="30" rows="10"></textarea>
+          <input type="text" placeholder="Slug of the post" required />
+          <textarea
+            placeholder="Content"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
           <ClickButton title={'Send New Post'}>
             {buttonSend ? 'Sending This Post...' : 'Send New Post'}
           </ClickButton>

@@ -41,7 +41,7 @@ async function BlogPost({ params }) {
         <div>
           <div className={styles.top}>
             <div className={styles.info}>
-              <h2 className={styles.title}>{data.title}</h2>
+              <h2>{data.title}</h2>
               <p className={styles.desc}>{data.description}</p>
               <div className={styles.author}>
                 by

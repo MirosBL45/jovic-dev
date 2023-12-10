@@ -1,6 +1,5 @@
 .layoutTitle {
   margin-bottom: 65px;
-  font-size: var(--big-font);
 }
 
 .container {
@@ -18,9 +17,6 @@
   object-fit: cover;
 }
 
-.content h2 {
-  font-size: var(--mb-font);
-}
 .content p {
   font-size: var(--ms-font);
   margin: var(--medium-font) 0;

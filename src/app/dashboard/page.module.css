@@ -47,6 +47,9 @@
   flex-direction: column;
   gap: 20px;
 }
+.new h1 {
+  margin-bottom: 40px;
+}
 .new input,
 .new textarea {
   padding: var(--small-font);

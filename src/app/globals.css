@@ -36,6 +36,7 @@
   --green-color: hsl(198, 100%, 35%);
   /* --dark-green-color: #51c28a; */
   --dark-green-color: hsl(198, 100%, 45%);
+  --dark-gray-color: #9d9d9d;
 }
 
 * {
@@ -49,6 +50,53 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+h1 {
+  font-size: var(--big-font);
+}
+
+h2 {
+  font-size: var(--mb-font);
+}
+
+
+
+
+/* MEDIA QUERIES (medium screens)
+@media screen and (max-width: 900px) {
+
+      h1 {
+          font-size: 19px;
+      }
+
+      h2 {
+          font-size: 15px;
+      }
+
+
+/* MEDIA QUERIES (small screens) */
+/* @media screen and (max-width: 600px) {
+
+
+      h1 {
+          font-size: 16px;
+      }
+
+      h2 {
+          font-size: 12px;
+      }
+  */
+
+
+
+
+
+
+
+
+
+
+
 
 a {
   color: inherit;
