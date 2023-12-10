@@ -27,8 +27,10 @@
   padding: 15px;
   border-radius: var(--small-border-radius);
 }
-.imgText h2 {
-  margin-top: 10px;
+.imgText p {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: var(--ms-font);
 }
 
 .textContainer {

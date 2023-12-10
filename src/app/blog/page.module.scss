@@ -1,5 +1,6 @@
 .layoutTitle {
-    margin-bottom: 45px;
+    margin-bottom: 65px;
+    font-size: var(--big-font);
 }
 
 .container {
@@ -19,6 +20,10 @@
 }
 
 .content {
+    h2 {
+        font-size: var(--mb-font);
+    }
+
     p {
         font-size: var(--ms-font);
         margin: var(--medium-font) 0;

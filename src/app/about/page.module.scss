@@ -29,8 +29,10 @@
     padding: 15px;
     border-radius: var(--small-border-radius);
 
-    h2 {
-        margin-top: 10px;
+    p {
+        margin-top: 15px;
+        font-weight: 600;
+        font-size: var(--ms-font);
     }
 }
 

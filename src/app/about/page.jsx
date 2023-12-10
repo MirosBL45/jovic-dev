@@ -29,7 +29,7 @@ function About() {
         />
         <div className={styles.imgText}>
           <h1>Digital Storytellers</h1>
-          <h2>Handcrafting award winning digital expiriences</h2>
+          <p>Handcrafting award winning digital expiriences</p>
         </div>
       </div>
       <div className={styles.textContainer}>

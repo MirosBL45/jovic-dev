@@ -43,7 +43,7 @@ async function Blog() {
             <Image src={item.image} alt="" width={400} height={250} />
           </div>
           <div className={styles.content}>
-            <h1>{item.title}</h1>
+            <h2>{item.title}</h2>
             <p>{item.description}</p>
             <span>{item.createdAt && formatDate(item.createdAt)}</span>
           </div>
