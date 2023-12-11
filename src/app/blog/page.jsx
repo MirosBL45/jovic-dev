@@ -32,25 +32,25 @@ async function Blog() {
   const data = await getData();
 
   return (
-    <div>
+    <main>
       {data.map((item) => (
-        <Link
-          key={item._id}
-          href={`blog/${item.slug}`}
-          className={styles.container}
-        >
-          <div className={styles.imgContainer}>
-            <Image src={item.image} alt="" width={400} height={250} />
-          </div>
-          <div className={styles.content}>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-            <span>{item.createdAt && formatDate(item.createdAt)}</span>
-          </div>
-        </Link>
+        <section key={item._id}>
+          <Link href={`blog/${item.slug}`} className={styles.container}>
+            <div className={styles.imgContainer}>
+              <Image src={item.image} alt="" width={400} height={250} />
+            </div>
+            <div className={styles.content}>
+              <header>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+              </header>
+              <time>{item.createdAt && formatDate(item.createdAt)}</time>
+            </div>
+          </Link>
+        </section>
       ))}
       <ScrollButton />
-    </div>
+    </main>
   );
 }
 

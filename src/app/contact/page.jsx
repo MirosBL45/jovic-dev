@@ -18,9 +18,11 @@ export const metadata = {
 
 function Contact() {
   return (
-    <div className={`${styles.container} layoutContainerAll`}>
-      <h1>Let's Keep in Touch</h1>
-      <div className={styles.content}>
+    <main className={`${styles.container} layoutContainerAll`}>
+      <header>
+        <h1>Let's Keep in Touch</h1>
+      </header>
+      <section className={styles.content}>
         <div className={styles.imgContainer}>
           <Image
             className="moveImage"
@@ -36,8 +38,8 @@ function Contact() {
           <textarea placeholder="Your Message" cols="30" rows="10"></textarea>
           <ClickButton title={'Send Message'}>{'Send Message'}</ClickButton>
         </form>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

@@ -16,17 +16,17 @@ export const metadata = {
 
 function Portfolio() {
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <h2>Choose an area</h2>
-      <div className={styles.items}>
+      <section className={styles.items}>
         {portfolioData.map(({ id, title, url, image }) => (
           <Link key={id} href={url} className={styles.item}>
             <Image src={image} width={300} height={300} alt={title} />
             <span className={styles.itemTitle}>{title}</span>
           </Link>
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

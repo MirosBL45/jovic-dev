@@ -5,7 +5,9 @@ import '@/app/globals.css';
 function BlogLayout({ children }) {
   return (
     <div className="layoutContainerAll">
-      <h1 className={styles.layoutTitle}>Read My Blog Posts</h1>
+      <header>
+        <h1 className={styles.layoutTitle}>Read My Blog Posts</h1>
+      </header>
       {children}
     </div>
   );

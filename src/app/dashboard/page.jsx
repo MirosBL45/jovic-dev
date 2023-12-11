@@ -136,62 +136,67 @@ function Dashboard() {
 
   if (session.status === 'authenticated') {
     return (
-      <div className={`${styles.container} layoutContainerAll`}>
-        <div className={styles.posts}>
-          {isLoading ? (
-            'We are loading posts or users, think about it'
-          ) : data && data.length ? (
-            data.map((post) => (
-              <div className={styles.post} key={post._id}>
-                <div className={styles.imgContainer}>
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={200}
-                    height={100}
-                  />
+      <>
+        <header className="layoutContainerAll">
+          <h1 className={styles.headline}>Add New Post</h1>
+        </header>
+        <main className={styles.container}>
+          <aside className={styles.posts}>
+            {isLoading ? (
+              'We are loading posts or users, think about it'
+            ) : data && data.length ? (
+              data.map((post) => (
+                <div className={styles.post} key={post._id}>
+                  <div className={styles.imgContainer}>
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={200}
+                      height={100}
+                    />
+                  </div>
+                  <h3>{post.title}</h3>
+                  <span
+                    onClick={() => handleDelete(post.slug)}
+                    title="Delete this post?"
+                    className={styles.delete}
+                  >
+                    X
+                  </span>
                 </div>
-                <h3>{post.title}</h3>
-                <span
-                  onClick={() => handleDelete(post.slug)}
-                  title="Delete this post?"
-                  className={styles.delete}
-                >
-                  X
-                </span>
+              ))
+            ) : (
+              <div className={styles.displayed}>
+                When you make your first post, it will appear here.
               </div>
-            ))
-          ) : (
-            <div className={styles.displayed}>
-              When you make your first post, it will appear here.
+            )}
+          </aside>
+          <form className={styles.new} onSubmit={handleSubmit}>
+            {/* <h1>Add New Post</h1> */}
+            <input type="text" placeholder="Title" required />
+            <input type="text" placeholder="Description" required />
+            <div className={styles.forImage}>
+              <p>Add image for the post:</p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={convertToBase64}
+                required
+              />
             </div>
-          )}
-        </div>
-        <form className={styles.new} onSubmit={handleSubmit}>
-          <h1>Add New Post</h1>
-          <input type="text" placeholder="Title" required />
-          <input type="text" placeholder="Description" required />
-          <div className={styles.forImage}>
-            <p>Add image for the post:</p>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={convertToBase64}
+            <input type="text" placeholder="Slug of the post" required />
+            <textarea
+              placeholder="Content"
+              cols="30"
+              rows="10"
               required
-            />
-          </div>
-          <input type="text" placeholder="Slug of the post" required />
-          <textarea
-            placeholder="Content"
-            cols="30"
-            rows="10"
-            required
-          ></textarea>
-          <ClickButton title={'Send New Post'}>
-            {buttonSend ? 'Sending This Post...' : 'Send New Post'}
-          </ClickButton>
-        </form>
-      </div>
+            ></textarea>
+            <ClickButton title={'Send New Post'}>
+              {buttonSend ? 'Sending This Post...' : 'Send New Post'}
+            </ClickButton>
+          </form>
+        </main>
+      </>
     );
   }
 }

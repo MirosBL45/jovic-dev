@@ -27,14 +27,16 @@ function About() {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt="jovic-dev"
         />
-        <div className={styles.imgText}>
+        <header className={styles.imgText}>
           <h1>Digital Storytellers</h1>
           <p>Handcrafting award winning digital expiriences</p>
-        </div>
+        </header>
       </div>
-      <div className={styles.textContainer}>
-        <div className={styles.item}>
-          <h2>Who Am I?</h2>
+      <main className={styles.textContainer}>
+        <article className={styles.item}>
+          <header>
+            <h2>Who Am I?</h2>
+          </header>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
             praesentium labore nostrum maxime voluptatum, quaerat laboriosam
@@ -51,9 +53,11 @@ function About() {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
             asperiores obcaecati nulla est fuga quod ipsum veritatis impedit.
           </p>
-        </div>
-        <div className={styles.item}>
-          <h2>What I Do?</h2>
+        </article>
+        <article className={styles.item}>
+          <header>
+            <h2>What I Do?</h2>
+          </header>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
             vero quo fugit molestias nisi, nam blanditiis harum consectetur.
@@ -65,8 +69,8 @@ function About() {
             ))}
           </ul>
           <LinkButton text={'Contact'} url={'/contact'} />
-        </div>
-      </div>
+        </article>
+      </main>
     </div>
   );
 }

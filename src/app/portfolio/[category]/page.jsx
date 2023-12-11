@@ -26,12 +26,16 @@ function Category({ params }) {
   const data = getData(params.category);
 
   return (
-    <div>
-      <h2 className={styles.catTitle}>{params.category}</h2>
+    <main>
+      <header>
+        <h2 className={styles.catTitle}>{params.category}</h2>
+      </header>
       {data.map((item) => (
-        <div key={item.id} className={styles.item}>
+        <section key={item.id} className={styles.item}>
           <div className={styles.content}>
-            <h3 className={styles.title}>{item.title}</h3>
+            <header>
+              <h3 className={styles.title}>{item.title}</h3>
+            </header>
             <p className={styles.description}>{item.desc}</p>
             <LinkButton
               title={'Click to see live project'}
@@ -48,10 +52,10 @@ function Category({ params }) {
               alt="jovic-dev"
             />
           </div>
-        </div>
+        </section>
       ))}
       <ScrollButton />
-    </div>
+    </main>
   );
 }
 

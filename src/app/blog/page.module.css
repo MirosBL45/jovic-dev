@@ -21,6 +21,6 @@
   font-size: var(--ms-font);
   margin: var(--medium-font) 0;
 }
-.content span {
+.content time {
   color: var(--dark-gray-color);
 }

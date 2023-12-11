@@ -38,15 +38,17 @@ async function BlogPost({ params }) {
       {!data ? (
         notFound()
       ) : (
-        <div>
-          <div className={styles.top}>
+        <main>
+          <section className={styles.top}>
             <div className={styles.info}>
-              <h2>{data.title}</h2>
+              <header>
+                <h2>{data.title}</h2>
+              </header>
               <p className={styles.desc}>{data.description}</p>
               <div className={styles.author}>
                 by
                 <span className={styles.username}>{data.username}</span>from
-                <span>{data.createdAt && formatDate(data.createdAt)}</span>
+                <time>{data.createdAt && formatDate(data.createdAt)}</time>
               </div>
             </div>
             <div className={styles.imageContainer}>
@@ -57,11 +59,11 @@ async function BlogPost({ params }) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-          </div>
-          <div className={styles.content}>
+          </section>
+          <aside className={styles.content}>
             <p className={styles.text}>{data.content}</p>
-          </div>
-        </div>
+          </aside>
+        </main>
       )}
     </>
   );

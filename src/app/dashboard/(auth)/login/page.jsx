@@ -49,8 +49,10 @@ function Login() {
   }
 
   return (
-    <div className={`${styles.container} layoutContainerAll`}>
-      <h1>Login to continue to the dashboard</h1>
+    <main className={`${styles.container} layoutContainerAll`}>
+      <header>
+        <h1>Login to continue to the dashboard</h1>
+      </header>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="email"
@@ -69,7 +71,7 @@ function Login() {
           <Image src={EMailIcon} alt="Mail" width={35} height={35} />
         </ClickButton>
       </form>
-      <div className={styles.withRegister}>
+      <section className={styles.withRegister}>
         <ClickButton onClick={handleClick} title={'Or login with Google'}>
           {'Or login with'}
           <Image src={GoogleIcon} alt="Google" width={35} height={35} />
@@ -77,8 +79,8 @@ function Login() {
         <Link href={'/dashboard/register'} title={`No account? Register here!`}>
           No account? Register here!
         </Link>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

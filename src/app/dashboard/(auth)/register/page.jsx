@@ -55,8 +55,10 @@ function Register() {
   }
 
   return (
-    <div className={`${styles.container} layoutContainerAll`}>
-      <h1>Register to continue to the dashboard</h1>
+    <main className={`${styles.container} layoutContainerAll`}>
+      <header>
+        <h1>Register to continue to the dashboard</h1>
+      </header>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -83,7 +85,7 @@ function Register() {
       </form>
       {error && 'Something went wrong, there is an error'}
       <Link href={'/dashboard/login'}>Login with an existing account</Link>
-    </div>
+    </main>
   );
 }
 
