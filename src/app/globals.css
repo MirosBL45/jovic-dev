@@ -62,17 +62,16 @@ h2 {
 
 
 
-/* MEDIA QUERIES (medium screens)
+/* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 900px) {
+  h1 {
+    font-size: var(--mb-font);
+  }
 
-      h1 {
-          font-size: 19px;
-      }
-
-      h2 {
-          font-size: 15px;
-      }
-
+  h2 {
+    font-size: var(--medium-font);
+  }
+}
 
 /* MEDIA QUERIES (small screens) */
 /* @media screen and (max-width: 600px) {
@@ -84,8 +83,8 @@ h2 {
 
       h2 {
           font-size: 12px;
-      }
-  */
+      }*/
+
 
 
 

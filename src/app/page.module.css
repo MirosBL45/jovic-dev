@@ -47,18 +47,8 @@
     width: 100%;
     object-fit: cover;
   }
+  .description {
+    font-size: var(--ms-font);
+  }
 }
 /* MEDIA QUERIES (small screens) */
-@media screen and (max-width: 600px) {
-  .footer__container {
-    margin: 0 0 0 0;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .footer__container article {
-    align-items: center;
-  }
-  .footer__container p {
-    text-align: center;
-  }
-}
