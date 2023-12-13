@@ -47,7 +47,7 @@ function Category({ params }) {
           <div className={styles.imgContainer}>
             <Image
               fill={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               src={item.image}
               alt="jovic-dev"
             />

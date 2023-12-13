@@ -17,7 +17,7 @@ export const metadata = {
 function Portfolio() {
   return (
     <main className={styles.container}>
-      <h2>Choose an area</h2>
+      <h2>Choose an area to see my work</h2>
       <section className={styles.items}>
         {portfolioData.map(({ id, title, url, image }) => (
           <Link key={id} href={url} className={styles.item}>
