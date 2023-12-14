@@ -4,10 +4,17 @@
     margin: 100px 0 150px;
 }
 
+.allSections {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-bottom: 70px;
+}
+
 .item {
     display: flex;
     gap: 50px;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
 
     &:nth-child(odd) {
         flex-direction: row-reverse;
@@ -46,10 +53,16 @@
         margin: 50px 0 70px;
     }
 
+    .allSections {
+        display: flex;
+        flex-direction: column;
+        gap: 140px;
+        margin-bottom: 50px;
+    }
+
     .item {
         flex-direction: column-reverse;
         gap: 30px;
-        margin-bottom: 140px;
 
         &:nth-child(odd) {
             flex-direction: column-reverse;

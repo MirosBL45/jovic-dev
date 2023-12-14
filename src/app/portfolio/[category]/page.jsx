@@ -26,31 +26,38 @@ function Category({ params }) {
   const data = getData(params.category);
 
   return (
-    <main>
+    <>
       <header>
         <h2 className={styles.catTitle}>{params.category}</h2>
       </header>
-      {data.map((item) => (
-        <section key={item.id} className={styles.item}>
-          <div className={styles.content}>
-            <header>
-              <h3>{item.title}</h3>
-            </header>
-            <p className={styles.description}>{item.desc}</p>
-            <LinkButton
-              title={'Click to see live project'}
-              openInNewTab={true}
-              text={'See More'}
-              url={item.url}
-            />
-          </div>
-          <div className={styles.imgContainer}>
-            <Image width={500} height={500} src={item.image} alt="jovic-dev" />
-          </div>
-        </section>
-      ))}
+      <main className={styles.allSections}>
+        {data.map((item) => (
+          <section key={item.id} className={styles.item}>
+            <div className={styles.content}>
+              <header>
+                <h3>{item.title}</h3>
+              </header>
+              <p className={styles.description}>{item.desc}</p>
+              <LinkButton
+                title={'Click to see live project'}
+                openInNewTab={true}
+                text={'See More'}
+                url={item.url}
+              />
+            </div>
+            <div className={styles.imgContainer}>
+              <Image
+                width={500}
+                height={500}
+                src={item.image}
+                alt="jovic-dev"
+              />
+            </div>
+          </section>
+        ))}
+      </main>
       <ScrollButton />
-    </main>
+    </>
   );
 }
 

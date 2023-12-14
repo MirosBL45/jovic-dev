@@ -6,3 +6,22 @@
   justify-content: center;
   margin-top: 100px;
 }
+
+/* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 900px) {
+  .container {
+    margin-top: 80px;
+  }
+}
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+  .container {
+    margin-top: 50px;
+  }
+}
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 450px) {
+  .container {
+    margin-top: 30px;
+  }
+}

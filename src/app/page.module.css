@@ -41,7 +41,7 @@
 @media screen and (max-width: 900px) {
   .container {
     flex-direction: column;
-    gap: 10vw;
+    gap: 7vw;
   }
   .img {
     width: 100%;
@@ -52,3 +52,8 @@
   }
 }
 /* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 5vw;
+  }
+}

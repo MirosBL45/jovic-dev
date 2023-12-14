@@ -44,7 +44,7 @@
 @media screen and (max-width: 900px) {
     .container {
         flex-direction: column;
-        gap: 10vw;
+        gap: 7vw;
     }
 
     .img {
@@ -59,17 +59,7 @@
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
-    // .footer__container {
-    //     margin: 0 0 0 0;
-    //     grid-template-columns: 1fr;
-    //     gap: 3rem;
-
-    //     article {
-    //         align-items: center;
-    //     }
-
-    //     p {
-    //         text-align: center;
-    //     }
-    // }
+    .container {
+        gap: 5vw;
+    }
 }
