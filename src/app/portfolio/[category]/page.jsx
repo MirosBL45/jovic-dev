@@ -34,7 +34,7 @@ function Category({ params }) {
         <section key={item.id} className={styles.item}>
           <div className={styles.content}>
             <header>
-              <h3 className={styles.title}>{item.title}</h3>
+              <h3>{item.title}</h3>
             </header>
             <p className={styles.description}>{item.desc}</p>
             <LinkButton
@@ -45,12 +45,7 @@ function Category({ params }) {
             />
           </div>
           <div className={styles.imgContainer}>
-            <Image
-              fill={true}
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              src={item.image}
-              alt="jovic-dev"
-            />
+            <Image width={500} height={500} src={item.image} alt="jovic-dev" />
           </div>
         </section>
       ))}

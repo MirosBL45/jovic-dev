@@ -16,7 +16,7 @@ export default function Home() {
     <main className={`${styles.container} layoutContainerAll`}>
       <header className={styles.item}>
         <h1 className={styles.title}>
-          Better design for your digital products.
+          Better solution for your digital products.
         </h1>
         <p className={styles.description}>
           Turning your Idea into Reality. We bring together the teams from the
