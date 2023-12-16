@@ -5,11 +5,12 @@
 .container {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
     margin-bottom: 50px;
 }
 
 .imgContainer {
+    flex-basis: 50%;
     border-radius: var(--sm-border-radius);
     overflow: hidden;
 
@@ -19,6 +20,8 @@
 }
 
 .content {
+    flex-basis: 50%;
+
     p {
         font-size: var(--ms-font);
         margin: var(--medium-font) 0;

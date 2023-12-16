@@ -173,8 +173,20 @@ function Dashboard() {
           </aside>
           <form className={styles.new} onSubmit={handleSubmit}>
             {/* <h1>Add New Post</h1> */}
-            <input type="text" placeholder="Title" required />
-            <input type="text" placeholder="Description" required />
+            <input
+              type="text"
+              placeholder="Title"
+              pattern=".{2,20}"
+              title="String with min length of 2 and max length of 20 characters"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Description"
+              pattern=".{2,200}"
+              title="String with min length of 2 and max length of 200 characters"
+              required
+            />
             <div className={styles.forImage}>
               <p>Add image for the post:</p>
               <input
@@ -184,11 +196,19 @@ function Dashboard() {
                 required
               />
             </div>
-            <input type="text" placeholder="Slug of the post" required />
+            <input
+              type="text"
+              placeholder="Slug of the post"
+              pattern=".{2,20}"
+              title="String with min length of 2 and max length of 20 characters"
+              required
+            />
             <textarea
               placeholder="Content"
               cols="30"
               rows="10"
+              pattern=".{2,2000}"
+              title="String with min length of 2 and max length of 2000 characters, that is about 280 words"
               required
             ></textarea>
             <ClickButton title={'Send New Post'}>
