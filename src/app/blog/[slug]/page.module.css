@@ -31,6 +31,8 @@
 }
 .imageContainer img {
   object-fit: cover;
+  width: 100%;
+  height: 300px;
 }
 
 .content {
@@ -39,4 +41,28 @@
   font-weight: 300;
   color: var(--dark-gray-color);
   text-align: justify;
+}
+
+/* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 800px) {
+  .top {
+    flex-direction: column;
+  }
+  .info {
+    gap: 40px;
+  }
+}
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+  .content {
+    text-align: left;
+    font-size: var(--ms-font);
+    line-height: 1.5;
+  }
+}
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 450px) {
+  .author {
+    font-size: var(--small-font);
+  }
 }

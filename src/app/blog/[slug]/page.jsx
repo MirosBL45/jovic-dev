@@ -1,5 +1,4 @@
 // react/next stuff
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 // components
@@ -52,16 +51,11 @@ async function BlogPost({ params }) {
               </div>
             </div>
             <div className={styles.imageContainer}>
-              <Image
-                src={data.image}
-                alt="people"
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+              <img loading="lazy" src={data.image} alt={data.title} />
             </div>
           </section>
           <aside className={styles.content}>
-            <p className={styles.text}>{data.content}</p>
+            <p>{data.content}</p>
           </aside>
         </main>
       )}

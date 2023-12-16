@@ -47,7 +47,15 @@
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
   .imgContainer {
-    max-width: 500px;
+    max-width: 430px;
   }
 }
 /* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 450px) {
+  .imgContainer {
+    max-width: 350px;
+  }
+  .layoutTitle {
+    margin-bottom: 85px;
+  }
+}

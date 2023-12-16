@@ -52,25 +52,17 @@
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
     .imgContainer {
-        max-width: 500px;
+        max-width: 430px;
     }
 }
 
 /* MEDIA QUERIES (very small screens) */
-//   @media screen and (max-width: 450px) {
-//     .container {
-//       padding: 0 15px;
-//     }
+@media screen and (max-width: 450px) {
+    .imgContainer {
+        max-width: 350px;
+    }
 
-//     h1 {
-//       font-size: var(--mbs-font);
-//     }
-
-//     h2 {
-//       font-size: var(--mb-font);
-//     }
-
-//     h3 {
-//       font-size: var(--medium-font);
-//     }
-//   }
+    .layoutTitle {
+        margin-bottom: 85px;
+    }
+}
