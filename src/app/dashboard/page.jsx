@@ -184,7 +184,7 @@ function Dashboard() {
               type="text"
               placeholder="Description"
               pattern=".{2,200}"
-              title="String with min length of 2 and max length of 200 characters"
+              title="String with min length of 2 and max length of 200 characters, that is about 30 words"
               required
             />
             <div className={styles.forImage}>

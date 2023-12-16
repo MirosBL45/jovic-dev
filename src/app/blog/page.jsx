@@ -37,7 +37,12 @@ async function Blog() {
         <section key={item._id}>
           <Link href={`blog/${item.slug}`} className={styles.container}>
             <div className={styles.imgContainer}>
-              <Image src={item.image} alt="" width={400} height={250} />
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={500}
+                height={280}
+              />
             </div>
             <div className={styles.content}>
               <header>
