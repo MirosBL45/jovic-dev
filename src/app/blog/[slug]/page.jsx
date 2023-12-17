@@ -1,5 +1,6 @@
 // react/next stuff
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 // components
 import { formatDate } from '@/utils/GeneralFunctions';
@@ -51,7 +52,13 @@ async function BlogPost({ params }) {
               </div>
             </div>
             <div className={styles.imageContainer}>
-              <img loading="lazy" src={data.image} alt={data.title} />
+              {/* <img loading="lazy" src={data.image} alt={data.title} /> */}
+              <Image
+                src={data.image}
+                alt={data.title}
+                width={500}
+                height={300}
+              />
             </div>
           </section>
           <aside className={styles.content}>

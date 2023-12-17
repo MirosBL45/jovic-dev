@@ -41,7 +41,7 @@ async function Blog() {
                 src={item.image}
                 alt={item.title}
                 width={500}
-                height={280}
+                height={300}
               />
             </div>
             <div className={styles.content}>

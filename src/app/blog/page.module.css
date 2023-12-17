@@ -7,14 +7,13 @@
   align-items: center;
   gap: 50px;
   margin-bottom: 50px;
-  height: 270px;
 }
 
 .imgContainer {
   flex-basis: 40%;
   border-radius: var(--medium-border-radius);
   overflow: hidden;
-  height: 270px;
+  line-height: 0;
 }
 .imgContainer img {
   object-fit: cover;

@@ -24,15 +24,15 @@
 
 .imageContainer {
     flex: 1;
-    height: 300px;
     position: relative;
-    border-radius: var(--sm-border-radius);
+    border-radius: var(--medium-border-radius);
     overflow: hidden;
+    // Get rid of extra 4px height on parent element of image
+    line-height: 0;
 
     img {
         object-fit: cover;
         width: 100%;
-        height: 300px;
     }
 }
 
