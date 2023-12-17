@@ -68,6 +68,8 @@ function Navbar() {
       <button
         onClick={() => setIsNavShowing(!isNavShowing)}
         className={styles.toggleBtn}
+        title="Open/Close Navbar"
+        aria-label="Open/Close Navbar"
       >
         {isNavShowing ? <MdOutlineClose /> : <HiMiniBars3BottomRight />}
       </button>
