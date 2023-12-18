@@ -60,7 +60,6 @@
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
   .container h1 {
-    font-size: 40px;
     margin-bottom: 60px;
   }
   .sendingForm {
@@ -69,7 +68,7 @@
   .sendingForm input,
   .sendingForm textarea {
     padding: 10px;
-    font-size: 15px;
+    font-size: var(--ms-font);
   }
   .imgContainer {
     height: 200px;

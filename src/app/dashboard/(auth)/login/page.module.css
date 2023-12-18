@@ -37,3 +37,11 @@
 .withRegister a:hover {
   color: var(--green-color);
 }
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+  .input {
+    padding: 10px;
+    font-size: var(--ms-font);
+  }
+}
