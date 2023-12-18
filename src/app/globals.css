@@ -101,7 +101,9 @@ a {
 }
 
 /* MEDIA QUERIES (medium screens) */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
+
+  /* @media screen and (max-width: 900px) { */
   .container {
     padding: 0 40px;
   }

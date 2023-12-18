@@ -39,6 +39,8 @@
     position: relative;
     border-radius: var(--sm-border-radius);
     overflow: hidden;
+    // Get rid of extra 4px height on parent element of image
+    line-height: 0;
 
     img {
         width: 100%;

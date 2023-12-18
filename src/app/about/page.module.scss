@@ -1,7 +1,3 @@
-.contact {
-    background: red;
-}
-
 .imgContainer {
     width: 100%;
     height: 300px;
@@ -27,7 +23,7 @@
     background: var(--green-color);
     color: var(--white-color);
     padding: 15px;
-    border-radius: var(--small-border-radius);
+    border-radius: var(--sm-border-radius);
 
     p {
         margin-top: 15px;
@@ -68,14 +64,6 @@
     .imgText {
         width: 70vw;
         padding: 7px;
-
-        h1 {
-            font-size: 19px;
-        }
-
-        h2 {
-            font-size: 15px;
-        }
     }
 }
 
@@ -90,11 +78,16 @@
         padding: 7px;
 
         h1 {
-            font-size: 16px;
-        }
-
-        h2 {
-            font-size: 12px;
+            font-size: var(--mb-font);
         }
     }
 }
+
+/* MEDIA QUERIES (very small screens) */
+// @media screen and (max-width: 450px) {
+//     .imgText {
+//         h1 {
+//             font-size: var(--mbs-font);
+//         }
+//     }
+// }
