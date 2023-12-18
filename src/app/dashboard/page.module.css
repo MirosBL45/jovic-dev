@@ -5,11 +5,17 @@
 
 .headline {
   text-align: center;
-  margin-bottom: 75px;
+  margin-bottom: 105px;
 }
 
 .posts {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.posts h3 {
+  margin-bottom: 60px;
 }
 
 .post {
@@ -90,6 +96,9 @@
   .post {
     gap: 25px;
   }
+  .posts {
+    gap: 40px;
+  }
 }
 /* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 850px) {
@@ -104,25 +113,44 @@
 @media screen and (max-width: 750px) {
   .container {
     flex-direction: column-reverse;
-    gap: 100px;
+    gap: 150px;
   }
   .post {
     padding: 0 20px;
     gap: 15px;
+    margin-bottom: 30px;
   }
   .delete {
     top: -16px;
     left: 0px;
     font-size: var(--mb-font);
   }
+  .posts {
+    gap: 30px;
+  }
+  .posts h3 {
+    margin-bottom: 60px;
+  }
 }
 /* MEDIA QUERIES (very small screens) */
 @media screen and (max-width: 450px) {
+  .container {
+    gap: 100px;
+  }
   .post {
     flex-direction: column;
+    gap: 25px;
+    padding: 0 0;
+    margin-bottom: 20px;
   }
   .delete {
-    top: -16px;
-    left: 45px;
+    position: relative;
+  }
+  .posts {
+    gap: 5px;
+  }
+  .posts h3 {
+    text-align: center;
+    margin-bottom: 50px;
   }
 }

@@ -145,6 +145,7 @@ function Dashboard() {
         </header>
         <main className={styles.container}>
           <aside className={styles.posts}>
+            <h3>Your previous posts</h3>
             {isLoading ? (
               'We are loading posts or users, think about it'
             ) : data && data.length ? (
