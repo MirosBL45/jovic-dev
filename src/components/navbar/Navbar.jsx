@@ -19,6 +19,7 @@ import LogoMJ from 'public/logoMJ.png';
 // icons
 import { MdOutlineClose } from 'react-icons/md';
 import { HiMiniBars3BottomRight } from 'react-icons/hi2';
+import { GrPowerShutdown } from 'react-icons/gr';
 
 // style
 import styles from './navbar.module.css';
@@ -59,8 +60,9 @@ function Navbar() {
           <button
             className={`${styles.logout} ${isNavShowing && styles.open}`}
             onClick={signOut}
+            title="Logout"
           >
-            Logout
+            <GrPowerShutdown />
           </button>
         )}
       </div>

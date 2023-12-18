@@ -37,15 +37,17 @@
 }
 
 .logout {
-    padding: 5px 9px;
+    margin-left: 40px;
+    display: grid;
+    place-items: center;
+    padding: 9px;
     border: none;
     background: var(--green-color);
-    color: #efefef;
+    color: rgb(195, 37, 37);
     border-radius: var(--small-border-radius);
     cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 0.8px;
     transition: var(--transition);
+    font-size: var(--medium-font);
 
     &:hover {
         background: var(--dark-green-color);
@@ -72,6 +74,14 @@
 @media screen and (max-width: 850px) {
     .container {
         padding: 0 2rem;
+    }
+
+    .links {
+        gap: 15px;
+    }
+
+    .logout {
+        margin-left: 25px;
     }
 }
 
@@ -110,8 +120,7 @@
     }
 
     .logout {
-        padding: 9px 13px;
-        font-weight: 500;
+        margin-left: 0px;
     }
 
     .link,
