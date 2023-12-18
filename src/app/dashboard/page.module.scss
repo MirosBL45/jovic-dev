@@ -15,8 +15,9 @@
 .post {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 45px;
     margin-bottom: 50px;
+    position: relative;
 }
 
 .imgContainer {
@@ -32,19 +33,17 @@
 }
 
 .delete {
-    font-weight: bold;
-    font-size: var(--ms-font);
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    font-size: var(--mbs-font);
     cursor: pointer;
     color: red;
-    border: 2px solid red;
-    border-radius: 50%;
-    padding: 5px 8px;
     transition: var(--transition);
 
     &:hover {
         transform: scale(1.1);
         color: rgb(221, 60, 221);
-        border: 2px solid rgb(221, 60, 221);
     }
 }
 
@@ -85,5 +84,58 @@
 
     p {
         color: var(--background);
+    }
+}
+
+/* MEDIA QUERIES (large screens) */
+@media screen and (max-width: 1024px) {
+    .container {
+        gap: 50px;
+    }
+
+    .post {
+        gap: 25px;
+    }
+}
+
+/* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 850px) {
+    .container {
+        gap: 35px;
+    }
+
+    .post {
+        gap: 20px;
+    }
+}
+
+/* MEDIA QUERIES (medium/small screens) */
+@media screen and (max-width: 750px) {
+    .container {
+        flex-direction: column-reverse;
+        gap: 100px;
+    }
+
+    .post {
+        padding: 0 20px;
+        gap: 15px;
+    }
+
+    .delete {
+        top: -16px;
+        left: 0px;
+        font-size: var(--mb-font);
+    }
+}
+
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 450px) {
+    .post {
+        flex-direction: column;
+    }
+
+    .delete {
+        top: -16px;
+        left: 45px;
     }
 }

@@ -15,6 +15,9 @@ import ClickButton from '@/components/Buttons/ClickButton';
 import styles from './page.module.css';
 import '@/app/globals.css';
 
+// icons
+import { IoCloseCircleOutline } from 'react-icons/io5';
+
 // function for catching data to see slugs
 async function getAllPostSlugs() {
   const response = await fetch('http://localhost:3000/api/posts');
@@ -155,13 +158,13 @@ function Dashboard() {
                       height={100}
                     />
                   </div>
-                  <h3>{post.title}</h3>
+                  <h4>{post.title}</h4>
                   <span
                     onClick={() => handleDelete(post.slug)}
                     title="Delete this post?"
                     className={styles.delete}
                   >
-                    X
+                    <IoCloseCircleOutline />
                   </span>
                 </div>
               ))
@@ -172,7 +175,6 @@ function Dashboard() {
             )}
           </aside>
           <form className={styles.new} onSubmit={handleSubmit}>
-            {/* <h1>Add New Post</h1> */}
             <input
               type="text"
               placeholder="Title"
