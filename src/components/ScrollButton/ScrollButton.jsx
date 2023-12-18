@@ -36,7 +36,7 @@ function ScrollButton() {
       onClick={handleButtonClick}
       title={'Scroll to Top'}
     >
-      <FaArrowUpLong size={35} />
+      <FaArrowUpLong className={styles.arrow} />
     </button>
   );
 }

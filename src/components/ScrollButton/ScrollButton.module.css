@@ -15,3 +15,14 @@
   box-shadow: 0 0 0 3px var(--green-color);
   border-color: var(--green-color);
 }
+
+.arrow {
+  font-size: var(--mb-font);
+}
+
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 450px) {
+  .arrow {
+    font-size: var(--medium-font);
+  }
+}

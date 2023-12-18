@@ -10,6 +10,7 @@ import Image from 'next/image';
 // components
 import { TabTitle } from '@/utils/GeneralFunctions';
 import ClickButton from '@/components/Buttons/ClickButton';
+import ScrollButton from '@/components/ScrollButton/ScrollButton';
 
 // style
 import styles from './page.module.css';
@@ -219,6 +220,7 @@ function Dashboard() {
             </ClickButton>
           </form>
         </main>
+        <ScrollButton />
       </>
     );
   }
