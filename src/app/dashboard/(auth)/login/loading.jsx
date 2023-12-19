@@ -1,3 +1,7 @@
 export default function Loading() {
-  return <p>Loading...</p>;
+  return (
+    <p style={{ marginTop: '150px', fontSize: '45px' }}>
+      Loading login page...
+    </p>
+  );
 }

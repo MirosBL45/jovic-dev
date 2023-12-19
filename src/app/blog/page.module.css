@@ -2,6 +2,11 @@
   margin-bottom: 65px;
 }
 
+.allBlogs {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .container {
   display: flex;
   align-items: center;

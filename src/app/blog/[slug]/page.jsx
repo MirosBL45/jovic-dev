@@ -5,13 +5,14 @@ import Image from 'next/image';
 // components
 import { formatDate } from '@/utils/GeneralFunctions';
 import ScrollButton from '@/components/ScrollButton/ScrollButton';
+import { BASE_API_URL } from '@/utils/constants';
 
 // style
 import styles from './page.module.css';
 
 // function for catching data
 async function getData(slug) {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`${BASE_API_URL}/api/posts/${slug}`, {
     cache: 'no-store',
   });
 
@@ -32,6 +33,11 @@ export async function generateMetadata({ params }) {
 }
 
 async function BlogPost({ params }) {
+  // check for url
+  if (!BASE_API_URL) {
+    return <p>conection failed</p>;
+  }
+
   const data = await getData(params.slug);
 
   return (
@@ -57,8 +63,12 @@ async function BlogPost({ params }) {
               <Image
                 src={data.image}
                 alt={data.title}
-                width={500}
-                height={300}
+                // width={500}
+                // height={300}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: '300px' }}
               />
             </div>
           </section>

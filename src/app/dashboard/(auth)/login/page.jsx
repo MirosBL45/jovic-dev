@@ -29,7 +29,9 @@ function Login() {
   const router = useRouter();
 
   if (session.status === 'loading') {
-    return <p>Loading User...</p>;
+    return (
+      <p style={{ marginTop: '150px', fontSize: '25px' }}>Loading User...</p>
+    );
   }
 
   if (session.status === 'authenticated') {

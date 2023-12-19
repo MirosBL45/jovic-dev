@@ -5,13 +5,14 @@ import Link from 'next/link';
 // components
 import { formatDate } from '@/utils/GeneralFunctions';
 import ScrollButton from '@/components/ScrollButton/ScrollButton';
+import { BASE_API_URL } from '@/utils/constants';
 
 // style
 import styles from './page.module.css';
 
 // function for catching data
 async function getData() {
-  const res = await fetch('http://localhost:3000/api/posts', {
+  const res = await fetch(`${BASE_API_URL}/api/posts`, {
     cache: 'no-store',
   });
 
@@ -29,10 +30,17 @@ export const metadata = {
 };
 
 async function Blog() {
+  // check for url
+  if (!BASE_API_URL) {
+    return (
+      <p style={{ marginTop: '150px', fontSize: '45px' }}>conection failed</p>
+    );
+  }
+
   const data = await getData();
 
   return (
-    <main>
+    <main className={styles.allBlogs}>
       {data.map((item) => (
         <section key={item._id}>
           <Link href={`blog/${item.slug}`} className={styles.container}>

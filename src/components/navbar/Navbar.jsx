@@ -6,7 +6,6 @@ import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-// import { useRouter } from 'next/navigation';
 
 // data
 import { links } from '@/utils/data';
@@ -32,9 +31,13 @@ function Navbar() {
   const router = useRouter();
 
   function handleLogout() {
-    router?.push('/');
-    signOut();
-    router?.push('/');
+    // Set the redirect to false and specify the callbackUrl
+    signOut({ redirect: false, callbackUrl: '/' });
+
+    // If the session is present and the user is on the active session page, manually redirect the user to the home page
+    if (session && router.asPath !== '/') {
+      router.push('/');
+    }
   }
 
   return (
@@ -68,7 +71,6 @@ function Navbar() {
           <button
             className={`${styles.logout} ${isNavShowing && styles.open}`}
             onClick={handleLogout}
-            // onClick={signOut}
             title="Logout"
           >
             <GrPowerShutdown />

@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { TabTitle } from '@/utils/GeneralFunctions';
 import ClickButton from '@/components/Buttons/ClickButton';
 import ScrollButton from '@/components/ScrollButton/ScrollButton';
+import { BASE_API_URL } from '@/utils/constants';
 
 // style
 import styles from './page.module.css';
@@ -21,13 +22,20 @@ import { IoCloseCircleOutline } from 'react-icons/io5';
 
 // function for catching data to see slugs
 async function getAllPostSlugs() {
-  const response = await fetch('http://localhost:3000/api/posts');
+  const response = await fetch(`${BASE_API_URL}/api/posts`);
   const posts = await response.json();
   const slugs = posts.map((post) => post.slug);
   return slugs;
 }
 
 function Dashboard() {
+  // check for url
+  if (!BASE_API_URL) {
+    return (
+      <p style={{ marginTop: '150px', fontSize: '45px' }}>conection failed</p>
+    );
+  }
+
   // for tab title
   useEffect(() => {
     TabTitle('Jovic-dev Dashboard');
@@ -47,7 +55,9 @@ function Dashboard() {
   );
 
   if (session.status === 'loading') {
-    return <p>Loading User...</p>;
+    return (
+      <p style={{ marginTop: '150px', fontSize: '25px' }}>Loading User...</p>
+    );
   }
 
   if (session.status === 'unauthenticated') {
@@ -149,7 +159,9 @@ function Dashboard() {
             <h3>Your previous posts</h3>
             <aside className={styles.posts}>
               {isLoading ? (
-                'We are loading posts or users, think about it'
+                <p style={{ marginTop: '50px', fontSize: '25px' }}>
+                  We are loading your posts, they are heavy, think about it...
+                </p>
               ) : data && data.length ? (
                 data.map((post) => (
                   <div className={styles.post} key={post._id}>
