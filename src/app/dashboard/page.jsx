@@ -29,13 +29,6 @@ async function getAllPostSlugs() {
 }
 
 function Dashboard() {
-  // check for url
-  if (!BASE_API_URL) {
-    return (
-      <p style={{ marginTop: '150px', fontSize: '45px' }}>conection failed</p>
-    );
-  }
-
   // for tab title
   useEffect(() => {
     TabTitle('Jovic-dev Dashboard');
@@ -47,12 +40,22 @@ function Dashboard() {
   // button sending text
   const [buttonSend, setButtonSend] = useState(false);
 
+  // for base64 image state
+  const [imageBase64, setImageBase64] = useState('');
+
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // catch data of posts
   const { data, mutate, error, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
+
+  // check for url
+  if (!BASE_API_URL) {
+    return (
+      <p style={{ marginTop: '150px', fontSize: '45px' }}>conection failed</p>
+    );
+  }
 
   if (session.status === 'loading') {
     return (
@@ -63,9 +66,6 @@ function Dashboard() {
   if (session.status === 'unauthenticated') {
     router?.push('/dashboard/login');
   }
-
-  // for base64 image state
-  const [imageBase64, setImageBase64] = useState('');
 
   async function handleSubmit(e) {
     setButtonSend(true);
