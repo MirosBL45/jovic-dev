@@ -20,7 +20,7 @@ function Contact() {
   return (
     <main className={`${styles.container} layoutContainerAll`}>
       <header>
-        <h1>Let's Keep in Touch</h1>
+        <h1>We can Keep in Touch</h1>
       </header>
       <section className={styles.content}>
         <div className={styles.imgContainer}>
