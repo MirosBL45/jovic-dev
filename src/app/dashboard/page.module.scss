@@ -1,6 +1,10 @@
 .container {
     display: flex;
     gap: 100px;
+
+    h3 {
+        margin-bottom: 60px;
+    }
 }
 
 .headline {
@@ -11,12 +15,8 @@
 .posts {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 50px;
-
-    h3 {
-        margin-bottom: 60px;
-    }
 }
 
 .post {
@@ -125,6 +125,10 @@
     .container {
         flex-direction: column-reverse;
         gap: 150px;
+
+        h3 {
+            margin-bottom: 60px;
+        }
     }
 
     .post {
@@ -141,10 +145,6 @@
 
     .posts {
         gap: 30px;
-
-        h3 {
-            margin-bottom: 60px;
-        }
     }
 }
 
@@ -152,6 +152,11 @@
 @media screen and (max-width: 450px) {
     .container {
         gap: 100px;
+
+        h3 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
     }
 
     .post {
@@ -167,10 +172,5 @@
 
     .posts {
         gap: 5px;
-
-        h3 {
-            text-align: center;
-            margin-bottom: 50px;
-        }
     }
 }

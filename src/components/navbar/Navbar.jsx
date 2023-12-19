@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 
 // data
 import { links } from '@/utils/data';
@@ -28,6 +29,13 @@ function Navbar() {
   const [isNavShowing, setIsNavShowing] = useState(false);
   const session = useSession();
   const pathname = usePathname();
+  const router = useRouter();
+
+  function handleLogout() {
+    router?.push('/');
+    signOut();
+    router?.push('/');
+  }
 
   return (
     <nav className={styles.container}>
@@ -59,7 +67,8 @@ function Navbar() {
         {session.status === 'authenticated' && (
           <button
             className={`${styles.logout} ${isNavShowing && styles.open}`}
-            onClick={signOut}
+            onClick={handleLogout}
+            // onClick={signOut}
             title="Logout"
           >
             <GrPowerShutdown />

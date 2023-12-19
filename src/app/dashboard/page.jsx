@@ -145,37 +145,39 @@ function Dashboard() {
           <h1 className={styles.headline}>Add New Post</h1>
         </header>
         <main className={styles.container}>
-          <aside className={styles.posts}>
+          <div>
             <h3>Your previous posts</h3>
-            {isLoading ? (
-              'We are loading posts or users, think about it'
-            ) : data && data.length ? (
-              data.map((post) => (
-                <div className={styles.post} key={post._id}>
-                  <div className={styles.imgContainer}>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={200}
-                      height={100}
-                    />
+            <aside className={styles.posts}>
+              {isLoading ? (
+                'We are loading posts or users, think about it'
+              ) : data && data.length ? (
+                data.map((post) => (
+                  <div className={styles.post} key={post._id}>
+                    <div className={styles.imgContainer}>
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={200}
+                        height={100}
+                      />
+                    </div>
+                    <h4>{post.title}</h4>
+                    <span
+                      onClick={() => handleDelete(post.slug)}
+                      title="Delete this post?"
+                      className={styles.delete}
+                    >
+                      <IoCloseCircleOutline />
+                    </span>
                   </div>
-                  <h4>{post.title}</h4>
-                  <span
-                    onClick={() => handleDelete(post.slug)}
-                    title="Delete this post?"
-                    className={styles.delete}
-                  >
-                    <IoCloseCircleOutline />
-                  </span>
+                ))
+              ) : (
+                <div className={styles.displayed}>
+                  When you make your first post, it will appear here.
                 </div>
-              ))
-            ) : (
-              <div className={styles.displayed}>
-                When you make your first post, it will appear here.
-              </div>
-            )}
-          </aside>
+              )}
+            </aside>
+          </div>
           <form className={styles.new} onSubmit={handleSubmit}>
             <input
               type="text"
