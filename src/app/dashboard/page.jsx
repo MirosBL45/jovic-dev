@@ -29,26 +29,8 @@ async function getAllPostSlugs() {
 }
 
 function Dashboard() {
-  // for tab title
-  useEffect(() => {
-    TabTitle('Jovic-dev Dashboard');
-  }, []);
-
   const session = useSession();
   const router = useRouter();
-
-  // button sending text
-  const [buttonSend, setButtonSend] = useState(false);
-
-  // for base64 image state
-  const [imageBase64, setImageBase64] = useState('');
-
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // catch data of posts
-  const { data, mutate, error, isLoading } = useSWR(
-    `/api/posts?username=${session?.data?.user.name}`,
-    fetcher
-  );
 
   // check for url
   if (!BASE_API_URL) {
@@ -65,7 +47,26 @@ function Dashboard() {
 
   if (session.status === 'unauthenticated') {
     router?.push('/dashboard/login');
+    return null;
   }
+
+  // for tab title
+  useEffect(() => {
+    TabTitle('Jovic-dev Dashboard');
+  }, []);
+
+  // button sending text
+  const [buttonSend, setButtonSend] = useState(false);
+
+  // for base64 image state
+  const [imageBase64, setImageBase64] = useState('');
+
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  // catch data of posts
+  const { data, mutate, error, isLoading } = useSWR(
+    `/api/posts?username=${session?.data?.user.name}`,
+    fetcher
+  );
 
   async function handleSubmit(e) {
     setButtonSend(true);

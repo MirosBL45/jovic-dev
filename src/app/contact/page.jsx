@@ -19,9 +19,10 @@ export const metadata = {
 function Contact() {
   return (
     <main className={`${styles.container} layoutContainerAll`}>
-      <header>
+      {/* <header>
         <h1>We can Keep in Touch</h1>
-      </header>
+      </header> */}
+      <p>We are together</p>
       <section className={styles.content}>
         <div className={styles.imgContainer}>
           <Image
