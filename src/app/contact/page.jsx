@@ -22,7 +22,6 @@ function Contact() {
       {/* <header>
         <h1>We can Keep in Touch</h1>
       </header> */}
-      <p>We are together</p>
       <section className={styles.content}>
         <div className={styles.imgContainer}>
           <Image
