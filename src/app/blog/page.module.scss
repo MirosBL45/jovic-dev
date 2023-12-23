@@ -23,6 +23,9 @@
 
     img {
         object-fit: cover;
+        // image must have width: 100% and some height
+        width: 100%;
+        height: 300px;
     }
 }
 

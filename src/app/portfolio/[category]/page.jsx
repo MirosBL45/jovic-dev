@@ -47,8 +47,9 @@ function Category({ params }) {
             </div>
             <div className={styles.imgContainer}>
               <Image
-                width={500}
-                height={500}
+                width={0}
+                height={0}
+                sizes="100vw"
                 src={item.image}
                 alt="jovic-dev"
               />

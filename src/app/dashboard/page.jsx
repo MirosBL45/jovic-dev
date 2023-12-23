@@ -170,8 +170,9 @@ function Dashboard() {
                       <Image
                         src={post.image}
                         alt={post.title}
-                        width={200}
-                        height={100}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
                       />
                     </div>
                     <h4>{post.title}</h4>
