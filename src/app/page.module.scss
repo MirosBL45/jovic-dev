@@ -1,3 +1,31 @@
+// for not found
+
+.notFoundContainer {
+    margin-top: 150px;
+    display: flex;
+    gap: 50px;
+}
+
+.notFoundText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    p {
+        font-size: var(--ms-font);
+    }
+
+    a {
+        color: #00a1e6;
+        transition: var(--transition);
+
+        &:hover {
+            color: hsl(198, 100%, 35%);
+        }
+    }
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -55,11 +83,22 @@
     .description {
         font-size: var(--ms-font);
     }
+
+    .notFoundContainer {
+        margin-top: 80px;
+        flex-direction: column-reverse;
+        gap: 0px;
+        margin-bottom: 50px;
+    }
 }
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
     .container {
         gap: 5vw;
+    }
+
+    .notFoundContainer {
+        margin-top: 20px;
     }
 }
