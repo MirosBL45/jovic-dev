@@ -26,7 +26,7 @@ function Contact() {
         <div className={styles.imgContainer}>
           <Image
             className="moveImage"
-            src={'/contact.png'}
+            src={'/emailContact.svg'}
             alt="contact jovic-dev"
             fill={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 // images
-import Hero from 'public/hero.png';
+import Hero from 'public/hero.svg';
 
 //components
 import LinkButton from '@/components/Buttons/LinkButton';
