@@ -56,6 +56,12 @@
 }
 
 /* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 1230px) {
+  .imgContainer img {
+    object-position: 80% 0;
+  }
+}
+/* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 900px) {
   .textContainer {
     gap: 50px;
