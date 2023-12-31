@@ -13,7 +13,7 @@ import '@/app/globals.css';
 
 function About() {
   return (
-    <div className={styles.container}>
+    <div id="about" className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
           src={'/coverAbout.jpg'}

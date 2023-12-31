@@ -17,7 +17,7 @@ export const links = [
   {
     id: 4,
     title: "About",
-    url: "/about",
+    url: "#about",
   },
   // {
   //   id: 5,

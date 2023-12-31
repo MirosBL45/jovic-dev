@@ -1,5 +1,5 @@
 .container {
-    margin-top: 170px;
+    padding-top: 170px;
 }
 
 .imgContainer {
@@ -159,13 +159,13 @@
     }
 
     .container {
-        margin-top: 100px;
+        padding-top: 100px;
     }
 }
 
 /* MEDIA QUERIES (very small screens) */
 @media screen and (max-width: 600px) {
     .container {
-        margin-top: 50px;
+        padding-top: 50px;
     }
 }
