@@ -63,7 +63,7 @@ function About() {
               <li key={id}>{text}</li>
             ))}
           </ul>
-          <LinkButton text={'Contact'} url={'/contact'} />
+          <LinkButton title={'Contact'} text={'Contact'} url={'/contact'} />
         </article>
       </section>
     </div>

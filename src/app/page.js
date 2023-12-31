@@ -7,6 +7,7 @@ import Hero from 'public/hero.svg';
 //components
 import LinkButton from '@/components/Buttons/LinkButton';
 import About from '@/components/about/About';
+import Portfolio from '@/components/portfolio/Portfolio';
 
 // style
 import styles from './page.module.css';
@@ -31,6 +32,7 @@ export default function Home() {
         </div>
       </main>
       <About />
+      <Portfolio />
     </>
   );
 }

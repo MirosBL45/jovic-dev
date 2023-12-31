@@ -1,0 +1,16 @@
+.container {
+  padding-top: 170px;
+}
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+  .container {
+    padding-top: 100px;
+  }
+}
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 600px) {
+  .container {
+    padding-top: 50px;
+  }
+}
