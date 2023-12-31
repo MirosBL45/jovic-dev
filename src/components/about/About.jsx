@@ -13,7 +13,7 @@ import '@/app/globals.css';
 
 function About() {
   return (
-    <div className={`${styles.container} layoutContainerAll`}>
+    <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
           src={'/coverAbout.jpg'}
@@ -22,11 +22,11 @@ function About() {
           height={0}
           sizes="100vw"
         />
-        <header className={styles.imgText}>
-          <h2>About Me</h2>
-          <p>You are what you believe you are</p>
-        </header>
       </div>
+      <header className={styles.imgText}>
+        <h2>About Me</h2>
+        <p>You are what you believe you are</p>
+      </header>
       <section className={styles.textContainer}>
         <article className={styles.item}>
           <header>

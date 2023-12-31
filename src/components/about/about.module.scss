@@ -1,3 +1,7 @@
+.container {
+    margin-top: 170px;
+}
+
 .imgContainer {
     width: 100%;
     height: 300px;
@@ -20,13 +24,22 @@
 }
 
 .imgText {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
     background: var(--green-color);
     color: var(--white-color);
-    padding: 15px 50px;
-    border-radius: var(--sm-border-radius);
+    padding: 50px;
+    height: 300px;
+    border-radius: var(--medium-border-radius);
+    transition: var(--transition);
+    filter: grayscale(90%);
+
+    &:hover {
+        filter: grayscale(0%);
+    }
 
     h2 {
         font-size: var(--large-font);
@@ -35,7 +48,7 @@
     p {
         margin-top: 15px;
         font-weight: 600;
-        font-size: var(--ms-font);
+        font-size: var(--medium-font);
     }
 }
 
@@ -63,11 +76,49 @@
 }
 
 // for cover image
-/* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 1230px) {
     .imgContainer {
+        height: 200px;
+
         img {
             object-position: 80% 0;
+            height: 200px;
+        }
+    }
+
+    .imgText {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .imgContainer {
+
+        img {
+            object-position: 100% 0;
+            object-fit: cover;
+
+        }
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .imgContainer {
+        height: 150px;
+
+        img {
+            height: 150px;
+            filter: grayscale(0%);
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .imgContainer {
+        height: 130px;
+
+        img {
+            height: 130px;
         }
     }
 }
@@ -79,7 +130,6 @@
     }
 
     .imgText {
-        width: 70vw;
         padding: 7px;
 
         h2 {
@@ -95,11 +145,27 @@
     }
 
     .imgText {
-        width: 70vw;
+        filter: grayscale(0%);
         padding: 7px;
+        height: 150px;
 
         h2 {
             font-size: var(--mbs-font);
         }
+
+        p {
+            font-size: var(--ms-font);
+        }
+    }
+
+    .container {
+        margin-top: 100px;
+    }
+}
+
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 600px) {
+    .container {
+        margin-top: 50px;
     }
 }
