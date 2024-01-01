@@ -143,3 +143,30 @@ export const itemsPortfolio = {
     }
   ],
 };
+
+export const portfolioAbout = [
+  {
+    id: 1,
+    title: "Illustrations",
+    url: "/portfolio/illustrations",
+    image: illustration,
+  },
+  {
+    id: 2,
+    title: "Websites",
+    url: "/portfolio/websites",
+    image: websites,
+  },
+  {
+    id: 3,
+    title: "Application",
+    url: "/portfolio/applications",
+    image: apps,
+  },
+  {
+    id: 4,
+    title: "Applicationqwqww",
+    url: "/portfolio/applications",
+    image: apps,
+  },
+]

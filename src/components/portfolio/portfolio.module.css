@@ -1,6 +1,9 @@
 .container {
   padding-top: 170px;
 }
+.container h3 {
+  margin: 35px 0;
+}
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
