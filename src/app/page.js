@@ -6,8 +6,8 @@ import Hero from 'public/hero.svg';
 
 //components
 import LinkButton from '@/components/Buttons/LinkButton';
-import About from '@/components/about/About';
-import Portfolio from '@/components/portfolio/Portfolio';
+import About from '@/components/homePage/about/About';
+import Portfolio from '@/components/homePage/portfolio/Portfolio';
 
 // style
 import styles from './page.module.css';
