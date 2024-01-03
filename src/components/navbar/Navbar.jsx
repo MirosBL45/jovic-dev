@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 // data
-import { links } from '@/utils/data';
+import { linksHomePage, linksOtherPages } from '@/utils/data';
 
 // components
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
@@ -29,6 +29,9 @@ function Navbar() {
   const session = useSession();
   const pathname = usePathname();
   const router = useRouter();
+
+  // choose which links to use depending on the page
+  const links = pathname === '/' ? linksHomePage : linksOtherPages;
 
   function handleLogout() {
     // Set the redirect to false and specify the callbackUrl

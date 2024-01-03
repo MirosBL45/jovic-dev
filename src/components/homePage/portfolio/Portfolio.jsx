@@ -9,7 +9,7 @@ import { portfolioAbout } from '@/utils/data';
 
 function Portfolio() {
   return (
-    <div className={styles.container}>
+    <div id="portfolio" className={styles.container}>
       <header>
         <h2>My Work</h2>
         <h3>Take a look at some of my projects</h3>
