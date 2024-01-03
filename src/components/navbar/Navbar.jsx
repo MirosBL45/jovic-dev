@@ -70,6 +70,7 @@ function Navbar() {
             </Link>
           </div>
         ))}
+        {/* show Logout button when user is logged in */}
         {session.status === 'authenticated' && (
           <button
             className={`${styles.logout} ${isNavShowing && styles.open}`}

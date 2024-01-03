@@ -20,17 +20,18 @@ export const metadata = {
 function About() {
   return (
     <div className={`${styles.container} layoutContainerAll`}>
+      <header className={styles.imgText}>
+        <h1>About Me</h1>
+        <p>You are what you believe you are</p>
+      </header>
       <div className={styles.imgContainer}>
         <Image
-          src={'/people-working.jpg'}
-          fill={true}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          src={'/coverAbout.jpg'}
           alt="jovic-dev"
+          width={0}
+          height={0}
+          sizes="100vw"
         />
-        <header className={styles.imgText}>
-          <h1>Digital Storytellers</h1>
-          <p>Handcrafting award winning digital expiriences</p>
-        </header>
       </div>
       <main className={styles.textContainer}>
         <article className={styles.item}>
