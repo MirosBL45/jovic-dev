@@ -28,7 +28,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-bottom: 30px;
     background: var(--green-color);
     color: var(--white-color);
     padding: 50px;
@@ -160,12 +160,5 @@
 
     .container {
         padding-top: 100px;
-    }
-}
-
-/* MEDIA QUERIES (very small screens) */
-@media screen and (max-width: 600px) {
-    .container {
-        padding-top: 50px;
     }
 }

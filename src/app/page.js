@@ -8,6 +8,8 @@ import Hero from 'public/hero.svg';
 import LinkButton from '@/components/Buttons/LinkButton';
 import About from '@/components/homePage/about/About';
 import Portfolio from '@/components/homePage/portfolio/Portfolio';
+import Contact from '@/components/homePage/contact/Contact';
+import ScrollButton from '@/components/ScrollButton/ScrollButton';
 
 // style
 import styles from './page.module.css';
@@ -33,6 +35,8 @@ export default function Home() {
       </main>
       <About />
       <Portfolio />
+      <Contact />
+      <ScrollButton />
     </>
   );
 }

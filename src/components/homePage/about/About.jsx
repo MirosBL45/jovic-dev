@@ -14,6 +14,10 @@ import '@/app/globals.css';
 function About() {
   return (
     <div id="about" className={styles.container}>
+      <header className={styles.imgText}>
+        <h2>About Me</h2>
+        <p>You are what you believe you are</p>
+      </header>
       <div className={styles.imgContainer}>
         <Image
           src={'/coverAbout.jpg'}
@@ -23,10 +27,6 @@ function About() {
           sizes="100vw"
         />
       </div>
-      <header className={styles.imgText}>
-        <h2>About Me</h2>
-        <p>You are what you believe you are</p>
-      </header>
       <section className={styles.textContainer}>
         <article className={styles.item}>
           <header>
