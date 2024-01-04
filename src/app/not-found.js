@@ -39,11 +39,11 @@ export default function NotFound() {
                 <h2>Whoops!!!</h2>
                 <p>It seems you've ventured into uncharted territory.</p>
                 <p>The page you're looking for might be on a vacation or has taken a coffee break.</p>
-                <p>In the meantime, if you're feeling adventurous, you can explore other corners of our digital realm.</p>
-                <p>If you believe this is a technical glitch, feel free to let <Link href="/contact">our support</Link> team know.</p>
+                <p>In the meantime, if you're feeling adventurous, you can explore other corners of my digital realm.</p>
+                <p>If you believe this is a technical glitch, feel free to let <Link title='Send me message' href="/contact">me know</Link> this.</p>
                 <p>Thanks for your patience, and happy exploring!</p>
                 <p>
-                    <Link href="/">Return Home</Link> or you will be
+                    <Link title='Click here to return on Home Page' href="/">Return Home</Link> or you will be
                     redirected in {counter} seconds.
                 </p>
             </div>
