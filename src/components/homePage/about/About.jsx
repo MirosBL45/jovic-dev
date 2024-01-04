@@ -16,7 +16,7 @@ function About() {
     <div id="about" className={styles.container}>
       <header className={styles.imgText}>
         <h2>About Me</h2>
-        <p>You are what you believe you are</p>
+        <p>Creating Exceptional Digital Experiences</p>
       </header>
       <div className={styles.imgContainer}>
         <Image

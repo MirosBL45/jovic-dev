@@ -46,10 +46,12 @@
 }
 
 .title {
-    background: linear-gradient(to bottom, var(--green-color), var(--gray-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    span {
+        background: linear-gradient(to bottom, var(--green-color), var(--gray-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 .description {

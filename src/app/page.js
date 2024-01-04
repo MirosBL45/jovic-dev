@@ -21,11 +21,15 @@ export default function Home() {
       <main className={`${styles.container} layoutContainerAll`}>
         <header className={styles.item}>
           <h1 className={styles.title}>
-            Better solution for your digital products.
+            <span>Better </span>
+            <span>solution </span>
+            <span>for </span>
+            <span>your </span>
+            <span>digital </span>
+            <span>products.</span>
           </h1>
           <p className={styles.description}>
-            Turning your Idea into Reality. We bring together the teams from the
-            global tech industry.
+            Turning your Idea into Reality. Discover My Power to Create Premium Web Solutions.
           </p>
           <LinkButton title={'Go to Portfolio to see My Works'} text={'See My Works'} url={'/portfolio'} />
         </header>
