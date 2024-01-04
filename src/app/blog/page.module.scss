@@ -1,5 +1,21 @@
 .layoutTitle {
-    margin-bottom: 65px;
+    margin-bottom: 165px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+        font-size: var(--ms-font);
+    }
+
+    a {
+        color: #00a1e6;
+        transition: var(--transition);
+
+        &:hover {
+            color: hsl(198, 100%, 35%);
+        }
+    }
 }
 
 .allBlogs {
