@@ -65,10 +65,10 @@ export const linksOtherPages = [
 ];
 
 export const aboutData = [
-  { id: 1, text: 'Creative Illustrations' },
-  { id: 2, text: 'Dynamic Websites' },
-  { id: 3, text: 'Fast and Handy Mobile Apps' },
-  { id: 4, text: 'Help with Copywriting' },
+  { id: 1, text: 'Rapid and Efficient Web Applications' },
+  { id: 2, text: 'Developing Dynamic websites with a Focus on incorporating SEO elements for enhanced Visibility and Performance.' },
+  { id: 3, text: 'Ensuring Responsive Design tailored to Every Device for an Optimal User Experience.' },
+  { id: 4, text: 'Providing Copywriting Support to Improve the Idea and Content.' },
 ]
 
 import illustration from '../../public/illustration.png';

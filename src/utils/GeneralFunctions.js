@@ -12,3 +12,7 @@ export function formatDate(dateString) {
     );
     return formattedDate;
 }
+
+// years of expirience
+export const currentYear = new Date().getFullYear();
+export const allYears = currentYear - 2021;

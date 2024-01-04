@@ -56,7 +56,7 @@
   font-weight: 300;
 }
 .item ul li {
-  list-style-type: "-";
+  list-style-type: "- ";
   margin-bottom: 10px;
 }
 

@@ -6,6 +6,7 @@ import LinkButton from '@/components/Buttons/LinkButton';
 
 // data
 import { aboutData } from '@/utils/data';
+import { allYears } from '@/utils/GeneralFunctions.js';
 
 // style
 import styles from './about.module.css';
@@ -33,20 +34,27 @@ function About() {
             <h2>Who Am I?</h2>
           </header>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
-            praesentium labore nostrum maxime voluptatum, quaerat laboriosam
-            quas possimus!
+            I am Miroslav Jović, a professional Frontend Developer committed to
+            delivering high-quality and scalable web solutions. With over{' '}
+            {allYears} years of experience, I specialize in crafting
+            user-friendly interfaces and responsive websites.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ad.
-            Praesentium facere minima tempora saepe aperiam dolore deserunt.
-            Nihil quo excepturi sed quas odio commodi asperiores libero ipsa
-            officiis accusantium rem, aspernatur vero repudiandae architecto
-            labore.
+            Specializing in ReactJS and NextJS, I leverage these cutting-edge
+            technologies to bring web projects to life. ReactJS, renowned for
+            its component-based architecture, allows me to build modular and
+            reusable UI elements, ensuring a streamlined development process.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
-            asperiores obcaecati nulla est fuga quod ipsum veritatis impedit.
+            NextJS, on the other hand, enhances the performance of web
+            applications through server-side rendering and simplified routing.
+            This not only results in faster load times but also contributes to a
+            smoother and more engaging user experience.
+          </p>
+          <p>
+            By harnessing the power of ReactJS and NextJS, I deliver web
+            solutions that seamlessly blend functionality and aesthetics,
+            catering to both the needs of the client and the end user.
           </p>
         </article>
         <article className={styles.item}>
@@ -54,9 +62,16 @@ function About() {
             <h2>What I Do?</h2>
           </header>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            vero quo fugit molestias nisi, nam blanditiis harum consectetur.
-            Ullam maiores ipsa voluptatum!
+            My role is to leverage sophisticated Frontend development skills to
+            help digital visions become a reality. I prioritize the optimization
+            of websites for speed, scalability, and an intuitive user journey.
+          </p>
+          <p>
+            In every project, I aim to translate design concepts into
+            interactive and dynamic web interfaces that not only meet but exceed
+            user expectations. With a keen eye on industry trends and standards,
+            I implement innovative Frontend solutions that stand out in the
+            ever-evolving digital landscape.
           </p>
           <ul>
             {aboutData.map(({ id, text }) => (

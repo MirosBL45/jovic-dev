@@ -44,6 +44,7 @@
   margin-top: 15px;
   font-weight: 600;
   font-size: var(--medium-font);
+  text-align: center;
 }
 
 .textContainer {
@@ -63,7 +64,7 @@
   font-weight: 300;
 }
 .item ul li {
-  list-style-type: "-";
+  list-style-type: "- ";
   margin-bottom: 10px;
 }
 
