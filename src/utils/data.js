@@ -82,6 +82,8 @@ export const aboutData = [
   { id: 4, text: 'Providing Copywriting Support to Improve the Idea and Content.' },
 ]
 
+export const contactData = { mainHeadline: 'We can Keep in Touch' }
+
 import illustration from '../../public/illustration.png';
 import websites from '../../public/websites.jpg';
 import apps from '../../public/apps.jpg';
