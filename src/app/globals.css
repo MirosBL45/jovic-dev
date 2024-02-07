@@ -3,7 +3,8 @@
   --dark-green-color: hsl(198, 100%, 35%);
   --white-color: #efefef;
   --gray-color: #bbb;
-  --background: #333;
+  --background: #15202B;
+  /* --background: #333; */
   --dark-gray-color: #676767;
 
   --small-border-radius: 0.313rem;
@@ -29,7 +30,8 @@
 }
 
 .dark {
-  --white-color: #333;
+  --white-color: #15202B;
+  /* --white-color: #333; */
   --background: #bbb;
   --green-color: hsl(198, 100%, 35%);
   --dark-green-color: hsl(198, 100%, 45%);

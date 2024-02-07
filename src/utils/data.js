@@ -76,9 +76,9 @@ export const aboutDataText = [
 ]
 
 export const aboutData = [
-  { id: 1, text: 'Rapid and Efficient Web Applications' },
-  { id: 2, text: 'Developing Dynamic websites with a Focus on incorporating SEO elements for enhanced Visibility and Performance.' },
-  { id: 3, text: 'Ensuring Responsive Design tailored to Every Device for an Optimal User Experience.' },
+  { id: 1, text: 'Rapid and Efficient Web Applications;' },
+  { id: 2, text: 'Developing Dynamic websites with a Focus on incorporating SEO elements for enhanced Visibility and Performance;' },
+  { id: 3, text: 'Ensuring Responsive Design tailored to Every Device for an Optimal User Experience;' },
   { id: 4, text: 'Providing Copywriting Support to Improve the Idea and Content.' },
 ]
 
