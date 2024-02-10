@@ -88,9 +88,13 @@ import illustration from '../../public/illustration.png';
 import apps from '../../public/apps.jpg';
 
 import games from '../../public/portfolio/games.jpg';
+
 import blackjack from '../../public/portfolio/imagesGames/blackjack.jpg';
 import poker from '../../public/portfolio/imagesGames/poker.jpg';
 import memory from '../../public/portfolio/imagesGames/memory.jpg';
+import puzzle from '../../public/portfolio/imagesGames/puzzle.jpg';
+
+import slider from '../../public/portfolio/imagesWeb/slider.jpg';
 
 export const portfolioData = [
   {
@@ -101,8 +105,8 @@ export const portfolioData = [
   },
   {
     id: 2,
-    title: "Illustrations",
-    url: "/portfolio/illustrations",
+    title: "Web sites",
+    url: "/portfolio/sites",
     image: illustration,
   },
   {
@@ -140,14 +144,13 @@ export const itemsPortfolio = {
         "https://images.pexels.com/photos/2916450/pexels-photo-2916450.jpeg",
     }
   ],
-  illustrations: [
+  sites: [
     {
       id: 1,
-      title: "Creative Portfolio",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
-      url: 'https://quillbot.com/',
-      image:
-        "https://images.pexels.com/photos/2916450/pexels-photo-2916450.jpeg",
+      title: "Slider Cat",
+      desc: "It was crucial to track the mouse movements correctly and synchronize the movement of the crosshair with each step. This required careful manipulation of mouse events and proper handling of screen coordinates. Implementing a fluid and aesthetically pleasing line movement was a challenge in optimizing performance.",
+      url: 'https://slidercatmj.netlify.app/',
+      image: slider,
     },
     {
       id: 2,
@@ -180,6 +183,13 @@ export const itemsPortfolio = {
       desc: "One of the key challenges in the development of the Memory game was to implement the logic of turning cards and matching them. When two cards are flipped over, I had to carefully monitor their status, reveal them appropriately, and allow players to see and remember the images on the cards",
       url: 'https://memory-card-game-mj.vercel.app/',
       image: memory,
+    },
+    {
+      id: 3,
+      title: "Puzzle",
+      desc: "This game offers users the opportunity to enjoy solving puzzles at three different levels of difficulty, each level being more challenging than the last. One of the key challenges was to implement the functionality of dragging partial pieces of the puzzle in order to achieve the final image stacking. I had to carefully manage the drag events, track the movement of the partials and position them correctly in certain places.",
+      url: 'https://puzzlemj.netlify.app/',
+      image: puzzle,
     },
     {
       id: 3,
