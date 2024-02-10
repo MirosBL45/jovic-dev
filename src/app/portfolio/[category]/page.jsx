@@ -41,7 +41,7 @@ function Category({ params }) {
               <LinkButton
                 title={'Click to see live project'}
                 openInNewTab={true}
-                text={'See More'}
+                text={'See Live'}
                 url={item.url}
               />
             </div>
