@@ -84,15 +84,16 @@ export const aboutData = [
 
 export const contactData = { mainHeadline: 'We can Keep in Touch' }
 
-import illustration from '../../public/illustration.png';
 import apps from '../../public/apps.jpg';
 
 import games from '../../public/portfolio/games.jpg';
+import sites from '../../public/portfolio/sites.jpg';
 
 import blackjack from '../../public/portfolio/imagesGames/blackjack.jpg';
 import poker from '../../public/portfolio/imagesGames/poker.jpg';
 import memory from '../../public/portfolio/imagesGames/memory.jpg';
 import puzzle from '../../public/portfolio/imagesGames/puzzle.jpg';
+import snake from '../../public/portfolio/imagesGames/snake.jpg';
 
 import slider from '../../public/portfolio/imagesWeb/slider.jpg';
 
@@ -107,7 +108,7 @@ export const portfolioData = [
     id: 2,
     title: "Web sites",
     url: "/portfolio/sites",
-    image: illustration,
+    image: sites,
   },
   {
     id: 3,
@@ -192,7 +193,14 @@ export const itemsPortfolio = {
       image: puzzle,
     },
     {
-      id: 3,
+      id: 4,
+      title: "Snake",
+      desc: "Implementing the logic for snake movement and bite detection was key. I had to carefully balance the speed of the snake, react to user commands and avoid collisions with walls. An additional challenge was developing the mechanics to generate bites on the screen that the snake eats in order to grow.",
+      url: 'https://snake-final.vercel.app/',
+      image: snake,
+    },
+    {
+      id: 5,
       title: "Poker",
       desc: "I had to handle the logic for detecting and evaluating card combinations, which added to the complexity of the project. Through this creative process, I gained a deep understanding of JavaScript, working with objects, manipulating the DOM, and developing complex algorithms.",
       url: 'https://pokermj.netlify.app/',
