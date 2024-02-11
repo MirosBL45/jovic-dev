@@ -97,6 +97,9 @@ import tictactoe from '../../public/portfolio/imagesGames/tictactoe.jpg';
 
 import slider from '../../public/portfolio/imagesWeb/slider.jpg';
 import pets from '../../public/portfolio/imagesWeb/pets.jpg';
+import social from '../../public/portfolio/imagesWeb/social.jpg';
+import quiz from '../../public/portfolio/imagesWeb/quiz.jpg';
+import candle from '../../public/portfolio/imagesWeb/candle.jpg';
 
 export const portfolioData = [
   {
@@ -156,6 +159,27 @@ export const itemsPortfolio = {
     },
     {
       id: 2,
+      title: "Social network",
+      desc: "This interactive website provides users with the opportunity to connect, share their thoughts, and interact with each other through posts, likes, and comments. One of the main challenges during the creation of this site was the implementation of authentication and authorization. Allowing users to log in securely, store their data, and properly manage it required careful handling of JavaScript.",
+      url: 'https://socialnetworkmj.netlify.app/',
+      image: social,
+    },
+    {
+      id: 3,
+      title: "Quiz App",
+      desc: "During the creation of this site, one of the key challenges was the implementation of a dynamic system for asking questions and collecting responses from users. I had to work carefully with JavaScript to properly manage the logic of the quiz, ensuring correct answers were properly tracked and results generated at the end.",
+      url: 'https://quizappmj.netlify.app/',
+      image: quiz,
+    },
+    {
+      id: 4,
+      title: "Candle",
+      desc: "Click on each candle and blow out the flame to reveal the sweet rewards that await! The task was to implement the dynamic behavior of each candle which required precise JavaScript handling to ensure that the flame only goes out when the user clicks on a specific candle. Try it for resolution 375x667.",
+      url: 'https://candle-game-mj.netlify.app/',
+      image: candle,
+    },
+    {
+      id: 5,
       title: "Slider Cat",
       desc: "It was crucial to track the mouse movements correctly and synchronize the movement of the crosshair with each step. This required careful manipulation of mouse events and proper handling of screen coordinates. Implementing a fluid and aesthetically pleasing line movement was a challenge in optimizing performance.",
       url: 'https://slidercatmj.netlify.app/',
