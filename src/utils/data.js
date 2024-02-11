@@ -84,25 +84,26 @@ export const aboutData = [
 
 export const contactData = { mainHeadline: 'We can Keep in Touch' }
 
-import apps from '../../public/apps.jpg';
-
 import games from '../../public/portfolio/games.jpg';
 import sites from '../../public/portfolio/sites.jpg';
+import webapps from '../../public/portfolio/webapps.jpg';
 
 import blackjack from '../../public/portfolio/imagesGames/blackjack.jpg';
 import poker from '../../public/portfolio/imagesGames/poker.jpg';
 import memory from '../../public/portfolio/imagesGames/memory.jpg';
 import puzzle from '../../public/portfolio/imagesGames/puzzle.jpg';
 import snake from '../../public/portfolio/imagesGames/snake.jpg';
+import tictactoe from '../../public/portfolio/imagesGames/tictactoe.jpg';
 
 import slider from '../../public/portfolio/imagesWeb/slider.jpg';
+import pets from '../../public/portfolio/imagesWeb/pets.jpg';
 
 export const portfolioData = [
   {
     id: 1,
-    title: "Applicationsqqq",
-    url: "/portfolio/applicationsqqq",
-    image: apps,
+    title: "Applications",
+    url: "/portfolio/applications",
+    image: webapps,
   },
   {
     id: 2,
@@ -119,7 +120,7 @@ export const portfolioData = [
 ];
 
 export const itemsPortfolio = {
-  applicationsqqq: [
+  applications: [
     {
       id: 1,
       title: "Creative Portfolio",
@@ -148,27 +149,18 @@ export const itemsPortfolio = {
   sites: [
     {
       id: 1,
+      title: "Pets - Medicine for the soul",
+      desc: "Designed in Figma, this site is a fusion of pet love and technology. One of the key challenges was the implementation of multilingualism and choosing between six world languages. Ensuring consistency between the design in Figma and the actual implementation required careful handling of styles via SCSS. Project is adapted for different screens so that users can enjoy it on any device.",
+      url: 'https://petsmj.netlify.app/',
+      image: pets,
+    },
+    {
+      id: 2,
       title: "Slider Cat",
       desc: "It was crucial to track the mouse movements correctly and synchronize the movement of the crosshair with each step. This required careful manipulation of mouse events and proper handling of screen coordinates. Implementing a fluid and aesthetically pleasing line movement was a challenge in optimizing performance.",
       url: 'https://slidercatmj.netlify.app/',
       image: slider,
     },
-    {
-      id: 2,
-      title: "Minimal Single Product",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
-      url: 'https://www.linkedin.com/in/mj888/',
-      image:
-        "https://images.pexels.com/photos/3130810/pexels-photo-3130810.jpeg",
-    },
-    {
-      id: 3,
-      title: "Strong Together Charity",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
-      url: 'https://github.com/MirosBL45',
-      image:
-        "https://images.pexels.com/photos/2103127/pexels-photo-2103127.jpeg",
-    }
   ],
   games: [
     {
@@ -201,6 +193,13 @@ export const itemsPortfolio = {
     },
     {
       id: 5,
+      title: "Tic tac toe",
+      desc: "It was important to properly implement the game logic, in order to automatically track the conquest and declare the winner. This step involved detecting winning combinations and properly updating the game state. Work on the user interface and visual aspect of the game was important. I had to ensure that each player's moves were clearly marked, maintain visibility of the game state, and allow for easy mouse interaction.",
+      url: 'https://tictactoemj.netlify.app/',
+      image: tictactoe,
+    },
+    {
+      id: 6,
       title: "Poker",
       desc: "I had to handle the logic for detecting and evaluating card combinations, which added to the complexity of the project. Through this creative process, I gained a deep understanding of JavaScript, working with objects, manipulating the DOM, and developing complex algorithms.",
       url: 'https://pokermj.netlify.app/',

@@ -47,6 +47,11 @@
         // image must have width: 100% and some height
         width: 100%;
         height: 500px;
+        transition: var(--transition);
+
+        &:hover {
+            transform: scale(1.15);
+        }
     }
 }
 
