@@ -104,6 +104,8 @@ import candle from '../../public/portfolio/imagesWeb/candle.jpg';
 import companywall from '../../public/portfolio/imagesApps/companywall.jpg';
 import materialSocial from '../../public/portfolio/imagesApps/materialSocial.jpg';
 import promptopia from '../../public/portfolio/imagesApps/promptopia.jpg';
+import todo from '../../public/portfolio/imagesApps/todo.jpg';
+import recipe from '../../public/portfolio/imagesApps/recipe.jpg';
 
 export const portfolioData = [
   {
@@ -137,17 +139,31 @@ export const itemsPortfolio = {
     },
     {
       id: 2,
-      title: "Material UI social network",
-      desc: "Project done in ReactJS with Material UI. It has no social network functionality, just styling using Material UI. I have made some folder structure to separate project components and data for project, and make clean code. || This React project with Material UI provides users with a simple yet elegant interface, without unnecessary social networks, focusing exclusively on visual design and the use of Material UI components. To improve code organization, I structured the project with clear folders that separate components from data, making it easier to maintain and add new functionality in the future.",
-      url: 'https://material-social-network.vercel.app/',
-      image: materialSocial,
+      title: "Recipe App",
+      desc: "This app becomes a personal culinary guide, powered by React. Explore the wealth of recipes, tailored to your tastes, with images that tempt your appetite. With the ability to filter by ingredients, this app provides a convenient way to find the perfect recipe. If you're in the mood for something sweet, just type in `chocolate` and you'll get a handful of recipes that include your favorite ingredient. In addition, you can access each recipe to find out the exact ingredients and preparation steps. || Feel free to explore different recipes and discover new flavors. Each recipe comes with pictures that visually evoke the finished product, giving you an extra level of inspiration.",
+      url: 'https://recipe-app-mj.vercel.app/',
+      image: recipe,
     },
     {
       id: 3,
+      title: "To Do",
+      desc: "This app allows you to easily add, mark as complete, or delete items, bringing organization to your fingertips. Everything you need is there: adding new items to your list, marking those you've completed or deleting those that are no longer relevant. The filter option allows you to view all items, only those that you have completed, or those that need to be done. || What makes this app special is the fact that, even when you refresh your browser, all your data remains intact. Without worrying about data loss, this app saves your to-do list exactly as it is, making it a reliable digital ally in organizing your daily schedule.",
+      url: 'https://to-do-list-react-js-mj.vercel.app/',
+      image: todo,
+    },
+    {
+      id: 4,
       title: "Company wall task",
       desc: "Roles page should contain a data table to list available roles by calling API. You can provide an in-memory data to be returned as a response (no duplicate role names allowed). The map will be populated through create action from the UI. It should be sorted by Role name by default. || Provide create and update actions to create/update roles. It should be implemented in a separate form page. Users page should contain a data table to list users by calling api. You can serve a json file from the server function as a response. Provide create and update actions to create/update users. It should be implemented in a separate form page. || After creating/updating the user/role object you should be redirected to the users/roles list page to show all the available users/roles. Each create/update action takes 2 seconds. You can simulate this period by using the setTimeout function. Use optimistic updates to show an updated list immediately.",
       url: 'https://mj-company-wall-task.vercel.app/',
       image: companywall,
+    },
+    {
+      id: 5,
+      title: "Material UI social network",
+      desc: "Project done in ReactJS with Material UI. It has no social network functionality, just styling using Material UI. I have made some folder structure to separate project components and data for project, and make clean code. || This React project with Material UI provides users with a simple yet elegant interface, without unnecessary social networks, focusing exclusively on visual design and the use of Material UI components. To improve code organization, I structured the project with clear folders that separate components from data, making it easier to maintain and add new functionality in the future.",
+      url: 'https://material-social-network.vercel.app/',
+      image: materialSocial,
     },
   ],
   sites: [
