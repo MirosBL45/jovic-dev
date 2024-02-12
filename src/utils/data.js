@@ -106,6 +106,7 @@ import materialSocial from '../../public/portfolio/imagesApps/materialSocial.jpg
 import promptopia from '../../public/portfolio/imagesApps/promptopia.jpg';
 import todo from '../../public/portfolio/imagesApps/todo.jpg';
 import recipe from '../../public/portfolio/imagesApps/recipe.jpg';
+import comit from '../../public/portfolio/imagesApps/comit.jpg';
 
 export const portfolioData = [
   {
@@ -153,13 +154,20 @@ export const itemsPortfolio = {
     },
     {
       id: 4,
+      title: "Comit task",
+      desc: "This is a project for the task I got from ComIT International when I applied for the job on the position for Frontend developer. I got a design in Figma that I needed to turn into a site using ReactJS. In the assignment I got a link where the data is located, and link is protected with CORS, so you have to use Extension CORS Unblock on your browser. Also, I done it with SASS, it is fun way to do CSS.",
+      url: 'https://assignment-for-comit-mj.vercel.app/',
+      image: comit,
+    },
+    {
+      id: 5,
       title: "Company wall task",
       desc: "Roles page should contain a data table to list available roles by calling API. You can provide an in-memory data to be returned as a response (no duplicate role names allowed). The map will be populated through create action from the UI. It should be sorted by Role name by default. || Provide create and update actions to create/update roles. It should be implemented in a separate form page. Users page should contain a data table to list users by calling api. You can serve a json file from the server function as a response. Provide create and update actions to create/update users. It should be implemented in a separate form page. || After creating/updating the user/role object you should be redirected to the users/roles list page to show all the available users/roles. Each create/update action takes 2 seconds. You can simulate this period by using the setTimeout function. Use optimistic updates to show an updated list immediately.",
       url: 'https://mj-company-wall-task.vercel.app/',
       image: companywall,
     },
     {
-      id: 5,
+      id: 6,
       title: "Material UI social network",
       desc: "Project done in ReactJS with Material UI. It has no social network functionality, just styling using Material UI. I have made some folder structure to separate project components and data for project, and make clean code. || This React project with Material UI provides users with a simple yet elegant interface, without unnecessary social networks, focusing exclusively on visual design and the use of Material UI components. To improve code organization, I structured the project with clear folders that separate components from data, making it easier to maintain and add new functionality in the future.",
       url: 'https://material-social-network.vercel.app/',
