@@ -101,6 +101,8 @@ import social from '../../public/portfolio/imagesWeb/social.jpg';
 import quiz from '../../public/portfolio/imagesWeb/quiz.jpg';
 import candle from '../../public/portfolio/imagesWeb/candle.jpg';
 
+import companywall from '../../public/portfolio/imagesApps/companywall.jpg';
+
 export const portfolioData = [
   {
     id: 1,
@@ -126,11 +128,10 @@ export const itemsPortfolio = {
   applications: [
     {
       id: 1,
-      title: "Creative Portfolio",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
-      url: 'https://github.com/MirosBL45',
-      image:
-        "https://images.pexels.com/photos/3130810/pexels-photo-3130810.jpeg",
+      title: "Company wall task",
+      desc: "Roles page should contain a data table to list available roles by calling API. You can provide an in-memory data to be returned as a response (no duplicate role names allowed). The map will be populated through create action from the UI. It should be sorted by Role name by default. Provide create and update actions to create/update roles. It should be implemented in a separate form page. Users page should contain a data table to list users by calling api. You can serve a json file from the server function as a response. Provide create and update actions to create/update users. It should be implemented in a separate form page. After creating/updating the user/role object you should be redirected to the users/roles list page to show all the available users/roles. Each create/update action takes 2 seconds. You can simulate this period by using the setTimeout function. Use optimistic updates to show an updated list immediately.",
+      url: 'https://mj-company-wall-task.vercel.app/',
+      image: companywall,
     },
     {
       id: 2,
