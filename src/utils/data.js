@@ -102,6 +102,8 @@ import quiz from '../../public/portfolio/imagesWeb/quiz.jpg';
 import candle from '../../public/portfolio/imagesWeb/candle.jpg';
 
 import companywall from '../../public/portfolio/imagesApps/companywall.jpg';
+import materialSocial from '../../public/portfolio/imagesApps/materialSocial.jpg';
+import promptopia from '../../public/portfolio/imagesApps/promptopia.jpg';
 
 export const portfolioData = [
   {
@@ -128,27 +130,25 @@ export const itemsPortfolio = {
   applications: [
     {
       id: 1,
-      title: "Company wall task",
-      desc: "Roles page should contain a data table to list available roles by calling API. You can provide an in-memory data to be returned as a response (no duplicate role names allowed). The map will be populated through create action from the UI. It should be sorted by Role name by default. Provide create and update actions to create/update roles. It should be implemented in a separate form page. Users page should contain a data table to list users by calling api. You can serve a json file from the server function as a response. Provide create and update actions to create/update users. It should be implemented in a separate form page. After creating/updating the user/role object you should be redirected to the users/roles list page to show all the available users/roles. Each create/update action takes 2 seconds. You can simulate this period by using the setTimeout function. Use optimistic updates to show an updated list immediately.",
-      url: 'https://mj-company-wall-task.vercel.app/',
-      image: companywall,
+      title: "Promptopia",
+      desc: "Welcome to Promptopia, a project created with the help of Next.js! This innovative app uses a range of technologies, including bcrypt, MongoDB, Mongoose, NextAuth and Tailwind CSS. Goal is to provide you with a unique experience where you can explore, create and share creative inspiration. || With the help of Next.js, this platform offers a fast and efficient user experience, with the use of advanced technologies such as MongoDB and Mongoose for data storage, bcrypt for the security of user information, NextAuth for simple and secure login with a Google account, and Tailwind CSS for modern and attractive styling.",
+      url: 'https://promptopia-by-miroslav.vercel.app/',
+      image: promptopia,
     },
     {
       id: 2,
-      title: "Minimal Single Product",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
-      url: 'https://www.linkedin.com/in/mj888/',
-      image:
-        "https://images.pexels.com/photos/2103127/pexels-photo-2103127.jpeg",
+      title: "Material UI social network",
+      desc: "Project done in ReactJS with Material UI. It has no social network functionality, just styling using Material UI. I have made some folder structure to separate project components and data for project, and make clean code. || This React project with Material UI provides users with a simple yet elegant interface, without unnecessary social networks, focusing exclusively on visual design and the use of Material UI components. To improve code organization, I structured the project with clear folders that separate components from data, making it easier to maintain and add new functionality in the future.",
+      url: 'https://material-social-network.vercel.app/',
+      image: materialSocial,
     },
     {
       id: 3,
-      title: "Strong Together Charity",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
-      url: 'https://quillbot.com/',
-      image:
-        "https://images.pexels.com/photos/2916450/pexels-photo-2916450.jpeg",
-    }
+      title: "Company wall task",
+      desc: "Roles page should contain a data table to list available roles by calling API. You can provide an in-memory data to be returned as a response (no duplicate role names allowed). The map will be populated through create action from the UI. It should be sorted by Role name by default. || Provide create and update actions to create/update roles. It should be implemented in a separate form page. Users page should contain a data table to list users by calling api. You can serve a json file from the server function as a response. Provide create and update actions to create/update users. It should be implemented in a separate form page. || After creating/updating the user/role object you should be redirected to the users/roles list page to show all the available users/roles. Each create/update action takes 2 seconds. You can simulate this period by using the setTimeout function. Use optimistic updates to show an updated list immediately.",
+      url: 'https://mj-company-wall-task.vercel.app/',
+      image: companywall,
+    },
   ],
   sites: [
     {
