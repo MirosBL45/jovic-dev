@@ -107,6 +107,8 @@ import promptopia from '../../public/portfolio/imagesApps/promptopia.jpg';
 import todo from '../../public/portfolio/imagesApps/todo.jpg';
 import recipe from '../../public/portfolio/imagesApps/recipe.jpg';
 import comit from '../../public/portfolio/imagesApps/comit.jpg';
+import githubfinder from '../../public/portfolio/imagesApps/githubfinder.jpg';
+import houses from '../../public/portfolio/imagesApps/houses.jpg';
 
 export const portfolioData = [
   {
@@ -133,31 +135,31 @@ export const itemsPortfolio = {
   applications: [
     {
       id: 1,
+      title: "House marketplace",
+      desc: "Welcome to the world of real estate through the React House Marketplace app! This innovative platform offers you the opportunity to research, sell or rent houses with a simple and user-friendly interface. Users can easily register, post ads for selling or renting their home, entering information such as price, number of rooms, number of bathrooms and even displaying the location on a map. With an intuitive user panel, the process of posting ads is quick and easy. || On the other hand, non-registered site visitors can also browse all available homes for sale or rent. They have access to all information about the houses, including prices, number of rooms, bathrooms and location on the map, without the need to log in.",
+      url: 'https://house-marketplace-mirosbl45.vercel.app/',
+      image: houses,
+    },
+    {
+      id: 2,
       title: "Promptopia",
       desc: "Welcome to Promptopia, a project created with the help of Next.js! This innovative app uses a range of technologies, including bcrypt, MongoDB, Mongoose, NextAuth and Tailwind CSS. Goal is to provide you with a unique experience where you can explore, create and share creative inspiration. || With the help of Next.js, this platform offers a fast and efficient user experience, with the use of advanced technologies such as MongoDB and Mongoose for data storage, bcrypt for the security of user information, NextAuth for simple and secure login with a Google account, and Tailwind CSS for modern and attractive styling.",
       url: 'https://promptopia-by-miroslav.vercel.app/',
       image: promptopia,
     },
     {
-      id: 2,
+      id: 3,
+      title: "Github Finder",
+      desc: "This React app gives you easy access to user accounts on GitHub, allowing you to explore repositories and learn about the work of other developers. A simple user search lets you find developers by name and view their GitHub profiles. || Once you find a user you're interested in, you can easily access their profile, where you can see how many repositories they've published, as well as browse their projects.",
+      url: 'https://github-finder-app-mirosbl45.vercel.app/',
+      image: githubfinder,
+    },
+    {
+      id: 4,
       title: "Recipe App",
       desc: "This app becomes a personal culinary guide, powered by React. Explore the wealth of recipes, tailored to your tastes, with images that tempt your appetite. With the ability to filter by ingredients, this app provides a convenient way to find the perfect recipe. If you're in the mood for something sweet, just type in `chocolate` and you'll get a handful of recipes that include your favorite ingredient. In addition, you can access each recipe to find out the exact ingredients and preparation steps. || Feel free to explore different recipes and discover new flavors. Each recipe comes with pictures that visually evoke the finished product, giving you an extra level of inspiration.",
       url: 'https://recipe-app-mj.vercel.app/',
       image: recipe,
-    },
-    {
-      id: 3,
-      title: "To Do",
-      desc: "This app allows you to easily add, mark as complete, or delete items, bringing organization to your fingertips. Everything you need is there: adding new items to your list, marking those you've completed or deleting those that are no longer relevant. The filter option allows you to view all items, only those that you have completed, or those that need to be done. || What makes this app special is the fact that, even when you refresh your browser, all your data remains intact. Without worrying about data loss, this app saves your to-do list exactly as it is, making it a reliable digital ally in organizing your daily schedule.",
-      url: 'https://to-do-list-react-js-mj.vercel.app/',
-      image: todo,
-    },
-    {
-      id: 4,
-      title: "Comit task",
-      desc: "This is a project for the task I got from ComIT International when I applied for the job on the position for Frontend developer. I got a design in Figma that I needed to turn into a site using ReactJS. In the assignment I got a link where the data is located, and link is protected with CORS, so you have to use Extension CORS Unblock on your browser. Also, I done it with SASS, it is fun way to do CSS.",
-      url: 'https://assignment-for-comit-mj.vercel.app/',
-      image: comit,
     },
     {
       id: 5,
@@ -168,6 +170,20 @@ export const itemsPortfolio = {
     },
     {
       id: 6,
+      title: "Comit task",
+      desc: "This is a project for the task I got from ComIT International when I applied for the job on the position for Frontend developer. I got a design in Figma that I needed to turn into a site using ReactJS. In the assignment I got a link where the data is located, and link is protected with CORS, so you have to use Extension CORS Unblock on your browser. Also, I done it with SASS, it is fun way to do CSS.",
+      url: 'https://assignment-for-comit-mj.vercel.app/',
+      image: comit,
+    },
+    {
+      id: 7,
+      title: "To Do",
+      desc: "This app allows you to easily add, mark as complete, or delete items, bringing organization to your fingertips. Everything you need is there: adding new items to your list, marking those you've completed or deleting those that are no longer relevant. The filter option allows you to view all items, only those that you have completed, or those that need to be done. || What makes this app special is the fact that, even when you refresh your browser, all your data remains intact. Without worrying about data loss, this app saves your to-do list exactly as it is, making it a reliable digital ally in organizing your daily schedule.",
+      url: 'https://to-do-list-react-js-mj.vercel.app/',
+      image: todo,
+    },
+    {
+      id: 8,
       title: "Material UI social network",
       desc: "Project done in ReactJS with Material UI. It has no social network functionality, just styling using Material UI. I have made some folder structure to separate project components and data for project, and make clean code. || This React project with Material UI provides users with a simple yet elegant interface, without unnecessary social networks, focusing exclusively on visual design and the use of Material UI components. To improve code organization, I structured the project with clear folders that separate components from data, making it easier to maintain and add new functionality in the future.",
       url: 'https://material-social-network.vercel.app/',
