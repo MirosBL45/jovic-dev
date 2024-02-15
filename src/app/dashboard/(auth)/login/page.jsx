@@ -10,6 +10,7 @@ import Link from 'next/link';
 // components
 import ClickButton from '@/components/Buttons/ClickButton';
 import { TabTitle } from '@/utils/GeneralFunctions';
+import PasswordInput from '@/components/PasswordInput/PasswordInput';
 
 // style
 import styles from './page.module.css';
@@ -62,12 +63,7 @@ function Login() {
           className={styles.input}
           required
         />
-        <input
-          type="password"
-          placeholder="password"
-          className={styles.input}
-          required
-        />
+        <PasswordInput />
         <ClickButton title={'Login with Mail'}>
           {'Login with'}
           <Image src={EMailIcon} alt="Mail" width={35} height={35} />

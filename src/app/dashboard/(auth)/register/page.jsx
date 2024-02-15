@@ -9,6 +9,7 @@ import Image from 'next/image';
 // components
 import ClickButton from '@/components/Buttons/ClickButton';
 import { TabTitle } from '@/utils/GeneralFunctions';
+import PasswordInput from '@/components/PasswordInput/PasswordInput';
 
 // icons
 import CheckList from 'public/checklist.png';
@@ -72,12 +73,7 @@ function Register() {
           className={styles.input}
           required
         />
-        <input
-          type="password"
-          placeholder="password"
-          className={styles.input}
-          required
-        />
+        <PasswordInput />
         <ClickButton title={'Register'}>
           {'Register'}
           <Image src={CheckList} alt="CheckList" width={35} height={35} />
