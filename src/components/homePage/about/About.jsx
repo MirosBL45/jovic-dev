@@ -2,8 +2,7 @@
 import AboutComponent from './AboutComponent';
 
 // data
-import { aboutData } from '@/utils/data';
-import { aboutDataText } from '@/utils/data';
+import { aboutData, aboutDataText } from '@/utils/allData/about';
 import { allYears } from '@/utils/GeneralFunctions.js';
 
 // style

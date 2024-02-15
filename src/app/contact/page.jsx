@@ -4,7 +4,7 @@
 import ContactComponent from '@/components/homePage/contact/ContactComponent';
 
 // data
-import { contactData } from '@/utils/data';
+import { contactData } from '@/utils/allData/contact';
 
 // style
 import styles from './page.module.css';

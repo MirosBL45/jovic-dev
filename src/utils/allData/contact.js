@@ -1,0 +1,1 @@
+export const contactData = { mainHeadline: 'We can Keep in Touch' }

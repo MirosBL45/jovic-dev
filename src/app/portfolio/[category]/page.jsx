@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import ScrollButton from '@/components/ScrollButton/ScrollButton';
 
 // data
-import { itemsPortfolio } from '@/utils/data';
+import { itemsPortfolio } from '@/utils/allData/mainPortfolio';
 
 // style
 import styles from './page.module.css';

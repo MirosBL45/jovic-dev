@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // data
-import { portfolioData } from '@/utils/data';
+import { portfolioData } from '@/utils/allData/mainPortfolio';
 
 // style
 import styles from './page.module.css';

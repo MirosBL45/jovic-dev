@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 // data
-import { linksHomePage, linksOtherPages } from '@/utils/data';
+import { linksHomePage, linksOtherPages } from '@/utils/allData/links';
 
 // components
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';

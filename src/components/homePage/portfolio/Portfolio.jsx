@@ -5,7 +5,7 @@ import LinkButton from '@/components/Buttons/LinkButton';
 import styles from './portfolio.module.css';
 
 // data
-import { portfolioAbout } from '@/utils/data';
+import { homePortfolio } from '@/utils/allData/homePortfolio';
 
 function Portfolio() {
   return (
@@ -14,7 +14,7 @@ function Portfolio() {
         <h2>My Work</h2>
         <h3>Take a look at some of my projects</h3>
       </header>
-      {portfolioAbout.map((item) => (
+      {homePortfolio.map((item) => (
         <p key={item.id}>{item.title}</p>
       ))}
       <LinkButton
