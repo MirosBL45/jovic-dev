@@ -111,6 +111,8 @@ import githubfinder from '../../public/portfolio/imagesApps/githubfinder.jpg';
 import houses from '../../public/portfolio/imagesApps/houses.jpg';
 import milspedAll from '../../public/portfolio/imagesApps/milspedAll.jpg';
 import simic from '../../public/portfolio/imagesApps/simic.jpg';
+import retail from '../../public/portfolio/imagesApps/retail.jpg';
+import kala from '../../public/portfolio/imagesApps/kala.jpg';
 
 export const portfolioData = [
   {
@@ -136,16 +138,30 @@ export const portfolioData = [
 export const itemsPortfolio = {
   applications: [
     {
+      id: "jednakala",
+      title: "Kala hvala",
+      desc: "This React app was made so that people can express their gratitude to firemans by posting an image and text as desired. All posts are publicly available and at the end the winning post is announced. || In my previous company, 4bees, I have been working on this project from scratch after getting design in Figma.",
+      url: 'https://jednakala-jednohvala.hr/',
+      image: kala,
+    },
+    {
+      id: "retail-heroes",
+      title: "Retail Heroes",
+      desc: "This beautiful React app was made for client from Switzerland. It is like a little game show and the rules are: you can click on each week to open its section and watch short clips, then you collect stickers for that week. After watching all 4 weeks, you get cool stickers as a gift. If you watch on a mobile phone, you can save the stickers in Viber and send them to your friends. || In my previous company, 4bees, I have been working on this project from scratch after getting design in Figma. I mostly worked for the desktop version, but I also helped a colleague with the mobile version.",
+      url: 'https://retail-heroes.vercel.app/',
+      image: retail,
+    },
+    {
       id: "milsped",
       title: "Milšped Group",
-      desc: "Milšped Group`s services are numerous and integrated, including customs mediation and representation, organization of international and domestic transport and distribution, as well as storage of goods - contract logistics. In my last company, 4bees, I worked on projects for Milšped Group, which includes their 3 web applications, Milšped, M-ONE and MBOX. || These applications are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the strapi database, the implementation of the English-Serbian language, the creation of the transport service price calculator and many other things.",
+      desc: "Milšped Group`s services are numerous and integrated, including customs mediation and representation, organization of international and domestic transport and distribution, as well as storage of goods - contract logistics. In my previous company, 4bees, I worked on projects for Milšped Group, which includes their 3 web applications, Milšped, M-ONE and MBOX. || These applications are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the strapi database, the implementation of the English-Serbian language, the creation of the transport service price calculator and many other things.",
       url: 'https://www.milsped.com/',
       image: milspedAll,
     },
     {
       id: "simic",
       title: "“Dr Simić” dental office",
-      desc: "“Dr Simić” dental office deals with prosthetics and aesthetic dentistry, implantology, orthopedics of the jaw, teeth whitening and aesthetic facial treatments, oral surgery, tooth treatment and aesthetic fillings, periodontology, preventive and children`s dentistry. || This application is made in Vue.js, Nuxt.js. I did the creation of galleries, the implementation of the English-Serbian language, adding some pages and other things.",
+      desc: "“Dr Simić” dental office deals with prosthetics and aesthetic dentistry, implantology, orthopedics of the jaw, teeth whitening and aesthetic facial treatments, oral surgery, tooth treatment and aesthetic fillings, periodontology, preventive and children`s dentistry. || This application is made in Vue.js, Nuxt.js. In my previous company, 4bees, I did the creation of galleries, the implementation of the English-Serbian language, adding some pages and other things.",
       url: 'https://www.milsped.com/',
       image: simic,
     },
