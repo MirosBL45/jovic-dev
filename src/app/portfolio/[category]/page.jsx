@@ -37,7 +37,6 @@ function Category({ params }) {
               <header>
                 <h3>{item.title}</h3>
               </header>
-              {/* <p className={styles.description}>{item.desc}</p> */}
               {item.desc.split('||').map((paragraph, index) => (
                 <p key={index} className={styles.description}>
                   {paragraph}
