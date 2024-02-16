@@ -1,5 +1,5 @@
 //components
-import AboutComponent from '@/components/homePage/about/AboutComponent';
+import AboutComponent from '@/components/PageComponents/homePage/about/AboutComponent';
 
 // data
 import { aboutData, aboutDataText } from '@/utils/allData/about';

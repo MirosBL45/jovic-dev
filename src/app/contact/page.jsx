@@ -1,7 +1,7 @@
 // 'use client';
 
 // components
-import ContactComponent from '@/components/homePage/contact/ContactComponent';
+import ContactComponent from '@/components/PageComponents/homePage/contact/ContactComponent';
 
 // data
 import { contactData } from '@/utils/allData/contact';
