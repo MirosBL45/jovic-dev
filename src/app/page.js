@@ -6,10 +6,10 @@ import Hero from 'public/hero.svg';
 
 //components
 import LinkButton from '@/components/Buttons/LinkButton';
-import About from '@/components/homePage/about/About';
-import Portfolio from '@/components/homePage/portfolio/Portfolio';
-import Contact from '@/components/homePage/contact/Contact';
-import ScrollButton from '@/components/ScrollButton/ScrollButton';
+import About from '@/components/PageComponents/homePage/about/About';
+import Portfolio from '@/components/PageComponents/homePage/portfolio/Portfolio';
+import Contact from '@/components/PageComponents/homePage/contact/Contact';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 
 // style
 import styles from './page.module.css';

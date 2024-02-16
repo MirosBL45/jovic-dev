@@ -4,7 +4,7 @@ import Image from 'next/image';
 // components
 import LinkButton from '@/components/Buttons/LinkButton';
 import { notFound } from 'next/navigation';
-import ScrollButton from '@/components/ScrollButton/ScrollButton';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 
 // data
 import { itemsPortfolio } from '@/utils/allData/mainPortfolio';

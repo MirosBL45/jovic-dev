@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 // components
 import { formatDate } from '@/utils/GeneralFunctions';
-import ScrollButton from '@/components/ScrollButton/ScrollButton';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
 
 // style

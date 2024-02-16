@@ -11,7 +11,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { linksHomePage, linksOtherPages } from '@/utils/allData/links';
 
 // components
-import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import DarkModeToggle from '@/components/UIComponents/DarkModeToggle/DarkModeToggle';
 
 // logo
 import LogoMJ from 'public/logoMJ.png';

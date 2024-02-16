@@ -1,6 +1,6 @@
 // components
-import Navbar from '@/components/navbar/Navbar'
-import Footer from '@/components/footer/Footer'
+import Navbar from '@/components/PageComponents/navbar/Navbar'
+import Footer from '@/components/PageComponents/footer/Footer'
 import { ThemeProvider } from '../context/ThemeContext';
 import AuthProvider from '@/components/AuthProvider/AuthProvider';
 

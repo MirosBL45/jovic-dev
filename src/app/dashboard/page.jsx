@@ -10,7 +10,7 @@ import Image from 'next/image';
 // components
 import { TabTitle } from '@/utils/GeneralFunctions';
 import ClickButton from '@/components/Buttons/ClickButton';
-import ScrollButton from '@/components/ScrollButton/ScrollButton';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
 
 // style
