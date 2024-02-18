@@ -7,9 +7,9 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 // components
-import ClickButton from '@/components/Buttons/ClickButton';
+import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
 import { TabTitle } from '@/utils/GeneralFunctions';
-import PasswordInput from '@/components/PasswordInput/PasswordInput';
+import PasswordInput from '@/components/CustomInputs/PasswordInput/PasswordInput';
 
 // icons
 import CheckList from 'public/checklist.png';

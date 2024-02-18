@@ -1,5 +1,6 @@
 //components
 import AboutComponent from './AboutComponent';
+import MeComponent from './MeComponent';
 
 // data
 import { aboutData, aboutDataText } from '@/utils/allData/about';
@@ -12,10 +13,12 @@ import '@/app/globals.css';
 function About() {
   return (
     <div id="about" className={styles.container}>
-      <header className={styles.imgText}>
-        <h2>{aboutDataText[7].mainHeadline}</h2>
-        <p>{aboutDataText[7].headlineText}</p>
-      </header>
+      <MeComponent
+        element="h2"
+        mainHeadline={aboutDataText[7].mainHeadline}
+        headlineText={aboutDataText[7].headlineText}
+        image={aboutDataText[7].image}
+      />
       <AboutComponent
         aboutDataText={aboutDataText}
         allYears={allYears}

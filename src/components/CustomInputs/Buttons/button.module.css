@@ -1,4 +1,7 @@
 .button {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   padding: 20px 40px;
   cursor: pointer;
   background: var(--green-color);

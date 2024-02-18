@@ -2,6 +2,7 @@
 
 // style
 import styles from './button.module.css';
+import '@/app/globals.css';
 
 function ClickButton({ children, onClick, title }) {
   return (

@@ -41,6 +41,9 @@
         font-size: var(--ms-font);
         font-weight: bold;
         resize: none;
+        font-family: "Lexend", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
     }
 }
 
@@ -75,11 +78,13 @@
 
     .sendingForm {
         display: flex;
+        align-items: center;
 
         input,
         textarea {
             padding: 10px;
             font-size: var(--ms-font);
+            width: 90vw;
         }
     }
 

@@ -8,9 +8,9 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 
 // components
-import ClickButton from '@/components/Buttons/ClickButton';
+import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
 import { TabTitle } from '@/utils/GeneralFunctions';
-import PasswordInput from '@/components/PasswordInput/PasswordInput';
+import PasswordInput from '@/components/CustomInputs/PasswordInput/PasswordInput';
 
 // style
 import styles from './page.module.css';

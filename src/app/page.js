@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Hero from 'public/hero.svg';
 
 //components
-import LinkButton from '@/components/Buttons/LinkButton';
+import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 import About from '@/components/PageComponents/homePage/about/About';
 import Portfolio from '@/components/PageComponents/homePage/portfolio/Portfolio';
 import Contact from '@/components/PageComponents/homePage/contact/Contact';

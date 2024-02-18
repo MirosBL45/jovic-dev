@@ -1,5 +1,5 @@
 //components
-import LinkButton from '@/components/Buttons/LinkButton';
+import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 
 // style
 import styles from './portfolio.module.css';

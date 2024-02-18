@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 // components
-import ClickButton from '@/components/Buttons/ClickButton';
+import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
 
 // style
 import styles from './contact.module.css';

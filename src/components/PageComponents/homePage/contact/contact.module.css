@@ -39,6 +39,9 @@
   font-size: var(--ms-font);
   font-weight: bold;
   resize: none;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 /* MEDIA QUERIES (medium screens) */
@@ -67,11 +70,13 @@
   }
   .sendingForm {
     display: flex;
+    align-items: center;
   }
   .sendingForm input,
   .sendingForm textarea {
     padding: 10px;
     font-size: var(--ms-font);
+    width: 90vw;
   }
   .imgContainer {
     height: 200px;

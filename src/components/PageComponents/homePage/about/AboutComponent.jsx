@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 //components
-import LinkButton from '@/components/Buttons/LinkButton';
+import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 
 // style
 import styles from './about.module.css';

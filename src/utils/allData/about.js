@@ -1,3 +1,5 @@
+import justMe from '../../../public/justMe.jpg';
+
 export const aboutDataText = [
     'I am Miroslav Jović, a professional Frontend Developer committed to delivering high-quality and scalable web solutions. With over',
     'years of experience, I specialize in crafting user-friendly interfaces and responsive websites.',
@@ -6,7 +8,7 @@ export const aboutDataText = [
     'By harnessing the power of React and Next.js, I deliver web solutions that seamlessly blend functionality and aesthetics, catering to both the needs of the client and the end user.',
     'My role is to leverage sophisticated Frontend development skills to help digital visions become a reality. I prioritize the optimization of websites for speed, scalability, and an intuitive user journey.',
     'In every project, I aim to translate design concepts into interactive and dynamic web interfaces that not only meet but exceed user expectations. With a keen eye on industry trends and standards, I implement innovative Frontend solutions that stand out in the ever-evolving digital landscape:',
-    { mainHeadline: 'About Me', headlineText: 'Creating Exceptional Digital Experiences', headline1: 'Who Am I?', headline2: 'What I Do?' },
+    { mainHeadline: 'About Me', headlineText: 'Creating Exceptional Digital Experiences', headline1: 'Who Am I?', headline2: 'What I Do?', image: justMe, },
 ];
 
 export const aboutData = [

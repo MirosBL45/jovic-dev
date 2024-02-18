@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 // components
-import LinkButton from '@/components/Buttons/LinkButton';
+import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 import { notFound } from 'next/navigation';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 
