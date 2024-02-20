@@ -12,8 +12,9 @@ import '@/app/globals.css';
 
 // Static metadata
 export const metadata = {
-  title: 'Jovic-dev About',
-  description: 'About Jovic Miroslav on web',
+  title: 'About Jović Miroslav',
+  description:
+    'About Jović Miroslav on the web. Jović Miroslav - Frontend Developer. I build fast, stable and responsive web applications and websites. My role is to leverage sophisticated Frontend development skills to help digital visions become a reality. This is my Portfolio WebApp made with NextJS, React, MongoDB, Mongoose and SWR',
 };
 
 function About() {

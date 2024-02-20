@@ -23,7 +23,7 @@ import EMailIcon from 'public/email.png';
 function Login() {
   // for tab title
   useEffect(() => {
-    TabTitle('Jovic-dev Login');
+    TabTitle('Login to Dashboard');
   }, []);
 
   const session = useSession();

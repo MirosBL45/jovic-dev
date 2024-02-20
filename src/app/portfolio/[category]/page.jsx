@@ -12,6 +12,12 @@ import { itemsPortfolio } from '@/utils/allData/mainPortfolio';
 // style
 import styles from './page.module.css';
 
+// Static metadata
+export const metadata = {
+  title: 'Portfolio of Jović Miroslav',
+  description: 'Portfolio of Jović Miroslav on the web. Look at my works',
+};
+
 function getData(categoryObject) {
   const data = itemsPortfolio[categoryObject];
 

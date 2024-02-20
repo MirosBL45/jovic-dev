@@ -10,8 +10,8 @@ import styles from './page.module.css';
 
 // Static metadata
 export const metadata = {
-  title: 'Jovic-dev Portfolio',
-  description: 'Portfolio Jovic Miroslav on web',
+  title: 'Portfolio of Jović Miroslav',
+  description: 'Portfolio of Jović Miroslav on the web. Look at my works',
 };
 
 function Portfolio() {

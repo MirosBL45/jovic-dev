@@ -27,7 +27,7 @@ async function getData(slug) {
 export async function generateMetadata({ params }) {
   const post = await getData(params.slug);
   return {
-    title: `Jovic-dev: ${post.title}`,
+    title: `Jović Miroslav's Blog: ${post.title}`,
     description: post.description,
   };
 }

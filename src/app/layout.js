@@ -9,9 +9,9 @@ import './globals.css'
 
 // Static metadata
 export const metadata = {
-  title: 'Jovic-dev',
-  description: 'Jovic Miroslav Portfolio WebApp made with NextJS, MongoDB, Mongoose and SWR',
-  keywords: 'HTML, CSS, SCSS, JavaScript, programming, ReactJS, NextJS, Next, React, MongoDB, Mongoose, SWR, Miroslav Jovic',
+  title: 'Jović Miroslav',
+  description: 'Jović Miroslav - Frontend Developer. I build fast, stable and responsive web applications and websites. This is my Portfolio WebApp made with NextJS, React, MongoDB, Mongoose and SWR',
+  keywords: 'HTML, CSS, SCSS, JavaScript, programming, ReactJS, NextJS, Next, React, MongoDB, Mongoose, SWR, Miroslav Jović, Frontend Developer, Web Development, Portfolio, Blog, Dashboard',
   icons: {
     icon: [{ url: '/logoMJ.png' }],
     shortcut: '/logoMJ.png',
@@ -29,24 +29,24 @@ export const metadata = {
       follow: true,
     },
   },
-  creator: 'Jovic Miroslav',
+  creator: 'Jović Miroslav',
   category: 'technology',
-  publisher: 'Jovic Miroslav',
-  applicationName: 'Jovic-dev',
-  authors: [{ name: 'Jovic Miroslav' }],
-  // twitter: {
-  //   title: 'Jovic-dev',
-  //   description: 'Jovic Miroslav Portfolio WebApp made with NextJS, MongoDB, Mongoose and SWR',
-  //   creator: 'Jovic Miroslav',
-  // },
-  // openGraph: {
-  //   images: '/logoMJ.png',
-  //   title: 'Jovic-dev',
-  //   description: 'Jovic Miroslav Portfolio WebApp made with NextJS, MongoDB, Mongoose and SWR',
-  //   siteName: 'Jovic-dev',
-  //   type: 'website',
-  //   authors: ['Jovic Miroslav'],
-  // },
+  publisher: 'Jović Miroslav',
+  applicationName: 'Jović Miroslav',
+  authors: [{ name: 'Jović Miroslav' }],
+  twitter: {
+    title: 'Jović Miroslav',
+    description: 'Jović Miroslav - Frontend Developer. I build fast, stable and responsive web applications and websites. This is my Portfolio WebApp made with NextJS, React, MongoDB, Mongoose and SWR',
+    creator: 'Jović Miroslav',
+  },
+  openGraph: {
+    images: '/logoMJ.png',
+    title: 'Jović Miroslav',
+    description: 'Jović Miroslav - Frontend Developer. I build fast, stable and responsive web applications and websites. This is my Portfolio WebApp made with NextJS, React, MongoDB, Mongoose and SWR',
+    siteName: 'Jović Miroslav',
+    type: 'website',
+    authors: ['Jović Miroslav'],
+  },
 }
 
 export default function RootLayout({ children }) {

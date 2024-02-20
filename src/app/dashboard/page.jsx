@@ -31,7 +31,7 @@ async function getAllPostSlugs() {
 function Dashboard() {
   // for tab title
   useEffect(() => {
-    TabTitle('Jovic-dev Dashboard');
+    TabTitle('Dashboard for your blogs');
   }, []);
 
   const session = useSession();

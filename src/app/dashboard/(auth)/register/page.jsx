@@ -21,7 +21,7 @@ import '@/app/globals.css';
 function Register() {
   // for tab title
   useEffect(() => {
-    TabTitle('Jovic-dev Register');
+    TabTitle('Register for using Dashboard');
   }, []);
 
   const [error, setError] = useState(false);

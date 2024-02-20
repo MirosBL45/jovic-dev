@@ -25,8 +25,9 @@ async function getData() {
 
 // Static metadata
 export const metadata = {
-  title: 'Jovic-dev Blog',
-  description: 'Blog Jovic Miroslav on web',
+  title: `Jović Miroslav's Blog`,
+  description:
+    'Blog of Jović Miroslav on the web. Read the latest interesting blogs',
 };
 
 async function Blog() {

@@ -1,5 +1,3 @@
-// 'use client';
-
 // components
 import ContactComponent from '@/components/PageComponents/homePage/contact/ContactComponent';
 
@@ -12,8 +10,9 @@ import '@/app/globals.css';
 
 // Static metadata
 export const metadata = {
-  title: 'Jovic-dev Contact',
-  description: 'Contact Jovic Miroslav on web',
+  title: 'Contact Jović Miroslav',
+  description:
+    'Contact Jović Miroslav on the web. Send me a message, I look forward to our meeting',
 };
 
 function Contact() {
