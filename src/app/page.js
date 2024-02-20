@@ -33,7 +33,7 @@ export default function Home() {
           </p>
           <LinkButton title={'Go to Portfolio to see My Works'} text={'See My Works'} url={'/portfolio'} />
         </header>
-        <div className={styles.item}>
+        <div className={styles.imageItem}>
           <Image src={Hero} alt="jovic-dev hero" className='moveImage' />
         </div>
       </main>

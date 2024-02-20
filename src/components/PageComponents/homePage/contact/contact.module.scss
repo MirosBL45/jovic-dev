@@ -64,6 +64,10 @@
         grid-template-columns: 35vw 35vw;
         justify-content: center;
 
+        .subjectInput {
+            grid-column: 1 / span 2;
+        }
+
         textarea {
             grid-column: 1 / span 2;
         }
@@ -81,6 +85,7 @@
         align-items: center;
 
         input,
+        .subjectInput,
         textarea {
             padding: 10px;
             font-size: var(--ms-font);

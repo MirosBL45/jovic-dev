@@ -33,7 +33,8 @@
   flex-direction: column;
   gap: 50px;
 }
-.item img {
+
+.imageItem img {
   width: 100%;
   object-fit: contain;
 }
@@ -87,7 +88,21 @@
   .notFoundContainer {
     margin-top: 20px;
   }
-  .item {
-    margin-bottom: -50px;
+  .imageItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .imageItem img {
+    width: 80%;
+  }
+}
+/* MEDIA QUERIES (extra small screens) */
+@media screen and (max-width: 400px) {
+  .imageItem {
+    margin-bottom: -30px;
+  }
+  .imageItem img {
+    width: 90%;
   }
 }

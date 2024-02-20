@@ -59,6 +59,9 @@
     grid-template-columns: 35vw 35vw;
     justify-content: center;
   }
+  .sendingForm .subjectInput {
+    grid-column: 1/span 2;
+  }
   .sendingForm textarea {
     grid-column: 1/span 2;
   }
@@ -73,6 +76,7 @@
     align-items: center;
   }
   .sendingForm input,
+  .sendingForm .subjectInput,
   .sendingForm textarea {
     padding: 10px;
     font-size: var(--ms-font);

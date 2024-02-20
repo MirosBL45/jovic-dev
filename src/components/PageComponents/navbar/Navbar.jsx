@@ -50,7 +50,13 @@ function Navbar() {
         className={styles.logo}
         onClick={() => setIsNavShowing(false)}
       >
-        <Image src={LogoMJ} alt="LogoMJ" width={50} height={50} />
+        <Image
+          priority={true}
+          src={LogoMJ}
+          alt="LogoMJ"
+          width={50}
+          height={50}
+        />
       </Link>
       <DarkModeToggle />
       <div
