@@ -1,3 +1,7 @@
+// react/next stuff
+import Link from 'next/link';
+import Image from 'next/image';
+
 //components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 
@@ -14,9 +18,11 @@ function Portfolio() {
         <h2>My Work</h2>
         <h3>Take a look at some of my projects</h3>
       </header>
-      {homePortfolio.map((item) => (
-        <p key={item.id}>{item.title}</p>
-      ))}
+      <section className={styles.portfolioItems}>
+        {homePortfolio.map((item) => (
+          <p key={item.id}>{item.title}</p>
+        ))}
+      </section>
       <LinkButton
         title={'See more projects'}
         text={'See more projects'}

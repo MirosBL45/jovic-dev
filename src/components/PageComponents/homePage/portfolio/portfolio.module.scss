@@ -6,6 +6,11 @@
     }
 }
 
+.portfolioItems {
+    display: flex;
+    justify-content: space-around;
+}
+
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
     .container {
