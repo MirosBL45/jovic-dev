@@ -21,15 +21,16 @@ export default function Home() {
       <main className={`${styles.container} layoutContainerAll`}>
         <header className={styles.item}>
           <h1 className={styles.title}>
-            <span>Better </span>
-            <span>solution </span>
-            <span>for </span>
-            <span>your </span>
-            <span>digital </span>
-            <span>products.</span>
+            <span>I </span>
+            <span>am </span>
+            <span>a </span>
+            <span>developer, </span>
+            <span>not </span>
+            <span>a </span>
+            <span>designer.</span>
           </h1>
           <p className={styles.description}>
-            Turning your Idea into Reality. Discover My Power to Create Premium Web Solutions.
+            Specializing in React and Next.js, I leverage these cutting-edge technologies to bring web projects to life.
           </p>
           <LinkButton title={'Go to Portfolio to see My Works'} text={'See My Works'} url={'/portfolio'} />
         </header>
