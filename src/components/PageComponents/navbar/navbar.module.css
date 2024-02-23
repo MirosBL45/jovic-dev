@@ -1,18 +1,46 @@
-.container {
+.navbar {
+  border-bottom-left-radius: var(--big-border-radius);
+  border-bottom-right-radius: var(--big-border-radius);
+  background: var(--white-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.nav_container {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 99;
-  border-bottom-left-radius: var(--big-border-radius);
-  border-bottom-right-radius: var(--big-border-radius);
-  width: 100vw;
-  background: var(--white-color);
-  padding: 0 3rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  width: var(--max-width);
+  padding: 0 var(--big-width-padding);
+}
+@media screen and (max-width: 1024px) {
+  .nav_container {
+    padding: 0 var(--normal-width-padding);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .nav_container {
+    padding: 0 var(--medium-width-padding);
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav_container {
+    padding: 0 var(--small-width-padding);
+  }
+}
+@media screen and (max-width: 450px) {
+  .nav_container {
+    padding: 0 var(--xs-width-padding);
+  }
 }
 
 .logo {
@@ -69,9 +97,6 @@
 
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 850px) {
-  .container {
-    padding: 0 2rem;
-  }
   .links {
     gap: 15px;
   }
@@ -81,9 +106,6 @@
 }
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 745px) {
-  .container {
-    padding: 0 1.1rem;
-  }
   .show_nav {
     transition: var(--transition);
     transform: translateX(0);
@@ -113,10 +135,12 @@
     margin-left: 0px;
   }
   .link,
+  .forDarkModeToggle,
   .logout {
     transform: translateX(100vw);
   }
   .link.open,
+  .forDarkModeToggle.open,
   .logout.open {
     transform: translateX(0);
   }
@@ -143,6 +167,9 @@
   }
   .open:nth-child(8) {
     transition-delay: 1.01s;
+  }
+  .open:nth-child(9) {
+    transition-delay: 1.11s;
   }
   .toggleBtn {
     outline: none;

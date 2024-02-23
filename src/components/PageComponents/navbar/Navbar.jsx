@@ -44,58 +44,68 @@ function Navbar() {
   }
 
   return (
-    <nav className={styles.container}>
-      <Link
-        href={'/'}
-        className={styles.logo}
-        onClick={() => setIsNavShowing(false)}
-      >
-        <Image
-          priority={true}
-          src={LogoMJ}
-          alt="LogoMJ"
-          width={50}
-          height={50}
-        />
-      </Link>
-      <DarkModeToggle />
-      <div
-        className={`${styles.links} ${
-          isNavShowing ? styles.show_nav : styles.hide_nav
-        }`}
-      >
-        {links.map((link) => (
+    <nav className={styles.navbar}>
+      <div className={styles.nav_container}>
+        <Link
+          href={'/'}
+          className={styles.logo}
+          onClick={() => setIsNavShowing(false)}
+        >
+          <Image
+            priority={true}
+            src={LogoMJ}
+            alt="LogoMJ"
+            width={50}
+            height={50}
+          />
+        </Link>
+        {/* <DarkModeToggle /> */}
+        <div
+          className={`${styles.links} ${
+            isNavShowing ? styles.show_nav : styles.hide_nav
+          }`}
+        >
+          {links.map((link) => (
+            <div
+              key={link.id}
+              className={`${styles.link} ${
+                pathname === link.url && styles.activeLink
+              } ${isNavShowing && styles.open}`}
+            >
+              <Link href={link.url} onClick={() => setIsNavShowing(false)}>
+                {link.title}
+              </Link>
+            </div>
+          ))}
           <div
-            key={link.id}
-            className={`${styles.link} ${
-              pathname === link.url && styles.activeLink
-            } ${isNavShowing && styles.open}`}
+            // div for animation
+            className={`${styles.forDarkModeToggle} ${
+              isNavShowing && styles.open
+            }`}
           >
-            <Link href={link.url} onClick={() => setIsNavShowing(false)}>
-              {link.title}
-            </Link>
+            <DarkModeToggle />
           </div>
-        ))}
-        {/* show Logout button when user is logged in */}
-        {session.status === 'authenticated' && (
-          <button
-            className={`${styles.logout} ${isNavShowing && styles.open}`}
-            onClick={handleLogout}
-            title="Logout"
-          >
-            <GrPowerShutdown />
-          </button>
-        )}
+          {/* show Logout button when user is logged in */}
+          {session.status === 'authenticated' && (
+            <button
+              className={`${styles.logout} ${isNavShowing && styles.open}`}
+              onClick={handleLogout}
+              title="Logout"
+            >
+              <GrPowerShutdown />
+            </button>
+          )}
+        </div>
+        {/* toggle button for mobile */}
+        <button
+          onClick={() => setIsNavShowing(!isNavShowing)}
+          className={styles.toggleBtn}
+          title="Open/Close Navbar"
+          aria-label="Open/Close Navbar"
+        >
+          {isNavShowing ? <MdOutlineClose /> : <HiMiniBars3BottomRight />}
+        </button>
       </div>
-      {/* toggle button for mobile */}
-      <button
-        onClick={() => setIsNavShowing(!isNavShowing)}
-        className={styles.toggleBtn}
-        title="Open/Close Navbar"
-        aria-label="Open/Close Navbar"
-      >
-        {isNavShowing ? <MdOutlineClose /> : <HiMiniBars3BottomRight />}
-      </button>
     </nav>
   );
 }

@@ -1,5 +1,5 @@
 // react/next stuff
-import Image from 'next/image';
+// import Image from 'next/image';
 
 //components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
@@ -11,7 +11,7 @@ import '@/app/globals.css';
 function AboutComponent({ aboutDataText, allYears, aboutData }) {
   return (
     <>
-      <div className={styles.imgContainer}>
+      {/* <div className={styles.imgContainer}>
         <Image
           src={'/coverAbout.jpg'}
           alt="jovic-dev"
@@ -19,7 +19,7 @@ function AboutComponent({ aboutDataText, allYears, aboutData }) {
           height={0}
           sizes="100vw"
         />
-      </div>
+      </div> */}
       <section className={styles.textContainer}>
         <article className={styles.item}>
           <header>

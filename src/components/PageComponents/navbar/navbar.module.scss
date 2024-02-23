@@ -1,18 +1,42 @@
-.container {
+.navbar {
+    border-bottom-left-radius: var(--big-border-radius);
+    border-bottom-right-radius: var(--big-border-radius);
+    background: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.nav_container {
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 99;
-    border-bottom-left-radius: var(--big-border-radius);
-    border-bottom-right-radius: var(--big-border-radius);
-    width: 100vw;
-    background: var(--white-color);
-    padding: 0 3rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    width: var(--max-width);
+    padding: 0 var(--big-width-padding);
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 var(--normal-width-padding);
+    }
+
+    @media screen and (max-width: 1000px) {
+        padding: 0 var(--medium-width-padding);
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 0 var(--small-width-padding);
+    }
+
+    @media screen and (max-width: 450px) {
+        padding: 0 var(--xs-width-padding);
+    }
 }
 
 .logo {
@@ -72,10 +96,6 @@
 
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 850px) {
-    .container {
-        padding: 0 2rem;
-    }
-
     .links {
         gap: 15px;
     }
@@ -87,9 +107,7 @@
 
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 745px) {
-    .container {
-        padding: 0 1.1rem;
-    }
+    // here the menu switches to the hamburger menu
 
     .show_nav {
         transition: var(--transition);
@@ -124,6 +142,7 @@
     }
 
     .link,
+    .forDarkModeToggle,
     .logout {
         transform: translateX(100vw);
 
@@ -132,7 +151,7 @@
         }
     }
 
-    @for $i from 1 through 8 {
+    @for $i from 1 through 9 {
         .open:nth-child(#{$i}) {
             transition-delay: ($i * 0.1s) + 0.21;
         }
