@@ -1,7 +1,10 @@
+// components
+import Spinner from '@/components/UIComponents/Spinner/Spinner';
+
 export default function Loading() {
   return (
-    <p style={{ marginTop: '150px', fontSize: '45px' }}>
-      Loading blogs... Grabbing from Database, Please be Patient
-    </p>
+    <Spinner
+      text={'Loading blogs... Grabbing from Database, Please be Patient'}
+    />
   );
 }
