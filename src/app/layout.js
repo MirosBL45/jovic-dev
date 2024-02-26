@@ -3,6 +3,7 @@ import Navbar from '@/components/PageComponents/navbar/Navbar'
 import Footer from '@/components/PageComponents/footer/Footer'
 import { ThemeProvider } from '../context/ThemeContext';
 import AuthProvider from '@/components/AuthProvider/AuthProvider';
+import Scroll from '@/components/UIComponents/PageScroll/Scroll';
 
 // styles
 import './globals.css'
@@ -52,6 +53,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Scroll />
       <body>
         <ThemeProvider>
           <AuthProvider>
