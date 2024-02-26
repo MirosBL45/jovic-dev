@@ -32,7 +32,10 @@ export default function Home() {
           <p className={styles.description}>
             Specializing in React and Next.js, I leverage these cutting-edge technologies to bring web projects to life.
           </p>
-          <LinkButton title={'Go to Portfolio to see My Works'} text={'See My Works'} url={'/portfolio'} />
+          <div className={styles.frontLinks}>
+            <LinkButton title={'Go to Portfolio to see My Works'} text={'See My Works'} url={'/portfolio'} />
+            <LinkButton openInNewTab={true} title={'Download CV of Miroslav Jovic, Frontend Developer'} text={'Download my CV'} url={'/Miroslav Jovic CV FED 2024.pdf'} />
+          </div>
         </header>
         <div className={styles.imageItem}>
           <Image src={Hero} alt="jovic-dev hero" className='moveImage' />

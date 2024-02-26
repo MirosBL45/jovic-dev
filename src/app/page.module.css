@@ -53,6 +53,21 @@
   font-size: var(--medium-font);
 }
 
+.frontLinks {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 600px) {
+  .frontLinks {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .frontLinks {
+    flex-direction: column;
+  }
+}
+
 /* MEDIA QUERIES (large screens) */
 @media screen and (max-width: 1024px) {
   .container {
