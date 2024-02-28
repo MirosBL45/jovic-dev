@@ -9,11 +9,11 @@ export const linksHomePage = [
     //     title: "About",
     //     url: "#about",
     // },
-    // {
-    //     id: 3,
-    //     title: "Portfolio",
-    //     url: "#portfolio",
-    // },
+    {
+        id: 3,
+        title: "Portfolio",
+        url: "#portfolio",
+    },
     // {
     //     id: 4,
     //     title: "Contact",
@@ -42,11 +42,11 @@ export const linksOtherPages = [
     //     title: "About",
     //     url: "/about",
     // },
-    // {
-    //     id: 3,
-    //     title: "Portfolio",
-    //     url: "/portfolio",
-    // },
+    {
+        id: 3,
+        title: "Portfolio",
+        url: "/portfolio",
+    },
     // {
     //     id: 4,
     //     title: "Contact",
