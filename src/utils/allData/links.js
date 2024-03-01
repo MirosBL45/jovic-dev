@@ -4,21 +4,21 @@ export const linksHomePage = [
         title: "Home",
         url: "/",
     },
-    // {
-    //     id: 2,
-    //     title: "About",
-    //     url: "#about",
-    // },
+    {
+        id: 2,
+        title: "About",
+        url: "#about",
+    },
     {
         id: 3,
         title: "Portfolio",
         url: "#portfolio",
     },
-    // {
-    //     id: 4,
-    //     title: "Contact",
-    //     url: "#contact",
-    // },
+    {
+        id: 4,
+        title: "Contact",
+        url: "#contact",
+    },
     {
         id: 5,
         title: "Blog",
@@ -37,21 +37,21 @@ export const linksOtherPages = [
         title: "Home",
         url: "/",
     },
-    // {
-    //     id: 2,
-    //     title: "About",
-    //     url: "/about",
-    // },
+    {
+        id: 2,
+        title: "About",
+        url: "/about",
+    },
     {
         id: 3,
         title: "Portfolio",
         url: "/portfolio",
     },
-    // {
-    //     id: 4,
-    //     title: "Contact",
-    //     url: "/contact",
-    // },
+    {
+        id: 4,
+        title: "Contact",
+        url: "/contact",
+    },
     {
         id: 5,
         title: "Blog",
