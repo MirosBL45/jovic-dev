@@ -6,7 +6,7 @@ export const linksHomePage = [
     },
     {
         id: 2,
-        title: "About",
+        title: "About me",
         url: "#about",
     },
     {
@@ -15,19 +15,19 @@ export const linksHomePage = [
         url: "#portfolio",
     },
     {
-        id: 4,
-        title: "Contact",
-        url: "#contact",
-    },
-    {
         id: 5,
         title: "Blog",
         url: "/blog",
     },
+    // {
+    //     id: 6,
+    //     title: "Dashboard",
+    //     url: "/dashboard",
+    // },
     {
-        id: 6,
-        title: "Dashboard",
-        url: "/dashboard",
+        id: 99,
+        title: "Contact",
+        url: "#contact",
     },
 ];
 
@@ -39,27 +39,27 @@ export const linksOtherPages = [
     },
     {
         id: 2,
-        title: "About",
-        url: "/about",
+        title: "About me",
+        url: "/#about",
     },
     {
         id: 3,
         title: "Portfolio",
-        url: "/portfolio",
-    },
-    {
-        id: 4,
-        title: "Contact",
-        url: "/contact",
+        url: "/#portfolio",
     },
     {
         id: 5,
         title: "Blog",
         url: "/blog",
     },
+    // {
+    //     id: 6,
+    //     title: "Dashboard",
+    //     url: "/dashboard",
+    // },
     {
-        id: 6,
-        title: "Dashboard",
-        url: "/dashboard",
+        id: 99,
+        title: "Contact",
+        url: "/#contact",
     },
 ];

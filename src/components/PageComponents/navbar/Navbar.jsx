@@ -6,6 +6,7 @@ import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { useContext } from 'react';
 
 // data
 import { linksHomePage, linksOtherPages } from '@/utils/allData/links';
@@ -13,8 +14,12 @@ import { linksHomePage, linksOtherPages } from '@/utils/allData/links';
 // components
 import DarkModeToggle from '@/components/UIComponents/DarkModeToggle/DarkModeToggle';
 
+// context
+import { ThemeContext } from '@/context/ThemeContext';
+
 // logo
-import LogoMJ from 'public/logoMJ.png';
+import logoWhite from 'public/logo white Miroslav Jovic Frontend Developer.svg';
+import logoBlack from 'public/logo black Miroslav Jovic Frontend Developer.svg';
 
 // icons
 import { MdOutlineClose } from 'react-icons/md';
@@ -29,6 +34,7 @@ function Navbar() {
   const session = useSession();
   const pathname = usePathname();
   const router = useRouter();
+  const { mode } = useContext(ThemeContext);
 
   // choose which links to use depending on the page
   const links = pathname === '/' ? linksHomePage : linksOtherPages;
@@ -46,17 +52,13 @@ function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.nav_container}>
-        <Link
-          href={'/'}
-          className={styles.logo}
-          onClick={() => setIsNavShowing(false)}
-        >
+        <Link href={'/'} onClick={() => setIsNavShowing(false)}>
           <Image
             priority={true}
-            src={LogoMJ}
-            alt="LogoMJ"
-            width={50}
-            height={50}
+            src={mode === 'light' ? logoBlack : logoWhite}
+            alt="logo Miroslav Jovic Frontend Developer"
+            width={186}
+            height={42}
           />
         </Link>
         {/* <DarkModeToggle /> */}
@@ -65,20 +67,31 @@ function Navbar() {
             isNavShowing ? styles.show_nav : styles.hide_nav
           }`}
         >
-          {links.map((link) => (
+          {links.map((link, index) => (
             <div
               key={link.id}
               className={`${styles.link} ${
                 pathname === link.url && styles.activeLink
               } ${isNavShowing && styles.open}`}
             >
-              <Link href={link.url} onClick={() => setIsNavShowing(false)}>
-                {link.title}
-              </Link>
+              {index !== links.length - 1 && (
+                <Link href={link.url} onClick={() => setIsNavShowing(false)}>
+                  {link.title}
+                </Link>
+              )}
             </div>
           ))}
+          {/* just contact link */}
+          <div className={`${styles.link} ${isNavShowing && styles.open}`}>
+            <Link
+              href={links[links.length - 1].url}
+              onClick={() => setIsNavShowing(false)}
+            >
+              {links[links.length - 1].title}
+            </Link>
+          </div>
           <div
-            // div for animation
+            // div for animation in mobile view
             className={`${styles.forDarkModeToggle} ${
               isNavShowing && styles.open
             }`}
