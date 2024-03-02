@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 :root {
-  --white-color: #fef5ea;
-  --background: #15202B;
+  /* --white-color: #fef5ea; */
+  --white-color: #F4F0FF;
+  /* --background: #15202B; */
+  --background: #02000F;
   --green-color: #00a1e6;
   --dark-green-color: #007db3;
   --dark-gray-color: #676767;
@@ -39,8 +41,10 @@
 }
 
 .dark {
-  --white-color: #15202B;
-  --background: #fef5ea;
+  --white-color: #02000F;
+  --background: #F4F0FF;
+  /* --white-color: #15202B;
+  --background: #fef5ea; */
   --green-color: #007db3;
   --dark-green-color: #00a1e6;
   --dark-gray-color: #9d9d9d;
