@@ -19,11 +19,6 @@ export const linksHomePage = [
         title: "Blog",
         url: "/blog",
     },
-    // {
-    //     id: 6,
-    //     title: "Dashboard",
-    //     url: "/dashboard",
-    // },
     {
         id: 99,
         title: "Contact",
@@ -52,11 +47,6 @@ export const linksOtherPages = [
         title: "Blog",
         url: "/blog",
     },
-    // {
-    //     id: 6,
-    //     title: "Dashboard",
-    //     url: "/dashboard",
-    // },
     {
         id: 99,
         title: "Contact",
