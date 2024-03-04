@@ -21,7 +21,7 @@ export const linksHomePage = [
     },
     {
         id: 99,
-        title: "Contact",
+        title: "Contact me",
         url: "#contact",
     },
 ];
@@ -49,7 +49,7 @@ export const linksOtherPages = [
     },
     {
         id: 99,
-        title: "Contact",
+        title: "Contact me",
         url: "/#contact",
     },
 ];

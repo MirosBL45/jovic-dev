@@ -81,15 +81,53 @@ function Navbar() {
               )}
             </div>
           ))}
-          {/* just contact link */}
-          <div className={`${styles.link} ${isNavShowing && styles.open}`}>
+
+          {/* ---------- JUST FOR MOBILE DEVICES!!! --------------- */}
+          <div className={`${styles.contactAndTheme} ${styles.hiddenContact}`}>
+            {/* just contact link */}
             <Link
+              className={`${styles.link} ${styles.justContactButton} ${
+                isNavShowing && styles.open
+              }`}
               href={links[links.length - 1].url}
               onClick={() => setIsNavShowing(false)}
             >
               {links[links.length - 1].title}
             </Link>
+            <div
+              // div for animation in mobile view
+              className={`${styles.forDarkModeToggle} ${
+                isNavShowing && styles.open
+              }`}
+            >
+              <DarkModeToggle />
+            </div>
+            {/* show Logout button when user is logged in */}
+            {session.status === 'authenticated' && (
+              <button
+                className={`${styles.logout} ${isNavShowing && styles.open}`}
+                onClick={handleLogout}
+                title="Logout"
+              >
+                <GrPowerShutdown />
+              </button>
+            )}
           </div>
+          {/* ^^^^^^^^^^^^^^ JUST FOR MOBILE DEVICES!!! ^^^^^^^^^^^ */}
+        </div>
+
+        {/* ---------- JUST FOR BIG DEVICES!!! --------------- */}
+        <div className={`${styles.contactAndTheme} ${styles.showContact}`}>
+          {/* just contact link */}
+          <Link
+            className={`${styles.link} ${styles.justContactButton} ${
+              isNavShowing && styles.open
+            }`}
+            href={links[links.length - 1].url}
+            onClick={() => setIsNavShowing(false)}
+          >
+            {links[links.length - 1].title}
+          </Link>
           <div
             // div for animation in mobile view
             className={`${styles.forDarkModeToggle} ${
@@ -109,6 +147,7 @@ function Navbar() {
             </button>
           )}
         </div>
+        {/* ^^^^^^^^^^^^^^ JUST FOR BIG DEVICES!!! ^^^^^^^^^^^ */}
         {/* toggle button for mobile */}
         <button
           onClick={() => setIsNavShowing(!isNavShowing)}

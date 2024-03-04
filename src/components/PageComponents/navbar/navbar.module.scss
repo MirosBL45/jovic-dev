@@ -56,6 +56,23 @@
     }
 }
 
+.contactAndTheme {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    .justContactButton {
+        padding: 12px 22px;
+        border: 1px solid var(--background);
+        border-radius: var(--xl-border-radius);
+        transform: var(--transition);
+
+        &:hover {
+            border: 1px solid var(--dark-green-color);
+        }
+    }
+}
+
 .logout {
     margin-left: 40px;
     display: grid;
@@ -90,6 +107,10 @@
     }
 }
 
+.hiddenContact {
+    display: none;
+}
+
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 850px) {
     .links {
@@ -102,8 +123,16 @@
 }
 
 /* MEDIA QUERIES (medium and small screens) */
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 900px) {
     // here the menu switches to the hamburger menu
+
+    .hiddenContact {
+        display: flex;
+    }
+
+    .showContact {
+        display: none;
+    }
 
     .show_nav {
         transition: var(--transition);
@@ -147,7 +176,7 @@
         }
     }
 
-    @for $i from 1 through 9 {
+    @for $i from 1 through 6 {
         .open:nth-child(#{$i}) {
             transition-delay: ($i * 0.1s) + 0.21;
         }

@@ -56,6 +56,21 @@
   color: var(--green-color);
 }
 
+.contactAndTheme {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.contactAndTheme .justContactButton {
+  padding: 12px 22px;
+  border: 1px solid var(--background);
+  border-radius: var(--xl-border-radius);
+  transform: var(--transition);
+}
+.contactAndTheme .justContactButton:hover {
+  border: 1px solid var(--dark-green-color);
+}
+
 .logout {
   margin-left: 40px;
   display: grid;
@@ -88,6 +103,10 @@
   color: var(--background);
 }
 
+.hiddenContact {
+  display: none;
+}
+
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 850px) {
   .links {
@@ -98,7 +117,13 @@
   }
 }
 /* MEDIA QUERIES (medium and small screens) */
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 900px) {
+  .hiddenContact {
+    display: flex;
+  }
+  .showContact {
+    display: none;
+  }
   .show_nav {
     transition: var(--transition);
     transform: translateX(0);
@@ -154,15 +179,6 @@
   }
   .open:nth-child(6) {
     transition-delay: 0.81s;
-  }
-  .open:nth-child(7) {
-    transition-delay: 0.91s;
-  }
-  .open:nth-child(8) {
-    transition-delay: 1.01s;
-  }
-  .open:nth-child(9) {
-    transition-delay: 1.11s;
   }
   .toggleBtn {
     outline: none;
