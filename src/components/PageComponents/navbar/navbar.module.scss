@@ -60,16 +60,16 @@
     display: flex;
     gap: 30px;
     align-items: center;
+}
 
-    .justContactButton {
-        padding: 12px 22px;
-        border: 1px solid var(--background);
-        border-radius: var(--xl-border-radius);
-        transform: var(--transition);
+.justContactButton {
+    padding: 12px 22px;
+    border: 1px solid var(--background);
+    border-radius: var(--xl-border-radius);
+    transform: var(--transition);
 
-        &:hover {
-            border: 1px solid var(--dark-green-color);
-        }
+    &:hover {
+        border: 1px solid var(--dark-green-color);
     }
 }
 
@@ -125,6 +125,16 @@
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 900px) {
     // here the menu switches to the hamburger menu
+
+    .contactAndTheme {
+        flex-direction: column;
+    }
+
+    .justContactButton {
+        padding: 8px 18px;
+        border: 1px solid var(--background);
+        border-radius: var(--big-border-radius);
+    }
 
     .hiddenContact {
         display: flex;
