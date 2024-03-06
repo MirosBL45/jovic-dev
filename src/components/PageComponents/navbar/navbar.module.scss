@@ -51,7 +51,7 @@
     transition: var(--transition);
 
     &:hover {
-        color: var(--green-color);
+        color: var(--main-color);
     }
 }
 
@@ -78,7 +78,7 @@
     place-items: center;
     padding: 9px;
     border: none;
-    background: var(--green-color);
+    background: var(--main-color);
     color: rgb(195, 37, 37);
     border-radius: var(--small-border-radius);
     cursor: pointer;
@@ -95,7 +95,7 @@
 }
 
 .activeLink {
-    background: var(--green-color);
+    background: var(--main-color);
     color: var(--white-color);
     padding: 5px 9px;
     border-radius: var(--small-border-radius);
@@ -202,7 +202,7 @@
         padding: 1rem;
 
         svg {
-            color: var(--green-color);
+            color: var(--main-color);
         }
     }
 }

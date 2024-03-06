@@ -1,10 +1,9 @@
 .button {
-    font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     padding: 20px 40px;
     cursor: pointer;
-    background: var(--green-color);
+    background: var(--main-color);
     border: none;
     border-radius: var(--medium-border-radius);
     color: #efefef;
@@ -18,8 +17,8 @@
 
     &:hover {
         background: var(--dark-green-color);
-        box-shadow: 0 0 0 3px var(--green-color);
-        border-color: var(--green-color);
+        box-shadow: 0 0 0 3px var(--main-color);
+        border-color: var(--main-color);
     }
 }
 

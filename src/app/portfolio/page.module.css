@@ -21,7 +21,7 @@
   transform: scale(1.15);
 }
 .item:hover .itemTitle {
-  color: var(--green-color);
+  color: var(--main-color);
 }
 .item img {
   transition: var(--transition);

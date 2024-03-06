@@ -23,3 +23,8 @@
   font-size: var(--ms-font);
   max-width: 550px;
 }
+
+.frontLinks {
+  display: flex;
+  gap: 32px;
+}

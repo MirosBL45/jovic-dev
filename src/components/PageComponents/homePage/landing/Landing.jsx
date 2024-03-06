@@ -1,3 +1,6 @@
+//components
+import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
+
 // style
 import styles from './landing.module.css';
 import '@/app/globals.css';
@@ -33,6 +36,19 @@ function Landing() {
           Specializing in React & Next.js I leverage cutting-edge technologies
           to bring web projects to life.
         </article>
+        <section className={styles.frontLinks}>
+          <LinkButton
+            title={'See my dev works'}
+            text={'See my dev works'}
+            url={'#portfolio'}
+          />
+          <LinkButton
+            openInNewTab={true}
+            title={'Download CV of Miroslav Jovic, Frontend Developer'}
+            text={'Download CV'}
+            url={'/Miroslav Jovic CV FED 2024.pdf'}
+          />
+        </section>
       </main>
     </>
   );
