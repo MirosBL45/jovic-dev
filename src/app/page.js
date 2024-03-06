@@ -10,6 +10,7 @@ import About from '@/components/PageComponents/homePage/about/About';
 import Portfolio from '@/components/PageComponents/homePage/portfolio/Portfolio';
 import Contact from '@/components/PageComponents/homePage/contact/Contact';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
+import Landing from '@/components/PageComponents/homePage/landing/Landing';
 
 // style
 import styles from './page.module.css';
@@ -18,6 +19,7 @@ import './globals.css'
 export default function Home() {
   return (
     <>
+      <Landing />
       <main className={`${styles.container} layoutContainerAll`}>
         <header className={styles.item}>
           <h1 className={styles.title}>

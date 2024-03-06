@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 32px;
+}
+
+.mainHeadline {
+  display: flex;
+  flex-direction: column;
+}
+.mainHeadline h1 {
+  font-weight: 500;
+}
+.mainHeadline p {
+  font-size: var(--regular-medium-font);
+  font-weight: 400;
+}
+
+.justText {
+  font-size: var(--ms-font);
+  max-width: 550px;
+}
