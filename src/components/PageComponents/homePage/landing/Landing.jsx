@@ -1,6 +1,7 @@
 //components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 import FlatLink from '@/components/CustomInputs/Buttons/FlatLink';
+import Keyboard from './Keyboard';
 
 // style
 import styles from './landing.module.css';
@@ -50,6 +51,7 @@ function Landing() {
             url={'/Miroslav Jovic CV FED 2024.pdf'}
           />
         </section>
+        <Keyboard />
       </main>
     </>
   );

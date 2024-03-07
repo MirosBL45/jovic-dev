@@ -14,12 +14,12 @@ export const metadata = {
   description: 'Jović Miroslav - Frontend Developer. I build fast, stable and responsive web applications and websites. This is my Portfolio WebApp made with NextJS, React, MongoDB, Mongoose and SWR',
   keywords: 'HTML, CSS, SCSS, JavaScript, programming, ReactJS, NextJS, Next, React, MongoDB, Mongoose, SWR, Miroslav Jović, Frontend Developer, Web Development, Portfolio, Blog, Dashboard',
   icons: {
-    icon: [{ url: '/logoMJ.png' }],
-    shortcut: '/logoMJ.png',
-    apple: '/logoMJ.png',
+    icon: [{ url: '/small logo Miroslav Jovic Frontend Developer.png' }],
+    shortcut: '/small logo Miroslav Jovic Frontend Developer.png',
+    apple: '/small logo Miroslav Jovic Frontend Developer.png',
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: '/logoMJ.png',
+      url: '/small logo Miroslav Jovic Frontend Developer.png',
     },
   },
   robots: {
@@ -41,7 +41,7 @@ export const metadata = {
     creator: 'Jović Miroslav',
   },
   openGraph: {
-    images: '/logoMJ.png',
+    images: '/small logo Miroslav Jovic Frontend Developer.png',
     title: 'Jović Miroslav',
     description: 'Jović Miroslav - Frontend Developer. I build fast, stable and responsive web applications and websites. This is my Portfolio WebApp made with NextJS, React, MongoDB, Mongoose and SWR',
     siteName: 'Jović Miroslav',

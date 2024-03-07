@@ -29,3 +29,12 @@
   align-items: center;
   gap: 32px;
 }
+
+.keyboard {
+  margin: 100px 0 185px;
+  position: relative;
+}
+.keyboard .mouse {
+  position: absolute;
+  right: -200px;
+}
