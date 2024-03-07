@@ -23,12 +23,12 @@
   --mbs-font: 3.5rem;
   --mb-font: 2.5rem;
   --medium-font: 1.5rem;
-  --small-font: 0.875rem;
 
   --large-font: 5.0rem;
-  --regular-font: 1rem;
-  --ms-font: 1.125rem;
   --regular-medium-font: 1.375rem;
+  --ms-font: 1.125rem;
+  --regular-font: 1rem;
+  --small-font: 0.875rem;
 
   --transition: all 270ms ease;
 

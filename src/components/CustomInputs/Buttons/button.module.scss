@@ -23,14 +23,6 @@
     }
 }
 
-/* MEDIA QUERIES (small screens) */
-@media screen and (max-width: 600px) {
-    .button {
-        padding: 15px 35px;
-        font-size: var(--ms-font);
-    }
-}
-
 .flat {
     color: var(--main-color);
     transition: var(--transition);
@@ -41,5 +33,17 @@
     &:hover {
         color: var(--dark-green-color);
         border-bottom: 1px solid var(--dark-green-color);
+    }
+}
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+    .button {
+        padding: 12px 20px;
+        font-size: var(--small-font);
+    }
+
+    .flat {
+        font-size: var(--small-font);
     }
 }

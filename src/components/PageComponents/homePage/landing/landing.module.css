@@ -30,11 +30,81 @@
   gap: 32px;
 }
 
-.keyboard {
+.keyboardAndMouse {
   margin: 100px 0 185px;
   position: relative;
 }
-.keyboard .mouse {
+
+.keyboard {
+  line-height: 0;
+}
+.keyboard img {
+  width: 443px;
+  height: 158px;
+}
+@media screen and (max-width: 680px) {
+  .keyboard img {
+    width: 400px;
+    height: 128px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .keyboard img {
+    width: 85vw;
+    height: 30vw;
+  }
+}
+
+.mouse {
   position: absolute;
   right: -200px;
+  top: 0;
+  line-height: 0;
+}
+@media screen and (max-width: 880px) {
+  .mouse {
+    right: -100px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .mouse {
+    display: none;
+  }
+}
+.mouse img {
+  width: 80px;
+  height: 155px;
+}
+@media screen and (max-width: 680px) {
+  .mouse img {
+    width: 70px;
+    height: 125px;
+  }
+}
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+  .mainHeadline p {
+    font-size: var(--ms-font);
+  }
+  .justText {
+    font-size: var(--regular-font);
+    max-width: 450px;
+  }
+  .frontLinks {
+    gap: 25px;
+  }
+}
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 450px) {
+  .mainHeadline p {
+    font-size: var(--regular-font);
+  }
+  .justText {
+    font-size: var(--small-font);
+    max-width: 400px;
+  }
+  .frontLinks {
+    gap: 19px;
+  }
 }

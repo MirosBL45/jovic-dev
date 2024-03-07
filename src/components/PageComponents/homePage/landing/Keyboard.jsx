@@ -19,20 +19,25 @@ import { ThemeContext } from '@/context/ThemeContext';
 function Keyboard() {
   const { mode } = useContext(ThemeContext);
   return (
-    <div className={styles.keyboard}>
-      <Image
-        src={mode === 'light' ? keyboard : keyboardTransparent}
-        alt="keyboard Miroslav Jovic Frontend Developer"
-        width={443}
-        height={158}
-      />
-      <Image
-        className={styles.mouse}
-        src={mode === 'light' ? mouse : mouseTransparent}
-        alt="mouse Miroslav Jovic Frontend Developer"
-        width={80}
-        height={155}
-      />
+    <div className={styles.keyboardAndMouse}>
+      <div className={styles.keyboard}>
+        <Image
+          src={mode === 'light' ? keyboard : keyboardTransparent}
+          alt="keyboard Miroslav Jovic Frontend Developer"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+      </div>
+      <div className={styles.mouse}>
+        <Image
+          src={mode === 'light' ? mouse : mouseTransparent}
+          alt="mouse Miroslav Jovic Frontend Developer"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+      </div>
     </div>
   );
 }
