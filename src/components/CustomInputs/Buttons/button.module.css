@@ -1,15 +1,15 @@
 .button {
   font-optical-sizing: auto;
   font-style: normal;
-  padding: 20px 40px;
+  padding: 14px 24px;
   cursor: pointer;
   background: var(--main-color);
   border: none;
-  border-radius: var(--medium-border-radius);
-  color: #efefef;
+  border-radius: var(--xl-border-radius);
+  color: var(--white-color);
   width: max-content;
   transition: var(--transition);
-  font-size: var(--medium-font);
+  font-size: var(--regular-font);
   display: flex;
   align-items: center;
   gap: 20px;
@@ -27,4 +27,15 @@
     padding: 15px 35px;
     font-size: var(--ms-font);
   }
+}
+.flat {
+  color: var(--main-color);
+  transition: var(--transition);
+  font-size: var(--regular-font);
+  position: relative;
+  border-bottom: 1px solid var(--main-color);
+}
+.flat:hover {
+  color: var(--dark-green-color);
+  border-bottom: 1px solid var(--dark-green-color);
 }

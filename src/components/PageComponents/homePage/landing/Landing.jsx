@@ -1,5 +1,6 @@
 //components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
+import FlatLink from '@/components/CustomInputs/Buttons/FlatLink';
 
 // style
 import styles from './landing.module.css';
@@ -42,7 +43,7 @@ function Landing() {
             text={'See my dev works'}
             url={'#portfolio'}
           />
-          <LinkButton
+          <FlatLink
             openInNewTab={true}
             title={'Download CV of Miroslav Jovic, Frontend Developer'}
             text={'Download CV'}

@@ -6,7 +6,8 @@
   --white-color: #F4F0FF;
   --background: #02000F;
   /* --main-color: hsl(194, 98%, 41%); */
-  --main-color: hsl(198, 82%, 23%);
+  --main-color: #0a66c2;
+  /* --main-color: hsl(216, 88%, 29%); */
   --dark-green-color: #007db3;
   --dark-gray-color: #676767;
   --gray-color: #bbb;
@@ -15,6 +16,7 @@
   --sm-border-radius: 0.625rem;
   --medium-border-radius: 0.938rem;
   --big-border-radius: 1.875rem;
+
   --xl-border-radius: 2.25rem;
 
   --big-font: 4.5rem;
@@ -48,7 +50,7 @@
 .dark {
   --white-color: #02000F;
   --background: #F4F0FF;
-  --main-color: hsl(194, 98%, 51%);
+  --main-color: #08c3fd;
   --dark-green-color: #00a1e6;
   --dark-gray-color: #9d9d9d;
 }
