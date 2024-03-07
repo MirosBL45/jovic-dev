@@ -84,7 +84,7 @@ async function BlogPost({ params }) {
             <div className={styles.imageContainer}>
               <Image
                 src={data.image}
-                alt={data.title}
+                alt={`${data.title} - Miroslav Jovic, Frontend Developer`}
                 width={0}
                 height={0}
                 sizes="100vw"

@@ -61,7 +61,7 @@ function Category({ params }) {
                 height={0}
                 sizes="100vw"
                 src={item.image}
-                alt="jovic-dev"
+                alt="Miroslav Jovic - Frontend Developer"
               />
             </div>
           </section>

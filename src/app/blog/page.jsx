@@ -48,7 +48,7 @@ async function Blog() {
             <div className={styles.imgContainer}>
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} - Miroslav Jovic, Frontend Developer`}
                 width={0}
                 height={0}
                 sizes="100vw"
