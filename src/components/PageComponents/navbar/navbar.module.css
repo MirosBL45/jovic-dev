@@ -64,12 +64,12 @@
 
 .justContactButton {
   padding: 12px 22px;
-  border: 1px solid var(--background);
+  border: 2px solid var(--background);
   border-radius: var(--xl-border-radius);
   transform: var(--transition);
 }
 .justContactButton:hover {
-  border: 1px solid var(--main-color);
+  border: 2px solid var(--main-color);
 }
 
 .logout {
@@ -123,7 +123,6 @@
   }
   .justContactButton {
     padding: 8px 18px;
-    border: 1px solid var(--background);
     border-radius: var(--big-border-radius);
   }
   .hiddenContact {

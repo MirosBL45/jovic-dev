@@ -13,10 +13,13 @@
 }
 .mainHeadline h1 {
   font-weight: 500;
+  letter-spacing: -0.02em;
 }
 .mainHeadline p {
   font-size: var(--regular-medium-font);
   font-weight: 400;
+  color: var(--white-color-second);
+  opacity: 80%;
 }
 
 .justText {

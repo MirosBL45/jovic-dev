@@ -14,6 +14,7 @@
   align-items: center;
   gap: 20px;
   text-align: center;
+  font-weight: 500;
 }
 .button:hover {
   background: var(--dark-green-color);
@@ -27,6 +28,7 @@
   font-size: var(--regular-font);
   position: relative;
   border-bottom: 1px solid var(--main-color);
+  font-weight: 500;
 }
 .flat:hover {
   color: var(--dark-green-color);
