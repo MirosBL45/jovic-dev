@@ -67,7 +67,7 @@ function Navbar() {
             isNavShowing ? styles.show_nav : styles.hide_nav
           }`}
         >
-          {links.map((link, index) => (
+          {links.slice(0, -1).map((link, index) => (
             <div
               key={link.id}
               className={`${styles.link} ${

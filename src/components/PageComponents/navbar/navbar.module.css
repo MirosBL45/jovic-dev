@@ -43,12 +43,13 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   transition: var(--transition);
   font-size: var(--regular-font);
 }
 
 .link {
+  font-weight: 500;
   transition: var(--transition);
 }
 .link:hover {
@@ -93,14 +94,13 @@
 }
 
 .activeLink {
-  background: var(--main-color);
-  color: var(--white-color);
-  padding: 7px 15px;
-  border-radius: var(--big-border-radius);
+  padding: 4px 0;
   cursor: pointer;
+  border-bottom: 2px solid var(--main-color);
+  transition: var(--transition);
 }
 .activeLink:hover a {
-  color: var(--background);
+  color: var(--main-color);
 }
 
 .hiddenContact {
