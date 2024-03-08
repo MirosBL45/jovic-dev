@@ -4,17 +4,17 @@
 import Image from 'next/image';
 import { useContext } from 'react';
 
+// context
+import { ThemeContext } from '@/context/ThemeContext';
+
 // style
 import styles from './landing.module.css';
 
 // images
-import keyboard from 'public/keyboard Miroslav Jovic Frontend Developer.webp';
-import keyboardTransparent from 'public/keyboard transparent Miroslav Jovic Frontend Developer.webp';
-import mouseTransparent from 'public/mouse transparent Miroslav Jovic Frontend Developer.webp';
-import mouse from 'public/mouse Miroslav Jovic Frontend Developer.webp';
-
-// context
-import { ThemeContext } from '@/context/ThemeContext';
+import keyboard from 'public/homePage/landing/keyboard Miroslav Jovic Frontend Developer.webp';
+import keyboardTransparent from 'public/homePage/landing/keyboard transparent Miroslav Jovic Frontend Developer.webp';
+import mouseTransparent from 'public/homePage/landing/mouse transparent Miroslav Jovic Frontend Developer.webp';
+import mouse from 'public/homePage/landing/mouse Miroslav Jovic Frontend Developer.webp';
 
 function Keyboard() {
   const { mode } = useContext(ThemeContext);
