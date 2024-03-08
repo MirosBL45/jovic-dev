@@ -1,4 +1,5 @@
 .container {
+    padding-top: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,8 +26,64 @@
     }
 }
 
+.aboutTextMainWithLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .textMe {
     display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.articleText {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+}
+
+.horizontalLine {
+    width: 1200px;
+    height: 1px;
+}
+
+.textandIcons {
+    position: relative;
+
+    .justText {
+        max-width: 460px;
+        text-align: left;
+
+        h3 {
+            font-size: var(--regular-font);
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            display: inline;
+        }
+
+        p {
+            font-size: var(--regular-font);
+            font-weight: 400;
+            color: var(--white-color-second);
+            opacity: 70%;
+            display: inline;
+        }
+    }
+
+    .line {
+        position: absolute;
+        left: -25px;
+        top: 5px;
+    }
+
+    .square {
+        position: absolute;
+        top: -45px;
+        left: 1px;
+    }
 }
 
 .miroslav {

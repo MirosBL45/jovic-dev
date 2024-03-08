@@ -26,25 +26,54 @@ import MiroslavLight from 'public/homePage/about/light Miroslav Jovic Frontend D
 function AboutText() {
   const { mode } = useContext(ThemeContext);
   return (
-    <section className={styles.textMe}>
-      <article>
-        {aboutDataText.map((item) => (
-          <div className={styles.justText} key={item.id}>
-            <p>{item.title}</p>
-            <p>{item.text}</p>
-          </div>
-        ))}
-      </article>
-      <div className={styles.miroslav}>
-        <Image
-          src={mode === 'light' ? Miroslav : MiroslavLight}
-          alt="Miroslav Jovic Frontend Developer"
-          width={0}
-          height={0}
-          sizes="100vw"
-        />
-      </div>
-    </section>
+    <div className={styles.aboutTextMainWithLine}>
+      <section className={styles.textMe}>
+        <article className={styles.articleText}>
+          {aboutDataText.map((item) => (
+            <div className={styles.textandIcons} key={item.id}>
+              <div className={styles.justText}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+              <Image
+                className={styles.square}
+                src={mode === 'light' ? squareDark : squareLight}
+                alt="square Miroslav Jovic Frontend Developer"
+                width={0}
+                height={0}
+              />
+              <Image
+                className={styles.line}
+                src={mode === 'light' ? lineDark : lineLight}
+                alt="line Miroslav Jovic Frontend Developer"
+                width={0}
+                height={0}
+              />
+            </div>
+          ))}
+        </article>
+        <div className={styles.miroslav}>
+          <Image
+            src={mode === 'light' ? Miroslav : MiroslavLight}
+            alt="Miroslav Jovic Frontend Developer"
+            width={0}
+            height={0}
+            sizes="100vw"
+          />
+        </div>
+      </section>
+      <hr
+        className={styles.horizontalLine}
+        style={{
+          border: 'none',
+          borderBottom: `1px solid ${
+            mode === 'light'
+              ? 'rgba(1, 0, 10, 0.35)'
+              : 'rgba(255, 255, 255, 0.74)'
+          }`,
+        }}
+      />
+    </div>
   );
 }
 
