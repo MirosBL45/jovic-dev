@@ -32,8 +32,7 @@ function AboutText() {
           {aboutDataText.map((item) => (
             <div className={styles.textandIcons} key={item.id}>
               <div className={styles.justText}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+                <h3>{item.title}</h3> <p>{item.text}</p>
               </div>
               <Image
                 className={styles.square}

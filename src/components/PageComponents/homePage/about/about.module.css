@@ -11,6 +11,12 @@
 .mainHeadline {
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 750px) {
+  .mainHeadline {
+    margin-bottom: 70px;
+  }
 }
 .mainHeadline h2 {
   font-weight: 500;
@@ -18,7 +24,7 @@
 }
 .mainHeadline p {
   margin-top: 10px;
-  font-size: var(--ms-medium-font);
+  font-size: var(--ms-font);
   font-weight: 300;
   color: var(--white-color-second);
   opacity: 80%;
@@ -36,6 +42,18 @@
   align-items: center;
   gap: 30px;
 }
+@media screen and (max-width: 870px) {
+  .textMe {
+    gap: 15px;
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .textMe {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
 
 .articleText {
   display: flex;
@@ -46,6 +64,11 @@
 .horizontalLine {
   width: 1200px;
   height: 1px;
+}
+@media screen and (max-width: 1250px) {
+  .horizontalLine {
+    width: 92vw;
+  }
 }
 
 .textandIcons {
@@ -86,3 +109,26 @@
   width: 245px;
   height: 345px;
 }
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+  .mainHeadline p {
+    font-size: var(--regular-font);
+  }
+  .textandIcons .justText {
+    max-width: 460px;
+  }
+  .textandIcons .justText h3 {
+    font-size: var(--small-font);
+  }
+  .textandIcons .justText p {
+    font-size: var(--small-font);
+  }
+  .textandIcons .line {
+    left: -17px;
+  }
+  .textandIcons .square {
+    top: -37px;
+  }
+}
+/* MEDIA QUERIES (very small screens) */
