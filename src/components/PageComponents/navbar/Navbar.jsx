@@ -61,7 +61,6 @@ function Navbar() {
             height={42}
           />
         </Link>
-        {/* <DarkModeToggle /> */}
         <div
           className={`${styles.links} ${
             isNavShowing ? styles.show_nav : styles.hide_nav
@@ -100,7 +99,7 @@ function Navbar() {
                 isNavShowing && styles.open
               }`}
             >
-              <DarkModeToggle />
+              <DarkModeToggle setIsNavShowing={setIsNavShowing} />
             </div>
             {/* show Logout button when user is logged in */}
             {session.status === 'authenticated' && (

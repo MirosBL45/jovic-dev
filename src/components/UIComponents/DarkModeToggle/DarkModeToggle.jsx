@@ -13,13 +13,16 @@ import styles from './darkModeToggle.module.css';
 import { BsMoonStarsFill } from 'react-icons/bs';
 import { ImSun } from 'react-icons/im';
 
-function DarkModeToggle() {
+function DarkModeToggle({ setIsNavShowing }) {
   const { toggle, mode } = useContext(ThemeContext);
 
   return (
     <div
       className={styles.container}
-      onClick={toggle}
+      onClick={() => {
+        setIsNavShowing(false);
+        toggle();
+      }}
       title="switch dark/light mode"
     >
       <div className={styles.icon}>
