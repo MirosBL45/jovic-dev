@@ -7,6 +7,9 @@
   --white-color-second: #01000A;
   --background: #02000F;
   --main-color: #0a66c2;
+  --icons-color: hsl(249, 100%, 1%);
+
+
   --dark-green-color: #007db3;
   --dark-gray-color: #676767;
   --gray-color: #bbb;
@@ -51,6 +54,9 @@
   --white-color-second: #EFEDFD;
   --background: #F4F0FF;
   --main-color: #08c3fd;
+  --icons-color: #7F7C8F;
+
+
   --dark-green-color: #00a1e6;
   --dark-gray-color: #9d9d9d;
 }

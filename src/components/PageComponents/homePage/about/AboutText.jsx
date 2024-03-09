@@ -6,7 +6,6 @@ import { useContext } from 'react';
 
 // data
 import { aboutDataText } from '@/utils/allData/about';
-import { homePortfolio } from '@/utils/allData/homePortfolio';
 
 // context
 import { ThemeContext } from '@/context/ThemeContext';
@@ -25,6 +24,7 @@ import MiroslavLight from 'public/homePage/about/light Miroslav Jovic Frontend D
 
 function AboutText() {
   const { mode } = useContext(ThemeContext);
+
   return (
     <div className={styles.aboutTextMainWithLine}>
       <section className={styles.textMe}>

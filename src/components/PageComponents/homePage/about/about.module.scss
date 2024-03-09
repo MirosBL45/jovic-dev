@@ -61,7 +61,7 @@
 }
 
 .horizontalLine {
-    width: 1200px;
+    width: calc(var(--max-width) - var(--big-width-padding));
     height: 1px;
 
     @media screen and (max-width: 1250px) {

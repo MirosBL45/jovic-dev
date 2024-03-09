@@ -1,0 +1,34 @@
+.lineTech {
+  position: absolute;
+  left: -20px;
+  top: 4px;
+}
+
+.gridSection {
+  margin-top: 50px;
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.technology {
+  max-width: 235px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.technology span {
+  color: var(--icons-color);
+  font-size: var(--mb-font);
+}
+.technology h3 {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--regular-font);
+  font-weight: 500;
+}
+.technology p {
+  font-size: var(--regular-font);
+  font-weight: 400;
+  color: var(--white-color-second);
+}
