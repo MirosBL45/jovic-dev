@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 // style
 import styles from './page.module.css';
-import '@/app/globals.css';
 
 function BlogLayout({ children }) {
   return (

@@ -6,7 +6,6 @@ import { contactData } from '@/utils/allData/contact';
 
 // style
 import styles from './page.module.css';
-import '@/app/globals.css';
 
 // Static metadata
 export const metadata = {

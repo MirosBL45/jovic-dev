@@ -15,7 +15,6 @@ import { BASE_API_URL } from '@/utils/constants';
 
 // style
 import styles from './page.module.css';
-import '@/app/globals.css';
 
 // icons
 import { IoCloseCircleOutline } from 'react-icons/io5';

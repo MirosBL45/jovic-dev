@@ -6,7 +6,6 @@ import { contactData } from '@/utils/allData/contact';
 
 // style
 import styles from './contact.module.css';
-import '@/app/globals.css';
 
 function Contact() {
   return (

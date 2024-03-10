@@ -12,7 +12,6 @@ import { ThemeContext } from '@/context/ThemeContext';
 
 // style
 import styles from './about.module.css';
-import '@/app/globals.css';
 
 // images
 import lineDark from 'public/homePage/about/line dark Miroslav Jovic Frontend Developer.png';

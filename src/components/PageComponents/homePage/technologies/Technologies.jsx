@@ -6,7 +6,6 @@ import Line from './Line';
 
 // style
 import styles from './technologies.module.css';
-import '@/app/globals.css';
 
 function Technologies() {
   return (

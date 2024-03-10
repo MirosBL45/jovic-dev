@@ -133,7 +133,7 @@ function Navbar() {
               isNavShowing && styles.open
             }`}
           >
-            <DarkModeToggle />
+            <DarkModeToggle setIsNavShowing={setIsNavShowing} />
           </div>
           {/* show Logout button when user is logged in */}
           {session.status === 'authenticated' && (

@@ -14,7 +14,6 @@ import PasswordInput from '@/components/CustomInputs/PasswordInput/PasswordInput
 
 // style
 import styles from './page.module.css';
-import '@/app/globals.css';
 
 // icons
 import GoogleIcon from 'public/google.svg';

@@ -12,7 +12,6 @@ import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
 
 // style
 import styles from './contact.module.css';
-import '@/app/globals.css';
 
 import { SERVICE_BASE, TEMPLATE_BASE, PUBLIC_BASE } from '@/utils/constants';
 

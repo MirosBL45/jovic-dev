@@ -16,7 +16,6 @@ import CheckList from 'public/checklist.png';
 
 // style
 import styles from './page.module.css';
-import '@/app/globals.css';
 
 function Register() {
   // for tab title

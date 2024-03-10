@@ -5,7 +5,6 @@ import Keyboard from './Keyboard';
 
 // style
 import styles from './landing.module.css';
-import '@/app/globals.css';
 
 function Landing() {
   const technologies = [

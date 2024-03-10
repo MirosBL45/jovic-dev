@@ -10,9 +10,11 @@ import { homePortfolio } from '@/utils/allData/homePortfolio';
 function Portfolio() {
   return (
     <div id="portfolio" className={styles.container}>
-      <header>
-        <h2>My Work</h2>
-        <h3>Take a look at some of my projects</h3>
+      <header className={styles.mainHeadline}>
+        <h2>
+          My {'{'}dev{'}'} projects
+        </h2>
+        <p>From Web Apps to Websites & Games</p>
       </header>
       <section className={styles.portfolioItems}>
         {homePortfolio.map((item) => (
