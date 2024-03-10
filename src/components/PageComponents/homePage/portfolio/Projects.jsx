@@ -2,7 +2,6 @@
 
 // react/next stuff
 import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 // components
@@ -15,8 +14,8 @@ import { apps, websites, games } from '@/utils/allData/homePortfolio';
 // style
 import styles from './portfolio.module.css';
 
-function Change() {
-  const arrayKeys = Object.keys(allData).filter((key) =>
+function Projects() {
+  const arrayNames = Object.keys(allData).filter((key) =>
     Array.isArray(allData[key])
   );
 
@@ -26,28 +25,42 @@ function Change() {
 
   return (
     <section className={styles.portfolioPart}>
-      &bull;
       <div className={styles.buttons}>
-        {arrayKeys.map((arrayKey, index) => (
+        {arrayNames.map((oneName, index) => (
           <button
             key={index}
-            title={`See Jovic Miroslav's ${arrayKey}`}
+            title={`See Jovic Miroslav's ${oneName}`}
             onClick={() => {
-              setProject(arrayKey);
+              setProject(oneName);
             }}
             className={
-              project === arrayKey ? `${styles.button}` : `${styles.flatButton}`
+              project === oneName ? `${styles.button}` : `${styles.flatButton}`
             }
           >
-            {arrayKey}
+            {oneName}
           </button>
         ))}
       </div>
       <div className={styles.projects}>
         {partOfProject.map((part) => (
           <article key={part.id}>
-            <p>{part.title}</p>
-            <p>{part.desc}</p>
+            <Image
+              width={363}
+              height={210}
+              src={part.image}
+              alt={`${part.title} Jovic Miroslav Frontend Developer`}
+            />
+            <p className={styles.technologies}>
+              {part.techs.map((oneTech, index) => (
+                <span key={index}>
+                  {oneTech}
+                  {index !== part.techs.length - 1 && ' · '}
+                </span>
+              ))}
+            </p>
+            <h3>{part.title}</h3>
+            <p className={styles.description}>{part.desc}</p>
+            <div className={styles.linksOfProjects}></div>
           </article>
         ))}
       </div>
@@ -61,4 +74,4 @@ function Change() {
   );
 }
 
-export default Change;
+export default Projects;

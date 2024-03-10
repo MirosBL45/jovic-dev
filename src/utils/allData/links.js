@@ -7,12 +7,12 @@ export const linksHomePage = [
     {
         id: 2,
         title: "About me",
-        url: "#about",
+        url: "/#about",
     },
     {
         id: 3,
         title: "Portfolio",
-        url: "#portfolio",
+        url: "/#portfolio",
     },
     {
         id: 5,
@@ -22,7 +22,7 @@ export const linksHomePage = [
     {
         id: 99,
         title: "Contact me",
-        url: "#contact",
+        url: "/#contact",
     },
 ];
 
@@ -40,7 +40,7 @@ export const linksOtherPages = [
     {
         id: 3,
         title: "Portfolio",
-        url: "/#portfolio",
+        url: "/portfolio",
     },
     {
         id: 5,

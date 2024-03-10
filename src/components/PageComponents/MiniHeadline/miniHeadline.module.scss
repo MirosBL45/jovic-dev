@@ -5,17 +5,16 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 32px;
+    gap: 52px;
+
+    @media screen and (max-width: 750px) {
+        gap: 62px;
+    }
 }
 
 .mainHeadline {
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
-
-    @media screen and (max-width: 750px) {
-        margin-bottom: 70px;
-    }
 
     h2 {
         font-weight: 500;

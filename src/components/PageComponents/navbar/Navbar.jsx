@@ -37,7 +37,10 @@ function Navbar() {
   const { mode } = useContext(ThemeContext);
 
   // choose which links to use depending on the page
-  const links = pathname === '/' ? linksHomePage : linksOtherPages;
+  // const links = pathname === '/' ? linksHomePage : linksOtherPages;
+  const links = pathname.includes('portfolio')
+    ? linksOtherPages
+    : linksHomePage;
 
   function handleLogout() {
     // Set the redirect to false and specify the callbackUrl

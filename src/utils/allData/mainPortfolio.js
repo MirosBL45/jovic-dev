@@ -32,13 +32,13 @@ export const portfolioData = [
     {
         id: 1,
         title: "Applications",
-        url: "/portfolio/applications",
+        url: "/portfolio/apps",
         image: webapps,
     },
     {
         id: 2,
         title: "Web sites",
-        url: "/portfolio/sites",
+        url: "/portfolio/websites",
         image: sites,
     },
     {
@@ -50,7 +50,7 @@ export const portfolioData = [
 ];
 
 export const itemsPortfolio = {
-    applications: [
+    apps: [
         {
             id: "jednakala",
             title: "Kala hvala",
@@ -136,7 +136,7 @@ export const itemsPortfolio = {
             image: materialSocial,
         },
     ],
-    sites: [
+    websites: [
         {
             id: 1,
             title: "Pets - Medicine for the soul",
