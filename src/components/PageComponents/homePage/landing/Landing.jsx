@@ -42,12 +42,14 @@ function Landing() {
             title={'See my dev works'}
             text={'See my dev works'}
             url={'#portfolio'}
+            buttonStyle={styles.button}
           />
-          <FlatLink
+          <LinkButton
             openInNewTab={true}
             title={'Download CV of Miroslav Jovic, Frontend Developer'}
             text={'Download CV'}
             url={'/Miroslav Jovic CV FED 2024.pdf'}
+            buttonStyle={styles.flat}
           />
         </section>
         <Keyboard />
