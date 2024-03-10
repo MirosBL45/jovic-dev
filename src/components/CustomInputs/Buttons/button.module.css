@@ -1,6 +1,4 @@
 .button {
-  font-optical-sizing: auto;
-  font-style: normal;
   padding: 14px 24px;
   cursor: pointer;
   background: var(--main-color);

@@ -1,11 +1,57 @@
-.portfolioItems {
-    display: flex;
-    justify-content: space-around;
+@mixin button_projects {
+    padding: 10px 26px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: var(--regular-font);
+    text-transform: capitalize
 }
 
-/* MEDIA QUERIES (small screens) */
-@media screen and (max-width: 600px) {
-    .container {
-        padding-top: 100px;
+.button {
+    @include button_projects;
+
+    color: var(--white-color);
+    background: var(--main-color);
+    border-radius: var(--xl-border-radius);
+
+    &:hover {
+        background: var(--dark-green-color);
+    }
+}
+
+.flatButton {
+    @include button_projects;
+
+    color: var(--background);
+    background: none;
+
+    &:hover {
+        color: var(--main-color);
+    }
+}
+
+.portfolioPart {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 63px;
+    margin: 44px 0 76px;
+
+    article {
+        max-width: 363px;
+        display: flex;
+        flex-direction: column;
     }
 }

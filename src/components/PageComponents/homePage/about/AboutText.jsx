@@ -37,8 +37,8 @@ function AboutText() {
                 className={styles.square}
                 src={mode === 'light' ? squareDark : squareLight}
                 alt="square Miroslav Jovic Frontend Developer"
-                width={0}
-                height={0}
+                width={32}
+                height={32}
               />
               <Image
                 className={styles.line}

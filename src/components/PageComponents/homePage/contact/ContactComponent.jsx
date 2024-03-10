@@ -78,8 +78,8 @@ function ContactComponent() {
             name="message"
             required
           ></textarea>
-          <ClickButton title={loading ? `Sending...` : `Let's talk`}>
-            {loading ? `Sending...` : `Let's talk`}
+          <ClickButton title={loading ? `Sending...` : `Send Message`}>
+            {loading ? `Sending...` : `Send Message`}
           </ClickButton>
         </form>
       </section>

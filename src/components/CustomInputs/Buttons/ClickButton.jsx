@@ -5,7 +5,7 @@ import styles from './button.module.css';
 
 function ClickButton({ children, onClick, title }) {
   return (
-    <button className={styles.button} title={title} onClick={onClick}>
+    <button title={title} onClick={onClick} className={styles.button}>
       {children}
     </button>
   );

@@ -32,6 +32,9 @@
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
+  .container {
+    padding-top: 100px;
+  }
   .mainHeadline p {
     font-size: var(--regular-font);
   }

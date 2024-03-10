@@ -1,12 +1,9 @@
 .button {
-    font-optical-sizing: auto;
-    font-style: normal;
     padding: 14px 24px;
     cursor: pointer;
     background: var(--main-color);
     border: none;
     border-radius: var(--xl-border-radius);
-    // color: #02000F;
     color: var(--white-color);
     width: max-content;
     transition: var(--transition);
