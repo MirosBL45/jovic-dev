@@ -6,7 +6,7 @@ const MiniHeadline = ({ id, headline, description, children }) => {
     <div id={id} className={styles.container}>
       <header className={styles.mainHeadline}>
         <h2>{headline}</h2>
-        {description && <p>{description}</p>}
+        <p>{description}</p>
       </header>
       {children}
     </div>

@@ -1,36 +1,3 @@
-.container {
-    padding-top: 170px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 32px;
-}
-
-.mainHeadline {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
-
-    @media screen and (max-width: 750px) {
-        margin-bottom: 70px;
-    }
-
-    h2 {
-        font-weight: 500;
-        letter-spacing: -0.01em;
-    }
-
-    p {
-        margin-top: 10px;
-        font-size: var(--ms-font);
-        font-weight: 300;
-        color: var(--white-color-second);
-        opacity: 80%;
-    }
-}
-
 .aboutTextMainWithLine {
     display: flex;
     flex-direction: column;
@@ -117,12 +84,6 @@
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
-    .mainHeadline {
-        p {
-            font-size: var(--regular-font);
-        }
-    }
-
     .textandIcons {
         .justText {
             max-width: 460px;

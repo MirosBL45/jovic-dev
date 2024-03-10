@@ -10,15 +10,13 @@ function About() {
   const descriptionText = `Frontend Developer with over ${allYears} years of experience.`;
 
   return (
-    <>
-      <MiniHeadline
-        id="about"
-        headline={headlineText}
-        description={descriptionText}
-      >
-        <AboutText />
-      </MiniHeadline>
-    </>
+    <MiniHeadline
+      id="about"
+      headline={headlineText}
+      description={descriptionText}
+    >
+      <AboutText />
+    </MiniHeadline>
   );
 }
 
