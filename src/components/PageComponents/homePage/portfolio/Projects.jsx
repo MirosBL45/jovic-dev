@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 // components
-import FlatLink from '@/components/CustomInputs/Buttons/FlatLink';
+import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 
 // data
 import * as allData from '@/utils/allData/homePortfolio';
@@ -64,11 +64,12 @@ function Projects() {
           </article>
         ))}
       </div>
-      <FlatLink
+      <LinkButton
         openInNewTab={false}
         title={`See all ${project}`}
         text={`See all ${project}`}
         url={`/portfolio/${project}`}
+        buttonStyle={'flat'}
       />
     </section>
   );

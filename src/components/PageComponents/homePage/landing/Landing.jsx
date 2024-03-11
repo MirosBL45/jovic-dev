@@ -1,6 +1,5 @@
 //components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
-import FlatLink from '@/components/CustomInputs/Buttons/FlatLink';
 import Keyboard from './Keyboard';
 
 // style
@@ -42,14 +41,14 @@ function Landing() {
             title={'See my dev works'}
             text={'See my dev works'}
             url={'#portfolio'}
-            buttonStyle={styles.button}
+            buttonStyle={'button'}
           />
           <LinkButton
             openInNewTab={true}
             title={'Download CV of Miroslav Jovic, Frontend Developer'}
             text={'Download CV'}
             url={'/Miroslav Jovic CV FED 2024.pdf'}
-            buttonStyle={styles.flat}
+            buttonStyle={'flat'}
           />
         </section>
         <Keyboard />
