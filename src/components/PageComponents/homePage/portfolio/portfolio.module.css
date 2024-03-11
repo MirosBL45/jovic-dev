@@ -6,9 +6,9 @@
   transition: var(--transition);
   font-size: var(--regular-font);
   text-transform: capitalize;
+  border-radius: var(--xl-border-radius);
   color: var(--white-color);
   background: var(--main-color);
-  border-radius: var(--xl-border-radius);
 }
 .button:hover {
   background: var(--dark-green-color);
@@ -22,6 +22,7 @@
   transition: var(--transition);
   font-size: var(--regular-font);
   text-transform: capitalize;
+  border-radius: var(--xl-border-radius);
   color: var(--background);
   background: none;
 }
