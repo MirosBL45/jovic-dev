@@ -41,7 +41,6 @@ function Landing() {
             title={'See my dev works'}
             text={'See my dev works'}
             url={'#portfolio'}
-            buttonStyle={'button'}
           />
           <LinkButton
             openInNewTab={true}

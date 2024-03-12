@@ -1,9 +1,6 @@
 .button {
   padding: 10px 26px;
-  cursor: pointer;
-  border: none;
   font-weight: 500;
-  transition: var(--transition);
   font-size: var(--regular-font);
   text-transform: capitalize;
   border-radius: var(--xl-border-radius);
@@ -16,10 +13,7 @@
 
 .flatButton {
   padding: 10px 26px;
-  cursor: pointer;
-  border: none;
   font-weight: 500;
-  transition: var(--transition);
   font-size: var(--regular-font);
   text-transform: capitalize;
   border-radius: var(--xl-border-radius);

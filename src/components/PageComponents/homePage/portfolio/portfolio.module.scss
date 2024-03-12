@@ -1,10 +1,7 @@
 @mixin button_projects {
     // these buttons are different than others in the project, that's why a special style is made for them
     padding: 10px 26px;
-    cursor: pointer;
-    border: none;
     font-weight: 500;
-    transition: var(--transition);
     font-size: var(--regular-font);
     text-transform: capitalize;
     border-radius: var(--xl-border-radius);

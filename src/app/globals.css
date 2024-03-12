@@ -116,6 +116,9 @@ button {
 
 button {
   outline: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .container {
@@ -218,13 +221,10 @@ button {
 /* for links and buttons */
 .button {
   padding: 14px 24px;
-  cursor: pointer;
   background: var(--main-color);
-  border: none;
   border-radius: var(--xl-border-radius);
   color: var(--white-color);
   width: max-content;
-  transition: var(--transition);
   font-size: var(--regular-font);
   display: flex;
   align-items: center;

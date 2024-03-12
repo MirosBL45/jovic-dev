@@ -6,6 +6,7 @@ function LinkButton({ text, url, openInNewTab, title, buttonStyle }) {
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : {};
 
+  // by default it has button class if nothing declared
   const combinedStyles = `${buttonStyle || 'button'}`;
 
   return (
