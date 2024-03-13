@@ -4,8 +4,15 @@
   font-size: var(--regular-font);
   text-transform: capitalize;
   border-radius: var(--xl-border-radius);
+  /* MEDIA QUERIES (small screens) */
   color: var(--white-color);
   background: var(--main-color);
+}
+@media screen and (max-width: 450px) {
+  .button {
+    padding: 7px 20px;
+    font-size: var(--small-font);
+  }
 }
 .button:hover {
   background: var(--dark-green-color);
@@ -17,8 +24,15 @@
   font-size: var(--regular-font);
   text-transform: capitalize;
   border-radius: var(--xl-border-radius);
+  /* MEDIA QUERIES (small screens) */
   color: var(--background);
   background: none;
+}
+@media screen and (max-width: 450px) {
+  .flatButton {
+    padding: 7px 20px;
+    font-size: var(--small-font);
+  }
 }
 .flatButton:hover {
   color: var(--main-color);
@@ -39,6 +53,7 @@
 
 .projects {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 63px;
   margin: 44px 0 76px;
@@ -49,6 +64,13 @@
   display: flex;
   flex-direction: column;
 }
+.projects .imageContainer {
+  line-height: 0;
+}
+.projects .imageContainer img {
+  width: 363px;
+  height: 210px;
+}
 .projects h3 {
   font-weight: 500;
   font-size: var(--project-font);
@@ -56,15 +78,74 @@
   letter-spacing: -0.05em;
   margin: 4px 0 16px;
 }
-
-.technologies {
+.projects .technologies {
   font-weight: 400;
   font-size: var(--small-font);
   color: var(--white-color-second);
   margin-top: 18px;
 }
-
-.description {
+.projects .description {
   font-weight: 400;
   font-size: var(--regular-font);
+}
+
+/* MEDIA QUERIES (large screens) */
+@media screen and (max-width: 1024px) {
+  .buttons {
+    gap: 14px;
+  }
+  .projects {
+    gap: 58px;
+  }
+  .projects article {
+    max-width: 353px;
+  }
+  .projects .imageContainer img {
+    width: 353px;
+    height: 200px;
+  }
+}
+/* MEDIA QUERIES (large screens) */
+@media screen and (max-width: 850px) {
+  .buttons {
+    gap: 12px;
+  }
+  .projects {
+    gap: 40px;
+    margin: 48px 0 56px;
+  }
+  .projects article {
+    max-width: 340px;
+  }
+  .projects .imageContainer img {
+    width: 340px;
+    height: 188px;
+  }
+}
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 450px) {
+  .buttons {
+    gap: 1px;
+  }
+  .projects {
+    gap: 63px;
+    margin: 50px 0 36px;
+  }
+  .projects article {
+    max-width: 330px;
+  }
+  .projects .imageContainer img {
+    width: 330px;
+    height: 178px;
+  }
+  .projects h3 {
+    font-size: var(--ms-font);
+    margin: 2px 0 10px;
+  }
+  .projects .technologies {
+    font-size: var(--xsmall-font);
+  }
+  .projects .description {
+    font-size: var(--small-font);
+  }
 }

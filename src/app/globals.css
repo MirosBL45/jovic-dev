@@ -33,6 +33,7 @@
   --ms-font: 1.125rem;
   --regular-font: 1rem;
   --small-font: 0.875rem;
+  --xsmall-font: 0.675rem;
 
   --transition: all 270ms ease;
 
@@ -78,8 +79,6 @@ body {
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  scrollbar-color: #02000F #08c3fd;
-  scrollbar-width: thin;
 }
 
 h1,

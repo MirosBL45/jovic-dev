@@ -5,6 +5,12 @@
     font-size: var(--regular-font);
     text-transform: capitalize;
     border-radius: var(--xl-border-radius);
+
+    /* MEDIA QUERIES (small screens) */
+    @media screen and (max-width: 450px) {
+        padding: 7px 20px;
+        font-size: var(--small-font);
+    }
 }
 
 .button {
@@ -44,6 +50,7 @@
 
 .projects {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 63px;
     margin: 44px 0 76px;
@@ -55,6 +62,16 @@
         flex-direction: column;
     }
 
+    .imageContainer {
+        // Get rid of extra 4px height on parent element of image
+        line-height: 0;
+
+        img {
+            width: 363px;
+            height: 210px;
+        }
+    }
+
     h3 {
         font-weight: 500;
         font-size: var(--project-font);
@@ -62,16 +79,97 @@
         letter-spacing: -0.05em;
         margin: 4px 0 16px;
     }
+
+    .technologies {
+        font-weight: 400;
+        font-size: var(--small-font);
+        color: var(--white-color-second);
+        margin-top: 18px;
+    }
+
+    .description {
+        font-weight: 400;
+        font-size: var(--regular-font);
+    }
 }
 
-.technologies {
-    font-weight: 400;
-    font-size: var(--small-font);
-    color: var(--white-color-second);
-    margin-top: 18px;
+/* MEDIA QUERIES (large screens) */
+@media screen and (max-width: 1024px) {
+    .buttons {
+        gap: 14px;
+    }
+
+    .projects {
+        gap: 58px;
+
+        article {
+            max-width: 353px;
+        }
+
+        .imageContainer {
+            img {
+                width: 353px;
+                height: 200px;
+            }
+        }
+    }
 }
 
-.description {
-    font-weight: 400;
-    font-size: var(--regular-font);
+/* MEDIA QUERIES (large screens) */
+@media screen and (max-width: 850px) {
+    .buttons {
+        gap: 12px;
+    }
+
+    .projects {
+        gap: 40px;
+        margin: 48px 0 56px;
+
+        article {
+            max-width: 340px;
+        }
+
+        .imageContainer {
+            img {
+                width: 340px;
+                height: 188px;
+            }
+        }
+    }
+}
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 450px) {
+    .buttons {
+        gap: 1px;
+    }
+
+    .projects {
+        gap: 63px;
+        margin: 50px 0 36px;
+
+        article {
+            max-width: 330px;
+        }
+
+        .imageContainer {
+            img {
+                width: 330px;
+                height: 178px;
+            }
+        }
+
+        h3 {
+            font-size: var(--ms-font);
+            margin: 2px 0 10px;
+        }
+
+        .technologies {
+            font-size: var(--xsmall-font);
+        }
+
+        .description {
+            font-size: var(--small-font);
+        }
+    }
 }

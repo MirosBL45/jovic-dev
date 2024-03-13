@@ -44,12 +44,15 @@ function Projects() {
       <div className={styles.projects}>
         {partOfProject.map((part) => (
           <article key={part.id}>
-            <Image
-              width={363}
-              height={210}
-              src={part.image}
-              alt={`${part.title} Jovic Miroslav Frontend Developer`}
-            />
+            <div className={styles.imageContainer}>
+              <Image
+                width={0}
+                height={0}
+                sizes="100vw"
+                src={part.image}
+                alt={`${part.title} Jovic Miroslav Frontend Developer`}
+              />
+            </div>
             <p className={styles.technologies}>
               {part.techs.map((oneTech, index) => (
                 <span key={index}>
