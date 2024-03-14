@@ -15,7 +15,7 @@ function ScrollButton() {
   useEffect(() => {
     function handleScroll() {
       const scrollY = window.scrollY;
-      setIsVisible(scrollY > 400);
+      setIsVisible(scrollY > 2000);
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -32,7 +32,7 @@ function ScrollButton() {
   return (
     <button
       className={styles.scrollButton}
-      style={{ display: isVisible ? 'block' : 'none' }}
+      style={{ display: isVisible ? 'grid' : 'none' }}
       onClick={handleButtonClick}
       title={'Scroll to Top'}
     >

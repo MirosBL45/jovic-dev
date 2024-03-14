@@ -1,8 +1,5 @@
 'use client';
 
-// react/next stuff
-import Image from 'next/image';
-
 // emailjs
 import emailjs from '@emailjs/browser';
 import { useState, useRef } from 'react';
@@ -42,15 +39,6 @@ function ContactComponent() {
   return (
     <>
       <section className={styles.content}>
-        <div className={styles.imgContainer}>
-          <Image
-            className="moveImage"
-            src={'/emailContact.svg'}
-            alt="contact jovic-dev"
-            fill={true}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
         <form ref={formRef} onSubmit={sendEmail} className={styles.sendingForm}>
           <input
             type="text"
@@ -62,13 +50,6 @@ function ContactComponent() {
             type="email"
             placeholder="Your Email"
             name="user_email"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Subject"
-            name="subject"
-            className={styles.subjectInput}
             required
           />
           <textarea

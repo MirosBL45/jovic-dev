@@ -1,14 +1,16 @@
 .scrollButton {
+  display: grid;
+  place-items: center;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none;
   cursor: pointer;
   transition: var(--transition);
   background: var(--main-color);
   border: none;
   border-radius: 50%;
   padding: 13px;
+  display: none;
 }
 .scrollButton:hover {
   background: var(--dark-green-color);

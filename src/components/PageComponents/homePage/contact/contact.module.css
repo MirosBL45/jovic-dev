@@ -1,24 +1,7 @@
-.container {
-  padding-top: 170px;
-}
-.container h2 {
-  text-align: center;
-  margin-bottom: 100px;
-}
-
 .content {
   display: flex;
   align-items: center;
-  gap: 100px;
-}
-
-.imgContainer {
-  flex: 1;
-  height: 500px;
-  position: relative;
-}
-.imgContainer img {
-  object-fit: contain;
+  margin-top: 10px;
 }
 
 .sendingForm {
@@ -29,16 +12,25 @@
 }
 .sendingForm input,
 .sendingForm textarea {
-  padding: var(--ms-font);
+  padding: 15px 17px;
   background: transparent;
   border: none;
   outline: none;
   color: var(--background);
   border: 1px solid var(--background);
-  border-radius: var(--medium-border-radius);
-  font-size: var(--ms-font);
-  font-weight: bold;
+  border-radius: var(--xxl-border-radius);
+  font-size: var(--regular-font);
+  font-weight: 400;
   resize: none;
+  transition: var(--transition);
+}
+.sendingForm input:focus,
+.sendingForm textarea:focus {
+  border: 1px solid var(--main-color);
+}
+.sendingForm textarea {
+  border-radius: var(--regular-font);
+  height: 190px;
 }
 
 /* MEDIA QUERIES (medium screens) */
