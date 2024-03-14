@@ -27,9 +27,13 @@
     flex-direction: column;
     gap: 15px;
     padding: 18px 0;
+    font-size: var(--xsmall-font);
   }
   .links {
     display: flex;
     flex-direction: column;
+  }
+  .icons {
+    font-size: var(--regular-font);
   }
 }

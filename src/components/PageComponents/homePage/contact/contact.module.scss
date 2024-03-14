@@ -52,10 +52,6 @@
         grid-template-columns: 35vw 35vw;
         justify-content: center;
 
-        .subjectInput {
-            grid-column: 1 / span 2;
-        }
-
         textarea {
             grid-column: 1 / span 2;
         }
@@ -73,7 +69,6 @@
         align-items: center;
 
         input,
-        .subjectInput,
         textarea {
             padding: 10px;
             font-size: var(--ms-font);
@@ -87,5 +82,15 @@
 
     .container {
         padding-top: 100px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sendingForm {
+
+        input,
+        textarea {
+            font-size: var(--small-font);
+        }
     }
 }
