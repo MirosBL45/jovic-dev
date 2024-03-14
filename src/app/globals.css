@@ -8,7 +8,10 @@
   --white-color-third: #010009;
   --background: #02000F;
   --main-color: #0a66c2;
-  --icons-color: hsl(249, 100%, 1%);
+  --icons-color: #010005;
+  --icons-footer-color: #150b3b;
+  --footer-color: #080423;
+  --footer-line: rgba(0, 0, 0, 0.24);
 
 
   --dark-green-color: #007db3;
@@ -60,6 +63,9 @@
   --background: #F4F0FF;
   --main-color: #08c3fd;
   --icons-color: #7F7C8F;
+  --icons-footer-color: #98A2B3;
+  --footer-color: #D0D5DD;
+  --footer-line: rgba(255, 255, 255, 0.24);
 
 
   --dark-green-color: #00a1e6;

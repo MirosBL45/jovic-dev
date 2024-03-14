@@ -15,7 +15,7 @@ function ScrollButton() {
   useEffect(() => {
     function handleScroll() {
       const scrollY = window.scrollY;
-      setIsVisible(scrollY > 2000);
+      setIsVisible(scrollY > 1000);
     }
 
     window.addEventListener('scroll', handleScroll);
