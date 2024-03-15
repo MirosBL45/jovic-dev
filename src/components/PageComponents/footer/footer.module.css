@@ -11,15 +11,26 @@
   text-align: center;
 }
 
+.links a {
+  transition: var(--transition);
+}
+.links a:hover {
+  color: var(--main-color);
+}
+
 .icons {
   color: var(--icons-footer-color);
   display: flex;
   gap: 18px;
-  font-size: var(--project-font);
+  font-size: var(--medium-font);
 }
 .icons a {
   display: grid;
   place-items: center;
+  transition: var(--transition);
+}
+.icons a:hover {
+  color: var(--main-color);
 }
 
 @media screen and (max-width: 500px) {
@@ -34,6 +45,6 @@
     flex-direction: column;
   }
   .icons {
-    font-size: var(--regular-font);
+    font-size: var(--project-font);
   }
 }

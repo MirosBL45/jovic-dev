@@ -11,15 +11,30 @@
     text-align: center;
 }
 
+.links {
+    a {
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--main-color);
+        }
+    }
+}
+
 .icons {
     color: var(--icons-footer-color);
     display: flex;
     gap: 18px;
-    font-size: var(--project-font);
+    font-size: var(--medium-font);
 
     a {
         display: grid;
         place-items: center;
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--main-color);
+        }
     }
 }
 
@@ -37,6 +52,6 @@
     }
 
     .icons {
-        font-size: var(--regular-font);
+        font-size: var(--project-font);
     }
 }

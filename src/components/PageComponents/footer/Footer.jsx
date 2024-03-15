@@ -12,21 +12,25 @@ function Footer() {
 
   return (
     <footer className={styles.container}>
-      <div>&copy; {currentYear} All rights reserved.</div>
       <div className={styles.links}>
         <span>
-          Designed by{' '}
+          &copy; {currentYear} Designed by{' '}
           <Link
             rel="noopener noreferrer"
             target="_blank"
             href={'https://www.devu.design/'}
+            title={'Design & Dev Studio – where Creativity & Technology unite.'}
           >
-            DeVu
+            Devu Design
           </Link>
           .
         </span>{' '}
         <span>
-          Developed by <Link href={'/contact'}>Miroslav Jovic</Link>.
+          Developed by{' '}
+          <Link title={'Jovic Miroslav Frontend Developer'} href={'/contact'}>
+            Jovic Miroslav
+          </Link>
+          .
         </span>
       </div>
       <div className={styles.icons}>
@@ -34,6 +38,7 @@ function Footer() {
           rel="noopener noreferrer"
           target="_blank"
           href={'https://www.linkedin.com/in/mj888/'}
+          title={`Jovic Miroslav's Frontend Developer Linkedin`}
         >
           <FaLinkedin />
         </Link>
@@ -41,6 +46,7 @@ function Footer() {
           rel="noopener noreferrer"
           target="_blank"
           href={'https://github.com/MirosBL45'}
+          title={`Jovic Miroslav's Frontend Developer Github`}
         >
           <FaGithub />
         </Link>
