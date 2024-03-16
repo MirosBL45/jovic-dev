@@ -1,6 +1,7 @@
-import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss } from "react-icons/si";
+import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop } from "react-icons/si";
 import { RiVuejsFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
+import { TbBrandFramerMotion, TbBrandAuth0 } from "react-icons/tb";
 
 export const technologiesText = [
     {
@@ -50,5 +51,170 @@ export const technologiesText = [
         title: 'CSS & Sass',
         text: 'I use Sass as my preferred CSS pre-processor.',
         icon: <FaSass />,
+    },
+];
+
+export const technologiesTextBig = [
+    {
+        id: 1,
+        title: 'JavaScript',
+        text: 'Strong JS knowledge and advanced web development.',
+        icon: <SiJavascript />,
+    },
+    {
+        id: 27,
+        title: 'TypeScript',
+        text: 'Enhancing code quality and maintainability with the statically typed nature of TypeScript in JavaScript projects.',
+        icon: <SiTypescript />,
+    },
+    {
+        id: 9,
+        title: 'ViteJS',
+        text: 'Utilizing ViteJS for blazing fast frontend development with modern tooling and efficient bundling.',
+        icon: <SiVite />,
+    },
+    {
+        id: 10,
+        title: 'ThreeJS',
+        text: 'Creating immersive 3D experiences and visualizations with the power of ThreeJS.',
+        icon: <SiThreedotjs />,
+    },
+    {
+        id: 11,
+        title: 'Framer Motion',
+        text: 'Animating React components seamlessly and creating fluid UI transitions using Framer Motion.',
+        icon: <TbBrandFramerMotion />,
+    },
+    {
+        id: 12,
+        title: 'React Icons',
+        text: 'Enhancing user interfaces with a vast library of customizable icons powered by React Icons.',
+        icon: <SiCreatereactapp />,
+    },
+    {
+        id: 13,
+        title: 'ReactStrap',
+        text: 'Building responsive and interactive React applications efficiently with ReactStrap components.',
+        icon: <SiSemanticuireact />,
+    },
+    {
+        id: 14,
+        title: 'MaterialUI',
+        text: 'Crafting beautiful and consistent user interfaces with MaterialUI design components for React.',
+        icon: <SiMui />,
+    },
+    {
+        id: 2,
+        title: 'React',
+        text: 'Building fast and efficient React App`s and websites.',
+        icon: <SiReact />,
+    },
+    {
+        id: 3,
+        title: 'Next.js',
+        text: 'Fast server-side rendering, dynamic routing & less code.',
+        icon: <SiNextdotjs />,
+    },
+    {
+        id: 4,
+        title: 'Vue.js',
+        text: 'I build web interfaces & one page applications using Vue.',
+        icon: <RiVuejsFill />,
+    },
+    {
+        id: 5,
+        title: 'MongoDB',
+        text: 'Using MongoDB for scalable databases on the backend.',
+        icon: <SiMongodb />,
+    },
+    {
+        id: 6,
+        title: 'Git',
+        text: 'DevOps tool for streamlined source code management.',
+        icon: <SiGit />,
+    },
+    {
+        id: 7,
+        title: 'TailwindCSS',
+        text: 'A utility-first widely used frontend CSS framework.',
+        icon: <SiTailwindcss />,
+    },
+    {
+        id: 8,
+        title: 'CSS & Sass',
+        text: 'I use Sass as my preferred CSS pre-processor.',
+        icon: <FaSass />,
+    },
+    {
+        id: 15,
+        title: 'Styled-components',
+        text: 'Styling React components with ease and flexibility using Styled-components for dynamic styling.',
+        icon: <SiStyledcomponents />,
+    },
+    {
+        id: 16,
+        title: 'Bootstrap',
+        text: 'Leveraging Bootstrap framework for rapid development of mobile-first and responsive web projects.',
+        icon: <SiBootstrap />,
+    },
+    {
+        id: 17,
+        title: 'Firebase',
+        text: 'Utilizing Firebase for scalable backend services, real-time database, and easy authentication integration.',
+        icon: <SiFirebase />,
+    },
+    {
+        id: 18,
+        title: 'Hygraph (GraphQL)',
+        text: 'Implementing GraphQL with Hygraph for efficient data fetching and manipulation in modern web applications.',
+        icon: <SiGraphql />,
+    },
+    {
+        id: 19,
+        title: 'Bcryptjs',
+        text: 'Enhancing security by seamlessly integrating Bcryptjs for password hashing and encryption in backend systems.',
+        icon: <SiLetsencrypt />,
+    },
+    {
+        id: 20,
+        title: 'Postman',
+        text: 'Testing, debugging, and documenting APIs effortlessly with the powerful features of Postman tool.',
+        icon: <SiPostman />,
+    },
+    {
+        id: 21,
+        title: 'Strapi',
+        text: 'Building robust, customizable, and secure APIs quickly with Strapi headless CMS.',
+        icon: <SiStrapi />,
+    },
+    {
+        id: 22,
+        title: 'NextAuth',
+        text: 'Implementing secure authentication flows easily with NextAuth for Next.js applications.',
+        icon: <TbBrandAuth0 />,
+    },
+    {
+        id: 23,
+        title: 'SWR',
+        text: 'Enhancing data fetching and caching in React applications with the simplicity and power of SWR (Stale-While-Revalidate).',
+        icon: <SiSwr />,
+    },
+    {
+        id: 24,
+        title: 'Mongoose',
+        text: 'Simplifying MongoDB data modeling and interaction with elegant ODM library Mongoose for Node.js applications.',
+        icon: <SiMongoose />,
+    },
+    {
+        id: 25,
+        title: 'Figma',
+        text: 'Designing intuitive and visually appealing user interfaces collaboratively using Figma.',
+        icon: <SiFigma />,
+    },
+    {
+        id: 26,
+        title: 'Photoshop',
+        text: 'Refining and manipulating digital graphics with precision and creativity using Adobe Photoshop.',
+        icon: <SiAdobephotoshop />,
     },
 ];

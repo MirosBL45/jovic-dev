@@ -1,5 +1,8 @@
 // data
-import { technologiesText } from '@/utils/allData/technologies';
+import {
+  technologiesText,
+  technologiesTextBig,
+} from '@/utils/allData/technologies';
 
 // components
 import Line from './Line';
@@ -10,7 +13,7 @@ import styles from './technologies.module.css';
 function Technologies() {
   return (
     <section className={styles.gridSection}>
-      {technologiesText.map((tech) => (
+      {technologiesTextBig.map((tech) => (
         <div key={tech.id} className={styles.technology}>
           <span>{tech.icon}</span>
           <h3>
