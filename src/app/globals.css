@@ -14,7 +14,7 @@
   --footer-line: rgba(0, 0, 0, 0.24);
 
 
-  --dark-green-color: #007db3;
+  --dark-green-color: hsl(210, 90%, 25%);
   --dark-gray-color: #676767;
   --gray-color: #bbb;
 
@@ -68,7 +68,7 @@
   --footer-line: rgba(255, 255, 255, 0.24);
 
 
-  --dark-green-color: #00a1e6;
+  --dark-green-color: hsl(194, 98%, 36%);
   --dark-gray-color: #9d9d9d;
 }
 
@@ -237,12 +237,11 @@ button {
   gap: 20px;
   text-align: center;
   font-weight: 500;
+  transition: var(--transition);
 }
 
 .button:hover {
   background: var(--dark-green-color);
-  box-shadow: 0 0 0 3px var(--main-color);
-  border-color: var(--main-color);
 }
 
 .flat {

@@ -59,7 +59,13 @@ function ContactComponent() {
             name="message"
             required
           ></textarea>
-          <ClickButton title={loading ? `Sending...` : `Send Message`}>
+          <ClickButton
+            title={
+              loading
+                ? `Sending...`
+                : `Send Message to Jovic Miroslav Frontend Developer`
+            }
+          >
             {loading ? `Sending...` : `Send Message`}
           </ClickButton>
         </form>

@@ -69,7 +69,7 @@ function Projects() {
       </div>
       <LinkButton
         openInNewTab={false}
-        title={`See all ${project}`}
+        title={`See all Jovic Miroslav's ${project}`}
         text={`See all ${project}`}
         url={`/portfolio/${project}`}
         buttonStyle={'flat'}

@@ -12,6 +12,9 @@
 }
 
 .links {
+    display: flex;
+    gap: 4px;
+
     a {
         transition: var(--transition);
 
@@ -38,7 +41,7 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 580px) {
     .container {
         flex-direction: column;
         gap: 15px;
