@@ -10,6 +10,15 @@
     padding: 6px;
     cursor: pointer;
     position: relative;
+    transition: var(--transition);
+
+    &:hover {
+        border: 2px solid var(--dark-green-color);
+
+        .ball {
+            background: var(--dark-green-color);
+        }
+    }
 }
 
 .icon {
@@ -24,6 +33,7 @@
     background: var(--main-color);
     border-radius: 50%;
     position: absolute;
+    transition: var(--transition);
 }
 
 /* MEDIA QUERIES (medium and small screens) */

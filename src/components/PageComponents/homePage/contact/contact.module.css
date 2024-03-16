@@ -9,7 +9,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 700px;
+  width: 50vw;
+  /* MEDIA QUERIES (big screens) */
+}
+@media screen and (min-width: 1500px) {
+  .sendingForm {
+    width: 750px;
+  }
 }
 .sendingForm input,
 .sendingForm textarea {
