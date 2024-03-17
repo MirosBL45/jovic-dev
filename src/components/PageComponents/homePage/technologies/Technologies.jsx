@@ -1,4 +1,7 @@
 'use client';
+
+// react/next stuff
+import Link from 'next/link';
 import { useState } from 'react';
 
 // data
@@ -32,14 +35,27 @@ function Technologies() {
           </div>
         ))}
       </section>
-      <p
-        onClick={() => {
-          setIsBig((prev) => !prev);
-        }}
-        className="flat"
-      >
-        Show {isBig ? 'less' : 'more'} technologies I use
-      </p>
+      {!isBig && (
+        <p
+          onClick={() => {
+            setIsBig((prev) => !prev);
+          }}
+          className="flat"
+        >
+          Show {isBig ? 'less' : 'more'} technologies I use
+        </p>
+      )}
+      {isBig && (
+        <Link
+          className="flat"
+          href={'/#portfolio'}
+          onClick={() => {
+            setIsBig((prev) => !prev);
+          }}
+        >
+          Show {isBig ? 'less' : 'more'} technologies I use
+        </Link>
+      )}
     </div>
   );
 }
