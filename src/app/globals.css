@@ -238,6 +238,7 @@ button {
   text-align: center;
   font-weight: 500;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .button:hover {
@@ -251,6 +252,7 @@ button {
   position: relative;
   border-bottom: 1px solid var(--main-color);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .flat:hover {

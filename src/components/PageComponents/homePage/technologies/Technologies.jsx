@@ -1,3 +1,6 @@
+'use client';
+import { useState } from 'react';
+
 // data
 import {
   technologiesText,
@@ -11,19 +14,33 @@ import Line from './Line';
 import styles from './technologies.module.css';
 
 function Technologies() {
+  const [isBig, setIsBig] = useState(false);
+
+  const technologies = isBig ? technologiesTextBig : technologiesText;
+
   return (
-    <section className={styles.gridSection}>
-      {technologiesTextBig.map((tech) => (
-        <div key={tech.id} className={styles.technology}>
-          <span>{tech.icon}</span>
-          <h3>
-            <Line />
-            {tech.title}
-          </h3>
-          <p>{tech.text}</p>
-        </div>
-      ))}
-    </section>
+    <div className={styles.allTechnologies}>
+      <section className={styles.gridSection}>
+        {technologies.map((tech) => (
+          <div key={tech.id} className={styles.technology}>
+            <span>{tech.icon}</span>
+            <h3>
+              <Line />
+              {tech.title}
+            </h3>
+            <p>{tech.text}</p>
+          </div>
+        ))}
+      </section>
+      <p
+        onClick={() => {
+          setIsBig((prev) => !prev);
+        }}
+        className="flat"
+      >
+        Show {isBig ? 'less' : 'more'} technologies I use
+      </p>
+    </div>
   );
 }
 
