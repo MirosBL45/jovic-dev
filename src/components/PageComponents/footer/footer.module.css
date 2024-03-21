@@ -26,7 +26,7 @@
   color: var(--icons-footer-color);
   display: flex;
   gap: 18px;
-  font-size: var(--medium-font);
+  font-size: var(--medium-big-font);
 }
 .icons a {
   display: grid;
@@ -49,6 +49,6 @@
     flex-direction: column;
   }
   .icons {
-    font-size: var(--project-font);
+    font-size: var(--medium-font);
   }
 }
