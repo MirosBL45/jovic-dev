@@ -227,9 +227,10 @@ button {
 
 /* for links and buttons */
 .button {
-  padding: 14px 24px;
+  padding: 13px 23px;
   background: var(--main-color);
   border-radius: var(--xl-border-radius);
+  border: 2px solid var(--main-color);
   color: var(--white-color);
   width: max-content;
   font-size: var(--regular-font);
@@ -243,7 +244,8 @@ button {
 }
 
 .button:hover {
-  background: var(--dark-green-color);
+  background: transparent;
+  color: var(--main-color);
 }
 
 .flat {

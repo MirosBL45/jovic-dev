@@ -14,9 +14,6 @@
     font-size: var(--small-font);
   }
 }
-.button:hover {
-  background: var(--dark-green-color);
-}
 
 .flatButton {
   padding: 10px 26px;

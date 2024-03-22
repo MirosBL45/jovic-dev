@@ -7,15 +7,16 @@
   cursor: pointer;
   transition: var(--transition);
   background: var(--main-color);
-  border: none;
+  border: 2px solid var(--main-color);
   border-radius: 50%;
-  padding: 13px;
+  padding: 11px;
   display: none;
 }
 .scrollButton:hover {
-  background: var(--dark-green-color);
-  box-shadow: 0 0 0 3px var(--main-color);
-  border-color: var(--main-color);
+  background: transparent;
+}
+.scrollButton:hover .arrow {
+  color: var(--main-color);
 }
 
 .arrow {
