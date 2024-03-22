@@ -45,6 +45,7 @@
 .textandIcons .justText {
   max-width: 460px;
   text-align: left;
+  font-size: var(--regular-font);
 }
 .textandIcons .justText h3 {
   font-size: var(--regular-font);
@@ -53,7 +54,6 @@
   display: inline;
 }
 .textandIcons .justText p {
-  font-size: var(--regular-font);
   font-weight: 400;
   color: var(--white-color-second);
   opacity: 70%;
@@ -80,15 +80,6 @@
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
-  .textandIcons .justText {
-    max-width: 460px;
-  }
-  .textandIcons .justText h3 {
-    font-size: var(--small-font);
-  }
-  .textandIcons .justText p {
-    font-size: var(--small-font);
-  }
   .textandIcons .line {
     left: -17px;
   }
@@ -96,4 +87,3 @@
     top: -37px;
   }
 }
-/* MEDIA QUERIES (very small screens) */

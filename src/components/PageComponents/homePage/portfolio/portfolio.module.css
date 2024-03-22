@@ -142,7 +142,4 @@
   .projects .technologies {
     font-size: var(--xsmall-font);
   }
-  .projects .description {
-    font-size: var(--small-font);
-  }
 }

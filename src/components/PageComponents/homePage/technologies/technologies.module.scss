@@ -80,7 +80,6 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         padding: 0 15px;
-        justify-content: center;
     }
 
     .technology {
@@ -91,7 +90,6 @@
             font-size: var(--medium-font);
         }
 
-        h3,
         p {
             font-size: var(--small-font);
         }

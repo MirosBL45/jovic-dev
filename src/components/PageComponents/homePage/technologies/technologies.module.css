@@ -84,7 +84,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0 15px;
-    justify-content: center;
   }
   .technology {
     gap: 8px;
@@ -93,7 +92,6 @@
   .technology span {
     font-size: var(--medium-font);
   }
-  .technology h3,
   .technology p {
     font-size: var(--small-font);
   }

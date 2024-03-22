@@ -38,7 +38,7 @@
   --ms-font: 1.125rem;
   --regular-font: 1rem;
   --small-font: 0.875rem;
-  --xsmall-font: 0.675rem;
+  --xsmall-font: 0.775rem;
 
   --transition: all 270ms ease;
 
@@ -209,11 +209,11 @@ button {
   }
 
   h1 {
-    font-size: var(--mbs-font);
+    font-size: var(--mb-font);
   }
 
   h2 {
-    font-size: var(--mb-font);
+    font-size: var(--medium-big-font);
   }
 
   h3 {

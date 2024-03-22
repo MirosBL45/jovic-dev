@@ -89,6 +89,8 @@
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
     .mainHeadline {
+        gap: 10px;
+
         p {
             font-size: var(--ms-font);
         }
@@ -106,30 +108,7 @@
 
 /* MEDIA QUERIES (very small screens) */
 @media screen and (max-width: 450px) {
-    .mainHeadline {
-        p {
-            font-size: var(--regular-font);
-        }
-    }
-
-    .justText {
-        font-size: var(--small-font);
-        max-width: 400px;
-    }
-
     .frontLinks {
         gap: 19px;
-    }
-}
-
-/* MEDIA QUERIES (small screens) */
-@media screen and (max-width: 600px) {
-    .button {
-        padding: 12px 20px;
-        font-size: var(--small-font);
-    }
-
-    .flat {
-        font-size: var(--small-font);
     }
 }

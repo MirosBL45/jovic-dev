@@ -8,7 +8,9 @@ import Image from 'next/image';
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 
 // data
+// this is for arrayNames
 import * as allData from '@/utils/allData/homePortfolio';
+// this is for partOfProject
 import { apps, websites, games } from '@/utils/allData/homePortfolio';
 
 // style

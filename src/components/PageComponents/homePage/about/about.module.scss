@@ -42,6 +42,7 @@
     .justText {
         max-width: 460px;
         text-align: left;
+        font-size: var(--regular-font);
 
         h3 {
             font-size: var(--regular-font);
@@ -51,7 +52,6 @@
         }
 
         p {
-            font-size: var(--regular-font);
             font-weight: 400;
             color: var(--white-color-second);
             opacity: 70%;
@@ -85,18 +85,6 @@
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
     .textandIcons {
-        .justText {
-            max-width: 460px;
-
-            h3 {
-                font-size: var(--small-font);
-            }
-
-            p {
-                font-size: var(--small-font);
-            }
-        }
-
         .line {
             left: -17px;
         }
@@ -106,6 +94,3 @@
         }
     }
 }
-
-/* MEDIA QUERIES (very small screens) */
-@media screen and (max-width: 450px) {}
