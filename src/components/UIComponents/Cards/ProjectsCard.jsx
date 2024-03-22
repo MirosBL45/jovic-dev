@@ -4,7 +4,7 @@ import Image from 'next/image';
 // style
 import styles from './cards.module.css';
 
-function ProjectsCards({ projects }) {
+function ProjectsCard({ projects }) {
   return (
     <div className={styles.projects}>
       {projects.map((project) => (
@@ -18,23 +18,20 @@ function ProjectsCards({ projects }) {
               alt={`${project.title} Jovic Miroslav Frontend Developer`}
             />
           </div>
-          {project.techs && (
-            <p className={styles.technologies}>
-              {project.techs.map((tech, index) => (
-                <span key={index}>
-                  {tech}
-                  {index !== project.techs.length - 1 && ' · '}
-                </span>
-              ))}
-            </p>
-          )}
+          <p className={styles.technologies}>
+            {project.techs.map((tech, index) => (
+              <span key={index}>
+                {tech}
+                {index !== project.techs.length - 1 && ' · '}
+              </span>
+            ))}
+          </p>
           <h3>{project.title}</h3>
           <p className={styles.description}>{project.desc}</p>
-          <div className={styles.linksOfProjects}></div>
         </article>
       ))}
     </div>
   );
 }
 
-export default ProjectsCards;
+export default ProjectsCard;

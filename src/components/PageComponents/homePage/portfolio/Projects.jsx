@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 // components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
-import Cards from '@/components/UIComponents/Cards/ProjectsCards';
+import ProjectsCard from '@/components/UIComponents/Cards/ProjectsCard';
 
 // data
 // this is for arrayNames
@@ -43,33 +43,7 @@ function Projects() {
           </button>
         ))}
       </div>
-      <Cards projects={partOfProject} />
-      {/* <div className={styles.projects}>
-        {partOfProject.map((part) => (
-          <article key={part.id}>
-            <div className={styles.imageContainer}>
-              <Image
-                width={0}
-                height={0}
-                sizes="100vw"
-                src={part.image}
-                alt={`${part.title} Jovic Miroslav Frontend Developer`}
-              />
-            </div>
-            <p className={styles.technologies}>
-              {part.techs.map((oneTech, index) => (
-                <span key={index}>
-                  {oneTech}
-                  {index !== part.techs.length - 1 && ' · '}
-                </span>
-              ))}
-            </p>
-            <h3>{part.title}</h3>
-            <p className={styles.description}>{part.desc}</p>
-            <div className={styles.linksOfProjects}></div>
-          </article>
-        ))}
-      </div> */}
+      <ProjectsCard projects={partOfProject} />
       <LinkButton
         openInNewTab={false}
         title={`See all Jovic Miroslav's ${project}`}

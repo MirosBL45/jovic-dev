@@ -8,13 +8,15 @@ function BlogLayout({ children }) {
   return (
     <div className="layoutContainerAll">
       <header className={styles.layoutTitle}>
-        <h1>Read My Blog Posts</h1>
+        <h1>
+          Read My {'{'}Blog{'}'} Posts
+        </h1>
         <p>
           You can go to the{' '}
           <Link title="Take me to the Dashboard" href={'/dashboard'}>
             Dashboard
           </Link>
-          , and register to make your own Posts
+          , and {'<'}register{'>'} to make {'['}your own{']'} Posts
         </p>
       </header>
       {children}

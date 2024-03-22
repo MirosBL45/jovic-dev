@@ -3,6 +3,17 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    text-align: center;
+
+    /* MEDIA QUERIES (medium screens) */
+    @media screen and (max-width: 800px) {
+        margin-bottom: 165px;
+    }
+
+    /* MEDIA QUERIES (very small screens) */
+    @media screen and (max-width: 450px) {
+        margin-bottom: 85px;
+    }
 
     p {
         font-size: var(--ms-font);
@@ -15,78 +26,5 @@
         &:hover {
             color: hsl(198, 100%, 35%);
         }
-    }
-}
-
-.allBlogs {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 50px;
-}
-
-.imgContainer {
-    flex-basis: 40%;
-    border-radius: var(--medium-border-radius);
-    overflow: hidden;
-    // Get rid of extra 4px height on parent element of image
-    line-height: 0;
-
-    img {
-        object-fit: cover;
-        // image must have width: 100% and some height
-        width: 100%;
-        height: 300px;
-    }
-}
-
-.content {
-    flex-basis: 60%;
-
-    p {
-        font-size: var(--ms-font);
-        margin: var(--medium-font) 0;
-    }
-
-    time {
-        color: var(--dark-gray-color);
-    }
-}
-
-/* MEDIA QUERIES (medium screens) */
-@media screen and (max-width: 800px) {
-    .layoutTitle {
-        margin-bottom: 165px;
-    }
-
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin-bottom: 200px;
-        height: auto;
-    }
-}
-
-/* MEDIA QUERIES (small screens) */
-@media screen and (max-width: 600px) {
-    .imgContainer {
-        max-width: 430px;
-    }
-}
-
-/* MEDIA QUERIES (very small screens) */
-@media screen and (max-width: 450px) {
-    .imgContainer {
-        max-width: 350px;
-    }
-
-    .layoutTitle {
-        margin-bottom: 85px;
     }
 }

@@ -36,6 +36,11 @@
   font-size: var(--regular-font);
 }
 
+.containerRadius {
+  border-radius: var(--medium-border-radius);
+  overflow: hidden;
+}
+
 /* MEDIA QUERIES (large screens) */
 @media screen and (max-width: 1024px) {
   .projects {
