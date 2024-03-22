@@ -17,9 +17,11 @@
 
     a {
         transition: var(--transition);
+        border-bottom: 1px solid var(--footer-color);
 
         &:hover {
             color: var(--main-color);
+            border-bottom: 1px solid var(--main-color);
         }
     }
 }
