@@ -3,8 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // components
-import { formatDate } from '@/utils/GeneralFunctions';
+import Cards from '@/components/UIComponents/Cards/ProjectsCards';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
+import { formatDate } from '@/utils/GeneralFunctions';
 import { BASE_API_URL } from '@/utils/constants';
 
 // style
@@ -41,31 +42,35 @@ async function Blog() {
   const data = await getData();
 
   return (
-    <main className={styles.allBlogs}>
-      {data.map((item) => (
-        <section key={item._id}>
-          <Link href={`blog/${item.slug}`} className={styles.container}>
-            <div className={styles.imgContainer}>
-              <Image
-                src={item.image}
-                alt={`${item.title} - Jovic Miroslav, Frontend Developer`}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className={styles.content}>
-              <header>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-              </header>
-              <time>{item.createdAt && formatDate(item.createdAt)}</time>
-            </div>
-          </Link>
-        </section>
-      ))}
+    // <main className={styles.allBlogs}>
+    //   {data.map((item) => (
+    //     <section key={item._id}>
+    //       <Link href={`blog/${item.slug}`} className={styles.container}>
+    //         <div className={styles.imgContainer}>
+    //           <Image
+    //             src={item.image}
+    //             alt={`${item.title} - Jovic Miroslav, Frontend Developer`}
+    //             width={0}
+    //             height={0}
+    //             sizes="100vw"
+    //           />
+    //         </div>
+    //         <div className={styles.content}>
+    //           <header>
+    //             <h2>{item.title}</h2>
+    //             <p>{item.description}</p>
+    //           </header>
+    //           <time>{item.createdAt && formatDate(item.createdAt)}</time>
+    //         </div>
+    //       </Link>
+    //     </section>
+    //   ))}
+    //   <ScrollButton />
+    // </main>
+    <>
+      <Cards projects={data} />
       <ScrollButton />
-    </main>
+    </>
   );
 }
 

@@ -2,10 +2,10 @@
 
 // react/next stuff
 import { useState } from 'react';
-import Image from 'next/image';
 
 // components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
+import Cards from '@/components/UIComponents/Cards/ProjectsCards';
 
 // data
 // this is for arrayNames
@@ -43,7 +43,8 @@ function Projects() {
           </button>
         ))}
       </div>
-      <div className={styles.projects}>
+      <Cards projects={partOfProject} />
+      {/* <div className={styles.projects}>
         {partOfProject.map((part) => (
           <article key={part.id}>
             <div className={styles.imageContainer}>
@@ -68,7 +69,7 @@ function Projects() {
             <div className={styles.linksOfProjects}></div>
           </article>
         ))}
-      </div>
+      </div> */}
       <LinkButton
         openInNewTab={false}
         title={`See all Jovic Miroslav's ${project}`}

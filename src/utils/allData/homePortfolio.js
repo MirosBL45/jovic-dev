@@ -5,7 +5,7 @@ import houses from '../../../public/portfolio/imagesApps/houses.jpg';
 export const apps = [
     {
         id: "jednakala",
-        title: "apps Kala hvala",
+        title: "apps Kala hhvala",
         desc: "apps This React app was made so that people can express their gratitude to firemans by posting an image and text as desired. All posts are publicly available and at the end the winning  Figma.",
         liveUrl: 'https://jednakala-jednohvala.hr/',
         gitUrl: 'https://jednakala-jednohvala.hr/',
