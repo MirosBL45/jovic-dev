@@ -31,7 +31,7 @@ function Technologies() {
               <Line />
               {tech.title}
             </h3>
-            <p>{tech.text}</p>
+            <p>{tech.text}.</p>
           </div>
         ))}
       </section>

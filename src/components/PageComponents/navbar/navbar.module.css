@@ -96,7 +96,6 @@
 .activeLink {
   padding: 4px 0;
   cursor: pointer;
-  border-bottom: 2px solid var(--main-color);
   transition: var(--transition);
 }
 .activeLink:hover a {
@@ -122,8 +121,10 @@
     flex-direction: column;
   }
   .justContactButton {
-    padding: 8px 18px;
+    padding: 6px 16px;
     border-radius: var(--big-border-radius);
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
   }
   .hiddenContact {
     display: flex;
@@ -148,11 +149,11 @@
     right: 0;
     z-index: 33;
     flex-direction: column;
-    gap: 35px;
-    background-image: linear-gradient(to bottom left, var(--white-color), var(--dark-gray-color));
-    font-size: var(--medium-font);
+    gap: 15px;
+    background: var(--background);
+    color: var(--white-color);
+    font-size: var(--project-font);
     font-weight: 500;
-    border-bottom-left-radius: var(--big-border-radius);
     border-top-left-radius: var(--big-border-radius);
     overflow: hidden;
   }

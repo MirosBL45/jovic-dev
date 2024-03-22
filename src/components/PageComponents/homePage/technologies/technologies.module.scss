@@ -76,8 +76,16 @@
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 680px) {
+    .gridSection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px;
+        justify-content: center;
+    }
+
     .technology {
         gap: 8px;
+        max-width: 265px;
 
         span {
             font-size: var(--medium-font);
