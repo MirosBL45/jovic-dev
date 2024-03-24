@@ -1,8 +1,8 @@
 // react/next stuff
-import Image from 'next/image';
 import Link from 'next/link';
 
 // components
+import ImageCard from './ImageCard';
 import { formatDate } from '@/utils/GeneralFunctions';
 
 // style
@@ -17,17 +17,11 @@ function BlogsCard({ data }) {
         .map((item) => (
           <Link href={`blog/${item.slug}`}>
             <article key={item._id}>
-              <div
-                className={`${styles.imageContainer} ${styles.containerRadius}`}
-              >
-                <Image
-                  src={item.image}
-                  alt={`${item.title} - Jovic Miroslav, Frontend Developer`}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-              </div>
+              <ImageCard
+                src={item.image}
+                alt={item.title}
+                additionalClass={styles.containerRadius}
+              />
               <p className={styles.technologies}>
                 <time>{item.createdAt && formatDate(item.createdAt)}</time>
               </p>

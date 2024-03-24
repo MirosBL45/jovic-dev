@@ -274,3 +274,15 @@ button {
     font-size: var(--small-font);
   }
 }
+
+/* styles for flat link */
+.mb-4 {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.mb-al {
+  margin-bottom: 12px;
+  display: inline-block;
+  margin-left: 30px;
+}

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 import { notFound } from 'next/navigation';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
+import SinglePortfolioCard from '@/components/UIComponents/Cards/SinglePortfolioCard';
 
 // data
 import { itemsPortfolio } from '@/utils/allData/mainPortfolio';
@@ -36,7 +37,8 @@ function Category({ params }) {
       <header>
         <h2 className={styles.catTitle}>{params.category}</h2>
       </header>
-      <main className={styles.allSections}>
+      <SinglePortfolioCard data={data} />
+      {/* <main className={styles.allSections}>
         {data.map((item) => (
           <section key={item.id} className={styles.item}>
             <div className={styles.content}>
@@ -66,7 +68,7 @@ function Category({ params }) {
             </div>
           </section>
         ))}
-      </main>
+      </main> */}
       <ScrollButton />
     </>
   );

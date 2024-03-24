@@ -1,5 +1,5 @@
-// react/next stuff
-import Image from 'next/image';
+// components
+import ImageCard from './ImageCard';
 
 // style
 import styles from './cards.module.css';
@@ -9,15 +9,7 @@ function ProjectsCard({ projects }) {
     <div className={styles.projects}>
       {projects.map((project) => (
         <article key={project.id}>
-          <div className={styles.imageContainer}>
-            <Image
-              width={0}
-              height={0}
-              sizes="100vw"
-              src={project.image}
-              alt={`${project.title} Jovic Miroslav Frontend Developer`}
-            />
-          </div>
+          <ImageCard src={project.image} alt={project.title} />
           <p className={styles.technologies}>
             {project.techs.map((tech, index) => (
               <span key={index}>
