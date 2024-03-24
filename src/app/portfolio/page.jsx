@@ -2,6 +2,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+// components
+import PortfolioCard from '@/components/UIComponents/Cards/PortfolioCard';
+
 // data
 import { portfolioData } from '@/utils/allData/mainPortfolio';
 
@@ -20,14 +23,15 @@ function Portfolio() {
       <h2>
         Choose {'['}an area{']'} to see my work
       </h2>
-      <section className={styles.items}>
+      {/* <section className={styles.items}>
         {portfolioData.map(({ id, title, url, image }) => (
           <Link key={id} href={url} className={styles.item}>
             <Image src={image} width={300} height={300} alt={title} />
             <span className={styles.itemTitle}>{title}</span>
           </Link>
         ))}
-      </section>
+      </section> */}
+      <PortfolioCard portfolioData={portfolioData} />
     </main>
   );
 }
