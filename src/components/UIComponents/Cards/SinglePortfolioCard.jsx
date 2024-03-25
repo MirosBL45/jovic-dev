@@ -1,6 +1,3 @@
-// react/next stuff
-import Link from 'next/link';
-
 // components
 import ImageCard from './ImageCard';
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
