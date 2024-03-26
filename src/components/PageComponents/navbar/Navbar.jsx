@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useContext } from 'react';
 
@@ -31,10 +31,27 @@ import styles from './navbar.module.css';
 
 function Navbar() {
   const [isNavShowing, setIsNavShowing] = useState(false);
+  const [coloredNav, setColoredNav] = useState(false);
   const session = useSession();
   const pathname = usePathname();
   const router = useRouter();
   const { mode } = useContext(ThemeContext);
+
+  // choose which color is navbar
+  useEffect(() => {
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      setColoredNav(scrollY > 300);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // choose which links to use depending on the page
   // const links = pathname === '/' ? linksHomePage : linksOtherPages;
@@ -53,7 +70,7 @@ function Navbar() {
   }
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={coloredNav ? styles.navbarColored : styles.navbar}>
       <div className={styles.nav_container}>
         <Link href={'/'} onClick={() => setIsNavShowing(false)}>
           <Image

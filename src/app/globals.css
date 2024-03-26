@@ -4,6 +4,7 @@
 
 :root {
   --white-color: #F4F0FF;
+  --white-color2: hsl(256, 100%, 94%);
   --white-color-second: #01000A;
   --white-color-third: #010009;
   --background: #02000F;
@@ -59,6 +60,7 @@
 
 .dark {
   --white-color: #02000F;
+  --white-color2: hsl(248, 100%, 6%);
   --white-color-second: #EFEDFD;
   --white-color-third: #F9FAFB;
   --background: #F4F0FF;
