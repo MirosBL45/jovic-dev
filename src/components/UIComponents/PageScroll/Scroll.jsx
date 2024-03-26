@@ -8,7 +8,15 @@ export default function Scroll() {
   const pathname = usePathname();
 
   useEffect(() => {
-    window.scroll(0, 0);
+    const hash = pathname.split('#')[1];
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return <></>;
