@@ -155,7 +155,7 @@ export const itemsPortfolio = {
         {
             id: 1,
             title: "Pets - Medicine for the soul",
-            desc: "Designed in Figma, this site is a fusion of pet love and technology. One of the key challenges was the implementation of multilingualism and choosing between six world languages. Ensuring consistency between the design in Figma and the actual implementation required careful handling of styles via SCSS. Project is adapted for different screens so that users can enjoy it on any device.",
+            desc: "Designed in Figma, this site is a fusion of pet love and technology. One of the key challenges was the implementation of multilingualism and choosing between six world languages. Project is adapted for different screens.",
             url: 'https://petsmj.netlify.app/',
             github: 'https://github.com/MirosBL45/pets_on_languages',
             image: pets,
@@ -163,7 +163,7 @@ export const itemsPortfolio = {
         {
             id: 2,
             title: "Social network",
-            desc: "This interactive website provides users with the opportunity to connect, share their thoughts, and interact with each other through posts, likes, and comments. One of the main challenges during the creation of this site was the implementation of authentication and authorization. Allowing users to log in securely, store their data, and properly manage it required careful handling of JavaScript.",
+            desc: "This interactive website enables users to connect, share thoughts, and engage through posts, likes, and comments. A significant challenge was implementing secure authentication and authorization, ensuring safe login, data storage, and management through JavaScript.",
             url: 'https://socialnetworkmj.netlify.app/',
             github: 'https://github.com/MirosBL45/Social_Network',
             image: social,
@@ -205,7 +205,7 @@ export const itemsPortfolio = {
         {
             id: 2,
             title: "Memory game",
-            desc: "One of the key challenges in the development of the Memory game was to implement the logic of turning cards and matching them. When two cards are flipped over, I had to carefully monitor their status, reveal them appropriately, and allow players to see and remember the images on the cards",
+            desc: "One of the key challenges in the development of the Memory game was to implement the logic of turning cards and matching them. When two cards are flipped over, I had to carefully monitor their status, reveal them appropriately, and allow players to see and remember the images.",
             url: 'https://memory-card-game-mj.vercel.app/',
             github: 'https://github.com/MirosBL45/memory_card_game',
             image: memory,
@@ -213,7 +213,7 @@ export const itemsPortfolio = {
         {
             id: 3,
             title: "Puzzle",
-            desc: "This game offers users the opportunity to enjoy solving puzzles at three different levels of difficulty, each level being more challenging than the last. One of the key challenges was to implement the functionality of dragging partial pieces of the puzzle in order to achieve the final image stacking. I had to carefully manage the drag events, track the movement of the partials and position them correctly in certain places.",
+            desc: "This game provides puzzles at three difficulty levels, progressively more challenging. A key challenge was implementing drag functionality for puzzle pieces, ensuring correct positioning to complete the image. It was essential to handle drag events and placement carefully.",
             url: 'https://puzzlemj.netlify.app/',
             github: 'https://github.com/MirosBL45/Puzzle_game',
             image: puzzle,
@@ -229,7 +229,7 @@ export const itemsPortfolio = {
         {
             id: 5,
             title: "Tic tac toe",
-            desc: "It was important to properly implement the game logic, in order to automatically track the conquest and declare the winner. This step involved detecting winning combinations and properly updating the game state. Work on the user interface and visual aspect of the game was important. I had to ensure that each player's moves were clearly marked, maintain visibility of the game state, and allow for easy mouse interaction.",
+            desc: "It was crucial to track wins and declare a winner automatically. This included detecting winning combinations and updating the game state accurately. Focus was also on enhancing the user interface for clear marking of player moves, maintaining game state visibility, and enabling easy mouse interaction.",
             url: 'https://tictactoemj.netlify.app/',
             github: 'https://github.com/MirosBL45/TicTacToe',
             image: tictactoe,

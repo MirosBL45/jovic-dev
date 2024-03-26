@@ -2,9 +2,11 @@
 import { notFound } from 'next/navigation';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import SinglePortfolioCard from '@/components/UIComponents/Cards/SinglePortfolioCard';
+import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 
 // data
 import { itemsPortfolio } from '@/utils/allData/mainPortfolio';
+import { portfolioData } from '@/utils/allData/mainPortfolio';
 
 // style
 import styles from './page.module.css';
@@ -30,6 +32,17 @@ function Category({ params }) {
 
   return (
     <>
+      <section className={styles.links}>
+        {portfolioData.map(({ id, title, url }) => (
+          <LinkButton
+            key={id}
+            url={url}
+            text={title}
+            title={`Click to see ${title}`}
+            buttonStyle={'flat'}
+          />
+        ))}
+      </section>
       <header>
         <h2 className={styles.catTitle}>{params.category}</h2>
       </header>

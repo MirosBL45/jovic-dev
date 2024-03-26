@@ -3,7 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 63px;
-  margin: 44px 0 76px;
+  margin: 44px 0;
   text-align: left;
 }
 .projects article {
