@@ -22,7 +22,7 @@ function Technologies() {
   const technologies = isBig ? technologiesTextBig : technologiesText;
 
   return (
-    <div className={styles.allTechnologies}>
+    <div id="technologies" className={styles.allTechnologies}>
       <section className={styles.gridSection}>
         {technologies.map((tech) => (
           <div key={tech.id} className={styles.technology}>
@@ -48,7 +48,7 @@ function Technologies() {
       {isBig && (
         <Link
           className="flat"
-          href={'/#portfolio'}
+          href={'/#technologies'}
           onClick={() => {
             setIsBig((prev) => !prev);
           }}
