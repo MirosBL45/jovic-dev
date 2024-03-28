@@ -31,6 +31,7 @@ const postSchema = new Schema({
 
 }, { timestamps: true });
 
+// enables additional modifications to the database's schema
 mongoose.models = {}
-export default mongoose.model('Post', postSchema);
 // it makes Post collection in jovicData (name of DB)
+export default mongoose.model('Post', postSchema);

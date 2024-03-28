@@ -19,6 +19,7 @@ const userSchema = new Schema({
     },
 }, { timestamps: true });
 
+// enables additional modifications to the database's schema
 mongoose.models = {}
-export default mongoose.model('User', userSchema);
 // it makes User collection in jovicData (name of DB)
+export default mongoose.model('User', userSchema);
