@@ -94,14 +94,17 @@ body {
 h1,
 h2 {
   font-family: "Lexend", sans-serif;
+  font-weight: 500;
 }
 
 h1 {
   font-size: var(--large-font);
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: var(--mbs-font);
+  letter-spacing: -0.01em;
 }
 
 h3 {

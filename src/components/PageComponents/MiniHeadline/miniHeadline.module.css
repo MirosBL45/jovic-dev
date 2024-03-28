@@ -17,10 +17,6 @@
   display: flex;
   flex-direction: column;
 }
-.mainHeadline h2 {
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
 .mainHeadline p {
   margin-top: 10px;
   font-size: var(--ms-font);

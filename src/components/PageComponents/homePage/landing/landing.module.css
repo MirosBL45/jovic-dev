@@ -11,10 +11,6 @@
   display: flex;
   flex-direction: column;
 }
-.mainHeadline h1 {
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
 .mainHeadline p {
   font-size: var(--regular-medium-font);
   font-weight: 400;
@@ -36,6 +32,16 @@
 .keyboardAndMouse {
   margin-top: 100px;
   position: relative;
+}
+@media screen and (max-width: 680px) {
+  .keyboardAndMouse {
+    margin-top: 80px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .keyboardAndMouse {
+    margin-top: 20px;
+  }
 }
 
 .keyboard {

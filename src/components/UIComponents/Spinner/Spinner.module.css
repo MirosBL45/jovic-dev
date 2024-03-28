@@ -9,7 +9,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--white-color);
   z-index: 5000;
   display: flex;
   justify-content: center;
@@ -17,10 +17,10 @@
 }
 
 .loadingSpinner {
-  width: 164px;
-  height: 164px;
+  width: 154px;
+  height: 154px;
   border: 8px solid;
-  border-color: #00cc66 transparent #a300cc transparent;
+  border-color: var(--main-color) transparent var(--background) transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
