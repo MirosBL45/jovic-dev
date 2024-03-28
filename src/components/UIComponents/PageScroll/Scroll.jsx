@@ -43,14 +43,12 @@ export default function Scroll() {
       console.log('ide isecen');
       const secen = urlLinkWindow.split('#')[1];
       const dodato = `'${secen}'`;
-      console.log(dodato);
-      if (dodato) {
-        const element = document.getElementById(dodato);
+      console.log(secen);
+      if (secen) {
+        const element = document.getElementById(secen);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-      } else {
-        window.scrollTo(0, 0);
       }
     }, 100);
     // }, [urlLinkWindow]);
