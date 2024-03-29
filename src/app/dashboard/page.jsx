@@ -156,7 +156,9 @@ function Dashboard() {
         </header>
         <main className={styles.container}>
           <div>
-            <h3>Your previous posts</h3>
+            <h3>
+              Your {'<'}previous{'>'} posts
+            </h3>
             <aside className={styles.posts}>
               {isLoading ? (
                 <p style={{ marginTop: '50px', fontSize: '25px' }}>
@@ -186,7 +188,8 @@ function Dashboard() {
                 ))
               ) : (
                 <div className={styles.displayed}>
-                  When you make your first post, it will appear here.
+                  When you make {'<'}your{'>'} first {'['}post{']'}, it will{' '}
+                  {'{'}appear{'}'} here.
                 </div>
               )}
             </aside>

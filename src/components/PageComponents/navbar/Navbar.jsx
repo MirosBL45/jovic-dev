@@ -77,6 +77,7 @@ function Navbar() {
             priority={true}
             src={mode === 'light' ? logoBlack : logoWhite}
             alt="logo Miroslav Jovic Frontend Developer"
+            title="Miroslav Jovic Frontend Developer"
             width={186}
             height={42}
           />

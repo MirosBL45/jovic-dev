@@ -1,8 +1,8 @@
 // components
 import { notFound } from 'next/navigation';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
-import SinglePortfolioCard from '@/components/UIComponents/Cards/SinglePortfolioCard';
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
+import ProjectsCard from '@/components/UIComponents/Cards/ProjectsCard';
 
 // data
 import { itemsPortfolio } from '@/utils/allData/mainPortfolio';
@@ -46,7 +46,7 @@ function Category({ params }) {
       <header>
         <h2 className={styles.catTitle}>{params.category}</h2>
       </header>
-      <SinglePortfolioCard data={data} />
+      <ProjectsCard projects={data} />
       <ScrollButton />
     </>
   );

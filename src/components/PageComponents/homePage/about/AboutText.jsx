@@ -54,6 +54,7 @@ function AboutText() {
           <Image
             src={mode === 'light' ? Miroslav : MiroslavLight}
             alt="Miroslav Jovic Frontend Developer"
+            title="Miroslav Jovic Frontend Developer"
             width={0}
             height={0}
             sizes="100vw"

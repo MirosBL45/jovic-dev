@@ -35,6 +35,12 @@
   font-weight: 400;
   font-size: var(--regular-font);
 }
+.projects .linksOfProjects {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 15px;
+}
 
 .containerRadius {
   border-radius: var(--medium-border-radius);

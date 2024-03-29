@@ -24,6 +24,7 @@ function Keyboard() {
         <Image
           src={mode === 'light' ? keyboard : keyboardTransparent}
           alt="keyboard Miroslav Jovic Frontend Developer"
+          title="keyboard Miroslav Jovic Frontend Developer"
           width={0}
           height={0}
           sizes="100vw"
@@ -34,6 +35,7 @@ function Keyboard() {
         <Image
           src={mode === 'light' ? mouse : mouseTransparent}
           alt="mouse Miroslav Jovic Frontend Developer"
+          title="mouse Miroslav Jovic Frontend Developer"
           width={0}
           height={0}
           sizes="100vw"
