@@ -97,6 +97,10 @@
     gap: 0px;
     margin-bottom: 50px;
   }
+  .item {
+    display: grid;
+    place-items: center;
+  }
 }
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 600px) {
@@ -106,21 +110,16 @@
   .notFoundContainer {
     margin-top: 20px;
   }
-  .imageItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .imageItem img {
+  .item img {
     width: 80%;
   }
 }
 /* MEDIA QUERIES (extra small screens) */
 @media screen and (max-width: 400px) {
-  .imageItem {
+  .item {
     margin-bottom: -30px;
   }
-  .imageItem img {
+  .item img {
     width: 90%;
   }
 }

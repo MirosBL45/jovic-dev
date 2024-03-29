@@ -11,7 +11,7 @@ import styles from './page.module.css';
 import './globals.css'
 
 // images
-import notFound from 'public/notFound.svg';
+import notFound from 'public/notFound Miroslav Jovic Frontend Developer.svg';
 
 export default function NotFound() {
     // Time in seconds
