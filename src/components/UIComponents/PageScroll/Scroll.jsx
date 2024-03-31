@@ -11,12 +11,7 @@ export default function Scroll() {
     window.scrollTo(0, 0);
     setTimeout(() => {
       const urlLinkWindow = window.location.href;
-      console.log('urlLinkWindow odmah sada');
-      console.log(urlLinkWindow);
-      console.log('ide isecen');
       const secen = urlLinkWindow.split('#')[1];
-      const dodato = `'${secen}'`;
-      console.log(secen);
       if (secen) {
         const element = document.getElementById(secen);
         if (element) {

@@ -11,8 +11,8 @@ function PortfolioCard({ portfolioData }) {
   return (
     <section className={styles.projects}>
       {portfolioData.map(({ id, title, url, image, description }) => (
-        <Link href={url} className={styles.item}>
-          <article key={id}>
+        <Link key={id} href={url} className={styles.item}>
+          <article>
             <ImageCard
               src={image}
               alt={title}

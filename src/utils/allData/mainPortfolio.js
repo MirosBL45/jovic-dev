@@ -14,6 +14,9 @@ import pets from '../../../public/portfolio/imagesWeb/pets.jpg';
 import social from '../../../public/portfolio/imagesWeb/social.jpg';
 import quiz from '../../../public/portfolio/imagesWeb/quiz.jpg';
 import candle from '../../../public/portfolio/imagesWeb/candle.jpg';
+import talex from '../../../public/portfolio/imagesWeb/talex.webp';
+import uzelac from '../../../public/portfolio/imagesWeb/uzelac.webp';
+import rakita from '../../../public/portfolio/imagesWeb/rakita.webp';
 
 import companywall from '../../../public/portfolio/imagesApps/companywall.jpg';
 import materialSocial from '../../../public/portfolio/imagesApps/materialSocial.jpg';
@@ -164,6 +167,33 @@ export const itemsPortfolio = {
         },
     ],
     websites: [
+        {
+            id: "talex",
+            title: "Talex",
+            desc: "Talex invest is a company for the execution of works in construction, Belgrade. I did the creation of galleries, the integration of animations in Vue.js, image customization and other things.",
+            liveUrl: 'https://www.talex.rs/',
+            gitUrl: 'https://github.com/MirosBL45/talex',
+            image: talex,
+            techs: ['Vue.js', 'Nuxt.js', 'Leaflet', 'CSS'],
+        },
+        {
+            id: "uzelac",
+            title: "UziLight",
+            desc: "Uzelac is in lighting design and visual storytelling. I made for him whole website with Vite.js which prioritizes speed by leveraging native ES module support in browsers, resulting in rapid startup times during development.",
+            liveUrl: 'https://uzelacweb-mj.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/uzelac_web',
+            image: uzelac,
+            techs: ['Vite.js', 'Framer-motion', 'TailwindCSS', 'React-three'],
+        },
+        {
+            id: "rakita",
+            title: "Studio Rakita",
+            desc: "Shooting events like weddings, sporting events, and high-altitude drone shooting is what Studio Rakita does. I made for them whole website with Next.js for server-side rendering, using TailwindCSS utility-first CSS styling framework.",
+            liveUrl: 'https://studio-rakita.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/studio_rakita',
+            image: rakita,
+            techs: ['Next.js', 'Framer-motion', 'TailwindCSS', 'Swiper'],
+        },
         {
             id: 1,
             title: "Pets - Medicine for the soul",

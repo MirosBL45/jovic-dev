@@ -1,11 +1,9 @@
 import retail from '../../../public/portfolio/imagesApps/retail.jpg';
 import kala from '../../../public/portfolio/imagesApps/kala.jpg';
-import houses from '../../../public/portfolio/imagesApps/houses.jpg';
 import milspedAll from '../../../public/portfolio/imagesApps/milspedAll.jpg';
 
 import pets from '../../../public/portfolio/imagesWeb/pets.jpg';
-import social from '../../../public/portfolio/imagesWeb/social.jpg';
-import quiz from '../../../public/portfolio/imagesWeb/quiz.jpg';
+import talex from '../../../public/portfolio/imagesWeb/talex.webp';
 
 import blackjack from '../../../public/portfolio/imagesGames/blackjack.jpg';
 import puzzle from '../../../public/portfolio/imagesGames/puzzle.jpg';
@@ -34,14 +32,32 @@ export const apps = [
         id: "milsped",
         title: "Milšped Group",
         desc: "Milšped Group includes 3 web applications, Milšped, M-ONE and MBOX which are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the Strapi, translations, the creation of the transport service price calculator and other things.",
-        liveUrl: 'https://www.milsped.com/',
-        gitUrl: 'https://github.com/MirosBL45/milsped',
+        liveUrl: 'https://m-one.rs/',
+        gitUrl: 'https://github.com/MirosBL45/m-one',
         image: milspedAll,
         techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
     },
 ];
 
 export const websites = [
+    {
+        id: "milsped",
+        title: "Milšped Group",
+        desc: "Milšped Group includes 3 web applications, Milšped, M-ONE and MBOX which are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the Strapi, translations, the creation of the transport service price calculator and other things.",
+        liveUrl: 'https://www.milsped.com/',
+        gitUrl: 'https://github.com/MirosBL45/milsped',
+        image: milspedAll,
+        techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
+    },
+    {
+        id: "talex",
+        title: "Talex",
+        desc: "Talex invest is a company for the execution of works in construction, Belgrade. I did the creation of galleries, the integration of animations in Vue.js, image customization and other things.",
+        liveUrl: 'https://www.talex.rs/',
+        gitUrl: 'https://github.com/MirosBL45/talex',
+        image: talex,
+        techs: ['Vue.js', 'Nuxt.js', 'Leaflet', 'CSS'],
+    },
     {
         id: "Pets",
         title: "Pets - Medicine for the soul",
@@ -50,24 +66,6 @@ export const websites = [
         gitUrl: 'https://github.com/MirosBL45/pets_on_languages',
         image: pets,
         techs: ['JavaScript', 'Figma', 'CSS', 'SCSS'],
-    },
-    {
-        id: "Social",
-        title: "Social network",
-        desc: "This interactive website enables users to connect, share thoughts, and engage through posts, likes, and comments. A significant challenge was implementing secure authentication and authorization, ensuring safe login, data storage, and management through JavaScript.",
-        liveUrl: 'https://socialnetworkmj.netlify.app/',
-        gitUrl: 'https://github.com/MirosBL45/Social_Network',
-        image: social,
-        techs: ['JavaScript', 'HTML', 'CSS', 'SCSS'],
-    },
-    {
-        id: "Quiz",
-        title: "Quiz App",
-        desc: "During the creation of this site, one of the key challenges was the implementation of a dynamic system for asking questions and collecting responses from users. I had to work carefully with JavaScript to properly manage the logic of the quiz, ensuring correct answers were properly tracked and results generated at the end.",
-        liveUrl: 'https://quizappmj.netlify.app/',
-        gitUrl: 'https://github.com/MirosBL45/Quiz_App',
-        image: quiz,
-        techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
     },
 ];
 

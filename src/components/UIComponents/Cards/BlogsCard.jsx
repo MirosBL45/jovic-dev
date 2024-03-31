@@ -15,8 +15,8 @@ function BlogsCard({ data }) {
         .slice()
         .reverse()
         .map((item) => (
-          <Link href={`blog/${item.slug}`}>
-            <article key={item._id}>
+          <Link key={item._id} href={`blog/${item.slug}`}>
+            <article>
               <ImageCard
                 src={item.image}
                 alt={item.title}
