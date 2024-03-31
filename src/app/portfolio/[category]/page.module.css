@@ -8,13 +8,50 @@
 .links {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 10px;
   margin-top: 25px;
 }
 @media screen and (max-width: 450px) {
   .links {
     gap: 15px;
   }
+}
+
+.button {
+  padding: 10px 26px;
+  font-weight: 500;
+  font-size: var(--regular-font);
+  text-transform: capitalize;
+  border-radius: var(--xl-border-radius);
+  /* MEDIA QUERIES (small screens) */
+  color: var(--white-color);
+  background: var(--main-color);
+}
+@media screen and (max-width: 450px) {
+  .button {
+    padding: 7px 20px;
+    font-size: var(--small-font);
+  }
+}
+
+.flatButton {
+  padding: 10px 26px;
+  font-weight: 500;
+  font-size: var(--regular-font);
+  text-transform: capitalize;
+  border-radius: var(--xl-border-radius);
+  /* MEDIA QUERIES (small screens) */
+  color: var(--background);
+  background: none;
+}
+@media screen and (max-width: 450px) {
+  .flatButton {
+    padding: 7px 20px;
+    font-size: var(--small-font);
+  }
+}
+.flatButton:hover {
+  color: var(--main-color);
 }
 
 @media screen and (max-width: 860px) {

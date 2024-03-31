@@ -1,12 +1,11 @@
 // components
 import { notFound } from 'next/navigation';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
-import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
 import ProjectsCard from '@/components/UIComponents/Cards/ProjectsCard';
+import JustLinks from './JustLinks';
 
 // data
 import { itemsPortfolio } from '@/utils/allData/mainPortfolio';
-import { portfolioData } from '@/utils/allData/mainPortfolio';
 
 // style
 import styles from './page.module.css';
@@ -32,17 +31,7 @@ function Category({ params }) {
 
   return (
     <>
-      <section className={styles.links}>
-        {portfolioData.map(({ id, title, url }) => (
-          <LinkButton
-            key={id}
-            url={url}
-            text={title}
-            title={`Click to see ${title}`}
-            buttonStyle={'flat'}
-          />
-        ))}
-      </section>
+      <JustLinks />
       <header>
         <h2 className={styles.catTitle}>{params.category}</h2>
       </header>
