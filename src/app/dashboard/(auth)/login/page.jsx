@@ -65,13 +65,25 @@ function Login() {
         <PasswordInput />
         <ClickButton title={'Login with Mail'}>
           {'Login with'}
-          <Image src={EMailIcon} alt="Mail" width={35} height={35} />
+          <Image
+            src={EMailIcon}
+            alt="Mail"
+            title="Login with mail - Jovic Miroslav, Frontend Developer"
+            width={35}
+            height={35}
+          />
         </ClickButton>
       </form>
       <section className={styles.withRegister}>
         <ClickButton onClick={handleClick} title={'Or login with Google'}>
           {'Or login with'}
-          <Image src={GoogleIcon} alt="Google" width={35} height={35} />
+          <Image
+            src={GoogleIcon}
+            alt="Google"
+            title="Login with Google - Jovic Miroslav, Frontend Developer"
+            width={35}
+            height={35}
+          />
         </ClickButton>
         <Link href={'/dashboard/register'} title={`No account? Register here!`}>
           No account? Register here!

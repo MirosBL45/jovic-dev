@@ -85,6 +85,7 @@ async function BlogPost({ params }) {
               <Image
                 src={data.image}
                 alt={`${data.title} - Jovic Miroslav, Frontend Developer`}
+                title={`${data.title} - Jovic Miroslav, Frontend Developer`}
                 width={0}
                 height={0}
                 sizes="100vw"

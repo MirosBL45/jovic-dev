@@ -22,6 +22,7 @@ function Line() {
       className={styles.lineTech}
       src={mode === 'light' ? lineDark : lineLight}
       alt="line Miroslav Jovic Frontend Developer"
+      title="line Miroslav Jovic Frontend Developer"
       width={0}
       height={0}
     />

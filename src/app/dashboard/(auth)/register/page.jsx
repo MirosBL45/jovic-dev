@@ -75,7 +75,13 @@ function Register() {
         <PasswordInput />
         <ClickButton title={'Register'}>
           {'Register'}
-          <Image src={CheckList} alt="CheckList" width={35} height={35} />
+          <Image
+            src={CheckList}
+            alt="Register - Jovic Miroslav, Frontend Developer"
+            title="Register - Jovic Miroslav, Frontend Developer"
+            width={35}
+            height={35}
+          />
         </ClickButton>
       </form>
       {error && 'Something went wrong, there is an error'}

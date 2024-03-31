@@ -48,7 +48,7 @@ export default function NotFound() {
                 </p>
             </div>
             <div className={styles.item}>
-                <Image src={notFound} alt="notFound" className='moveImage' />
+                <Image src={notFound} alt="not found Miroslav Jovic Frontend Developer" title='not found Miroslav Jovic Frontend Developer' className='moveImage' />
             </div>
         </div>
     )

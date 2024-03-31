@@ -37,6 +37,7 @@ function AboutText() {
                 className={styles.square}
                 src={mode === 'light' ? squareDark : squareLight}
                 alt="square Miroslav Jovic Frontend Developer"
+                title="square Miroslav Jovic Frontend Developer"
                 width={32}
                 height={32}
               />
@@ -44,6 +45,7 @@ function AboutText() {
                 className={styles.line}
                 src={mode === 'light' ? lineDark : lineLight}
                 alt="line Miroslav Jovic Frontend Developer"
+                title="line Miroslav Jovic Frontend Developer"
                 width={0}
                 height={0}
               />
