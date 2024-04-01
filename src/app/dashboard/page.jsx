@@ -41,6 +41,7 @@ function Dashboard() {
 
   // for base64 image state
   const [imageBase64, setImageBase64] = useState('');
+  const [imageBase64second, setImageBase64second] = useState('');
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // catch data of posts
@@ -71,10 +72,15 @@ function Dashboard() {
     setButtonSend(true);
     e.preventDefault();
     const title = e.target[0].value;
-    const description = e.target[1].value;
+    const headline1 = e.target[1].value;
+    const description1 = e.target[2].value;
+    const content1 = e.target[3].value;
     const image = imageBase64;
-    let slug = e.target[3].value.replace(/\s+/g, '_');
-    const content = e.target[4].value;
+    const headline2 = e.target[5].value;
+    const description2 = e.target[6].value;
+    const content2 = e.target[7].value;
+    const imagesecond = imageBase64second;
+    let slug = e.target[9].value.replace(/\s+/g, '_');
 
     // fetch all slugs
     const existingSlugs = await getAllPostSlugs();
@@ -95,10 +101,15 @@ function Dashboard() {
         method: 'POST',
         body: JSON.stringify({
           title,
-          description,
+          headline1,
+          description1,
+          content1,
           image,
+          headline2,
+          description2,
+          content2,
+          imagesecond,
           slug,
-          content,
           username: session.data.user.name,
         }),
       });
@@ -133,8 +144,8 @@ function Dashboard() {
     const file = e.target.files[0];
 
     // check file size
-    if (file.size > 5 * 1024 * 1024) {
-      alert('The image is too large. Please select an image smaller than 5MB.');
+    if (file.size > 2 * 1024 * 1024) {
+      alert('The image is too large. Please select an image smaller than 2MB.');
       return;
     }
 
@@ -142,6 +153,25 @@ function Dashboard() {
     reader.readAsDataURL(file);
     reader.onload = () => {
       setImageBase64(reader.result);
+    };
+    reader.onerror = (err) => {
+      console.log('Error with image: ', err);
+    };
+  }
+
+  function convertToBase64second(e) {
+    const file = e.target.files[0];
+
+    // check file size
+    if (file.size > 2 * 1024 * 1024) {
+      alert('The image is too large. Please select an image smaller than 2MB.');
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setImageBase64second(reader.result);
     };
     reader.onerror = (err) => {
       console.log('Error with image: ', err);
@@ -198,20 +228,35 @@ function Dashboard() {
           <form className={styles.new} onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Title"
+              placeholder="Main Title"
               pattern=".{2,20}"
               title="String with min length of 2 and max length of 20 characters"
               required
             />
             <input
               type="text"
-              placeholder="Description"
+              placeholder="Headline 1"
+              pattern=".{2,20}"
+              title="String with min length of 2 and max length of 20 characters"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Description 1"
               pattern=".{2,200}"
               title="String with min length of 2 and max length of 200 characters, that is about 30 words"
               required
             />
+            <textarea
+              placeholder="Content 1"
+              cols="30"
+              rows="10"
+              pattern=".{2,2000}"
+              title="String with min length of 2 and max length of 2000 characters, that is about 280 words"
+              required
+            ></textarea>
             <div className={styles.forImage}>
-              <p>Add image for the post:</p>
+              <p>Add first image for the post:</p>
               <input
                 type="file"
                 accept="image/*"
@@ -219,6 +264,39 @@ function Dashboard() {
                 required
               />
             </div>
+
+            <input
+              type="text"
+              placeholder="Headline 2"
+              pattern=".{2,20}"
+              title="String with min length of 2 and max length of 20 characters"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Description 2"
+              pattern=".{2,200}"
+              title="String with min length of 2 and max length of 200 characters, that is about 30 words"
+              required
+            />
+            <textarea
+              placeholder="Content 2"
+              cols="30"
+              rows="10"
+              pattern=".{2,2000}"
+              title="String with min length of 2 and max length of 2000 characters, that is about 280 words"
+              required
+            ></textarea>
+            <div className={styles.forImage}>
+              <p>Add second image for the post:</p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={convertToBase64second}
+                required
+              />
+            </div>
+
             <input
               type="text"
               placeholder="Slug of the post"
@@ -226,14 +304,6 @@ function Dashboard() {
               title="String with min length of 2 and max length of 20 characters"
               required
             />
-            <textarea
-              placeholder="Content"
-              cols="30"
-              rows="10"
-              pattern=".{2,2000}"
-              title="String with min length of 2 and max length of 2000 characters, that is about 280 words"
-              required
-            ></textarea>
             <ClickButton title={'Send New Post'}>
               {buttonSend ? 'Sending This Post...' : 'Send New Post'}
             </ClickButton>

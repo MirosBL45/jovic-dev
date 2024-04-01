@@ -26,7 +26,7 @@ function BlogsCard({ data }) {
                 <time>{item.createdAt && formatDate(item.createdAt)}</time>
               </p>
               <h3>{item.title}</h3>
-              <p className={styles.description}>{item.description}</p>
+              <p className={styles.description}>{item.description1}</p>
             </article>
           </Link>
         ))}

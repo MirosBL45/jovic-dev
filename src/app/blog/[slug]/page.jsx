@@ -1,11 +1,10 @@
 // react/next stuff
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 
 // components
-import { formatDate } from '@/utils/GeneralFunctions';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
+import SlugCard from './SlugCard';
 
 // style
 import styles from './page.module.css';
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }) {
   const post = await getData(params.slug);
   return {
     title: `Jović Miroslav's Blog: ${post.title}`,
-    description: post.description,
+    description: post.description1,
   };
 }
 
@@ -40,28 +39,25 @@ async function BlogPost({ params }) {
 
   const data = await getData(params.slug);
 
-  // function for break text into parts
-  function splitContent(content) {
-    const sentences = content.split('. ');
-    const maxCharacters = 400;
-    let currentCharacters = 0;
-    let result = [];
+  const articleData1 = {
+    title: `${data.title}`,
+    headline1: `${data.headline1}`,
+    description1: `${data.description1}`,
+    username: `${data.username}`,
+    createdAt: `${data.createdAt}`,
+    image: `${data.image}`,
+    content1: `${data.content1}`,
+  };
 
-    sentences.forEach((sentence, index) => {
-      const sentenceLength = sentence.length + 1; // Add 1 for the space
-      if (currentCharacters + sentenceLength > maxCharacters && index !== 0) {
-        // If we exceed the limit and are not at the beginning, add twice <br>
-        result.push(<br key={`br1_${index}`} />);
-        result.push(<br key={`br2_${index}`} />);
-        currentCharacters = 0; // Reset the counter
-      }
-
-      result.push(sentence + (index === sentences.length - 1 ? '' : '. '));
-      currentCharacters += sentenceLength;
-    });
-
-    return result;
-  }
+  const articleData2 = {
+    title: `${data.title}`,
+    headline1: `${data.headline2}`,
+    description1: `${data.description2}`,
+    username: `${data.username}`,
+    createdAt: `${data.createdAt}`,
+    image: `${data.imagesecond}`,
+    content1: `${data.content2}`,
+  };
 
   return (
     <>
@@ -69,30 +65,9 @@ async function BlogPost({ params }) {
         notFound()
       ) : (
         <main>
-          <section className={styles.top}>
-            <div className={styles.info}>
-              <header>
-                <h2>{data.title}</h2>
-              </header>
-              <p className={styles.desc}>{data.description}</p>
-              <div className={styles.author}>
-                by
-                <span className={styles.username}>{data.username}</span>from
-                <time>{data.createdAt && formatDate(data.createdAt)}</time>
-              </div>
-            </div>
-            <div className={styles.imageContainer}>
-              <Image
-                src={data.image}
-                alt={`${data.title} - Jovic Miroslav, Frontend Developer`}
-                title={`${data.title} - Jovic Miroslav, Frontend Developer`}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-          </section>
-          <aside className={styles.content}>{splitContent(data.content)}</aside>
+          <h2 className={styles.blogTitle}>{data.title}</h2>
+          <SlugCard data={articleData1} />
+          <SlugCard data={articleData2} />
         </main>
       )}
       <ScrollButton />

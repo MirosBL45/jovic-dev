@@ -1,5 +1,5 @@
 .layoutTitle {
-    margin-bottom: 165px;
+    margin-bottom: 85px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -7,12 +7,12 @@
 
     /* MEDIA QUERIES (medium screens) */
     @media screen and (max-width: 800px) {
-        margin-bottom: 165px;
+        margin-bottom: 65px;
     }
 
     /* MEDIA QUERIES (very small screens) */
     @media screen and (max-width: 450px) {
-        margin-bottom: 85px;
+        margin-bottom: 45px;
     }
 
     p {
