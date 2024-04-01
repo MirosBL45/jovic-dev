@@ -101,7 +101,7 @@
   font-size: var(--medium-font);
 }
 .logout:hover {
-  background: var(--dark-green-color);
+  background: var(--dark-main-color);
 }
 
 .toggleBtn {
