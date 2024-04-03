@@ -103,6 +103,11 @@
 .logout:hover {
   background: var(--dark-main-color);
 }
+@media screen and (max-width: 1050px) {
+  .logout {
+    margin-left: 10px;
+  }
+}
 
 .toggleBtn {
   display: none;
@@ -131,7 +136,7 @@
   }
 }
 /* MEDIA QUERIES (medium and small screens) */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
   .contactAndTheme {
     flex-direction: column;
   }
@@ -148,8 +153,8 @@
     display: none;
   }
   .show_nav {
-    transition: var(--transition);
     transform: translateX(0);
+    transition: var(--transition);
   }
   .hide_nav {
     transform: translateX(100vw);

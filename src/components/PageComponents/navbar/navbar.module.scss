@@ -98,6 +98,10 @@
     &:hover {
         background: var(--dark-main-color);
     }
+
+    @media screen and (max-width: 1050px) {
+        margin-left: 10px;
+    }
 }
 
 .toggleBtn {
@@ -131,7 +135,8 @@
 }
 
 /* MEDIA QUERIES (medium and small screens) */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
+    // @media screen and (max-width: 900px) {
     // here the menu switches to the hamburger menu
 
     .contactAndTheme {
@@ -155,8 +160,8 @@
     }
 
     .show_nav {
-        transition: var(--transition);
         transform: translateX(0);
+        transition: var(--transition);
     }
 
     .hide_nav {

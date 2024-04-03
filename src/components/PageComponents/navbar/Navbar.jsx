@@ -126,7 +126,10 @@ function Navbar() {
             {session.status === 'authenticated' && (
               <button
                 className={`${styles.logout} ${isNavShowing && styles.open}`}
-                onClick={handleLogout}
+                onClick={() => {
+                  handleLogout();
+                  setIsNavShowing(false);
+                }}
                 title="Logout"
               >
                 <GrPowerShutdown />
