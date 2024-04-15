@@ -19,7 +19,10 @@
 
   --dark-main-color: hsl(210, 90%, 25%);
   --dark-gray-color: #676767;
+
   --gray-color: #bbb;
+
+  --gray-color2: #1c1c1c;
 
   --xxl-border-radius: 6.25rem;
   --xl-border-radius: 2.25rem;
@@ -73,6 +76,7 @@
 
   --popup-bgd: rgba(8, 195, 253, 0.5);
 
+  --gray-color2: #c8c1c1;
 
   --dark-main-color: hsl(194, 98%, 36%);
   --dark-gray-color: #9d9d9d;
@@ -272,6 +276,17 @@ button {
   border-radius: var(--xl-border-radius);
   border: 2px solid var(--main-color);
   color: var(--white-color);
+}
+
+.disabledButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--gray-color2);
+  border: 2px solid var(--white-color);
+}
+
+.disabledButton:hover {
+  color: var(--background);
 }
 
 .flat {

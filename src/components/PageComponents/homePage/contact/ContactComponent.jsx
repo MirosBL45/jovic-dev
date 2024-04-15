@@ -65,6 +65,7 @@ function ContactComponent() {
             required
           ></textarea>
           <ClickButton
+            disabled={loading}
             title={
               loading
                 ? `Sending...`

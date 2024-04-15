@@ -25,9 +25,13 @@ function Register() {
 
   const [error, setError] = useState(false);
 
+  // button sending text
+  const [buttonSend, setButtonSend] = useState(false);
+
   const router = useRouter();
 
   async function handleSubmit(e) {
+    setButtonSend(true);
     e.preventDefault();
     const name = e.target[0].value;
     const email = e.target[1].value;
@@ -45,6 +49,8 @@ function Register() {
           password,
         }),
       });
+
+      setButtonSend(false);
 
       res.status === 201 &&
         router.push('/dashboard/login?success=Account has been created');
@@ -73,7 +79,10 @@ function Register() {
           required
         />
         <PasswordInput />
-        <ClickButton title={'Register'}>
+        <ClickButton
+          title={'Register - Jovic Miroslav, Frontend Developer'}
+          disabled={buttonSend}
+        >
           {'Register'}
           <Image
             src={CheckList}

@@ -314,7 +314,10 @@ function Dashboard() {
               title="String with min length of 2 and max length of 20 characters"
               required
             />
-            <ClickButton title={'Send New Post'}>
+            <ClickButton
+              title={buttonSend ? 'Sending This Post...' : 'Send New Post'}
+              disabled={buttonSend}
+            >
               {buttonSend ? 'Sending This Post...' : 'Send New Post'}
             </ClickButton>
           </form>

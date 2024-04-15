@@ -4,7 +4,7 @@
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 // components
@@ -28,6 +28,9 @@ function Login() {
   const session = useSession();
   const router = useRouter();
 
+  // button sending text
+  const [buttonSend, setButtonSend] = useState(false);
+
   if (session.status === 'loading') {
     return (
       <p style={{ marginTop: '150px', fontSize: '25px' }}>Loading User...</p>
@@ -39,6 +42,7 @@ function Login() {
   }
 
   function handleSubmit(e) {
+    setButtonSend(true);
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
@@ -47,6 +51,7 @@ function Login() {
   }
 
   function handleClick() {
+    setButtonSend(true);
     signIn('google');
   }
 
@@ -63,8 +68,12 @@ function Login() {
           required
         />
         <PasswordInput />
-        <ClickButton title={'Login with Mail'}>
-          {'Login with'}
+        <ClickButton
+          title={buttonSend ? 'Please wait...' : 'Login with Mail'}
+          disabled={buttonSend}
+        >
+          {/* {'Login with'} */}
+          {buttonSend ? 'Please wait...' : 'Login with'}
           <Image
             src={EMailIcon}
             alt="Mail"
@@ -75,8 +84,13 @@ function Login() {
         </ClickButton>
       </form>
       <section className={styles.withRegister}>
-        <ClickButton onClick={handleClick} title={'Or login with Google'}>
-          {'Or login with'}
+        <ClickButton
+          onClick={handleClick}
+          title={buttonSend ? 'Please wait...' : 'Or login with Google'}
+          disabled={buttonSend}
+        >
+          {/* {'Or login with'} */}
+          {buttonSend ? 'Please wait...' : 'Or login with'}
           <Image
             src={GoogleIcon}
             alt="Google"
