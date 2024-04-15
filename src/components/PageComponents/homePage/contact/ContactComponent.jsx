@@ -6,6 +6,7 @@ import { useState, useRef } from 'react';
 
 // components
 import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
+import Popup from '@/components/UIComponents/PopUp/PopUp';
 
 // style
 import styles from './contact.module.css';
@@ -16,6 +17,10 @@ function ContactComponent() {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
 
+  // for PopUp model
+  const [popupMessage, setPopupMessage] = useState(false);
+  const handleClose = () => setPopupMessage(false);
+
   function sendEmail(e) {
     e.preventDefault();
 
@@ -25,7 +30,7 @@ function ContactComponent() {
       .then(
         () => {
           setLoading(false);
-          alert('Thank you. I will get back to you as soon as possible.');
+          setPopupMessage(true);
         },
         (error) => {
           setLoading(false);
@@ -70,6 +75,13 @@ function ContactComponent() {
           </ClickButton>
         </form>
       </section>
+      {popupMessage && (
+        <Popup
+          message="Thank you. I will get back to you as soon as possible."
+          onClose={handleClose}
+          showPopup={popupMessage}
+        />
+      )}
     </>
   );
 }

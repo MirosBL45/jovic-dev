@@ -12,6 +12,8 @@ import { TabTitle } from '@/utils/GeneralFunctions';
 import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
+import Popup1 from '@/components/UIComponents/PopUp/PopUp';
+import Popup2 from '@/components/UIComponents/PopUp/PopUp';
 
 // style
 import styles from './page.module.css';
@@ -38,6 +40,12 @@ function Dashboard() {
 
   // button sending text
   const [buttonSend, setButtonSend] = useState(false);
+
+  // for PopUp model
+  const [popupMessage1, setPopupMessage1] = useState(false);
+  const handleClose1 = () => setPopupMessage1(false);
+  const [popupMessage2, setPopupMessage2] = useState(false);
+  const handleClose2 = () => setPopupMessage2(false);
 
   // for base64 image state
   const [imageBase64, setImageBase64] = useState('');
@@ -145,7 +153,8 @@ function Dashboard() {
 
     // check file size
     if (file.size > 2 * 1024 * 1024) {
-      alert('The image is too large. Please select an image smaller than 2MB.');
+      setPopupMessage1(true);
+      e.target.value = '';
       return;
     }
 
@@ -164,7 +173,8 @@ function Dashboard() {
 
     // check file size
     if (file.size > 2 * 1024 * 1024) {
-      alert('The image is too large. Please select an image smaller than 2MB.');
+      setPopupMessage2(true);
+      e.target.value = '';
       return;
     }
 
@@ -310,6 +320,20 @@ function Dashboard() {
           </form>
         </main>
         <ScrollButton />
+        {popupMessage1 && (
+          <Popup1
+            message="The first image is too large. Please select an image smaller than 2MB."
+            onClose={handleClose1}
+            showPopup={popupMessage1}
+          />
+        )}
+        {popupMessage2 && (
+          <Popup2
+            message="The second image is too large. Please select an image smaller than 2MB."
+            onClose={handleClose2}
+            showPopup={popupMessage2}
+          />
+        )}
       </>
     );
   }
