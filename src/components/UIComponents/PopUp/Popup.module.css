@@ -69,3 +69,58 @@
     gap: 30px;
   }
 }
+
+.contentDelete {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.buttons {
+  display: flex;
+  gap: 25px;
+}
+.buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 10px;
+  font-size: var(--regular-medium-font);
+  border-radius: var(--medium-border-radius);
+  color: aliceblue;
+  transition: var(--transition);
+}
+.buttons button svg {
+  width: 25px;
+  height: 25px;
+  transition: var(--transition);
+}
+
+.delete {
+  font-size: var(--mbs-font);
+  color: red;
+  display: grid;
+  place-items: center;
+}
+
+.deleteButton {
+  background: red;
+}
+.deleteButton:hover {
+  transform: scale(1.05);
+  background: rgb(221, 60, 221);
+}
+.deleteButton:hover svg {
+  transform: rotate(180deg);
+}
+
+.cancelButton {
+  background: var(--main-color);
+}
+.cancelButton:hover {
+  transform: scale(1.05);
+  background: var(--dark-main-color);
+}

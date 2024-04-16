@@ -14,6 +14,7 @@ import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
 import Popup1 from '@/components/UIComponents/PopUp/PopUp';
 import Popup2 from '@/components/UIComponents/PopUp/PopUp';
+import DeletePopUp from '@/components/UIComponents/PopUp/DeletePopUp';
 
 // style
 import styles from './page.module.css';
@@ -41,7 +42,11 @@ function Dashboard() {
   // button sending text
   const [buttonSend, setButtonSend] = useState(false);
 
-  // for PopUp model
+  // PopUp model deleting post
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [slugToDelete, setSlugToDelete] = useState('');
+
+  // PopUp models for loading images
   const [popupMessage1, setPopupMessage1] = useState(false);
   const handleClose1 = () => setPopupMessage1(false);
   const [popupMessage2, setPopupMessage2] = useState(false);
@@ -138,21 +143,30 @@ function Dashboard() {
   }
 
   async function handleDelete(slug) {
-    const userConfirmed = window.confirm('Delete this post?');
+    setSlugToDelete(slug);
+    setShowConfirmation(true);
+  }
 
-    if (userConfirmed) {
-      try {
-        await fetch(`/api/posts/${slug}`, {
-          method: 'DELETE',
-        });
-        // it reloads page, so we can see it after deleting post
-        mutate();
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      alert('Deletion suspended!');
+  async function confirmDelete() {
+    try {
+      await fetch(`/api/posts/${slugToDelete}`, {
+        method: 'DELETE',
+      });
+      // it reloads page, so we can see it after deleting post
+      mutate();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      // reset fields
+      setSlugToDelete('');
+      setShowConfirmation(false);
     }
+  }
+
+  function cancelDelete() {
+    // reset fields
+    setSlugToDelete('');
+    setShowConfirmation(false);
   }
 
   function convertToBase64(e) {
@@ -201,7 +215,9 @@ function Dashboard() {
     return (
       <>
         <header className="layoutContainerAll">
-          <h1 className={styles.headline}>Add New Post</h1>
+          <h1 className={styles.headline}>
+            {buttonSend ? 'Sending This Post...' : 'Add New Post'}
+          </h1>
         </header>
         <main className={styles.container}>
           <div>
@@ -251,6 +267,7 @@ function Dashboard() {
               pattern=".{2,20}"
               title="String with min length of 2 and max length of 20 characters"
               required
+              disabled={buttonSend && true}
             />
             <input
               type="text"
@@ -258,6 +275,7 @@ function Dashboard() {
               pattern=".{2,20}"
               title="String with min length of 2 and max length of 20 characters"
               required
+              disabled={buttonSend && true}
             />
             <input
               type="text"
@@ -265,6 +283,7 @@ function Dashboard() {
               pattern=".{2,200}"
               title="String with min length of 2 and max length of 200 characters, that is about 30 words"
               required
+              disabled={buttonSend && true}
             />
             <textarea
               placeholder="Content 1"
@@ -273,6 +292,7 @@ function Dashboard() {
               pattern=".{2,2000}"
               title="String with min length of 2 and max length of 2000 characters, that is about 280 words"
               required
+              disabled={buttonSend && true}
             ></textarea>
             <div className={styles.forImage}>
               <p>
@@ -291,6 +311,7 @@ function Dashboard() {
                   accept="image/*"
                   onChange={convertToBase64}
                   required
+                  disabled={buttonSend && true}
                 />
               </div>
               {renderedImage1 && (
@@ -313,6 +334,7 @@ function Dashboard() {
               pattern=".{2,20}"
               title="String with min length of 2 and max length of 20 characters"
               required
+              disabled={buttonSend && true}
             />
             <input
               type="text"
@@ -320,6 +342,7 @@ function Dashboard() {
               pattern=".{2,200}"
               title="String with min length of 2 and max length of 200 characters, that is about 30 words"
               required
+              disabled={buttonSend && true}
             />
             <textarea
               placeholder="Content 2"
@@ -328,6 +351,7 @@ function Dashboard() {
               pattern=".{2,2000}"
               title="String with min length of 2 and max length of 2000 characters, that is about 280 words"
               required
+              disabled={buttonSend && true}
             ></textarea>
             <div className={styles.forImage}>
               <p>
@@ -346,6 +370,7 @@ function Dashboard() {
                   accept="image/*"
                   onChange={convertToBase64second}
                   required
+                  disabled={buttonSend && true}
                 />
               </div>
               {renderedImage2 && (
@@ -368,6 +393,7 @@ function Dashboard() {
               pattern=".{2,20}"
               title="String with min length of 2 and max length of 20 characters"
               required
+              disabled={buttonSend && true}
             />
             <ClickButton
               title={buttonSend ? 'Sending This Post...' : 'Send New Post'}
@@ -390,6 +416,12 @@ function Dashboard() {
             message="The second image is too large. Please select an image smaller than 2MB."
             onClose={handleClose2}
             showPopup={popupMessage2}
+          />
+        )}
+        {showConfirmation && (
+          <DeletePopUp
+            cancelDelete={cancelDelete}
+            confirmDelete={confirmDelete}
           />
         )}
       </>
