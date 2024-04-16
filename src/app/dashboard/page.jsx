@@ -19,7 +19,7 @@ import Popup2 from '@/components/UIComponents/PopUp/PopUp';
 import styles from './page.module.css';
 
 // icons
-import { IoCloseCircleOutline } from 'react-icons/io5';
+import { IoCloseCircleOutline, IoImageOutline } from 'react-icons/io5';
 
 // function for catching data to see slugs
 async function getAllPostSlugs() {
@@ -50,6 +50,10 @@ function Dashboard() {
   // for base64 image state
   const [imageBase64, setImageBase64] = useState('');
   const [imageBase64second, setImageBase64second] = useState('');
+
+  // to show uploaded image
+  const [renderedImage1, setRenderedImage1] = useState('');
+  const [renderedImage2, setRenderedImage2] = useState('');
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // catch data of posts
@@ -123,8 +127,11 @@ function Dashboard() {
       });
       // it reloads page, so we can see that new post which was created
       mutate();
+      // reset fields
       e.target.reset();
       setButtonSend(false);
+      setRenderedImage1('');
+      setRenderedImage2('');
     } catch (error) {
       console.log(error);
     }
@@ -162,6 +169,7 @@ function Dashboard() {
     reader.readAsDataURL(file);
     reader.onload = () => {
       setImageBase64(reader.result);
+      setRenderedImage1(reader.result);
     };
     reader.onerror = (err) => {
       console.log('Error with image: ', err);
@@ -182,6 +190,7 @@ function Dashboard() {
     reader.readAsDataURL(file);
     reader.onload = () => {
       setImageBase64second(reader.result);
+      setRenderedImage2(reader.result);
     };
     reader.onerror = (err) => {
       console.log('Error with image: ', err);
@@ -266,13 +275,36 @@ function Dashboard() {
               required
             ></textarea>
             <div className={styles.forImage}>
-              <p>Add first image for the post:</p>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={convertToBase64}
-                required
-              />
+              <p>
+                {!renderedImage1
+                  ? 'Add first image for the post:'
+                  : 'Image added'}
+              </p>
+              <div className={styles.labelDiv}>
+                <label htmlFor="image-upload1">
+                  {!renderedImage1 ? 'Add image' : 'Change image'}
+                  <IoImageOutline />
+                </label>
+                <input
+                  id="image-upload1"
+                  type="file"
+                  accept="image/*"
+                  onChange={convertToBase64}
+                  required
+                />
+              </div>
+              {renderedImage1 && (
+                <div className={styles.renderedImage}>
+                  <Image
+                    src={renderedImage1}
+                    alt="Miroslav Jovic Frontend Developer"
+                    title="Miroslav Jovic Frontend Developer"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                  />
+                </div>
+              )}
             </div>
 
             <input
@@ -298,13 +330,36 @@ function Dashboard() {
               required
             ></textarea>
             <div className={styles.forImage}>
-              <p>Add second image for the post:</p>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={convertToBase64second}
-                required
-              />
+              <p>
+                {!renderedImage2
+                  ? 'Add second image for the post:'
+                  : 'Image added'}
+              </p>
+              <div className={styles.labelDiv}>
+                <label htmlFor="image-upload2">
+                  {!renderedImage2 ? 'Add image' : 'Change image'}
+                  <IoImageOutline />
+                </label>
+                <input
+                  id="image-upload2"
+                  type="file"
+                  accept="image/*"
+                  onChange={convertToBase64second}
+                  required
+                />
+              </div>
+              {renderedImage2 && (
+                <div className={styles.renderedImage}>
+                  <Image
+                    src={renderedImage2}
+                    alt="Miroslav Jovic Frontend Developer"
+                    title="Miroslav Jovic Frontend Developer"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                  />
+                </div>
+              )}
             </div>
 
             <input

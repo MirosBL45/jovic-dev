@@ -69,11 +69,15 @@
   border: none;
   outline: none;
   color: var(--background);
-  border: 1px solid var(--background);
+  border: 2px solid var(--input-border-color);
   border-radius: var(--medium-border-radius);
   font-size: var(--small-font);
   font-weight: bold;
   resize: none;
+}
+.new input:focus,
+.new textarea:focus {
+  border: 2px solid var(--main-color);
 }
 
 .displayed {
@@ -82,12 +86,99 @@
 }
 
 .forImage {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 .forImage p {
   color: var(--background);
+  font-size: var(--ms-font);
+  grid-row-start: 1;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+@media screen and (max-width: 450px) {
+  .forImage p {
+    font-size: var(--regular-font);
+  }
+}
+@media screen and (max-width: 370px) {
+  .forImage p {
+    font-size: var(--small-font);
+  }
+}
+.forImage .renderedImage {
+  grid-column-start: 2;
+  grid-row-end: span 2;
+  border-radius: var(--medium-border-radius);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+.forImage .renderedImage img {
+  width: 60%;
+  height: auto;
+}
+.forImage .labelDiv {
+  grid-row-start: 2;
+  display: grid;
+  place-items: center;
+}
+.forImage input[type=file] {
+  display: none;
+}
+.forImage label {
+  font-size: var(--ms-font);
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 13px 12px;
+  cursor: pointer;
+  color: #F4F0FF;
+  background: var(--main-color);
+  transition: var(--transition);
+  width: 70%;
+}
+@media screen and (max-width: 1250px) {
+  .forImage label {
+    gap: 10px;
+    width: 99%;
+    padding: 13px 6px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .forImage label {
+    font-size: var(--regular-font);
+  }
+}
+@media screen and (max-width: 370px) {
+  .forImage label {
+    font-size: var(--small-font);
+  }
+}
+.forImage label:hover {
+  transform: scale(1.1);
+  background: var(--dark-main-color);
+}
+.forImage label svg {
+  width: 30px;
+  height: 30px;
+}
+@media screen and (max-width: 450px) {
+  .forImage label svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .forImage label svg {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 /* MEDIA QUERIES (large screens) */
@@ -102,17 +193,8 @@
     gap: 40px;
   }
 }
-/* MEDIA QUERIES (medium screens) */
-@media screen and (max-width: 850px) {
-  .container {
-    gap: 35px;
-  }
-  .post {
-    gap: 20px;
-  }
-}
 /* MEDIA QUERIES (medium/small screens) */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .container {
     flex-direction: column-reverse;
     gap: 150px;

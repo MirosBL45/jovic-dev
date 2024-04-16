@@ -16,6 +16,8 @@
 
   --popup-bgd: rgba(10, 102, 194, 0.5);
 
+  --input-border-color: #162235;
+
 
   --dark-main-color: hsl(210, 90%, 25%);
   --dark-gray-color: #676767;
@@ -76,6 +78,8 @@
 
   --popup-bgd: rgba(8, 195, 253, 0.5);
 
+  --input-border-color: #475467;
+
   --gray-color2: #c8c1c1;
 
   --dark-main-color: hsl(194, 98%, 36%);
@@ -126,6 +130,17 @@ h4 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--white-color);
+  background: var(--main-color);
+}
+
+::selection {
+  color: var(--white-color);
+  background: var(--main-color);
 }
 
 input,
