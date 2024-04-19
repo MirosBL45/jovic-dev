@@ -28,8 +28,8 @@ import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.jpg'
 import houses from '../../../public/portfolio/imagesApps/houses.jpg';
 import milspedAll from '../../../public/portfolio/imagesApps/milspedAll.jpg';
 import simic from '../../../public/portfolio/imagesApps/simic.jpg';
-import retail from '../../../public/portfolio/imagesApps/retail.jpg';
-import kala from '../../../public/portfolio/imagesApps/kala.jpg';
+import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
+import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 
 export const portfolioData = [
     {

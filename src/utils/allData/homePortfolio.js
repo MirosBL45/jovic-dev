@@ -1,5 +1,5 @@
-import retail from '../../../public/portfolio/imagesApps/retail.jpg';
-import kala from '../../../public/portfolio/imagesApps/kala.jpg';
+import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
+import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 import milspedAll from '../../../public/portfolio/imagesApps/milspedAll.jpg';
 
 import pets from '../../../public/portfolio/imagesWeb/pets.jpg';
