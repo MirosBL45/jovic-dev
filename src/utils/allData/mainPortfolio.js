@@ -18,16 +18,20 @@ import talex from '../../../public/portfolio/imagesWeb/talex.webp';
 import uzelac from '../../../public/portfolio/imagesWeb/uzelac.webp';
 import rakita from '../../../public/portfolio/imagesWeb/rakita.webp';
 
-import companywall from '../../../public/portfolio/imagesApps/companywall.jpg';
+import companywall from '../../../public/portfolio/imagesApps/companywalltask.webp';
+// import companywall from '../../../public/portfolio/imagesApps/companywall.jpg';
 import materialSocial from '../../../public/portfolio/imagesApps/materialSocial.jpg';
 import promptopia from '../../../public/portfolio/imagesApps/promptopia.jpg';
 import todo from '../../../public/portfolio/imagesApps/todo.jpg';
 import recipe from '../../../public/portfolio/imagesApps/recipe.jpg';
-import comit from '../../../public/portfolio/imagesApps/comit.jpg';
-import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.jpg';
+import comit from '../../../public/portfolio/imagesApps/committask.webp';
+// import comit from '../../../public/portfolio/imagesApps/comit.jpg';
+import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.webp';
+// import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.jpg';
 import houses from '../../../public/portfolio/imagesApps/houses.jpg';
 import milspedAll from '../../../public/portfolio/imagesApps/milspedAll.jpg';
-import simic from '../../../public/portfolio/imagesApps/simic.jpg';
+import simic from '../../../public/portfolio/imagesApps/drsimic.webp';
+// import simic from '../../../public/portfolio/imagesApps/simic.jpg';
 import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 
@@ -116,10 +120,10 @@ export const itemsPortfolio = {
         },
         {
             id: "gitUrl-finder",
-            title: "gitUrl Finder",
-            desc: "This React app gives you easy access to user accounts on gitUrl, allowing you to explore repositories and learn about the work of other developers. A simple user search lets you find developers by name and view their gitUrl profiles.",
-            liveUrl: 'https://gitUrl-finder-app-mirosbl45.vercel.app/',
-            gitUrl: 'https://github.com/MirosBL45/gitUrl_finder_app',
+            title: "GitHub Finder",
+            desc: "This React app gives you easy access to user accounts on GitHub, allowing you to explore repositories and learn about the work of other developers. A simple user search lets you find developers by name and view their GitHub profiles.",
+            liveUrl: 'https://github-finder-app-mirosbl45.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/github_finder_app',
             image: githubfinder,
             techs: ['React', 'Axios', 'DaisyUI', 'React-icons'],
         },
