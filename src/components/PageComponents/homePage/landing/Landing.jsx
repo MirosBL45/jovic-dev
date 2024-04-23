@@ -13,7 +13,7 @@ function Landing() {
     'Vue.js',
     'MongoDB',
     'Tailwind CSS',
-    'Sass',
+    'SCSS',
   ];
 
   return (

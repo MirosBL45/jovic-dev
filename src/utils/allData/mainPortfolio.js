@@ -2,12 +2,12 @@ import games from '../../../public/portfolio/games.jpg';
 import sites from '../../../public/portfolio/sites.jpg';
 import webapps from '../../../public/portfolio/webapps.jpg';
 
-import blackjack from '../../../public/portfolio/imagesGames/blackjack.jpg';
-import poker from '../../../public/portfolio/imagesGames/poker.jpg';
-import memory from '../../../public/portfolio/imagesGames/memory.jpg';
-import puzzle from '../../../public/portfolio/imagesGames/puzzle.jpg';
-import snake from '../../../public/portfolio/imagesGames/snake.jpg';
-import tictactoe from '../../../public/portfolio/imagesGames/tictactoe.jpg';
+import blackjack from '../../../public/portfolio/imagesGames/blackjack.webp';
+import poker from '../../../public/portfolio/imagesGames/poker.webp';
+import memory from '../../../public/portfolio/imagesGames/memory.webp';
+import puzzle from '../../../public/portfolio/imagesGames/puzzle.webp';
+import snake from '../../../public/portfolio/imagesGames/snake.webp';
+import tictactoe from '../../../public/portfolio/imagesGames/tictactoe.webp';
 
 import slider from '../../../public/portfolio/imagesWeb/slidercat.webp';
 import pets from '../../../public/portfolio/imagesWeb/pets.webp';
@@ -43,20 +43,20 @@ export const portfolioData = [
         forUrl: 'apps',
     },
     {
-        id: 2,
-        title: "Websites",
-        url: "/portfolio/websites",
-        image: sites,
-        description: 'Discover a variety of websites that showcase my emphasis on clean design and a smooth user experience, demonstrating my dedication to creating visually appealing and efficient online destinations. Explore the convergence of art and technology as you travel these engaging digital environments.',
-        forUrl: 'websites',
-    },
-    {
         id: 3,
         title: "Games",
         url: "/portfolio/games",
         image: games,
         description: 'Indulge in the thrill of interactive entertainment with my collection of games. Developed using JavaScript these games offer experiences that captivate players because each game highlights my passion for blending creativity with technical expertise.',
         forUrl: 'games',
+    },
+    {
+        id: 2,
+        title: "Websites",
+        url: "/portfolio/websites",
+        image: sites,
+        description: 'Discover a variety of websites that showcase my emphasis on clean design and a smooth user experience, demonstrating my dedication to creating visually appealing and efficient online destinations. Explore the convergence of art and technology as you travel these engaging digital environments.',
+        forUrl: 'websites',
     },
 ];
 
@@ -171,6 +171,62 @@ export const itemsPortfolio = {
             techs: ['React', 'MaterialUI'],
         },
     ],
+    games: [
+        {
+            id: 1,
+            title: "Blackjack",
+            desc: "It was crucial to implement the rules of Blackjack, including proper counting of card values, treating aces as 1 or 11, and proper management of aces. Also, I had to pay attention to the logic around `busting` when a player goes over 21.",
+            liveUrl: 'https://mjblackjack.netlify.app/',
+            gitUrl: 'https://github.com/MirosBL45/Blackjack',
+            image: blackjack,
+            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+        },
+        {
+            id: 2,
+            title: "Memory game",
+            desc: "One of the key challenges in the development of the Memory game was to implement the logic of turning cards and matching them. When two cards are flipped over, I had to carefully monitor their status, reveal them appropriately, and allow players to see and remember the images.",
+            liveUrl: 'https://memory-card-game-mj.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/memory_card_game',
+            image: memory,
+            techs: ['JavaScript', 'HTML', 'CSS', 'SCSS'],
+        },
+        {
+            id: 3,
+            title: "Puzzle",
+            desc: "This game provides puzzles at three difficulty levels, progressively more challenging. A key challenge was implementing drag functionality for puzzle pieces, ensuring correct positioning to complete the image. It was essential to handle drag events and placement carefully.",
+            liveUrl: 'https://puzzlemj.netlify.app/',
+            gitUrl: 'https://github.com/MirosBL45/Puzzle_game',
+            image: puzzle,
+            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+        },
+        {
+            id: 4,
+            title: "Snake",
+            desc: "Implementing the logic for snake movement and bite detection was key. I had to carefully balance the speed of the snake, react to user commands and avoid collisions with walls. An additional challenge was developing the mechanics to generate bites on the screen that the snake eats in order to grow.",
+            liveUrl: 'https://snake-final.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/snake_final',
+            image: snake,
+            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+        },
+        {
+            id: 5,
+            title: "Tic tac toe",
+            desc: "It was crucial to track wins and declare a winner automatically. This included detecting winning combinations and updating the game state accurately. Focus was also on enhancing the user interface for clear marking of player moves, maintaining game state visibility, and enabling easy mouse interaction.",
+            liveUrl: 'https://tictactoemj.netlify.app/',
+            gitUrl: 'https://github.com/MirosBL45/TicTacToe',
+            image: tictactoe,
+            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+        },
+        {
+            id: 6,
+            title: "Poker",
+            desc: "I had to handle the logic for detecting and evaluating card combinations, which added to the complexity of the project. Through this creative process, I gained a deep understanding of JavaScript, working with objects, manipulating the DOM, and developing complex algorithms.",
+            liveUrl: 'https://pokermj.netlify.app/',
+            gitUrl: 'https://github.com/MirosBL45/Poker',
+            image: poker,
+            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+        },
+    ],
     websites: [
         {
             id: "talex",
@@ -183,7 +239,7 @@ export const itemsPortfolio = {
         },
         {
             id: "uzelac",
-            title: "UziLight",
+            title: "Uzelac Light",
             desc: "Uzelac is in lighting design and visual storytelling. I made for him whole website with Vite.js which prioritizes speed by leveraging native ES module support in browsers, resulting in rapid startup times during development.",
             liveUrl: 'https://uzilight.com/',
             gitUrl: 'https://github.com/MirosBL45/uzelac_web',
@@ -260,62 +316,6 @@ export const itemsPortfolio = {
             liveUrl: 'https://slidercatmj.netlify.app/',
             gitUrl: 'https://github.com/MirosBL45/Slider-cat',
             image: slider,
-            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
-        },
-    ],
-    games: [
-        {
-            id: 1,
-            title: "Blackjack",
-            desc: "It was crucial to implement the rules of Blackjack, including proper counting of card values, treating aces as 1 or 11, and proper management of aces. Also, I had to pay attention to the logic around `busting` when a player goes over 21.",
-            liveUrl: 'https://mjblackjack.netlify.app/',
-            gitUrl: 'https://github.com/MirosBL45/Blackjack',
-            image: blackjack,
-            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
-        },
-        {
-            id: 2,
-            title: "Memory game",
-            desc: "One of the key challenges in the development of the Memory game was to implement the logic of turning cards and matching them. When two cards are flipped over, I had to carefully monitor their status, reveal them appropriately, and allow players to see and remember the images.",
-            liveUrl: 'https://memory-card-game-mj.vercel.app/',
-            gitUrl: 'https://github.com/MirosBL45/memory_card_game',
-            image: memory,
-            techs: ['JavaScript', 'HTML', 'CSS', 'SCSS'],
-        },
-        {
-            id: 3,
-            title: "Puzzle",
-            desc: "This game provides puzzles at three difficulty levels, progressively more challenging. A key challenge was implementing drag functionality for puzzle pieces, ensuring correct positioning to complete the image. It was essential to handle drag events and placement carefully.",
-            liveUrl: 'https://puzzlemj.netlify.app/',
-            gitUrl: 'https://github.com/MirosBL45/Puzzle_game',
-            image: puzzle,
-            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
-        },
-        {
-            id: 4,
-            title: "Snake",
-            desc: "Implementing the logic for snake movement and bite detection was key. I had to carefully balance the speed of the snake, react to user commands and avoid collisions with walls. An additional challenge was developing the mechanics to generate bites on the screen that the snake eats in order to grow.",
-            liveUrl: 'https://snake-final.vercel.app/',
-            gitUrl: 'https://github.com/MirosBL45/snake_final',
-            image: snake,
-            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
-        },
-        {
-            id: 5,
-            title: "Tic tac toe",
-            desc: "It was crucial to track wins and declare a winner automatically. This included detecting winning combinations and updating the game state accurately. Focus was also on enhancing the user interface for clear marking of player moves, maintaining game state visibility, and enabling easy mouse interaction.",
-            liveUrl: 'https://tictactoemj.netlify.app/',
-            gitUrl: 'https://github.com/MirosBL45/TicTacToe',
-            image: tictactoe,
-            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
-        },
-        {
-            id: 6,
-            title: "Poker",
-            desc: "I had to handle the logic for detecting and evaluating card combinations, which added to the complexity of the project. Through this creative process, I gained a deep understanding of JavaScript, working with objects, manipulating the DOM, and developing complex algorithms.",
-            liveUrl: 'https://pokermj.netlify.app/',
-            gitUrl: 'https://github.com/MirosBL45/Poker',
-            image: poker,
             techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
         },
     ],

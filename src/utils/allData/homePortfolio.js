@@ -6,9 +6,9 @@ import pets from '../../../public/portfolio/imagesWeb/pets.webp';
 import talex from '../../../public/portfolio/imagesWeb/talexm.webp';
 import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
 
-import blackjack from '../../../public/portfolio/imagesGames/blackjack.jpg';
-import puzzle from '../../../public/portfolio/imagesGames/puzzle.jpg';
-import snake from '../../../public/portfolio/imagesGames/snake.jpg';
+import blackjack from '../../../public/portfolio/imagesGames/blackjack.webp';
+import puzzle from '../../../public/portfolio/imagesGames/puzzle.webp';
+import snake from '../../../public/portfolio/imagesGames/snake.webp';
 
 export const apps = [
     {
