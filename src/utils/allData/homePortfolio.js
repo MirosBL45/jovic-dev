@@ -2,8 +2,8 @@ import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
 
-import pets from '../../../public/portfolio/imagesWeb/pets.jpg';
-import talex from '../../../public/portfolio/imagesWeb/talex.webp';
+import pets from '../../../public/portfolio/imagesWeb/pets.webp';
+import talex from '../../../public/portfolio/imagesWeb/talexm.webp';
 import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
 
 import blackjack from '../../../public/portfolio/imagesGames/blackjack.jpg';

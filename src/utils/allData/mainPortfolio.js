@@ -9,36 +9,27 @@ import puzzle from '../../../public/portfolio/imagesGames/puzzle.jpg';
 import snake from '../../../public/portfolio/imagesGames/snake.jpg';
 import tictactoe from '../../../public/portfolio/imagesGames/tictactoe.jpg';
 
-import slider from '../../../public/portfolio/imagesWeb/slider.jpg';
-import pets from '../../../public/portfolio/imagesWeb/pets.jpg';
-import social from '../../../public/portfolio/imagesWeb/social.jpg';
-import quiz from '../../../public/portfolio/imagesWeb/quiz.jpg';
-import candle from '../../../public/portfolio/imagesWeb/candle.jpg';
-import talex from '../../../public/portfolio/imagesWeb/talex.webp';
-import uzelac from '../../../public/portfolio/imagesWeb/uzelac.webp';
-import rakita from '../../../public/portfolio/imagesWeb/rakita.webp';
+import slider from '../../../public/portfolio/imagesWeb/slidercat.webp';
+import pets from '../../../public/portfolio/imagesWeb/pets.webp';
+import social from '../../../public/portfolio/imagesWeb/socialnetwork.webp';
+import quiz from '../../../public/portfolio/imagesWeb/quiz.webp';
+import iqos from '../../../public/portfolio/imagesWeb/iqos.webp';
+import talex from '../../../public/portfolio/imagesWeb/talexm.webp';
+import uzelac from '../../../public/portfolio/imagesWeb/uzilight.webp';
+import rakita from '../../../public/portfolio/imagesWeb/studiorakita.webp';
 
 import companywall from '../../../public/portfolio/imagesApps/companywalltask.webp';
-// import companywall from '../../../public/portfolio/imagesApps/companywall.jpg';
-// import materialSocial from '../../../public/portfolio/imagesApps/materialSocial.jpg';
 import materialSocial from '../../../public/portfolio/imagesApps/materialUI.webp';
-// import promptopia from '../../../public/portfolio/imagesApps/promptopia.jpg';
 import promptopia from '../../../public/portfolio/imagesApps/promptopiaApp.webp';
-// import todo from '../../../public/portfolio/imagesApps/todo.jpg';
 import todo from '../../../public/portfolio/imagesApps/todolist.webp';
 import recipe from '../../../public/portfolio/imagesApps/recipeapp.webp';
-// import recipe from '../../../public/portfolio/imagesApps/recipe.jpg';
 import comit from '../../../public/portfolio/imagesApps/committask.webp';
-// import comit from '../../../public/portfolio/imagesApps/comit.jpg';
 import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.webp';
-// import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.jpg';
-// import houses from '../../../public/portfolio/imagesApps/houses.jpg';
 import houses from '../../../public/portfolio/imagesApps/housemarketplace.webp';
 import mboxt from '../../../public/portfolio/imagesApps/mboxt.webp';
 import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
 import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
 import simic from '../../../public/portfolio/imagesApps/drsimic.webp';
-// import simic from '../../../public/portfolio/imagesApps/simic.jpg';
 import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 
@@ -255,11 +246,11 @@ export const itemsPortfolio = {
         },
         {
             id: 4,
-            title: "Candle",
+            title: "Iqos",
             desc: "Click on each candle and blow out the flame to reveal the sweet rewards that await! The task was to implement the dynamic behavior of each candle which required precise JavaScript handling to ensure that the flame only goes out when the user clicks on a specific candle. Try it for resolution 375x667.",
             liveUrl: 'https://candle-game-mj.netlify.app/',
             gitUrl: 'https://github.com/MirosBL45/candle_game',
-            image: candle,
+            image: iqos,
             techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
         },
         {
