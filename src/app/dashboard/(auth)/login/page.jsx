@@ -17,7 +17,7 @@ import styles from './page.module.css';
 
 // icons
 import GoogleIcon from 'public/google.svg';
-import EMailIcon from 'public/email.png';
+import EMailIcon from 'public/email.webp';
 
 function Login() {
   // for tab title

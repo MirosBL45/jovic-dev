@@ -1,9 +1,10 @@
 import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
-import milspedAll from '../../../public/portfolio/imagesApps/milspedAll.jpg';
+import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
 
 import pets from '../../../public/portfolio/imagesWeb/pets.jpg';
 import talex from '../../../public/portfolio/imagesWeb/talex.webp';
+import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
 
 import blackjack from '../../../public/portfolio/imagesGames/blackjack.jpg';
 import puzzle from '../../../public/portfolio/imagesGames/puzzle.jpg';
@@ -30,11 +31,11 @@ export const apps = [
     },
     {
         id: "milsped",
-        title: "Milšped Group",
+        title: "Milšped: M-ONE",
         desc: "Milšped Group includes 3 web applications, Milšped, M-ONE and MBOX which are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the Strapi, translations, the creation of the transport service price calculator and other things.",
         liveUrl: 'https://m-one.rs/',
-        gitUrl: 'https://github.com/MirosBL45/m-one',
-        image: milspedAll,
+        gitUrl: 'https://github.com/MirosBL45',
+        image: mOne,
         techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
     },
 ];
@@ -45,8 +46,8 @@ export const websites = [
         title: "Milšped Group",
         desc: "Milšped Group includes 3 web applications, Milšped, M-ONE and MBOX which are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the Strapi, translations, the creation of the transport service price calculator and other things.",
         liveUrl: 'https://www.milsped.com/',
-        gitUrl: 'https://github.com/MirosBL45/milsped',
-        image: milspedAll,
+        gitUrl: 'https://github.com/MirosBL45',
+        image: milspedJust,
         techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
     },
     {

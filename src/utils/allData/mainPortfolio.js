@@ -20,16 +20,23 @@ import rakita from '../../../public/portfolio/imagesWeb/rakita.webp';
 
 import companywall from '../../../public/portfolio/imagesApps/companywalltask.webp';
 // import companywall from '../../../public/portfolio/imagesApps/companywall.jpg';
-import materialSocial from '../../../public/portfolio/imagesApps/materialSocial.jpg';
-import promptopia from '../../../public/portfolio/imagesApps/promptopia.jpg';
-import todo from '../../../public/portfolio/imagesApps/todo.jpg';
-import recipe from '../../../public/portfolio/imagesApps/recipe.jpg';
+// import materialSocial from '../../../public/portfolio/imagesApps/materialSocial.jpg';
+import materialSocial from '../../../public/portfolio/imagesApps/materialUI.webp';
+// import promptopia from '../../../public/portfolio/imagesApps/promptopia.jpg';
+import promptopia from '../../../public/portfolio/imagesApps/promptopiaApp.webp';
+// import todo from '../../../public/portfolio/imagesApps/todo.jpg';
+import todo from '../../../public/portfolio/imagesApps/todolist.webp';
+import recipe from '../../../public/portfolio/imagesApps/recipeapp.webp';
+// import recipe from '../../../public/portfolio/imagesApps/recipe.jpg';
 import comit from '../../../public/portfolio/imagesApps/committask.webp';
 // import comit from '../../../public/portfolio/imagesApps/comit.jpg';
 import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.webp';
 // import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.jpg';
-import houses from '../../../public/portfolio/imagesApps/houses.jpg';
-import milspedAll from '../../../public/portfolio/imagesApps/milspedAll.jpg';
+// import houses from '../../../public/portfolio/imagesApps/houses.jpg';
+import houses from '../../../public/portfolio/imagesApps/housemarketplace.webp';
+import mboxt from '../../../public/portfolio/imagesApps/mboxt.webp';
+import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
+import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
 import simic from '../../../public/portfolio/imagesApps/drsimic.webp';
 // import simic from '../../../public/portfolio/imagesApps/simic.jpg';
 import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
@@ -84,11 +91,11 @@ export const itemsPortfolio = {
         },
         {
             id: "milsped",
-            title: "Milšped Group",
+            title: "Milšped: M-ONE",
             desc: "Milšped Group includes 3 web applications, Milšped, M-ONE and MBOX which are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the Strapi, translations, the creation of the transport service price calculator and many other things.",
-            liveUrl: 'https://www.milsped.com/',
-            gitUrl: 'https://github.com/MirosBL45/milsped',
-            image: milspedAll,
+            liveUrl: 'https://m-one.rs/',
+            gitUrl: 'https://github.com/MirosBL45',
+            image: mOne,
             techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
         },
         {
@@ -187,7 +194,7 @@ export const itemsPortfolio = {
             id: "uzelac",
             title: "UziLight",
             desc: "Uzelac is in lighting design and visual storytelling. I made for him whole website with Vite.js which prioritizes speed by leveraging native ES module support in browsers, resulting in rapid startup times during development.",
-            liveUrl: 'https://uzelacweb-mj.vercel.app/',
+            liveUrl: 'https://uzilight.com/',
             gitUrl: 'https://github.com/MirosBL45/uzelac_web',
             image: uzelac,
             techs: ['Vite.js', 'Framer-motion', 'TailwindCSS', 'React-three'],
@@ -202,6 +209,15 @@ export const itemsPortfolio = {
             techs: ['Next.js', 'Framer-motion', 'TailwindCSS', 'Swiper'],
         },
         {
+            id: "milsped",
+            title: "Milšped: MBOX Terminals",
+            desc: "Milšped Group includes 3 web applications, Milšped, M-ONE and MBOX which are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the Strapi, translations, the creation of the transport service price calculator and many other things.",
+            liveUrl: 'https://mboxt.com/',
+            gitUrl: 'https://github.com/MirosBL45',
+            image: mboxt,
+            techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
+        },
+        {
             id: 1,
             title: "Pets - Medicine for the soul",
             desc: "Designed in Figma, this site is a fusion of pet love and technology. One of the key challenges was the implementation of multilingualism and choosing between six world languages. Project is adapted for different screens.",
@@ -209,6 +225,15 @@ export const itemsPortfolio = {
             gitUrl: 'https://github.com/MirosBL45/pets_on_languages',
             image: pets,
             techs: ['JavaScript', 'Figma', 'CSS', 'SCSS'],
+        },
+        {
+            id: "milspedGroup",
+            title: "Milšped Group",
+            desc: "Milšped Group includes 3 web applications, Milšped, M-ONE and MBOX which are made in Vue.js, Nuxt.js. I did the creation of galleries, the integration to pull data from the Strapi, translations, the creation of the transport service price calculator and other things.",
+            liveUrl: 'https://www.milsped.com/',
+            gitUrl: 'https://github.com/MirosBL45',
+            image: milspedJust,
+            techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
         },
         {
             id: 2,
