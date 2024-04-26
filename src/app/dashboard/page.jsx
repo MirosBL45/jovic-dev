@@ -220,7 +220,7 @@ function Dashboard() {
           </h1>
         </header>
         <main className={styles.container}>
-          <div>
+          <div className={styles.previousPosts}>
             <h3>
               Your {'<'}previous{'>'} posts
             </h3>
@@ -264,16 +264,16 @@ function Dashboard() {
             <input
               type="text"
               placeholder="Main Title"
-              pattern=".{2,20}"
-              title="String with min length of 2 and max length of 20 characters"
+              pattern=".{2,75}"
+              title="String with min length of 2 and max length of 75 characters, that is about 10 words"
               required
               disabled={buttonSend && true}
             />
             <input
               type="text"
               placeholder="Headline 1"
-              pattern=".{2,20}"
-              title="String with min length of 2 and max length of 20 characters"
+              pattern=".{2,35}"
+              title="String with min length of 2 and max length of 35 characters, that is about 6 words"
               required
               disabled={buttonSend && true}
             />
@@ -331,8 +331,8 @@ function Dashboard() {
             <input
               type="text"
               placeholder="Headline 2"
-              pattern=".{2,20}"
-              title="String with min length of 2 and max length of 20 characters"
+              pattern=".{2,35}"
+              title="String with min length of 2 and max length of 35 characters, that is about 6 words"
               required
               disabled={buttonSend && true}
             />
