@@ -22,7 +22,7 @@
   align-items: center;
   z-index: 99;
   transition: var(--transition);
-  background: var(--white-color2);
+  background: var(--navbar-bg);
 }
 
 .nav_container {

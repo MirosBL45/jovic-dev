@@ -70,7 +70,7 @@ function AboutText() {
           borderBottom: `1px solid ${
             mode === 'light'
               ? 'rgba(1, 0, 10, 0.35)'
-              : 'rgba(255, 255, 255, 0.74)'
+              : 'rgba(255, 255, 255, 0.24)'
           }`,
         }}
       />

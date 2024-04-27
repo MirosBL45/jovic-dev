@@ -9,7 +9,7 @@ function BlogLayout({ children }) {
     <div className="layoutContainerAll">
       <header className={styles.layoutTitle}>
         <h1>
-          Read My {'{'}Blog{'}'} Posts
+          Read my {'{'}blog{'}'} posts
         </h1>
         <p>
           You can go to the{' '}

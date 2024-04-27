@@ -6,7 +6,7 @@ function Layout({ children }) {
     <div className="layoutContainerAll">
       <header className={styles.layoutTitle}>
         <h1>
-          My {'<'}Work{'>'}
+          My {'<'}projects{'>'}
         </h1>
       </header>
       {children}

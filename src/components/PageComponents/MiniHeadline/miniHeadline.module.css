@@ -17,12 +17,13 @@
   display: flex;
   flex-direction: column;
 }
-.mainHeadline p {
+.mainHeadline h3 {
   margin-top: 10px;
   font-size: var(--ms-font);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--white-color-second);
   opacity: 80%;
+  font-family: "Poppins", sans-serif;
 }
 
 /* MEDIA QUERIES (small screens) */
@@ -30,7 +31,7 @@
   .container {
     padding-top: 100px;
   }
-  .mainHeadline p {
+  .mainHeadline h3 {
     font-size: var(--regular-font);
   }
 }
