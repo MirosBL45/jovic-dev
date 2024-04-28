@@ -18,9 +18,19 @@ async function getData() {
 
 // Static metadata
 export const metadata = {
-  title: `Jović Miroslav's Blog`,
+  title: `Jović Miroslav's Blog | Frontend Developer`,
   description:
-    'Blog of Jović Miroslav on the web. Read the latest interesting blogs',
+    'Blog of Jović Miroslav on the web. Read the latest interesting blogs about frontend development. Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development',
+  twitter: {
+    title: `Jović Miroslav's Blog | Frontend Developer`,
+    description:
+      'Blog of Jović Miroslav on the web. Read the latest interesting blogs about frontend development. Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development',
+  },
+  openGraph: {
+    title: `Jović Miroslav's Blog | Frontend Developer`,
+    description:
+      'Blog of Jović Miroslav on the web. Read the latest interesting blogs about frontend development. Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development',
+  },
 };
 
 async function Blog() {
