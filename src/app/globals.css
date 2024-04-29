@@ -176,7 +176,7 @@ button {
 
 @keyframes imageMove {
   from {
-    transform: translateY(-19px);
+    transform: translateY(-18px);
   }
 
   to {
