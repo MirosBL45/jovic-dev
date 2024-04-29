@@ -104,6 +104,7 @@
   text-align: center;
   display: grid;
   place-items: center;
+  margin-bottom: 5px;
 }
 @media screen and (max-width: 450px) {
   .forImage p {
@@ -118,8 +119,6 @@
 .forImage .renderedImage {
   grid-column-start: 2;
   grid-row-end: span 2;
-  border-radius: var(--medium-border-radius);
-  overflow: hidden;
   display: grid;
   place-items: center;
   line-height: 0;
@@ -127,6 +126,7 @@
 .forImage .renderedImage img {
   width: 60%;
   height: 90%;
+  object-fit: contain;
 }
 .forImage .labelDiv {
   grid-row-start: 2;
@@ -137,12 +137,12 @@
   display: none;
 }
 .forImage label {
-  font-size: var(--ms-font);
-  border-radius: 13px;
+  font-size: var(--regular-font);
+  border-radius: var(--medium-border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   padding: 13px 12px;
   cursor: pointer;
   color: #F4F0FF;
@@ -159,11 +159,6 @@
 }
 @media screen and (max-width: 450px) {
   .forImage label {
-    font-size: var(--regular-font);
-  }
-}
-@media screen and (max-width: 370px) {
-  .forImage label {
     font-size: var(--small-font);
   }
 }
@@ -172,19 +167,19 @@
   background: var(--dark-main-color);
 }
 .forImage label svg {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
 }
 @media screen and (max-width: 450px) {
   .forImage label svg {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
   }
 }
 @media screen and (max-width: 370px) {
   .forImage label svg {
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
   }
 }
 

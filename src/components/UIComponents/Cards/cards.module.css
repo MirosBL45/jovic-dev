@@ -17,6 +17,7 @@
 .projects .imageContainer img {
   width: 363px;
   height: 210px;
+  object-fit: cover;
 }
 .projects h3 {
   font-weight: 500;

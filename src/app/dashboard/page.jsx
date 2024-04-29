@@ -235,8 +235,8 @@ function Dashboard() {
                     <div className={styles.imgContainer}>
                       <Image
                         src={post.image}
-                        alt={`${post.title} - Jovic Miroslav, Frontend Developer`}
-                        title={`${post.title} - Jovic Miroslav, Frontend Developer`}
+                        alt={`${post.title} - Miroslav Jovic, Frontend Developer`}
+                        title={`${post.title} - Miroslav Jovic, Frontend Developer`}
                         width={0}
                         height={0}
                         sizes="100vw"

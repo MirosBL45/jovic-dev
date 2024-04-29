@@ -12,8 +12,8 @@ function ImageCard({ src, alt, additionalClass }) {
         height={0}
         sizes="100vw"
         src={src}
-        alt={`${alt} Jovic Miroslav Frontend Developer`}
-        title={`${alt} Jovic Miroslav Frontend Developer`}
+        alt={`${alt} | Miroslav Jovic Frontend Developer`}
+        title={`${alt} | Miroslav Jovic Frontend Developer`}
       />
     </div>
   );
