@@ -48,8 +48,8 @@ export default function SlugCard({ data }) {
         <div className={styles.imageContainer}>
           <Image
             src={data.image}
-            alt={`${data.title} - Jovic Miroslav, Frontend Developer`}
-            title={`${data.title} - Jovic Miroslav, Frontend Developer`}
+            alt={`${data.title} - Miroslav Jovic, Frontend Developer`}
+            title={`${data.title} - Miroslav Jovic, Frontend Developer`}
             width={0}
             height={0}
             sizes="100vw"

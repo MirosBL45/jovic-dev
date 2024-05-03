@@ -27,7 +27,7 @@ function Footer() {
         </span>{' '}
         <span>
           Developed by{' '}
-          <Link title={'Jovic Miroslav Frontend Developer'} href={'/contact'}>
+          <Link title={'Miroslav Jovic Frontend Developer'} href={'/contact'}>
             Jovic Miroslav
           </Link>
           .

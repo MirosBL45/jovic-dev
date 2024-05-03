@@ -69,7 +69,7 @@ function ContactComponent() {
             title={
               loading
                 ? `Sending...`
-                : `Send Message to Jovic Miroslav Frontend Developer`
+                : `Send Message to Miroslav Jovic, Frontend Developer`
             }
           >
             {loading ? `Sending...` : `Send Message`}

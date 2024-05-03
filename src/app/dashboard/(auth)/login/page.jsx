@@ -77,7 +77,7 @@ function Login() {
           <Image
             src={EMailIcon}
             alt="Mail"
-            title="Login with mail - Jovic Miroslav, Frontend Developer"
+            title="Login with mail - Miroslav Jovic, Frontend Developer"
             width={35}
             height={35}
           />
@@ -94,7 +94,7 @@ function Login() {
           <Image
             src={GoogleIcon}
             alt="Google"
-            title="Login with Google - Jovic Miroslav, Frontend Developer"
+            title="Login with Google - Miroslav Jovic, Frontend Developer"
             width={35}
             height={35}
           />

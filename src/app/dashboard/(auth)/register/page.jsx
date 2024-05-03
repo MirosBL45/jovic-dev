@@ -80,14 +80,14 @@ function Register() {
         />
         <PasswordInput />
         <ClickButton
-          title={'Register - Jovic Miroslav, Frontend Developer'}
+          title={'Register - Miroslav Jovic, Frontend Developer'}
           disabled={buttonSend}
         >
           {'Register'}
           <Image
             src={CheckList}
-            alt="Register - Jovic Miroslav, Frontend Developer"
-            title="Register - Jovic Miroslav, Frontend Developer"
+            alt="Register - Miroslav Jovic, Frontend Developer"
+            title="Register - Miroslav Jovic, Frontend Developer"
             width={35}
             height={35}
           />
