@@ -29,7 +29,6 @@
 .projects .imageContainer img {
   width: 363px;
   height: 210px;
-  object-fit: cover;
 }
 .projects h3 {
   font-weight: 500;
@@ -58,6 +57,9 @@
 .containerRadius {
   border-radius: var(--medium-border-radius);
   overflow: hidden;
+}
+.containerRadius img {
+  object-fit: cover;
 }
 
 /* MEDIA QUERIES (large screens) */

@@ -14,7 +14,7 @@ export const metadata = {
 
 function Portfolio() {
   return (
-    <main className={styles.container}>
+    <main className={`${styles.container} ${styles.mainHolder}`}>
       <h2>
         Choose {'['}an area{']'} to see my work
       </h2>

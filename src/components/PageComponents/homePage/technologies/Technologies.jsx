@@ -26,7 +26,7 @@ function Technologies() {
       <section className={styles.gridSection}>
         {technologies.map((tech) => (
           <div key={tech.id} className={styles.technology}>
-            <span>{tech.icon}</span>
+            <span title={tech.title}>{tech.icon}</span>
             <h3>
               <Line />
               {tech.title}

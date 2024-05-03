@@ -29,7 +29,7 @@
         img {
             width: 363px;
             height: 210px;
-            object-fit: cover;
+            // object-fit: cover;
         }
     }
 
@@ -64,6 +64,10 @@
 .containerRadius {
     border-radius: var(--medium-border-radius);
     overflow: hidden;
+
+    img {
+        object-fit: cover;
+    }
 }
 
 /* MEDIA QUERIES (large screens) */
