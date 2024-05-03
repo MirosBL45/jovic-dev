@@ -96,7 +96,6 @@
     height: 178px;
   }
   .projects h3 {
-    font-size: var(--ms-font);
     margin: 2px 0 10px;
   }
   .projects .technologies {

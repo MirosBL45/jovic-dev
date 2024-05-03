@@ -35,7 +35,7 @@ function Category({ params }) {
         <h2 className={styles.catTitle}>{params.category}</h2>
       </header>
       <ProjectsCard projects={data} />
-      <ScrollButton />
+      {/* <ScrollButton /> */}
     </>
   );
 }

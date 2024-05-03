@@ -46,7 +46,7 @@ async function Blog() {
   return (
     <>
       <BlogsCard data={data} />
-      <ScrollButton />
+      {/* <ScrollButton /> */}
     </>
   );
 }

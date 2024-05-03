@@ -70,7 +70,7 @@ async function BlogPost({ params }) {
           <SlugCard data={articleData2} />
         </main>
       )}
-      <ScrollButton />
+      {/* <ScrollButton /> */}
     </>
   );
 }

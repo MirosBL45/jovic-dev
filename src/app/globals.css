@@ -341,11 +341,6 @@ button {
   .flat {
     font-size: var(--small-font);
   }
-
-  .buttonTransparent,
-  .flatWhite {
-    font-size: var(--xsmall-font);
-  }
 }
 
 /* styles for flat link */

@@ -403,7 +403,7 @@ function Dashboard() {
             </ClickButton>
           </form>
         </main>
-        <ScrollButton />
+        {/* <ScrollButton /> */}
         {popupMessage1 && (
           <Popup1
             message="The first image is too large. Please select an image smaller than 2MB."
