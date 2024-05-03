@@ -6,7 +6,7 @@ import styles from './page.module.css';
 
 function BlogLayout({ children }) {
   return (
-    <div className="layoutContainerAll">
+    <div className={`layoutContainerAll ${styles.mainHolder}`}>
       <header className={styles.layoutTitle}>
         <h1>
           Read my {'{'}blog{'}'} posts
