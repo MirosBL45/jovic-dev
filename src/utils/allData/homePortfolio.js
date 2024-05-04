@@ -2,7 +2,7 @@ import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
 
-import pets from '../../../public/portfolio/imagesWeb/pets.webp';
+import rakita from '../../../public/portfolio/imagesWeb/studiorakita.webp';
 import talex from '../../../public/portfolio/imagesWeb/talexm.webp';
 import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
 
@@ -60,13 +60,13 @@ export const websites = [
         techs: ['Vue.js', 'Nuxt.js', 'Leaflet', 'CSS'],
     },
     {
-        id: "Pets",
-        title: "Pets - Medicine for the soul",
-        desc: "Designed in Figma, this site is a fusion of pet love and technology. Key challenge was the implementation of multilingualism and choosing between six world languages. Project is adapted for different screens.",
-        liveUrl: 'https://petsmj.netlify.app/',
-        gitUrl: 'https://github.com/MirosBL45/pets_on_languages',
-        image: pets,
-        techs: ['JavaScript', 'Figma', 'CSS', 'SCSS'],
+        id: "rakita",
+        title: "Studio Rakita",
+        desc: "Shooting weddings, sporting events, and high-altitude drone shooting is what Studio Rakita does. This website uses Next.js for server-side rendering with the TailwindCSS utility-first CSS styling framework.",
+        liveUrl: 'https://studio-rakita.vercel.app/',
+        gitUrl: 'https://github.com/MirosBL45/studio_rakita',
+        image: rakita,
+        techs: ['Next.js', 'Framer-motion', 'TailwindCSS', 'Swiper'],
     },
 ];
 
