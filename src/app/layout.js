@@ -48,6 +48,7 @@ export const metadata = {
     type: 'website',
     authors: ['Miroslav Jović'],
   },
+  googleSiteVerification: 'dU9xoqyY9hyBJGtActa9QThi1QrPIPBvmvtgrzyP8l4',
 }
 
 export default function RootLayout({ children }) {
