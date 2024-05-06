@@ -4,7 +4,6 @@ import Footer from '@/components/PageComponents/footer/Footer'
 import { ThemeProvider } from '../context/ThemeContext';
 import AuthProvider from '@/components/AuthProvider/AuthProvider';
 import Scroll from '@/components/UIComponents/PageScroll/Scroll';
-import Head from 'next/head';
 
 // styles
 import './globals.css'
@@ -49,16 +48,13 @@ export const metadata = {
     type: 'website',
     authors: ['Miroslav Jović'],
   },
-  googleSiteVerification: 'dU9xoqyY9hyBJGtActa9QThi1QrPIPBvmvtgrzyP8l4',
+  verification: { google: "dU9xoqyY9hyBJGtActa9QThi1QrPIPBvmvtgrzyP8l4" },
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Scroll />
-      <Head>
-        <meta name="google-site-verification" content="dU9xoqyY9hyBJGtActa9QThi1QrPIPBvmvtgrzyP8l4" />
-      </Head>
       <body>
         <ThemeProvider>
           <AuthProvider>
