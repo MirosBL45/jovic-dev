@@ -4,7 +4,7 @@
 
 :root {
   --white-color: #F4F0FF;
-  --navbar-bg: hsl(259, 66%, 94%);
+  --navbar-bg: #ece6fa;
   --white-color-second: #01000A;
   --white-color-third: #010009;
   --background: #02000F;
@@ -19,7 +19,7 @@
   --input-border-color: #162235;
 
 
-  --dark-main-color: hsl(210, 90%, 25%);
+  --dark-main-color: #064079;
   --dark-gray-color: #676767;
 
   --gray-color: #bbb;
@@ -66,7 +66,7 @@
 
 .dark {
   --white-color: #02000F;
-  --navbar-bg: hsl(248, 100%, 6%);
+  --navbar-bg: #04001f;
   --white-color-second: #EFEDFD;
   --white-color-third: #F9FAFB;
   --background: #F4F0FF;
@@ -82,7 +82,7 @@
 
   --gray-color2: #c8c1c1;
 
-  --dark-main-color: hsl(194, 98%, 36%);
+  --dark-main-color: #028cb6;
   --dark-gray-color: #9d9d9d;
 }
 
