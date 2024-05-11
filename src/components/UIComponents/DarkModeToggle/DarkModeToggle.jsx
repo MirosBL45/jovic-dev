@@ -23,7 +23,7 @@ function DarkModeToggle({ setIsNavShowing }) {
         setIsNavShowing(false);
         toggle();
       }}
-      title="switch dark/light mode"
+      title={mode === 'light' ? 'Switch to Dark mode' : 'Switch to Light mode'}
     >
       <div className={styles.icon}>
         <BsMoonStarsFill />

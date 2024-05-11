@@ -95,17 +95,22 @@ function Navbar() {
               } ${isNavShowing && styles.open}`}
             >
               {index !== links.length - 1 && (
-                <Link href={link.url} onClick={() => setIsNavShowing(false)}>
+                <Link
+                  title={`Miroslav Jovic Frontend Developer - ${link.title}`}
+                  href={link.url}
+                  onClick={() => setIsNavShowing(false)}
+                >
                   {link.title}
                 </Link>
               )}
             </div>
           ))}
 
-          {/* ---------- JUST FOR MOBILE DEVICES!!! --------------- */}
+          {/* ---------- JUST FOR MOBILE DEVICES!!! contact, theme, logout --------------- */}
           <div className={`${styles.contactAndTheme} ${styles.hiddenContact}`}>
             {/* just contact link */}
             <Link
+              title="Contact Miroslav Jovic Frontend Developer"
               className={`${styles.link} ${styles.justContactButton} ${
                 isNavShowing && styles.open
               }`}
@@ -136,13 +141,14 @@ function Navbar() {
               </button>
             )}
           </div>
-          {/* ^^^^^^^^^^^^^^ JUST FOR MOBILE DEVICES!!! ^^^^^^^^^^^ */}
+          {/* ^^^^^^^^^^^^^^ JUST FOR MOBILE DEVICES!!! contact, theme, logout ^^^^^^^^^^^ */}
         </div>
 
-        {/* ---------- JUST FOR BIG DEVICES!!! --------------- */}
+        {/* ---------- JUST FOR BIG DEVICES!!! contact, theme, logout --------------- */}
         <div className={`${styles.contactAndTheme} ${styles.showContact}`}>
           {/* just contact link */}
           <Link
+            title="Contact Miroslav Jovic Frontend Developer"
             className={`${styles.link} ${styles.justContactButton} ${
               isNavShowing && styles.open
             }`}
@@ -170,7 +176,7 @@ function Navbar() {
             </button>
           )}
         </div>
-        {/* ^^^^^^^^^^^^^^ JUST FOR BIG DEVICES!!! ^^^^^^^^^^^ */}
+        {/* ^^^^^^^^^^^^^^ JUST FOR BIG DEVICES!!! contact, theme, logout ^^^^^^^^^^^ */}
         {/* toggle button for mobile */}
         <button
           onClick={() => setIsNavShowing(!isNavShowing)}
