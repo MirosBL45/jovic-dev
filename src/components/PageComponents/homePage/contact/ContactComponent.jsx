@@ -19,10 +19,37 @@ function ContactComponent() {
 
   // for PopUp model
   const [popupMessage, setPopupMessage] = useState(false);
-  const handleClose = () => setPopupMessage(false);
+  const [popupMessageEmpty, setPopupMessageEmpty] = useState(false);
+  const [popupMessageMail, setPopupMessageMail] = useState(false);
+
+  function handleClose() {
+    setPopupMessage(false);
+    setPopupMessageEmpty(false);
+    setPopupMessageMail(false);
+  }
+
+  // A function to check the validity of an email address using regex
+  function isValidEmail(email) {
+    // Regex for checking email address validity
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   function sendEmail(e) {
     e.preventDefault();
+
+    if (!e.target[0].value || !e.target[1].value || !e.target[2].value) {
+      setPopupMessageEmpty(true);
+      return;
+    }
+
+    // Getting the email address value from another form field
+    const emailValue = e.target[1].value;
+    // Checking the validity of the email address
+    if (!isValidEmail(emailValue)) {
+      setPopupMessageMail(true);
+      return;
+    }
 
     setLoading(true);
     emailjs
@@ -81,6 +108,20 @@ function ContactComponent() {
           message="Thank you. I will get back to you as soon as possible."
           onClose={handleClose}
           showPopup={popupMessage}
+        />
+      )}
+      {popupMessageEmpty && (
+        <Popup
+          message="Fill all fileds"
+          onClose={handleClose}
+          showPopup={popupMessageEmpty}
+        />
+      )}
+      {popupMessageMail && (
+        <Popup
+          message="Enter valid mail"
+          onClose={handleClose}
+          showPopup={popupMessageMail}
         />
       )}
     </>
