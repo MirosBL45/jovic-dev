@@ -12,9 +12,12 @@ import { TabTitle } from '@/utils/GeneralFunctions';
 import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
 import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
-import Popup1 from '@/components/UIComponents/PopUp/PopUp';
-import Popup2 from '@/components/UIComponents/PopUp/PopUp';
+import Popup from '@/components/UIComponents/PopUp/PopUp';
 import DeletePopUp from '@/components/UIComponents/PopUp/DeletePopUp';
+import {
+  areAllFieldsFilled,
+  isInputLengthValid,
+} from '@/utils/GeneralFunctions';
 
 // style
 import styles from './page.module.css';
@@ -48,9 +51,16 @@ function Dashboard() {
 
   // PopUp models for loading images
   const [popupMessage1, setPopupMessage1] = useState(false);
-  const handleClose1 = () => setPopupMessage1(false);
   const [popupMessage2, setPopupMessage2] = useState(false);
-  const handleClose2 = () => setPopupMessage2(false);
+  const [popupMessageEmpty, setPopupMessageEmpty] = useState(false);
+  const [popupMessageRange, setPopupMessageRange] = useState(false);
+
+  function handleClose() {
+    setPopupMessage1(false);
+    setPopupMessage2(false);
+    setPopupMessageEmpty(false);
+    setPopupMessageRange(false);
+  }
 
   // for base64 image state
   const [imageBase64, setImageBase64] = useState('');
@@ -86,8 +96,33 @@ function Dashboard() {
   }
 
   async function handleSubmit(e) {
-    setButtonSend(true);
     e.preventDefault();
+
+    // We take all input elements from the form, except the last one which is the submit button
+    const formFields = Array.from(e.target.elements).slice(0, -1);
+
+    if (!areAllFieldsFilled(formFields)) {
+      setPopupMessageEmpty(true);
+      return;
+    }
+
+    if (
+      !isInputLengthValid(e.target[0].value, 2, 75) ||
+      !isInputLengthValid(e.target[1].value, 2, 35) ||
+      !isInputLengthValid(e.target[2].value, 2, 200) ||
+      !isInputLengthValid(e.target[3].value, 2, 2000) ||
+      !isInputLengthValid(e.target[5].value, 2, 35) ||
+      !isInputLengthValid(e.target[6].value, 2, 200) ||
+      !isInputLengthValid(e.target[7].value, 2, 2000) ||
+      !isInputLengthValid(e.target[9].value, 2, 20)
+    ) {
+      // Error message if input is out of range
+      setPopupMessageRange(true);
+      return;
+    }
+
+    setButtonSend(true);
+
     const title = e.target[0].value;
     const headline1 = e.target[1].value;
     const description1 = e.target[2].value;
@@ -405,17 +440,31 @@ function Dashboard() {
         </main>
         {/* <ScrollButton /> */}
         {popupMessage1 && (
-          <Popup1
+          <Popup
             message="The first image is too large. Please select an image smaller than 2MB."
-            onClose={handleClose1}
+            onClose={handleClose}
             showPopup={popupMessage1}
           />
         )}
         {popupMessage2 && (
-          <Popup2
+          <Popup
             message="The second image is too large. Please select an image smaller than 2MB."
-            onClose={handleClose2}
+            onClose={handleClose}
             showPopup={popupMessage2}
+          />
+        )}
+        {popupMessageEmpty && (
+          <Popup
+            message="Fill all fileds!"
+            onClose={handleClose}
+            showPopup={popupMessageEmpty}
+          />
+        )}
+        {popupMessageRange && (
+          <Popup
+            message="Match pattern for fileds!"
+            onClose={handleClose}
+            showPopup={popupMessageRange}
           />
         )}
         {showConfirmation && (

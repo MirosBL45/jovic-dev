@@ -7,6 +7,7 @@ import { useState, useRef } from 'react';
 // components
 import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
 import Popup from '@/components/UIComponents/PopUp/PopUp';
+import { isValidEmail, areAllFieldsFilled } from '@/utils/GeneralFunctions';
 
 // style
 import styles from './contact.module.css';
@@ -28,17 +29,13 @@ function ContactComponent() {
     setPopupMessageMail(false);
   }
 
-  // A function to check the validity of an email address using regex
-  function isValidEmail(email) {
-    // Regex for checking email address validity
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
   function sendEmail(e) {
     e.preventDefault();
 
-    if (!e.target[0].value || !e.target[1].value || !e.target[2].value) {
+    // We take all input elements from the form, except the last one which is the submit button
+    const formFields = Array.from(e.target.elements).slice(0, -1);
+
+    if (!areAllFieldsFilled(formFields)) {
       setPopupMessageEmpty(true);
       return;
     }
@@ -112,14 +109,14 @@ function ContactComponent() {
       )}
       {popupMessageEmpty && (
         <Popup
-          message="Fill all fileds"
+          message="Fill all fileds!"
           onClose={handleClose}
           showPopup={popupMessageEmpty}
         />
       )}
       {popupMessageMail && (
         <Popup
-          message="Enter valid mail"
+          message="Enter valid mail!"
           onClose={handleClose}
           showPopup={popupMessageMail}
         />
