@@ -2,9 +2,9 @@
 import { notFound } from 'next/navigation';
 
 // components
-import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
 import SlugCard from './SlugCard';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 
 // style
 import styles from './page.module.css';

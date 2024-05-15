@@ -10,7 +10,6 @@ import Image from 'next/image';
 // components
 import { TabTitle } from '@/utils/GeneralFunctions';
 import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
-import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
 import Popup from '@/components/UIComponents/PopUp/PopUp';
 import DeletePopUp from '@/components/UIComponents/PopUp/DeletePopUp';
@@ -18,6 +17,7 @@ import {
   areAllFieldsFilled,
   isInputLengthValid,
 } from '@/utils/GeneralFunctions';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 
 // style
 import styles from './page.module.css';

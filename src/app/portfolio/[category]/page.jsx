@@ -1,8 +1,8 @@
 // components
 import { notFound } from 'next/navigation';
-import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import ProjectsCard from '@/components/UIComponents/Cards/ProjectsCard';
 import JustLinks from './JustLinks';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 
 // data
 import { itemsPortfolio } from '@/utils/allData/mainPortfolio';

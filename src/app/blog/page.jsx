@@ -1,7 +1,7 @@
 // components
 import BlogsCard from '@/components/UIComponents/Cards/BlogsCard';
-import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 import { BASE_API_URL } from '@/utils/constants';
+import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
 
 // function for catching data
 async function getData() {
