@@ -14,19 +14,19 @@ export const metadata = {
   description: 'Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development',
   keywords: 'HTML, CSS, SCSS, Sass, JavaScript, programming, ReactJS, NextJS, Next.js, React, Vue.js, MongoDB, Mongoose, SWR, Miroslav Jovic, Miroslav Jović, Frontend Developer, Web Development, Portfolio, Blog, Dashboard, Frontend Design, User Interface (UI), User Experience (UX), Responsive Design, Web Applications, Single Page Applications (SPA), Component-Based Development, Version Control (Git), API Integration, Progressive Web Apps (PWA), Performance Optimization, Frontend Frameworks, Frontend Libraries, Frontend Tools, Web Development Tools, Cross-Browser Compatibility, Mobile-First Development, Accessibility (A11y), SEO Optimization, Performance Monitoring, Debugging Techniques, Code Refactoring, Agile Development, Scrum Methodology, Git, GitHub, TailwindCSS, ViteJS, ThreeJS, Framer Motion, React Icons, ReactStrap, MaterialUI, Styled-components, Bootstrap, TypeScript, Firebase, Hygraph (GraphQL), Bcryptjs, Postman, Strapi, NextAuth, Figma, Photoshop, Premiere pro, Modern JavaScript Frameworks, UI/UX Design Principles, CSS Frameworks, CSS Preprocessors, Frontend Build Tools, Frontend Testing, Browser Developer Tools, Responsive Web Design, Animation Effects, Code Optimization Techniques, Web Performance Metrics, Continuous Integration (CI), Deployment Strategies, Frontend Architecture, State Management,  Functional Programming in JavaScript, Asynchronous JavaScript (Promises, Async/Await), Frontend Security Best Practices, Web Accessibility Standards, Browser Compatibility Testing, Frontend Performance Optimization Techniques, Code Versioning, WebSockets, Server-Side Rendering (SSR), Static Site Generation (SSG), Progressive Enhancement, Internationalization (i18n) and Localization',
   icons: {
-    icon: [{ url: '/logo 96 Miroslav Jovic Frontend Developer.png', type: 'image/png' }],
+    icon: [{ url: '/favico logo 96 Miroslav Jovic Frontend Developer.ico', type: 'image/x-icon' }],
     shortcut: {
-      url: '/logo 96 Miroslav Jovic Frontend Developer.png',
-      type: "image/png"
+      url: '/favico logo 96 Miroslav Jovic Frontend Developer.ico',
+      type: "image/x-icon"
     },
     apple: {
-      url: '/logo 96 Miroslav Jovic Frontend Developer.png',
-      type: "image/png"
+      url: '/favico logo 96 Miroslav Jovic Frontend Developer.ico',
+      type: "image/x-icon"
     },
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: '/logo 96 Miroslav Jovic Frontend Developer.png',
-      type: "image/png"
+      url: '/favico logo 96 Miroslav Jovic Frontend Developer.ico',
+      type: "image/x-icon"
     },
   },
   robots: {
@@ -48,7 +48,7 @@ export const metadata = {
     creator: 'Miroslav Jović',
   },
   openGraph: {
-    images: '/logo 96 Miroslav Jovic Frontend Developer.png',
+    images: '/favico logo 96 Miroslav Jovic Frontend Developer.ico',
     title: 'Miroslav Jović | Frontend Developer',
     description: 'Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development',
     siteName: 'Miroslav Jović',
