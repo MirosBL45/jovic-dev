@@ -114,7 +114,7 @@ function Dashboard() {
       !isInputLengthValid(e.target[5].value, 2, 35) ||
       !isInputLengthValid(e.target[6].value, 2, 200) ||
       !isInputLengthValid(e.target[7].value, 2, 2000) ||
-      !isInputLengthValid(e.target[9].value, 2, 20)
+      !isInputLengthValid(e.target[9].value, 2, 35)
     ) {
       // Error message if input is out of range
       setPopupMessageRange(true);
@@ -425,8 +425,8 @@ function Dashboard() {
             <input
               type="text"
               placeholder="Slug of the post"
-              pattern=".{2,20}"
-              title="String with min length of 2 and max length of 20 characters"
+              pattern=".{2,35}"
+              title="String with min length of 2 and max length of 35 characters, that is about 6 words"
               required
               disabled={buttonSend && true}
             />
