@@ -109,10 +109,10 @@ function Dashboard() {
     if (
       !isInputLengthValid(e.target[0].value, 2, 75) ||
       !isInputLengthValid(e.target[1].value, 2, 35) ||
-      !isInputLengthValid(e.target[2].value, 2, 200) ||
+      !isInputLengthValid(e.target[2].value, 2, 135) ||
       !isInputLengthValid(e.target[3].value, 2, 2000) ||
       !isInputLengthValid(e.target[5].value, 2, 35) ||
-      !isInputLengthValid(e.target[6].value, 2, 200) ||
+      !isInputLengthValid(e.target[6].value, 2, 135) ||
       !isInputLengthValid(e.target[7].value, 2, 2000) ||
       !isInputLengthValid(e.target[9].value, 2, 35)
     ) {
@@ -315,8 +315,8 @@ function Dashboard() {
             <input
               type="text"
               placeholder="Description 1"
-              pattern=".{2,200}"
-              title="String with min length of 2 and max length of 200 characters, that is about 30 words"
+              pattern=".{2,135}"
+              title="String with min length of 2 and max length of 135 characters, that is about 20 words"
               required
               disabled={buttonSend && true}
             />
@@ -374,8 +374,8 @@ function Dashboard() {
             <input
               type="text"
               placeholder="Description 2"
-              pattern=".{2,200}"
-              title="String with min length of 2 and max length of 200 characters, that is about 30 words"
+              pattern=".{2,135}"
+              title="String with min length of 2 and max length of 135 characters, that is about 20 words"
               required
               disabled={buttonSend && true}
             />
