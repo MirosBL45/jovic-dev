@@ -32,6 +32,7 @@ import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
 import simic from '../../../public/portfolio/imagesApps/drsimic.webp';
 import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
+import whatsApp from '../../../public/portfolio/imagesApps/whatsApp.webp';
 
 export const portfolioData = [
     {
@@ -97,6 +98,15 @@ export const itemsPortfolio = {
             gitUrl: 'https://github.com/MirosBL45/dental-simic',
             image: simic,
             techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
+        },
+        {
+            id: "whatsApp",
+            title: "Desktop WhatsApp Clone with OpenAI",
+            desc: "This application is made in Next.js with TypeScript.It supports group chat, video call, ChatGPT support for with @gpt and image generation with @dall-e.",
+            liveUrl: 'https://whats-app-mjovic.vercel.app',
+            gitUrl: 'https://github.com/MirosBL45/WhatsApp',
+            image: whatsApp,
+            techs: ['Next.js', 'TypeScript', 'TailwindCSS', 'Convex'],
         },
         {
             id: "houses",
