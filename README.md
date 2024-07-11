@@ -38,6 +38,6 @@ This project is my personal web portfolio, developed using the following technol
 ### 7. **Security**
 
 - **bcryptjs**: Used for hashing passwords to store them securely instead of plaintext.
-  - [Learn more about bcryptjs](https://www.npmjs.com/package/bcryptjs)
+  - <a href="https://www.npmjs.com/package/bcryptjs" target="_blank">Learn more about bcryptjs</a>
 
 Each of these technologies plays a vital role in enhancing the functionality and user experience of the personal web portfolio, making it a modern and robust application.
