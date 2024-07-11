@@ -1,6 +1,6 @@
 ## Project: Personal Web Portfolio
 
-This project is my personal web portfolio, developed using the following technologies and tools:
+This project is my personal web portfolio, where you can view my works, download my resume, and contact me. It is developed using the following technologies and tools:
 
 ### 1. **Framework and Core**
 
@@ -38,6 +38,6 @@ This project is my personal web portfolio, developed using the following technol
 ### 7. **Security**
 
 - **bcryptjs**: Used for hashing passwords to store them securely instead of plaintext.
-  - <a href="https://www.npmjs.com/package/bcryptjs" target="_blank">Learn more about bcryptjs</a>
+  - [Learn more about bcryptjs](https://www.npmjs.com/package/bcryptjs)
 
 Each of these technologies plays a vital role in enhancing the functionality and user experience of the personal web portfolio, making it a modern and robust application.
