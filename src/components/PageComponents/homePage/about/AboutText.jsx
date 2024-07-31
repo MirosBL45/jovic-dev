@@ -57,9 +57,12 @@ function AboutText() {
             src={mode === 'light' ? Miroslav : MiroslavLight}
             alt="Miroslav Jovic Frontend Developer"
             title="Miroslav Jovic Frontend Developer"
-            width={0}
-            height={0}
-            sizes="100vw"
+            // width={0}
+            // height={0}
+            // sizes="100vw"
+            sizes="245px"
+            width="777"
+            height="1092"
           />
         </div>
       </section>
