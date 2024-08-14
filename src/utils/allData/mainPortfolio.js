@@ -33,6 +33,7 @@ import simic from '../../../public/portfolio/imagesApps/drsimic.webp';
 import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 import whatsApp from '../../../public/portfolio/imagesApps/whatsApp.webp';
+import imageGallery from '../../../public/portfolio/imagesApps/imageGallery.webp';
 
 export const portfolioData = [
     {
@@ -125,6 +126,15 @@ export const itemsPortfolio = {
             gitUrl: 'https://github.com/MirosBL45/Promptopia',
             image: promptopia,
             techs: ['Next.js', 'MongoDB', 'Bcrypt', 'Next-auth'],
+        },
+        {
+            id: "pexelsImageGallery",
+            title: "Pexels Image Gallery",
+            desc: "This project is an image gallery application that fetches images from pexels.com. It features pagination and allows users to search for images based on the object in the picture (e.g., typing `cat` displays images of cats).",
+            liveUrl: 'https://pexels-gallery-mj.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/Next.js-Image-Gallery',
+            image: imageGallery,
+            techs: ['Next.js', 'TypeScript', 'zod', 'TailwindCSS'],
         },
         {
             id: "gitUrl-finder",
