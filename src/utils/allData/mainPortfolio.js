@@ -34,6 +34,7 @@ import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
 import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
 import whatsApp from '../../../public/portfolio/imagesApps/whatsApp.webp';
 import imageGallery from '../../../public/portfolio/imagesApps/imageGallery.webp';
+import liveDocs from '../../../public/portfolio/imagesApps/liveDocs.webp';
 
 export const portfolioData = [
     {
@@ -101,9 +102,18 @@ export const itemsPortfolio = {
             techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
         },
         {
+            id: "liveDocs",
+            title: "Collaborative SaaS Application",
+            desc: "I developed a collaborative SaaS application that enables real-time document editing, user authentication, document storage, and performance monitoring. Inspired by Google Docs, this application is tailored for enterprise users, offering advanced monitoring and notification capabilities.",
+            liveUrl: 'https://live-docs-mj.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/live_docs',
+            image: liveDocs,
+            techs: ['Next.js', 'TypeScript', 'Liveblocks', 'Sentry'],
+        },
+        {
             id: "whatsApp",
             title: "Desktop WhatsApp Clone with OpenAI",
-            desc: "This application is made in Next.js with TypeScript.It supports group chat, video call, ChatGPT support for with @gpt and image generation with @dall-e.",
+            desc: "Made in Next.js with TypeScript this desktop WhatsApp Clone supports group chat, video call, ChatGPT support for with @gpt and image generation with @dall-e. Of course, there are also group chats, as well as regular sending of pictures or videos.",
             liveUrl: 'https://whats-app-mjovic.vercel.app',
             gitUrl: 'https://github.com/MirosBL45/WhatsApp',
             image: whatsApp,
