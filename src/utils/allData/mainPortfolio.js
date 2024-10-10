@@ -150,7 +150,7 @@ export const itemsPortfolio = {
             id: "gitUrl-finder",
             title: "GitHub Finder",
             desc: "This React app gives you easy access to user accounts on GitHub, allowing you to explore repositories and learn about the work of other developers. A simple user search lets you find developers by name and view their GitHub profiles.",
-            liveUrl: 'https://github-finder-app-mirosbl45.vercel.app/',
+            liveUrl: 'https://github-finder-app-mj.vercel.app/',
             gitUrl: 'https://github.com/MirosBL45/github_finder_app',
             image: githubfinder,
             techs: ['React', 'Axios', 'DaisyUI', 'React-icons'],
