@@ -151,7 +151,7 @@ export const itemsPortfolio = {
             id: "pexelsImageGallery",
             title: "Pexels Image Gallery",
             desc: "This project is an image gallery application that fetches images from pexels.com. It features pagination and allows users to search for images based on the object in the picture (e.g., typing `cat` displays images of cats).",
-            liveUrl: 'https://pexels-gallery-mj.vercel.app',
+            liveUrl: 'https://nextjs-image-gallery-mjovic.netlify.app',
             gitUrl: 'https://github.com/MirosBL45/Next.js-Image-Gallery',
             image: imageGallery,
             techs: ['Next.js', 'TypeScript', 'zod', 'TailwindCSS'],
