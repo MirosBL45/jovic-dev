@@ -201,15 +201,6 @@ export const itemsPortfolio = {
             image: todo,
             techs: ['React', 'React-icons', 'CSS'],
         },
-        {
-            id: "material-UI-social-network",
-            title: "Material UI social network",
-            desc: "React project styled with Material UI, devoid of social networking features. The focus is on clean styling through Material UI components. I've organized the code into folders for better maintenance and future expansion.",
-            liveUrl: 'https://material-social-network.vercel.app',
-            gitUrl: 'https://github.com/MirosBL45/material-social-network',
-            image: materialSocial,
-            techs: ['React', 'MaterialUI'],
-        },
     ],
     games: [
         {
@@ -305,7 +296,7 @@ export const itemsPortfolio = {
             techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
         },
         {
-            id: 1,
+            id: "Pets",
             title: "Pets - Medicine for the soul",
             desc: "Designed in Figma, this site is a fusion of pet love and technology. One of the key challenges was the implementation of multilingualism and choosing between six world languages. Project is adapted for different screens.",
             liveUrl: 'https://petsmj.netlify.app/',
@@ -323,7 +314,7 @@ export const itemsPortfolio = {
             techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
         },
         {
-            id: 2,
+            id: "Social_network",
             title: "Social network",
             desc: "This interactive website enables users to connect, share thoughts, and engage through posts, likes, and comments. A significant challenge was implementing secure authentication and authorization, ensuring safe login, data storage, and management through JavaScript.",
             liveUrl: 'https://socialnetworkmj.netlify.app/',
@@ -332,7 +323,7 @@ export const itemsPortfolio = {
             techs: ['JavaScript', 'HTML', 'CSS', 'SCSS'],
         },
         {
-            id: 3,
+            id: "Quiz_App",
             title: "Quiz App",
             desc: "During the creation of this site, one of the key challenges was the implementation of a dynamic system for asking questions and collecting responses from users. I had to work carefully with JavaScript to properly manage the logic of the quiz, ensuring correct answers were properly tracked and results generated at the end.",
             liveUrl: 'https://quizappmj.netlify.app/',
@@ -341,7 +332,7 @@ export const itemsPortfolio = {
             techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
         },
         {
-            id: 4,
+            id: "Iqos",
             title: "Iqos",
             desc: "Click on each candle and blow out the flame to reveal the sweet rewards that await! The task was to implement the dynamic behavior of each candle which required precise JavaScript handling to ensure that the flame only goes out when the user clicks on a specific candle. Try it for resolution 375x667.",
             liveUrl: 'https://candle-game-mj.netlify.app/',
@@ -350,13 +341,22 @@ export const itemsPortfolio = {
             techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
         },
         {
-            id: 5,
-            title: "Slider Cat",
-            desc: "It was crucial to track the mouse movements correctly and synchronize the movement of the crosshair with each step. This required careful manipulation of mouse events and proper handling of screen coordinates. Implementing a fluid and aesthetically pleasing line movement was a challenge in optimizing performance.",
-            liveUrl: 'https://slidercatmj.netlify.app/',
-            gitUrl: 'https://github.com/MirosBL45/Slider-cat',
-            image: slider,
-            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+            id: "material-UI-social-network",
+            title: "Material UI social network",
+            desc: "React project styled with Material UI, devoid of social networking features. The focus is on clean styling through Material UI components. I've organized the code into folders for better maintenance and future expansion.",
+            liveUrl: 'https://material-social-network.vercel.app',
+            gitUrl: 'https://github.com/MirosBL45/material-social-network',
+            image: materialSocial,
+            techs: ['React', 'MaterialUI'],
         },
+        // {
+        //     id: 5,
+        //     title: "Slider Cat",
+        //     desc: "It was crucial to track the mouse movements correctly and synchronize the movement of the crosshair with each step. This required careful manipulation of mouse events and proper handling of screen coordinates. Implementing a fluid and aesthetically pleasing line movement was a challenge in optimizing performance.",
+        //     liveUrl: 'https://slidercatmj.netlify.app/',
+        //     gitUrl: 'https://github.com/MirosBL45/Slider-cat',
+        //     image: slider,
+        //     techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+        // },
     ],
 };
