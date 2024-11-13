@@ -169,7 +169,7 @@ export const itemsPortfolio = {
             id: "recipe-app",
             title: "Recipe App",
             desc: "This app becomes a personal culinary guide, powered by React. Explore the wealth of recipes, tailored to your tastes, with images that tempt your appetite. With the ability to filter by ingredients, this app provides a convenient way to find the perfect recipe.",
-            liveUrl: 'https://recipe-app-mj.vercel.app',
+            liveUrl: 'https://recipe-app-mj.netlify.app',
             gitUrl: 'https://github.com/MirosBL45/recipe-app',
             image: recipe,
             techs: ['React', 'Framer-motion', 'React-icons', 'Styled-components'],
