@@ -1,4 +1,4 @@
-import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs } from "react-icons/si";
+import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs, SiChakraui, SiExpress } from "react-icons/si";
 import { RiVuejsFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
 import { TbBrandFramerMotion, TbBrandAuth0 } from "react-icons/tb";
@@ -105,9 +105,15 @@ export const technologiesTextBig = [
     },
     {
         id: 88,
-        title: 'NodeJS',
+        title: 'Node.js',
         text: 'I develop server-side applications and RESTful APIs using Node.js, ensuring efficient and scalable backend solutions',
         icon: <SiNodedotjs />,
+    },
+    {
+        id: 89,
+        title: 'Express.js',
+        text: 'I develop robust backend systems with Express.js, providing secure and efficient endpoints for frontend applications',
+        icon: <SiExpress />,
     },
     {
         id: 9,
@@ -144,6 +150,12 @@ export const technologiesTextBig = [
         title: 'MaterialUI',
         text: 'Crafting beautiful and consistent user interfaces with MaterialUI design components for React',
         icon: <SiMui />,
+    },
+    {
+        id: 144,
+        title: 'ChakraUI',
+        text: 'I efficiently build responsive and accessible user interfaces with Chakra UI, leveraging its pre-built components',
+        icon: <SiChakraui />,
     },
     {
         id: 15,
