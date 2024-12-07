@@ -1,4 +1,4 @@
-import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro } from "react-icons/si";
+import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs } from "react-icons/si";
 import { RiVuejsFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
 import { TbBrandFramerMotion, TbBrandAuth0 } from "react-icons/tb";
@@ -24,9 +24,9 @@ export const technologiesText = [
     },
     {
         id: 4,
-        title: 'Vue.js',
-        text: 'I build web interfaces & one page applications using Vue',
-        icon: <RiVuejsFill />,
+        title: 'TypeScript',
+        text: 'Improving code quality with TypeScript`s static typing',
+        icon: <SiTypescript />,
     },
     {
         id: 5,
@@ -75,9 +75,9 @@ export const technologiesTextBig = [
     },
     {
         id: 4,
-        title: 'Vue.js',
-        text: 'I build web interfaces & one page applications using Vue',
-        icon: <RiVuejsFill />,
+        title: 'TypeScript',
+        text: 'Improving code quality with TypeScript`s static typing',
+        icon: <SiTypescript />,
     },
     {
         id: 5,
@@ -102,6 +102,12 @@ export const technologiesTextBig = [
         title: 'CSS & Sass',
         text: 'I use Sass as my preferred CSS pre-processor',
         icon: <FaSass />,
+    },
+    {
+        id: 88,
+        title: 'NodeJS',
+        text: 'I develop server-side applications and RESTful APIs using Node.js, ensuring efficient and scalable backend solutions',
+        icon: <SiNodedotjs />,
     },
     {
         id: 9,
@@ -153,9 +159,9 @@ export const technologiesTextBig = [
     },
     {
         id: 17,
-        title: 'TypeScript',
-        text: 'Enhancing code quality and maintainability with the statically typed nature of TypeScript in JavaScript projects',
-        icon: <SiTypescript />,
+        title: 'Vue.js',
+        text: 'I build modern web interfaces and single-page applications using Vue, focusing on user-friendly designs',
+        icon: <RiVuejsFill />,
     },
     {
         id: 18,
