@@ -46,7 +46,7 @@ function Landing() {
             openInNewTab={true}
             title={'Download CV of Miroslav Jovic, Frontend Developer'}
             text={'Download CV'}
-            url={'/Miroslav Jovic CV FED 2024 GW.pdf'}
+            url={'/Miroslav Jovic CV FED 2025.pdf'}
             buttonStyle={'flat'}
           />
         </section>
