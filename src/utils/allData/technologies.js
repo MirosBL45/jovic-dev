@@ -1,8 +1,7 @@
-import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs, SiChakraui, SiExpress, SiHeadlessui } from "react-icons/si";
-import { RiVuejsFill } from "react-icons/ri";
+import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs, SiChakraui, SiExpress, SiHeadlessui, SiShadcnui, SiClerk, SiSentry } from "react-icons/si";
+import { RiVuejsFill, RiFirebaseFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
 import { TbBrandFramerMotion, TbBrandAuth0 } from "react-icons/tb";
-import { MdOutlineDesignServices } from "react-icons/md";
 
 export const technologiesText = [
     {
@@ -168,7 +167,7 @@ export const technologiesTextBig = [
         id: 165,
         title: 'ShadcnUI',
         text: 'I use shadcn/ui to build modern and customizable user interfaces with a focus on flexibility and design consistency',
-        icon: <MdOutlineDesignServices />,
+        icon: <SiShadcnui />,
     },
     {
         id: 15,
@@ -192,7 +191,7 @@ export const technologiesTextBig = [
         id: 18,
         title: 'Firebase',
         text: 'Utilizing Firebase for scalable backend services, real-time database, and easy authentication integration',
-        icon: <SiFirebase />,
+        icon: <RiFirebaseFill />,
     },
     {
         id: 19,
@@ -207,10 +206,22 @@ export const technologiesTextBig = [
         icon: <SiLetsencrypt />,
     },
     {
+        id: 200,
+        title: 'Clerk',
+        text: 'I leverage Clerk to build secure and user-friendly authentication systems, including features like multi-factor authentication',
+        icon: <SiClerk />,
+    },
+    {
         id: 21,
         title: 'Postman',
         text: 'Testing, debugging, and documenting APIs effortlessly with the powerful features of Postman tool',
         icon: <SiPostman />,
+    },
+    {
+        id: 201,
+        title: 'Sentry',
+        text: 'I use Sentry to monitor and debug errors in web applications, ensuring better stability and user experience',
+        icon: <SiSentry />,
     },
     {
         id: 22,
