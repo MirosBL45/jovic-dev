@@ -1,4 +1,4 @@
-import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs, SiChakraui, SiExpress, SiHeadlessui, SiShadcnui, SiClerk, SiSentry } from "react-icons/si";
+import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs, SiChakraui, SiExpress, SiHeadlessui, SiShadcnui, SiClerk, SiSentry, SiZulip, SiConvertio, SiZod, SiReacthookform } from "react-icons/si";
 import { RiVuejsFill, RiFirebaseFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
 import { TbBrandFramerMotion, TbBrandAuth0 } from "react-icons/tb";
@@ -194,6 +194,12 @@ export const technologiesTextBig = [
         icon: <RiFirebaseFill />,
     },
     {
+        id: 210,
+        title: 'Convex',
+        text: 'I use Convex to build reactive and serverless backends, simplifying data handling and application logic',
+        icon: <SiConvertio />,
+    },
+    {
         id: 19,
         title: 'Hygraph (GraphQL)',
         text: 'Implementing GraphQL with Hygraph for efficient data fetching and manipulation in modern web applications',
@@ -222,6 +228,24 @@ export const technologiesTextBig = [
         title: 'Sentry',
         text: 'I use Sentry to monitor and debug errors in web applications, ensuring better stability and user experience',
         icon: <SiSentry />,
+    },
+    {
+        id: 202,
+        title: 'Zustand',
+        text: 'I use Zustand to manage global state in React applications with a lightweight and intuitive approach',
+        icon: <SiZulip />,
+    },
+    {
+        id: 222,
+        title: 'React Hook Form',
+        text: 'I utilize React Hook Form for building flexible and easy-to-use forms, integrating seamlessly with UI libraries and validation schemas',
+        icon: <SiReacthookform />,
+    },
+    {
+        id: 203,
+        title: 'Zod',
+        text: 'I use Zod to validate and define data schemas, ensuring type safety and reliability in applications',
+        icon: <SiZod />,
     },
     {
         id: 22,
