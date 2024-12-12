@@ -1,7 +1,8 @@
-import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs, SiChakraui, SiExpress } from "react-icons/si";
+import { SiJavascript, SiReact, SiNextdotjs, SiMongodb, SiGit, SiTailwindcss, SiTypescript, SiVite, SiThreedotjs, SiCreatereactapp, SiSemanticuireact, SiMui, SiBootstrap, SiFirebase, SiGraphql, SiStyledcomponents, SiLetsencrypt, SiPostman, SiStrapi, SiSwr, SiMongoose, SiFigma, SiAdobephotoshop, SiAdobepremierepro, SiNodedotjs, SiChakraui, SiExpress, SiHeadlessui } from "react-icons/si";
 import { RiVuejsFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
 import { TbBrandFramerMotion, TbBrandAuth0 } from "react-icons/tb";
+import { MdOutlineDesignServices } from "react-icons/md";
 
 export const technologiesText = [
     {
@@ -156,6 +157,18 @@ export const technologiesTextBig = [
         title: 'ChakraUI',
         text: 'I efficiently build responsive and accessible user interfaces with Chakra UI, leveraging its pre-built components',
         icon: <SiChakraui />,
+    },
+    {
+        id: 155,
+        title: 'Headless UI',
+        text: 'I use Headless UI to build accessible and fully customizable components for modern web applications',
+        icon: <SiHeadlessui />,
+    },
+    {
+        id: 165,
+        title: 'ShadcnUI',
+        text: 'I use shadcn/ui to build modern and customizable user interfaces with a focus on flexibility and design consistency',
+        icon: <MdOutlineDesignServices />,
     },
     {
         id: 15,
