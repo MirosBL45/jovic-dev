@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <>
       <Landing />
+      <Portfolio />
       <About />
       <Technologies />
-      <Portfolio />
       <Contact />
     </>
   );

@@ -1,6 +1,6 @@
 //components
 import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
-import Keyboard from './Keyboard';
+// import Keyboard from './Keyboard';
 
 // style
 import styles from './landing.module.css';
@@ -50,7 +50,7 @@ function Landing() {
             buttonStyle={'flat'}
           />
         </section>
-        <Keyboard />
+        {/* <Keyboard /> */}
       </main>
     </>
   );
