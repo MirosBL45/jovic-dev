@@ -6,21 +6,21 @@ export const linksHomePage = [
     },
     {
         id: 2,
-        title: "About me",
-        url: "/#about",
-    },
-    {
-        id: 3,
         title: "Portfolio",
         url: "/#portfolio",
     },
     {
-        id: 5,
+        id: 3,
+        title: "About me",
+        url: "/#about",
+    },
+    {
+        id: 4,
         title: "Blog",
         url: "/blog",
     },
     {
-        id: 99,
+        id: 5,
         title: "Contact me",
         url: "/#contact",
     },
@@ -34,21 +34,21 @@ export const linksOtherPages = [
     },
     {
         id: 2,
-        title: "About me",
-        url: "/#about",
-    },
-    {
-        id: 3,
         title: "Portfolio",
         url: "/portfolio",
     },
     {
-        id: 5,
+        id: 3,
+        title: "About me",
+        url: "/#about",
+    },
+    {
+        id: 4,
         title: "Blog",
         url: "/blog",
     },
     {
-        id: 99,
+        id: 5,
         title: "Contact me",
         url: "/#contact",
     },

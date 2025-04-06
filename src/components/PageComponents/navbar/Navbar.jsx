@@ -54,8 +54,9 @@ function Navbar() {
   }, []);
 
   // choose which links to use depending on the page
-  // const links = pathname === '/' ? linksHomePage : linksOtherPages;
-  const links = pathname.includes('portfolio')
+  const otherPages = ['portfolio', 'blog'];
+
+  const links = otherPages.some((page) => pathname.includes(page))
     ? linksOtherPages
     : linksHomePage;
 
