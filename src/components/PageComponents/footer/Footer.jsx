@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './footer.module.css';
 
 // icons
-import { FaLinkedin, FaGithub } from 'react-icons/fa6';
+import { FaLinkedin, FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,7 +38,7 @@ function Footer() {
           rel="noopener noreferrer"
           target="_blank"
           href={'https://www.linkedin.com/in/mj888/'}
-          title={`Jovic Miroslav's Frontend Developer Linkedin`}
+          title={`Jovic Miroslav's Frontend Developer Linkedin profile`}
         >
           <FaLinkedin />
         </Link>
@@ -46,9 +46,17 @@ function Footer() {
           rel="noopener noreferrer"
           target="_blank"
           href={'https://github.com/MirosBL45'}
-          title={`Jovic Miroslav's Frontend Developer Github`}
+          title={`Jovic Miroslav's Frontend Developer Github profile`}
         >
           <FaGithub />
+        </Link>
+        <Link
+          rel="noopener noreferrer"
+          target="_blank"
+          href={'https://x.com/MiroslavJovic45'}
+          title={`Jovic Miroslav's Frontend Developer X profile`}
+        >
+          <FaXTwitter />
         </Link>
       </div>
     </footer>
