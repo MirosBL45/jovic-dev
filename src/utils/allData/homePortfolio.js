@@ -15,7 +15,7 @@ export const apps = [
         id: "jednakala",
         title: "Kala hvala",
         desc: "This React app was made so that people can express their gratitude to firefighters by posting an image and text as desired. All posts are publicly available, and at the end, the winning post is announced.",
-        liveUrl: 'https://jednakala-jednohvala.hr/',
+        liveUrl: 'https://kala-hvala-mj.vercel.app/',
         gitUrl: 'https://github.com/MirosBL45/kala-hvala',
         image: kala,
         techs: ['React', 'MaterialUI', 'Axios', 'JS-Cookie'],
