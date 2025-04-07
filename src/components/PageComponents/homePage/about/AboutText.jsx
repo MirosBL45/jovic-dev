@@ -18,8 +18,9 @@ import lineDark from 'public/homePage/about/line dark Miroslav Jovic Frontend De
 import lineLight from 'public/homePage/about/line light Miroslav Jovic Frontend Developer.png';
 import squareDark from 'public/homePage/about/square dark Miroslav Jovic Frontend Developer.png';
 import squareLight from 'public/homePage/about/square light Miroslav Jovic Frontend Developer.png';
-import Miroslav from 'public/homePage/about/Miroslav Jovic Frontend Developer.webp';
-import MiroslavLight from 'public/homePage/about/light Miroslav Jovic Frontend Developer.webp';
+// import Miroslav from 'public/homePage/about/Miroslav Jovic Frontend Developer.webp';
+// import MiroslavLight from 'public/homePage/about/light Miroslav Jovic Frontend Developer.webp';
+import MiroslavImage from 'public/homePage/about/Miroslav Jovic Frontend Developer.webp';
 
 function AboutText() {
   const { mode } = useContext(ThemeContext);
@@ -54,15 +55,16 @@ function AboutText() {
         </article>
         <div className={styles.miroslav}>
           <Image
-            src={mode === 'light' ? Miroslav : MiroslavLight}
+            // src={mode === 'light' ? Miroslav : MiroslavLight}
+            src={MiroslavImage}
             alt="Miroslav Jovic Frontend Developer"
             title="Miroslav Jovic Frontend Developer"
-            // width={0}
-            // height={0}
-            // sizes="100vw"
-            sizes="245px"
-            width="777"
-            height="1092"
+            width={0}
+            height={0}
+            sizes="100vw"
+            // sizes="245px"
+            // width="777"
+            // height="1092"
           />
         </div>
       </section>

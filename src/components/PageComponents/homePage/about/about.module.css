@@ -49,7 +49,7 @@
 }
 .textandIcons .justText h3 {
   font-size: var(--regular-font);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   display: inline;
 }
