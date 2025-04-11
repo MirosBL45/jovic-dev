@@ -28,6 +28,7 @@
   font-weight: bold;
   color: var(--background);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
 .input:focus {
   border: 2px solid var(--input-border-color);
