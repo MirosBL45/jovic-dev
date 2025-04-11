@@ -82,10 +82,6 @@
   font-weight: bold;
   resize: none;
 }
-.new input:focus,
-.new textarea:focus {
-  border: 2px solid var(--main-color);
-}
 
 .displayed {
   margin-top: 150px;

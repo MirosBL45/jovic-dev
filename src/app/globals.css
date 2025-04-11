@@ -147,6 +147,32 @@ button {
   font-family: 'Poppins', sans-serif;
 }
 
+input,
+textarea {
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--input-border-color);
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--input-border-color);
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  transition: var(--transition);
+  color: var(--main-color);
+  transform: translateY(-10px);
+  transform: translateX(10px);
+  font-size: var(--small-font);
+}
+
 button {
   outline: none;
   border: none;
