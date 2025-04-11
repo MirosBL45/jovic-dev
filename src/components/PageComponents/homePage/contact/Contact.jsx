@@ -1,17 +1,19 @@
 // components
 import ContactComponent from './ContactComponent';
 import MiniHeadline from '../../MiniHeadline/MiniHeadline';
+import LinksText from './LinksText';
+
+// data
+import { contactData } from '@/utils/allData/contact';
 
 function Contact() {
-  const headlineText = `Let’s [work] together`;
-  const descriptionText = `Open to full time, remote jobs or freelance projects.`;
-
   return (
     <MiniHeadline
       id="contact"
-      headline={headlineText}
-      description={descriptionText}
+      headline={contactData.headlineText}
+      description={contactData.descriptionText}
     >
+      <LinksText />
       <ContactComponent />
     </MiniHeadline>
   );

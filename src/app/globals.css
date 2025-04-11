@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --white-color: #F4F0FF;
+  --white-color: #f4f0ff;
   --navbar-bg: #ece6fa;
-  --white-color-second: #01000A;
+  --white-color-second: #01000a;
   --white-color-third: #010009;
-  --background: #02000F;
+  --background: #02000f;
   --main-color: #0a66c2;
   --icons-color: #010005;
   --icons-footer-color: #150b3b;
@@ -17,7 +17,6 @@
   --popup-bgd: rgba(10, 102, 194, 0.5);
 
   --input-border-color: #162235;
-
 
   --dark-main-color: #064079;
   --dark-gray-color: #676767;
@@ -33,8 +32,7 @@
   --sm-border-radius: 0.625rem;
   --small-border-radius: 0.313rem;
 
-
-  --large-font: 5.0rem;
+  --large-font: 5rem;
   --big-font: 4.5rem;
   --mbs-font: 3.5rem;
   --mb-font: 2.5rem;
@@ -65,15 +63,15 @@
 }
 
 .dark {
-  --white-color: #02000F;
+  --white-color: #02000f;
   --navbar-bg: #04001f;
-  --white-color-second: #EFEDFD;
-  --white-color-third: #F9FAFB;
-  --background: #F4F0FF;
+  --white-color-second: #efedfd;
+  --white-color-third: #f9fafb;
+  --background: #f4f0ff;
   --main-color: #08c3fd;
-  --icons-color: #7F7C8F;
-  --icons-footer-color: #98A2B3;
-  --footer-color: #D0D5DD;
+  --icons-color: #7f7c8f;
+  --icons-footer-color: #98a2b3;
+  --footer-color: #d0d5dd;
   --footer-line: rgba(255, 255, 255, 0.24);
 
   --popup-bgd: rgba(8, 195, 253, 0.5);
@@ -97,7 +95,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -105,7 +103,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Lexend", sans-serif;
+  font-family: 'Lexend', sans-serif;
   font-weight: 500;
 }
 
@@ -146,7 +144,7 @@ a {
 input,
 textarea,
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 button {
@@ -193,7 +191,6 @@ button {
 
 /* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 1000px) {
-
   .layoutContainerAll {
     margin-top: 150px;
   }
@@ -269,6 +266,16 @@ button {
   font-weight: 500;
   transition: var(--transition);
   cursor: pointer;
+}
+
+.buttonContact {
+  transition: var(--transition);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttonContact:hover {
+  border-color: var(--input-border-color);
+  box-shadow: 0 0 10px var(--main-color);
 }
 
 .button:hover {

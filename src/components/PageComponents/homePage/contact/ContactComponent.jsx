@@ -71,18 +71,18 @@ function ContactComponent() {
         <form ref={formRef} onSubmit={sendEmail} className={styles.sendingForm}>
           <input
             type="text"
-            placeholder="Your Name"
+            placeholder="Your Name or Nickname (e.g. Jane or Frontend Ninja)"
             name="user_name"
             required
           />
           <input
             type="email"
-            placeholder="Your Email"
+            placeholder="Your Email (e.g. jane@ninja.com)"
             name="user_email"
             required
           />
           <textarea
-            placeholder="Your Message"
+            placeholder="What’s on your mind? (Tell me about your idea, project, or even your favorite JavaScript trick)"
             cols="30"
             rows="10"
             name="message"
@@ -96,7 +96,7 @@ function ContactComponent() {
                 : `Send Message to Miroslav Jovic, Frontend Developer`
             }
           >
-            {loading ? `Sending...` : `Send Message`}
+            {loading ? `Connecting...` : `Let’s connect!`}
           </ClickButton>
         </form>
       </section>

@@ -1,5 +1,9 @@
 // components
 import ContactComponent from '@/components/PageComponents/homePage/contact/ContactComponent';
+import LinksText from '@/components/PageComponents/homePage/contact/LinksText';
+
+// data
+import { contactData } from '@/utils/allData/contact';
 
 // style
 import styles from './page.module.css';
@@ -25,7 +29,9 @@ function Contact() {
   return (
     <main className={`${styles.container} layoutContainerAll`}>
       <header>
-        <h1>{`Let’s [work] together`}</h1>
+        <h1>{contactData.headlineText}</h1>
+        <h2>{contactData.descriptionText}</h2>
+        <LinksText />
       </header>
       <ContactComponent />
     </main>
