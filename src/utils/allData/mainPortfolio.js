@@ -114,11 +114,11 @@ export const itemsPortfolio = {
         {
             id: "whatsApp",
             title: "Desktop WhatsApp Clone with OpenAI",
-            desc: "Made in Next.js with TypeScript this desktop WhatsApp Clone supports group chat, video call, ChatGPT support for with @gpt and image generation with @dall-e. Of course, there are also group chats, as well as regular sending of pictures or videos.",
+            desc: "Made in Next.js with TypeScript and Zustand for fast state management, this desktop WhatsApp Clone supports group chat, video call, ChatGPT support for with @gpt and image generation with @dall-e. Of course, there are also group chats, as well as regular sending of pictures or videos.",
             liveUrl: 'https://whats-app-mjovic.vercel.app',
             gitUrl: 'https://github.com/MirosBL45/WhatsApp',
             image: whatsApp,
-            techs: ['Next.js', 'TypeScript', 'TailwindCSS', 'Convex'],
+            techs: ['Next.js', 'TypeScript', 'Zustand', 'Convex'],
         },
         {
             id: "carHub",
