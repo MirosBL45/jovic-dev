@@ -132,7 +132,7 @@ function Dashboard() {
     const description2 = e.target[6].value;
     const content2 = e.target[7].value;
     const imagesecond = imageBase64second;
-    let slug = e.target[9].value.replace(/\s+/g, '_');
+    let slug = e.target[9].value.replace(/\s+/g, '-');
 
     // fetch all slugs
     const existingSlugs = await getAllPostSlugs();
