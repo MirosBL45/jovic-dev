@@ -1,14 +1,14 @@
-import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
-import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
-import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
+import retail from '../../../public/portfolio/imagesApps/retailheroes Miroslav Jovic Frontend Developer.webp';
+import kala from '../../../public/portfolio/imagesApps/kalahvala Miroslav Jovic Frontend Developer.webp';
+import mOne from '../../../public/portfolio/imagesApps/mOne Miroslav Jovic Frontend Developer.webp';
 
-import rakita from '../../../public/portfolio/imagesWeb/studiorakita.webp';
-import talex from '../../../public/portfolio/imagesWeb/talexm.webp';
-import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
+import rakita from '../../../public/portfolio/imagesWeb/studiorakita Miroslav Jovic Frontend Developer.webp';
+import talex from '../../../public/portfolio/imagesWeb/talexm Miroslav Jovic Frontend Developer.webp';
+import milspedJust from '../../../public/portfolio/imagesApps/milspedJust Miroslav Jovic Frontend Developer.webp';
 
-import blackjack from '../../../public/portfolio/imagesGames/blackjack.webp';
-import puzzle from '../../../public/portfolio/imagesGames/puzzle.webp';
-import snake from '../../../public/portfolio/imagesGames/snake.webp';
+import blackjack from '../../../public/portfolio/imagesGames/blackjack Miroslav Jovic Frontend Developer.webp';
+import puzzle from '../../../public/portfolio/imagesGames/puzzle Miroslav Jovic Frontend Developer.webp';
+import snake from '../../../public/portfolio/imagesGames/snake Miroslav Jovic Frontend Developer.webp';
 
 export const apps = [
     {

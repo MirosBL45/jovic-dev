@@ -1,41 +1,42 @@
-import games from '../../../public/portfolio/games.jpg';
-import sites from '../../../public/portfolio/sites.jpg';
-import webapps from '../../../public/portfolio/webapps.jpg';
+import games from '../../../public/portfolio/games Miroslav Jovic Frontend Developer.jpg';
+import sites from '../../../public/portfolio/sites Miroslav Jovic Frontend Developer.jpg';
+import webapps from '../../../public/portfolio/webapps Miroslav Jovic Frontend Developer.jpg';
 
-import blackjack from '../../../public/portfolio/imagesGames/blackjack.webp';
-import poker from '../../../public/portfolio/imagesGames/poker.webp';
-import memory from '../../../public/portfolio/imagesGames/memory.webp';
-import puzzle from '../../../public/portfolio/imagesGames/puzzle.webp';
-import snake from '../../../public/portfolio/imagesGames/snake.webp';
-import tictactoe from '../../../public/portfolio/imagesGames/tictactoe.webp';
+import blackjack from '../../../public/portfolio/imagesGames/blackjack Miroslav Jovic Frontend Developer.webp';
+import poker from '../../../public/portfolio/imagesGames/poker Miroslav Jovic Frontend Developer.webp';
+import memory from '../../../public/portfolio/imagesGames/memory Miroslav Jovic Frontend Developer.webp';
+import puzzle from '../../../public/portfolio/imagesGames/puzzle Miroslav Jovic Frontend Developer.webp';
+import snake from '../../../public/portfolio/imagesGames/snake Miroslav Jovic Frontend Developer.webp';
+import tictactoe from '../../../public/portfolio/imagesGames/tictactoe Miroslav Jovic Frontend Developer.webp';
 
-import slider from '../../../public/portfolio/imagesWeb/slidercat.webp';
-import pets from '../../../public/portfolio/imagesWeb/pets.webp';
-import social from '../../../public/portfolio/imagesWeb/socialnetwork.webp';
-import quiz from '../../../public/portfolio/imagesWeb/quiz.webp';
-import iqos from '../../../public/portfolio/imagesWeb/iqos.webp';
-import talex from '../../../public/portfolio/imagesWeb/talexm.webp';
-import uzelac from '../../../public/portfolio/imagesWeb/uzilight.webp';
-import rakita from '../../../public/portfolio/imagesWeb/studiorakita.webp';
+import slider from '../../../public/portfolio/imagesWeb/slidercat Miroslav Jovic Frontend Developer.webp';
+import pets from '../../../public/portfolio/imagesWeb/pets Miroslav Jovic Frontend Developer.webp';
+import social from '../../../public/portfolio/imagesWeb/socialnetwork Miroslav Jovic Frontend Developer.webp';
+import quiz from '../../../public/portfolio/imagesWeb/quiz Miroslav Jovic Frontend Developer.webp';
+import iqos from '../../../public/portfolio/imagesWeb/iqos Miroslav Jovic Frontend Developer.webp';
+import talex from '../../../public/portfolio/imagesWeb/talexm Miroslav Jovic Frontend Developer.webp';
+import uzelac from '../../../public/portfolio/imagesWeb/uzilight Miroslav Jovic Frontend Developer.webp';
+import rakita from '../../../public/portfolio/imagesWeb/studiorakita Miroslav Jovic Frontend Developer.webp';
 
-import companywall from '../../../public/portfolio/imagesApps/companywalltask.webp';
-import materialSocial from '../../../public/portfolio/imagesApps/materialUI.webp';
-import promptopia from '../../../public/portfolio/imagesApps/promptopiaApp.webp';
-import todo from '../../../public/portfolio/imagesApps/todolist.webp';
-import recipe from '../../../public/portfolio/imagesApps/recipeapp.webp';
-import comit from '../../../public/portfolio/imagesApps/committask.webp';
-import githubfinder from '../../../public/portfolio/imagesApps/githubfinder.webp';
-import houses from '../../../public/portfolio/imagesApps/housemarketplace.webp';
-import mboxt from '../../../public/portfolio/imagesApps/mboxt.webp';
-import milspedJust from '../../../public/portfolio/imagesApps/milspedJust.webp';
-import mOne from '../../../public/portfolio/imagesApps/mOne.webp';
-import simic from '../../../public/portfolio/imagesApps/drsimic.webp';
-import retail from '../../../public/portfolio/imagesApps/retailheroes.webp';
-import kala from '../../../public/portfolio/imagesApps/kalahvala.webp';
-import whatsApp from '../../../public/portfolio/imagesApps/whatsApp.webp';
-import imageGallery from '../../../public/portfolio/imagesApps/imageGallery.webp';
-import liveDocs from '../../../public/portfolio/imagesApps/liveDocs.webp';
-import carHub from '../../../public/portfolio/imagesApps/carHub.webp';
+import companywall from '../../../public/portfolio/imagesApps/companywalltask Miroslav Jovic Frontend Developer.webp';
+import materialSocial from '../../../public/portfolio/imagesApps/materialUI Miroslav Jovic Frontend Developer.webp';
+import promptopia from '../../../public/portfolio/imagesApps/promptopiaApp Miroslav Jovic Frontend Developer.webp';
+import todo from '../../../public/portfolio/imagesApps/todolist Miroslav Jovic Frontend Developer.webp';
+import recipe from '../../../public/portfolio/imagesApps/recipeapp Miroslav Jovic Frontend Developer.webp';
+import comit from '../../../public/portfolio/imagesApps/committask Miroslav Jovic Frontend Developer.webp';
+import githubfinder from '../../../public/portfolio/imagesApps/githubfinder Miroslav Jovic Frontend Developer.webp';
+import houses from '../../../public/portfolio/imagesApps/housemarketplace Miroslav Jovic Frontend Developer.webp';
+import mboxt from '../../../public/portfolio/imagesApps/mboxt Miroslav Jovic Frontend Developer.webp';
+import milspedJust from '../../../public/portfolio/imagesApps/milspedJust Miroslav Jovic Frontend Developer.webp';
+import mOne from '../../../public/portfolio/imagesApps/mOne Miroslav Jovic Frontend Developer.webp';
+import simic from '../../../public/portfolio/imagesApps/drsimic Miroslav Jovic Frontend Developer.webp';
+import retail from '../../../public/portfolio/imagesApps/retailheroes Miroslav Jovic Frontend Developer.webp';
+import kala from '../../../public/portfolio/imagesApps/kalahvala Miroslav Jovic Frontend Developer.webp';
+import whatsApp from '../../../public/portfolio/imagesApps/whatsApp Miroslav Jovic Frontend Developer.webp';
+import imageGallery from '../../../public/portfolio/imagesApps/imageGallery Miroslav Jovic Frontend Developer.webp';
+import liveDocs from '../../../public/portfolio/imagesApps/liveDocs Miroslav Jovic Frontend Developer.webp';
+import carHub from '../../../public/portfolio/imagesApps/carHub Miroslav Jovic Frontend Developer.webp';
+import habitsTracker from '../../../public/portfolio/imagesApps/habits-tracker Miroslav Jovic Frontend Developer.webp';
 
 export const portfolioData = [
     {
@@ -155,6 +156,15 @@ export const itemsPortfolio = {
             gitUrl: 'https://github.com/MirosBL45/Next.js-Image-Gallery',
             image: imageGallery,
             techs: ['Next.js', 'TypeScript', 'zod', 'TailwindCSS'],
+        },
+        {
+            id: "habitsTracker",
+            title: "Habits Tracker",
+            desc: "This is a Habit Tracker mini application that allows users to add new habits, mark them as completed, track their streak over a 30-day period, and delete them once no longer needed. It`s designed to promote daily discipline and improve productivity through clear habit tracking.",
+            liveUrl: 'https://habits-tracker-mj.vercel.app',
+            gitUrl: 'https://github.com/MirosBL45/habits-tracker',
+            image: habitsTracker,
+            techs: ['Vite.js', 'TypeScript', 'Redux', 'MaterialUI'],
         },
         {
             id: "gitUrl-finder",
@@ -349,14 +359,14 @@ export const itemsPortfolio = {
             image: materialSocial,
             techs: ['React', 'MaterialUI'],
         },
-        // {
-        //     id: 5,
-        //     title: "Slider Cat",
-        //     desc: "It was crucial to track the mouse movements correctly and synchronize the movement of the crosshair with each step. This required careful manipulation of mouse events and proper handling of screen coordinates. Implementing a fluid and aesthetically pleasing line movement was a challenge in optimizing performance.",
-        //     liveUrl: 'https://slidercatmj.netlify.app/',
-        //     gitUrl: 'https://github.com/MirosBL45/Slider-cat',
-        //     image: slider,
-        //     techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
-        // },
+        {
+            id: 5,
+            title: "Slider Cat",
+            desc: "It was crucial to track the mouse movements correctly and synchronize the movement of the crosshair with each step. This required careful manipulation of mouse events and proper handling of screen coordinates. Implementing a fluid and aesthetically pleasing line movement was a challenge in optimizing performance.",
+            liveUrl: 'https://slidercatmj.netlify.app/',
+            gitUrl: 'https://github.com/MirosBL45/Slider-cat',
+            image: slider,
+            techs: ['JavaScript', 'SCSS', 'CSS', 'HTML'],
+        },
     ],
 };
