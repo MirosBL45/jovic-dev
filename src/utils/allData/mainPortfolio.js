@@ -37,6 +37,7 @@ import imageGallery from '../../../public/portfolio/imagesApps/imageGallery Miro
 import liveDocs from '../../../public/portfolio/imagesApps/liveDocs Miroslav Jovic Frontend Developer.webp';
 import carHub from '../../../public/portfolio/imagesApps/carHub Miroslav Jovic Frontend Developer.webp';
 import habitsTracker from '../../../public/portfolio/imagesApps/habits-tracker Miroslav Jovic Frontend Developer.webp';
+import bodybuddy from '../../../public/portfolio/imagesApps/bodybuddy Miroslav Jovic Frontend Developer.webp';
 
 export const portfolioData = [
     {
