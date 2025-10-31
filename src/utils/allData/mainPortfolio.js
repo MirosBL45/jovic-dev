@@ -69,13 +69,13 @@ export const portfolioData = [
 export const itemsPortfolio = {
     apps: [
         {
-            id: "jednakala",
-            title: "Kala hvala",
-            desc: "This React app was made so that people can express their gratitude to firefighters by posting an image and text as desired. All posts are publicly available, and at the end, the winning post is announced.",
-            liveUrl: 'https://kala-hvala-mj.vercel.app/',
-            gitUrl: 'https://github.com/MirosBL45/kala-hvala',
-            image: kala,
-            techs: ['React', 'MaterialUI', 'Axios', 'JS-Cookie'],
+            id: "body-buddy",
+            title: "Body buddy",
+            desc: "Body Buddy is an AI-powered fitness application that helps users generate personalized workout and nutrition plans through natural conversation. Users talk directly to the AI assistant.",
+            liveUrl: 'https://aibodybuddy.com/',
+            gitUrl: 'https://github.com/MirosBL45/BodyBuddy',
+            image: bodybuddy,
+            techs: ['Next.js', 'TypeScript', 'Clerk', 'Convex'],
         },
         {
             id: "retail-heroes",
@@ -94,6 +94,15 @@ export const itemsPortfolio = {
             gitUrl: 'https://github.com/MirosBL45',
             image: mOne,
             techs: ['Vue.js', 'Nuxt.js', 'Strapi', 'CSS'],
+        },
+        {
+            id: "jednakala",
+            title: "Kala hvala",
+            desc: "This React app was made so that people can express their gratitude to firefighters by posting an image and text as desired. All posts are publicly available, and at the end, the winning post is announced.",
+            liveUrl: 'https://kala-hvala-mj.vercel.app/',
+            gitUrl: 'https://github.com/MirosBL45/kala-hvala',
+            image: kala,
+            techs: ['React', 'MaterialUI', 'Axios', 'JS-Cookie'],
         },
         {
             id: "simic",
