@@ -7,7 +7,8 @@ import MiniHeadline from '../../MiniHeadline/MiniHeadline';
 
 function About() {
   const headlineText = 'Problem solver <coder>';
-  const descriptionText = `Medior Frontend Developer with over ${allYears} years of experience.`;
+  const descriptionText = `Frontend Developer with ${allYears}+ years of professional experience.`;
+  // const descriptionText = `Frontend Developer with over ${allYears} years of experience.`;
 
   return (
     <MiniHeadline

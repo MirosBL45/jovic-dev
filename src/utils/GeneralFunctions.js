@@ -13,9 +13,21 @@ export function formatDate(dateString) {
     return formattedDate;
 }
 
-// years of expirience
-export const currentYear = new Date().getFullYear();
-export const allYears = currentYear - 2021;
+// years of experience (from April 2021)
+const startDate = new Date(2021, 3); // meseci su 0-based (3 = April)
+const today = new Date();
+
+let years = today.getFullYear() - startDate.getFullYear();
+
+// ako još nije prošao april ove godine, oduzmi 1
+if (
+    today.getMonth() < 3 ||
+    (today.getMonth() === 3 && today.getDate() < 1)
+) {
+    years--;
+}
+
+export const allYears = years;
 
 // A function to check the validity of an email address using regex
 export function isValidEmail(email) {
