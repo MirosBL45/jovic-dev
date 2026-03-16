@@ -25,14 +25,16 @@
   text-transform: capitalize;
   border-radius: var(--xl-border-radius);
   /* MEDIA QUERIES (small screens) */
-  color: var(--white-color);
-  background: var(--main-color);
 }
 @media screen and (max-width: 450px) {
   .button {
     padding: 7px 20px;
     font-size: var(--small-font);
   }
+}
+.button {
+  color: var(--white-color);
+  background: var(--main-color);
 }
 
 .flatButton {
@@ -42,14 +44,16 @@
   text-transform: capitalize;
   border-radius: var(--xl-border-radius);
   /* MEDIA QUERIES (small screens) */
-  color: var(--background);
-  background: none;
 }
 @media screen and (max-width: 450px) {
   .flatButton {
     padding: 7px 20px;
     font-size: var(--small-font);
   }
+}
+.flatButton {
+  color: var(--background);
+  background: none;
 }
 .flatButton:hover {
   color: var(--main-color);

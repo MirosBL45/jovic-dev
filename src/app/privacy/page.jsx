@@ -2,44 +2,45 @@
 import Link from "next/link";
 
 // data
-import { termsDataText } from "@/utils/allData/terms";
+import { privacyDataText } from "@/utils/allData/privacy";
 
 // style
 import styles from "./page.module.css";
 
 // Static metadata
 export const metadata = {
-  title: "Terms Jović Miroslav | Frontend Developer",
+  title: "Privacy Policy Jović Miroslav | Frontend Developer",
   description:
     "Contact Jović Miroslav on the web. Send me a message, I look forward to our meeting. Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development",
   twitter: {
-    title: "Terms Jović Miroslav | Frontend Developer",
+    title: "Privacy Policy Jović Miroslav | Frontend Developer",
     description:
       "Contact Jović Miroslav on the web. Send me a message, I look forward to our meeting. Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development",
   },
   openGraph: {
-    title: "Terms Jović Miroslav | Frontend Developer",
+    title: "Privacy Policy Jović Miroslav | Frontend Developer",
     description:
       "Contact Jović Miroslav on the web. Send me a message, I look forward to our meeting. Explore my portfolio showcasing quick, stable, and responsive online applications and websites crafted with Next.js, React, MongoDB, Mongoose, and SWR. As a frontend developer, I bring digital dreams to life with cutting-edge technologies, ensuring seamless user experiences. Dive into my work and discover the power of innovative frontend development",
   },
 };
 
-function Terms() {
+function Privacy() {
   return (
     <main className={styles.container}>
       <header>
-        <h1>{termsDataText.headlineText}</h1>
-        <h2>{termsDataText.descriptionText}</h2>
+        <h1>{privacyDataText.headlineText}</h1>
+        <h2>{privacyDataText.descriptionText}</h2>
       </header>
 
-      <p>{termsDataText.lastUpdated}</p>
-      <p>{termsDataText.introText}</p>
+      <p>{privacyDataText.lastUpdated}</p>
 
-      {termsDataText.sections.map((section) => (
+      {privacyDataText.sections.map((section) => (
         <section key={section.id}>
           <h2>{section.title}</h2>
 
           {section.text && <span>{section.text}</span>}
+
+          {section.afterText && <p>{section.afterText}</p>}
 
           {section.list && (
             <ul>
@@ -49,10 +50,10 @@ function Terms() {
             </ul>
           )}
 
-          {section.afterText && <p>{section.afterText}</p>}
+          {section.afterListText && <p>{section.afterListText}</p>}
 
           {section.isContact && (
-            <Link href="/contact" title="Miroslav Jović Frontend Developer">
+            <Link title="Miroslav Jović Frontend Developer" href="/contact">
               contact me.
             </Link>
           )}
@@ -62,4 +63,4 @@ function Terms() {
   );
 }
 
-export default Terms;
+export default Privacy;

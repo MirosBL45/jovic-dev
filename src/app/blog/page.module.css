@@ -5,12 +5,14 @@
   gap: 20px;
   text-align: center;
   /* MEDIA QUERIES (medium screens) */
-  /* MEDIA QUERIES (very small screens) */
 }
 @media screen and (max-width: 800px) {
   .layoutTitle {
     margin-bottom: 65px;
   }
+}
+.layoutTitle {
+  /* MEDIA QUERIES (very small screens) */
 }
 @media screen and (max-width: 450px) {
   .layoutTitle {
