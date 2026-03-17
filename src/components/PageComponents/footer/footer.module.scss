@@ -62,3 +62,28 @@
         }
     }
 }
+
+.termsAndIcons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-font);
+    align-items: center;
+
+    @media screen and (max-width: 580px) {
+        gap: var(--xsmall-font);
+    }
+}
+
+.terms {
+    display: flex;
+    gap: 5px;
+    font-size: var(--terms-font);
+
+    a {
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--main-color);
+        }
+    }
+}
