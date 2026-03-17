@@ -1,0 +1,19 @@
+.container {
+  margin-top: 150px;
+  color: var(--background);
+  max-width: var(--max-width);
+}
+.container h1 {
+  font-size: var(--mb-font);
+  margin-bottom: 1.7rem;
+  color: var(--main-color);
+}
+.container h2 {
+  font-size: var(--medium-font);
+  margin: 1.2rem 0;
+  color: var(--main-color);
+}
+.container ul {
+  margin: 0.6rem 0;
+  padding-left: var(--mb-font);
+}

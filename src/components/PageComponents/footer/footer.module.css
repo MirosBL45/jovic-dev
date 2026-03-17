@@ -54,3 +54,26 @@
     padding: 7px;
   }
 }
+.termsAndIcons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-font);
+  align-items: center;
+}
+@media screen and (max-width: 580px) {
+  .termsAndIcons {
+    gap: var(--xsmall-font);
+  }
+}
+
+.terms {
+  display: flex;
+  gap: 5px;
+  font-size: var(--terms-font);
+}
+.terms a {
+  transition: var(--transition);
+}
+.terms a:hover {
+  color: var(--main-color);
+}
