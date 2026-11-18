@@ -41,3 +41,40 @@ This project is my personal web portfolio, where you can view my works, download
   - [Learn more about bcryptjs](https://www.npmjs.com/package/bcryptjs)
 
 Each of these technologies plays a vital role in enhancing the functionality and user experience of the personal web portfolio, making it a modern and robust application.
+
+## Development
+
+### Prerequisites
+
+- Node.js 20.9 or newer
+- npm
+
+### Setup
+
+1. Install the dependencies with `npm ci`.
+2. Copy `.env.example` to `.env` and fill in the values. Env files are never committed, only `.env.example` is.
+3. Start the dev server with `npm run dev` and open http://localhost:3000.
+
+### Commands
+
+| Command                                                     | Description                                               |
+| ----------------------------------------------------------- | --------------------------------------------------------- |
+| `npm run dev`                                               | Start the dev server                                      |
+| `npm run build`                                             | Create a production build                                 |
+| `npm run start`                                             | Run the production build                                  |
+| `npm run test`                                              | Run the tests once                                        |
+| `npm run test:watch`                                        | Run the tests in watch mode                               |
+| `npm run format`                                            | Format the project with Prettier                          |
+| `npm run format:check`                                      | Check the formatting without changing files               |
+| `npm run sass:file -- path/x.module.scss path/x.module.css` | Compile one SCSS file                                     |
+| `npm run sass:check`                                        | Check that every `.module.css` matches its `.module.scss` |
+
+### Branches
+
+- `master` is production on Vercel.
+- `develop` is the base for all work.
+- New work goes to `feature/...` or `fix/...` branches created from `develop`.
+
+### Styles
+
+Components import `.module.css`, and the source of every style is the `.module.scss` file next to it. After changing a `.module.scss` file, compile it with Live Sass Compiler or `npm run sass:file`. Never edit a `.module.css` file by hand. `src/app/globals.css` has no SCSS source and is edited directly.

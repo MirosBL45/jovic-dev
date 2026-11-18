@@ -1,12 +1,12 @@
 // react/next stuff
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 // style
-import styles from './contact.module.css';
+import styles from "./contact.module.css";
 
 // images
-import Miroslav from 'public/homePage/Miroslav Jovic Frontend Developer.png';
+import Miroslav from "public/homePage/Miroslav Jovic Frontend Developer.png";
 
 function LinksText() {
   return (
@@ -22,20 +22,20 @@ function LinksText() {
         />
       </div>
       <p className={styles.socials}>
-        Contact me on{' '}
+        Contact me on{" "}
         <Link
           rel="noopener noreferrer"
           target="_blank"
-          href={'https://www.linkedin.com/in/mj888/'}
+          href={"https://www.linkedin.com/in/mj888/"}
           title={`Jovic Miroslav's Frontend Developer Linkedin profile`}
         >
           LinkedIn
         </Link>
-        , visit my{' '}
+        , visit my{" "}
         <Link
           rel="noopener noreferrer"
           target="_blank"
-          href={'https://github.com/MirosBL45'}
+          href={"https://github.com/MirosBL45"}
           title={`Jovic Miroslav's Frontend Developer Github profile`}
         >
           Github

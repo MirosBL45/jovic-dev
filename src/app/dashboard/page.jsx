@@ -1,29 +1,26 @@
-'use client';
+"use client";
 
 // react/next stuff
-import useSWR from 'swr';
-import { useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import useSWR from "swr";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 // components
-import { TabTitle } from '@/utils/GeneralFunctions';
-import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
-import { BASE_API_URL } from '@/utils/constants';
-import Popup from '@/components/UIComponents/PopUp/PopUp';
-import DeletePopUp from '@/components/UIComponents/PopUp/DeletePopUp';
-import {
-  areAllFieldsFilled,
-  isInputLengthValid,
-} from '@/utils/GeneralFunctions';
-import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
+import { TabTitle } from "@/utils/GeneralFunctions";
+import ClickButton from "@/components/CustomInputs/Buttons/ClickButton";
+import { BASE_API_URL } from "@/utils/constants";
+import Popup from "@/components/UIComponents/PopUp/PopUp";
+import DeletePopUp from "@/components/UIComponents/PopUp/DeletePopUp";
+import { areAllFieldsFilled, isInputLengthValid } from "@/utils/GeneralFunctions";
+import ScrollButton from "@/components/UIComponents/ScrollButton/ScrollButton";
 
 // style
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 // icons
-import { IoCloseCircleOutline, IoImageOutline } from 'react-icons/io5';
+import { IoCloseCircleOutline, IoImageOutline } from "react-icons/io5";
 
 // function for catching data to see slugs
 async function getAllPostSlugs() {
@@ -36,7 +33,7 @@ async function getAllPostSlugs() {
 function Dashboard() {
   // for tab title
   useEffect(() => {
-    TabTitle('Dashboard for your blogs');
+    TabTitle("Dashboard for your blogs");
   }, []);
 
   const session = useSession();
@@ -47,7 +44,7 @@ function Dashboard() {
 
   // PopUp model deleting post
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [slugToDelete, setSlugToDelete] = useState('');
+  const [slugToDelete, setSlugToDelete] = useState("");
 
   // PopUp models for loading images
   const [popupMessage1, setPopupMessage1] = useState(false);
@@ -63,12 +60,12 @@ function Dashboard() {
   }
 
   // for base64 image state
-  const [imageBase64, setImageBase64] = useState('');
-  const [imageBase64second, setImageBase64second] = useState('');
+  const [imageBase64, setImageBase64] = useState("");
+  const [imageBase64second, setImageBase64second] = useState("");
 
   // to show uploaded image
-  const [renderedImage1, setRenderedImage1] = useState('');
-  const [renderedImage2, setRenderedImage2] = useState('');
+  const [renderedImage1, setRenderedImage1] = useState("");
+  const [renderedImage2, setRenderedImage2] = useState("");
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // catch data of posts
@@ -79,19 +76,15 @@ function Dashboard() {
 
   // check for url
   if (!BASE_API_URL) {
-    return (
-      <p style={{ marginTop: '150px', fontSize: '45px' }}>conection failed</p>
-    );
+    return <p style={{ marginTop: "150px", fontSize: "45px" }}>conection failed</p>;
   }
 
-  if (session.status === 'loading') {
-    return (
-      <p style={{ marginTop: '150px', fontSize: '25px' }}>Loading User...</p>
-    );
+  if (session.status === "loading") {
+    return <p style={{ marginTop: "150px", fontSize: "25px" }}>Loading User...</p>;
   }
 
-  if (session.status === 'unauthenticated') {
-    router?.push('/dashboard/login');
+  if (session.status === "unauthenticated") {
+    router?.push("/dashboard/login");
     return null;
   }
 
@@ -132,7 +125,7 @@ function Dashboard() {
     const description2 = e.target[6].value;
     const content2 = e.target[7].value;
     const imagesecond = imageBase64second;
-    let slug = e.target[9].value.replace(/\s+/g, '-');
+    let slug = e.target[9].value.replace(/\s+/g, "-");
 
     // fetch all slugs
     const existingSlugs = await getAllPostSlugs();
@@ -149,8 +142,8 @@ function Dashboard() {
     slug = slug.toLowerCase();
 
     try {
-      await fetch('/api/posts', {
-        method: 'POST',
+      await fetch("/api/posts", {
+        method: "POST",
         body: JSON.stringify({
           title,
           headline1,
@@ -170,8 +163,8 @@ function Dashboard() {
       // reset fields
       e.target.reset();
       setButtonSend(false);
-      setRenderedImage1('');
-      setRenderedImage2('');
+      setRenderedImage1("");
+      setRenderedImage2("");
     } catch (error) {
       console.log(error);
     }
@@ -185,7 +178,7 @@ function Dashboard() {
   async function confirmDelete() {
     try {
       await fetch(`/api/posts/${slugToDelete}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
       // it reloads page, so we can see it after deleting post
       mutate();
@@ -193,14 +186,14 @@ function Dashboard() {
       console.log(error);
     } finally {
       // reset fields
-      setSlugToDelete('');
+      setSlugToDelete("");
       setShowConfirmation(false);
     }
   }
 
   function cancelDelete() {
     // reset fields
-    setSlugToDelete('');
+    setSlugToDelete("");
     setShowConfirmation(false);
   }
 
@@ -210,7 +203,7 @@ function Dashboard() {
     // check file size
     if (file.size > 2 * 1024 * 1024) {
       setPopupMessage1(true);
-      e.target.value = '';
+      e.target.value = "";
       return;
     }
 
@@ -221,7 +214,7 @@ function Dashboard() {
       setRenderedImage1(reader.result);
     };
     reader.onerror = (err) => {
-      console.log('Error with image: ', err);
+      console.log("Error with image: ", err);
     };
   }
 
@@ -231,7 +224,7 @@ function Dashboard() {
     // check file size
     if (file.size > 2 * 1024 * 1024) {
       setPopupMessage2(true);
-      e.target.value = '';
+      e.target.value = "";
       return;
     }
 
@@ -242,26 +235,26 @@ function Dashboard() {
       setRenderedImage2(reader.result);
     };
     reader.onerror = (err) => {
-      console.log('Error with image: ', err);
+      console.log("Error with image: ", err);
     };
   }
 
-  if (session.status === 'authenticated') {
+  if (session.status === "authenticated") {
     return (
       <>
         <header className="layoutContainerAll">
           <h1 className={styles.headline}>
-            {buttonSend ? 'Sending This Post...' : 'Add New Post'}
+            {buttonSend ? "Sending This Post..." : "Add New Post"}
           </h1>
         </header>
         <main className={styles.container}>
           <div className={styles.previousPosts}>
             <h3>
-              Your {'<'}previous{'>'} posts
+              Your {"<"}previous{">"} posts
             </h3>
             <aside className={styles.posts}>
               {isLoading ? (
-                <p style={{ marginTop: '50px', fontSize: '25px' }}>
+                <p style={{ marginTop: "50px", fontSize: "25px" }}>
                   We are loading your posts, they are heavy, think about it...
                 </p>
               ) : data && data.length ? (
@@ -289,8 +282,7 @@ function Dashboard() {
                 ))
               ) : (
                 <div className={styles.displayed}>
-                  When you make {'<'}your{'>'} first {'['}post{']'}, it will{' '}
-                  {'{'}appear{'}'} here.
+                  When you make {"<"}your{">"} first {"["}post{"]"}, it will {"{"}appear{"}"} here.
                 </div>
               )}
             </aside>
@@ -330,14 +322,10 @@ function Dashboard() {
               disabled={buttonSend && true}
             ></textarea>
             <div className={styles.forImage}>
-              <p>
-                {!renderedImage1
-                  ? 'Add first image for the post:'
-                  : 'Image added'}
-              </p>
+              <p>{!renderedImage1 ? "Add first image for the post:" : "Image added"}</p>
               <div className={styles.labelDiv}>
                 <label htmlFor="image-upload1">
-                  {!renderedImage1 ? 'Add image' : 'Change image'}
+                  {!renderedImage1 ? "Add image" : "Change image"}
                   <IoImageOutline />
                 </label>
                 <input
@@ -389,14 +377,10 @@ function Dashboard() {
               disabled={buttonSend && true}
             ></textarea>
             <div className={styles.forImage}>
-              <p>
-                {!renderedImage2
-                  ? 'Add second image for the post:'
-                  : 'Image added'}
-              </p>
+              <p>{!renderedImage2 ? "Add second image for the post:" : "Image added"}</p>
               <div className={styles.labelDiv}>
                 <label htmlFor="image-upload2">
-                  {!renderedImage2 ? 'Add image' : 'Change image'}
+                  {!renderedImage2 ? "Add image" : "Change image"}
                   <IoImageOutline />
                 </label>
                 <input
@@ -431,10 +415,10 @@ function Dashboard() {
               disabled={buttonSend && true}
             />
             <ClickButton
-              title={buttonSend ? 'Sending This Post...' : 'Send New Post'}
+              title={buttonSend ? "Sending This Post..." : "Send New Post"}
               disabled={buttonSend}
             >
-              {buttonSend ? 'Sending This Post...' : 'Send New Post'}
+              {buttonSend ? "Sending This Post..." : "Send New Post"}
             </ClickButton>
           </form>
         </main>
@@ -454,11 +438,7 @@ function Dashboard() {
           />
         )}
         {popupMessageEmpty && (
-          <Popup
-            message="Fill all fileds!"
-            onClose={handleClose}
-            showPopup={popupMessageEmpty}
-          />
+          <Popup message="Fill all fileds!" onClose={handleClose} showPopup={popupMessageEmpty} />
         )}
         {popupMessageRange && (
           <Popup
@@ -468,10 +448,7 @@ function Dashboard() {
           />
         )}
         {showConfirmation && (
-          <DeletePopUp
-            cancelDelete={cancelDelete}
-            confirmDelete={confirmDelete}
-          />
+          <DeletePopUp cancelDelete={cancelDelete} confirmDelete={confirmDelete} />
         )}
       </>
     );

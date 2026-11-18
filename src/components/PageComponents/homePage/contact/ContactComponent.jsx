@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
 // emailjs
-import emailjs from '@emailjs/browser';
-import { useState, useRef } from 'react';
+import emailjs from "@emailjs/browser";
+import { useState, useRef } from "react";
 
 // components
-import ClickButton from '@/components/CustomInputs/Buttons/ClickButton';
-import Popup from '@/components/UIComponents/PopUp/PopUp';
-import { isValidEmail, areAllFieldsFilled } from '@/utils/GeneralFunctions';
+import ClickButton from "@/components/CustomInputs/Buttons/ClickButton";
+import Popup from "@/components/UIComponents/PopUp/PopUp";
+import { isValidEmail, areAllFieldsFilled } from "@/utils/GeneralFunctions";
 
 // style
-import styles from './contact.module.css';
+import styles from "./contact.module.css";
 
-import { SERVICE_BASE, TEMPLATE_BASE, PUBLIC_BASE } from '@/utils/constants';
+import { SERVICE_BASE, TEMPLATE_BASE, PUBLIC_BASE } from "@/utils/constants";
 
 function ContactComponent() {
   const formRef = useRef();
@@ -49,19 +49,17 @@ function ContactComponent() {
     }
 
     setLoading(true);
-    emailjs
-      .sendForm(SERVICE_BASE, TEMPLATE_BASE, formRef.current, PUBLIC_BASE)
-      .then(
-        () => {
-          setLoading(false);
-          setPopupMessage(true);
-        },
-        (error) => {
-          setLoading(false);
-          console.log(error);
-          alert('Somthing went wrong. Please, try again.');
-        }
-      );
+    emailjs.sendForm(SERVICE_BASE, TEMPLATE_BASE, formRef.current, PUBLIC_BASE).then(
+      () => {
+        setLoading(false);
+        setPopupMessage(true);
+      },
+      (error) => {
+        setLoading(false);
+        console.log(error);
+        alert("Somthing went wrong. Please, try again.");
+      }
+    );
     e.target.reset();
   }
 
@@ -90,11 +88,7 @@ function ContactComponent() {
           ></textarea>
           <ClickButton
             disabled={loading}
-            title={
-              loading
-                ? `Sending...`
-                : `Send Message to Miroslav Jovic, Frontend Developer`
-            }
+            title={loading ? `Sending...` : `Send Message to Miroslav Jovic, Frontend Developer`}
           >
             {loading ? `Connecting...` : `Let’s connect!`}
           </ClickButton>
@@ -108,18 +102,10 @@ function ContactComponent() {
         />
       )}
       {popupMessageEmpty && (
-        <Popup
-          message="Fill all fileds!"
-          onClose={handleClose}
-          showPopup={popupMessageEmpty}
-        />
+        <Popup message="Fill all fileds!" onClose={handleClose} showPopup={popupMessageEmpty} />
       )}
       {popupMessageMail && (
-        <Popup
-          message="Enter valid mail!"
-          onClose={handleClose}
-          showPopup={popupMessageMail}
-        />
+        <Popup message="Enter valid mail!" onClose={handleClose} showPopup={popupMessageMail} />
       )}
     </>
   );

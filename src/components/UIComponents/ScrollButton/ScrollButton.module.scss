@@ -1,34 +1,34 @@
 .scrollButton {
-    display: grid;
-    place-items: center;
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    cursor: pointer;
-    transition: var(--transition);
-    background: var(--main-color);
-    border: 2px solid var(--main-color);
-    border-radius: 50%;
-    padding: 11px;
-    display: none;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  padding: 11px;
+  display: none;
 
-    &:hover {
-        background: transparent;
+  &:hover {
+    background: transparent;
 
-        .arrow {
-            color: var(--main-color);
-        }
+    .arrow {
+      color: var(--main-color);
     }
+  }
 }
 
 .arrow {
-    font-size: var(--mb-font);
-    color: var(--white-color);
+  font-size: var(--mb-font);
+  color: var(--white-color);
 }
 
 /* MEDIA QUERIES (very small screens) */
 @media screen and (max-width: 450px) {
-    .arrow {
-        font-size: var(--medium-font);
-    }
+  .arrow {
+    font-size: var(--medium-font);
+  }
 }

@@ -1,20 +1,17 @@
-'use client';
+"use client";
 
 // react/next stuff
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from "next/link";
+import { useState } from "react";
 
 // data
-import {
-  technologiesText,
-  technologiesTextBig,
-} from '@/utils/allData/technologies';
+import { technologiesText, technologiesTextBig } from "@/utils/allData/technologies";
 
 // components
-import Line from './Line';
+import Line from "./Line";
 
 // style
-import styles from './technologies.module.css';
+import styles from "./technologies.module.css";
 
 function Technologies() {
   const [isBig, setIsBig] = useState(false);
@@ -42,18 +39,18 @@ function Technologies() {
           }}
           className="flat"
         >
-          Show {isBig ? 'less' : 'more'} technologies I use
+          Show {isBig ? "less" : "more"} technologies I use
         </p>
       )}
       {isBig && (
         <Link
           className="flat"
-          href={'/#technologies'}
+          href={"/#technologies"}
           onClick={() => {
             setIsBig((prev) => !prev);
           }}
         >
-          Show {isBig ? 'less' : 'more'} technologies I use
+          Show {isBig ? "less" : "more"} technologies I use
         </Link>
       )}
     </div>

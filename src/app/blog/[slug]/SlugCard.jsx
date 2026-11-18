@@ -1,16 +1,16 @@
 // react/next stuff
-import Image from 'next/image';
+import Image from "next/image";
 
 // components
-import { formatDate } from '@/utils/GeneralFunctions';
+import { formatDate } from "@/utils/GeneralFunctions";
 
 // style
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 export default function SlugCard({ data }) {
   // function for break text into parts
   function splitContent(content) {
-    const sentences = content.split('. ');
+    const sentences = content.split(". ");
     const maxCharacters = 400;
     let currentCharacters = 0;
     let result = [];
@@ -24,7 +24,7 @@ export default function SlugCard({ data }) {
         currentCharacters = 0; // Reset the counter
       }
 
-      result.push(sentence + (index === sentences.length - 1 ? '' : '. '));
+      result.push(sentence + (index === sentences.length - 1 ? "" : ". "));
       currentCharacters += sentenceLength;
     });
 

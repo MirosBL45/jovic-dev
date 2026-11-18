@@ -61,17 +61,11 @@ function Footer() {
           </Link>
         </div>
         <div className={styles.terms}>
-          <Link
-            href="/terms"
-            title={`Jovic Miroslav's Frontend Developer Terms of Service`}
-          >
+          <Link href="/terms" title={`Jovic Miroslav's Frontend Developer Terms of Service`}>
             Terms of Service
           </Link>
           |
-          <Link
-            href="/privacy"
-            title={`Jovic Miroslav's Frontend Developer Privacy Policy`}
-          >
+          <Link href="/privacy" title={`Jovic Miroslav's Frontend Developer Privacy Policy`}>
             Privacy Policy
           </Link>
         </div>

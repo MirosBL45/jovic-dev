@@ -1,60 +1,60 @@
 @mixin button_projects {
-    // these buttons are different than others in the project, that's why a special style is made for them
-    padding: 10px 26px;
-    font-weight: 500;
-    font-size: var(--regular-font);
-    text-transform: capitalize;
-    border-radius: var(--xl-border-radius);
+  // these buttons are different than others in the project, that's why a special style is made for them
+  padding: 10px 26px;
+  font-weight: 500;
+  font-size: var(--regular-font);
+  text-transform: capitalize;
+  border-radius: var(--xl-border-radius);
 
-    /* MEDIA QUERIES (small screens) */
-    @media screen and (max-width: 450px) {
-        padding: 7px 20px;
-        font-size: var(--small-font);
-    }
+  /* MEDIA QUERIES (small screens) */
+  @media screen and (max-width: 450px) {
+    padding: 7px 20px;
+    font-size: var(--small-font);
+  }
 }
 
 .button {
-    @include button_projects;
+  @include button_projects;
 
-    color: var(--white-color);
-    background: var(--main-color);
+  color: var(--white-color);
+  background: var(--main-color);
 }
 
 .flatButton {
-    @include button_projects;
+  @include button_projects;
 
-    color: var(--background);
-    background: none;
+  color: var(--background);
+  background: none;
 
-    &:hover {
-        color: var(--main-color);
-    }
+  &:hover {
+    color: var(--main-color);
+  }
 }
 
 .portfolioPart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 
-    /* MEDIA QUERIES (large screens) */
-    @media screen and (max-width: 1024px) {
-        gap: 14px;
-    }
+  /* MEDIA QUERIES (large screens) */
+  @media screen and (max-width: 1024px) {
+    gap: 14px;
+  }
 
-    /* MEDIA QUERIES (large screens) */
-    @media screen and (max-width: 850px) {
-        gap: 12px;
-    }
+  /* MEDIA QUERIES (large screens) */
+  @media screen and (max-width: 850px) {
+    gap: 12px;
+  }
 
-    /* MEDIA QUERIES (small screens) */
-    @media screen and (max-width: 450px) {
-        gap: 1px;
-    }
+  /* MEDIA QUERIES (small screens) */
+  @media screen and (max-width: 450px) {
+    gap: 1px;
+  }
 }

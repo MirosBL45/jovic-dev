@@ -1,0 +1,6 @@
+context/
+.claude/
+public/
+package-lock.json
+backups/
+src/**/*.module.css

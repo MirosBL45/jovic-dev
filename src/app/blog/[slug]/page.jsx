@@ -1,18 +1,18 @@
 // react/next stuff
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 
 // components
-import { BASE_API_URL } from '@/utils/constants';
-import SlugCard from './SlugCard';
-import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
+import { BASE_API_URL } from "@/utils/constants";
+import SlugCard from "./SlugCard";
+import ScrollButton from "@/components/UIComponents/ScrollButton/ScrollButton";
 
 // style
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 // function for catching data
 async function getData(slug) {
   const res = await fetch(`${BASE_API_URL}/api/posts/${slug}`, {
-    cache: 'no-store',
+    cache: "no-store",
   });
 
   if (!res.ok) {

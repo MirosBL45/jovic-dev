@@ -1,53 +1,53 @@
 .container {
-    width: max-content;
-    height: max-content;
-    border: 2px solid var(--main-color);
-    border-radius: var(--big-border-radius);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    padding: 6px;
-    cursor: pointer;
-    position: relative;
-    transition: var(--transition);
+  width: max-content;
+  height: max-content;
+  border: 2px solid var(--main-color);
+  border-radius: var(--big-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
 
-    &:hover {
-        border: 2px solid var(--dark-main-color);
+  &:hover {
+    border: 2px solid var(--dark-main-color);
 
-        .ball {
-            background: var(--dark-main-color);
-        }
+    .ball {
+      background: var(--dark-main-color);
     }
+  }
 }
 
 .icon {
-    font-size: 19px;
-    display: flex;
-    place-items: center;
+  font-size: 19px;
+  display: flex;
+  place-items: center;
 }
 
 .ball {
-    width: 23px;
-    height: 23px;
-    background: var(--main-color);
-    border-radius: 50%;
-    position: absolute;
-    transition: var(--transition);
+  width: 23px;
+  height: 23px;
+  background: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  transition: var(--transition);
 }
 
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 504px) {
-    .container {
-        border: 1.5px solid var(--main-color);
-    }
+  .container {
+    border: 1.5px solid var(--main-color);
+  }
 
-    .icon {
-        font-size: 15px;
-    }
+  .icon {
+    font-size: 15px;
+  }
 
-    .ball {
-        width: 19px;
-        height: 19px;
-    }
+  .ball {
+    width: 19px;
+    height: 19px;
+  }
 }

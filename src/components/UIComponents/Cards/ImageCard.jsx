@@ -1,8 +1,8 @@
 // react/next stuff
-import Image from 'next/image';
+import Image from "next/image";
 
 // style
-import styles from './cards.module.css';
+import styles from "./cards.module.css";
 
 function ImageCard({ src, alt, additionalClass }) {
   return (

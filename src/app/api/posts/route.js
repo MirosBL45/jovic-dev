@@ -6,40 +6,35 @@ import connectToDB from "@/utils/db";
 import Post from "@/models/Post";
 
 export const GET = async (request) => {
-    // to get posts from user which is logged in
-    const url = new URL(request.url);
-    const username = url.searchParams.get('username');
+  // to get posts from user which is logged in
+  const url = new URL(request.url);
+  const username = url.searchParams.get("username");
 
-    //fetch
-    try {
-        await connectToDB();
+  //fetch
+  try {
+    await connectToDB();
 
-        const posts = await Post.find(username && { username });
+    const posts = await Post.find(username && { username });
 
-        return new NextResponse(JSON.stringify(posts), { status: 200 });
-
-    } catch (error) {
-        return new NextResponse('Database Error', { status: 500 });
-    }
-}
-
-
-
+    return new NextResponse(JSON.stringify(posts), { status: 200 });
+  } catch (error) {
+    return new NextResponse("Database Error", { status: 500 });
+  }
+};
 
 export const POST = async (request) => {
-    const body = await request.json();
+  const body = await request.json();
 
-    const newPost = new Post(body);
+  const newPost = new Post(body);
 
-    //fetch
-    try {
-        await connectToDB();
+  //fetch
+  try {
+    await connectToDB();
 
-        await newPost.save();
+    await newPost.save();
 
-        return new NextResponse('Post has been created', { status: 201 });
-
-    } catch (error) {
-        return new NextResponse('Database Error', { status: 500 });
-    }
-}
+    return new NextResponse("Post has been created", { status: 201 });
+  } catch (error) {
+    return new NextResponse("Database Error", { status: 500 });
+  }
+};
