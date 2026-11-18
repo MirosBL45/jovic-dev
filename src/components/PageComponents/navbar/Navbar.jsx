@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
 // react/next stuff
-import Link from 'next/link';
-import { signOut, useSession } from 'next-auth/react';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { useContext } from 'react';
+import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useContext } from "react";
 
 // data
-import { linksHomePage, linksOtherPages } from '@/utils/allData/links';
+import { linksHomePage, linksOtherPages } from "@/utils/allData/links";
 
 // components
-import DarkModeToggle from '@/components/UIComponents/DarkModeToggle/DarkModeToggle';
+import DarkModeToggle from "@/components/UIComponents/DarkModeToggle/DarkModeToggle";
 
 // context
-import { ThemeContext } from '@/context/ThemeContext';
+import { ThemeContext } from "@/context/ThemeContext";
 
 // logo
-import logoWhite from 'public/logo white Miroslav Jovic Frontend Developer.svg';
-import logoBlack from 'public/logo black Miroslav Jovic Frontend Developer.svg';
+import logoWhite from "public/logo white Miroslav Jovic Frontend Developer.svg";
+import logoBlack from "public/logo black Miroslav Jovic Frontend Developer.svg";
 
 // icons
-import { MdOutlineClose } from 'react-icons/md';
-import { HiMiniBars3BottomRight } from 'react-icons/hi2';
-import { GrPowerShutdown } from 'react-icons/gr';
+import { MdOutlineClose } from "react-icons/md";
+import { HiMiniBars3BottomRight } from "react-icons/hi2";
+import { GrPowerShutdown } from "react-icons/gr";
 
 // style
-import styles from './navbar.module.css';
+import styles from "./navbar.module.css";
 
 function Navbar() {
   const [isNavShowing, setIsNavShowing] = useState(false);
@@ -44,17 +44,17 @@ function Navbar() {
       setColoredNav(scrollY > 300);
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   // choose which links to use depending on the page
-  const otherPages = ['portfolio', 'blog'];
+  const otherPages = ["portfolio", "blog"];
 
   const links = otherPages.some((page) => pathname.includes(page))
     ? linksOtherPages
@@ -62,32 +62,28 @@ function Navbar() {
 
   function handleLogout() {
     // Set the redirect to false and specify the callbackUrl
-    signOut({ redirect: false, callbackUrl: '/' });
+    signOut({ redirect: false, callbackUrl: "/" });
 
     // If the session is present and the user is on the active session page, manually redirect the user to the home page
-    if (session && router.asPath !== '/') {
-      router.push('/');
+    if (session && router.asPath !== "/") {
+      router.push("/");
     }
   }
 
   return (
     <nav className={coloredNav ? styles.navbarColored : styles.navbar}>
       <div className={styles.nav_container}>
-        <Link href={'/'} onClick={() => setIsNavShowing(false)}>
+        <Link href={"/"} onClick={() => setIsNavShowing(false)}>
           <Image
             priority={true}
-            src={mode === 'light' ? logoBlack : logoWhite}
+            src={mode === "light" ? logoBlack : logoWhite}
             alt="logo Miroslav Jovic Frontend Developer"
             title="Miroslav Jovic Frontend Developer"
             width={186}
             height={42}
           />
         </Link>
-        <div
-          className={`${styles.links} ${
-            isNavShowing ? styles.show_nav : styles.hide_nav
-          }`}
-        >
+        <div className={`${styles.links} ${isNavShowing ? styles.show_nav : styles.hide_nav}`}>
           {links.slice(0, -1).map((link, index) => (
             <div
               key={link.id}
@@ -122,14 +118,12 @@ function Navbar() {
             </Link>
             <div
               // div for animation in mobile view
-              className={`${styles.forDarkModeToggle} ${
-                isNavShowing && styles.open
-              }`}
+              className={`${styles.forDarkModeToggle} ${isNavShowing && styles.open}`}
             >
               <DarkModeToggle setIsNavShowing={setIsNavShowing} />
             </div>
             {/* show Logout button when user is logged in */}
-            {session.status === 'authenticated' && (
+            {session.status === "authenticated" && (
               <button
                 className={`${styles.logout} ${isNavShowing && styles.open}`}
                 onClick={() => {
@@ -150,9 +144,7 @@ function Navbar() {
           {/* just contact link */}
           <Link
             title="Contact Miroslav Jovic Frontend Developer"
-            className={`${styles.link} ${styles.justContactButton} ${
-              isNavShowing && styles.open
-            }`}
+            className={`${styles.link} ${styles.justContactButton} ${isNavShowing && styles.open}`}
             href={links[links.length - 1].url}
             onClick={() => setIsNavShowing(false)}
           >
@@ -160,14 +152,12 @@ function Navbar() {
           </Link>
           <div
             // div for animation in mobile view
-            className={`${styles.forDarkModeToggle} ${
-              isNavShowing && styles.open
-            }`}
+            className={`${styles.forDarkModeToggle} ${isNavShowing && styles.open}`}
           >
             <DarkModeToggle setIsNavShowing={setIsNavShowing} />
           </div>
           {/* show Logout button when user is logged in */}
-          {session.status === 'authenticated' && (
+          {session.status === "authenticated" && (
             <button
               className={`${styles.logout} ${isNavShowing && styles.open}`}
               onClick={handleLogout}

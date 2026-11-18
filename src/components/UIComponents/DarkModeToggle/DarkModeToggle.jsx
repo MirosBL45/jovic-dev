@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
 // react/next stuff
-import { useContext } from 'react';
+import { useContext } from "react";
 
 // context
-import { ThemeContext } from '@/context/ThemeContext';
+import { ThemeContext } from "@/context/ThemeContext";
 
 // style
-import styles from './darkModeToggle.module.css';
+import styles from "./darkModeToggle.module.css";
 
 // icons
-import { BsMoonStarsFill } from 'react-icons/bs';
-import { ImSun } from 'react-icons/im';
+import { BsMoonStarsFill } from "react-icons/bs";
+import { ImSun } from "react-icons/im";
 
 function DarkModeToggle({ setIsNavShowing }) {
   const { toggle, mode } = useContext(ThemeContext);
@@ -23,7 +23,7 @@ function DarkModeToggle({ setIsNavShowing }) {
         setIsNavShowing(false);
         toggle();
       }}
-      title={mode === 'light' ? 'Switch to Dark mode' : 'Switch to Light mode'}
+      title={mode === "light" ? "Switch to Dark mode" : "Switch to Light mode"}
     >
       <div className={styles.icon}>
         <BsMoonStarsFill />
@@ -31,10 +31,7 @@ function DarkModeToggle({ setIsNavShowing }) {
       <div className={styles.icon}>
         <ImSun />
       </div>
-      <div
-        className={styles.ball}
-        style={mode === 'light' ? { left: '4px' } : { right: '3px' }}
-      />
+      <div className={styles.ball} style={mode === "light" ? { left: "4px" } : { right: "3px" }} />
     </div>
   );
 }

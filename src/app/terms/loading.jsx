@@ -1,7 +1,3 @@
 export default function Loading() {
-  return (
-    <p style={{ marginTop: '150px', fontSize: '45px' }}>
-      Loading terms page...
-    </p>
-  );
+  return <p style={{ marginTop: "150px", fontSize: "45px" }}>Loading terms page...</p>;
 }

@@ -1,5 +1,5 @@
 // style
-import styles from './miniHeadline.module.css';
+import styles from "./miniHeadline.module.css";
 
 const MiniHeadline = ({ id, headline, description, children }) => {
   return (

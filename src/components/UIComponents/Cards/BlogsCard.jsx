@@ -1,12 +1,12 @@
 // react/next stuff
-import Link from 'next/link';
+import Link from "next/link";
 
 // components
-import ImageCard from './ImageCard';
-import { formatDate } from '@/utils/GeneralFunctions';
+import ImageCard from "./ImageCard";
+import { formatDate } from "@/utils/GeneralFunctions";
 
 // style
-import styles from './cards.module.css';
+import styles from "./cards.module.css";
 
 function BlogsCard({ data }) {
   return (

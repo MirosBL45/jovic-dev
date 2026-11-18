@@ -1,18 +1,18 @@
 // components
-import { notFound } from 'next/navigation';
-import ProjectsCard from '@/components/UIComponents/Cards/ProjectsCard';
-import JustLinks from './JustLinks';
-import ScrollButton from '@/components/UIComponents/ScrollButton/ScrollButton';
+import { notFound } from "next/navigation";
+import ProjectsCard from "@/components/UIComponents/Cards/ProjectsCard";
+import JustLinks from "./JustLinks";
+import ScrollButton from "@/components/UIComponents/ScrollButton/ScrollButton";
 
 // data
-import { itemsPortfolio } from '@/utils/allData/mainPortfolio';
+import { itemsPortfolio } from "@/utils/allData/mainPortfolio";
 
 // style
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 // Static metadata
 export const metadata = {
-  title: 'Portfolio of Jović Miroslav | Frontend Developer',
+  title: "Portfolio of Jović Miroslav | Frontend Developer",
 };
 
 function getData(categoryObject) {

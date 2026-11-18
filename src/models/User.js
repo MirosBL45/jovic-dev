@@ -2,24 +2,27 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     name: {
-        type: String,
-        unique: true,
-        required: true,
+      type: String,
+      unique: true,
+      required: true,
     },
     email: {
-        type: String,
-        unique: true,
-        required: true,
+      type: String,
+      unique: true,
+      required: true,
     },
     password: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
-}, { timestamps: true });
+  },
+  { timestamps: true }
+);
 
 // enables additional modifications to the database's schema
-mongoose.models = {}
+mongoose.models = {};
 // it makes User collection in jovicData (name of DB)
-export default mongoose.model('User', userSchema);
+export default mongoose.model("User", userSchema);
