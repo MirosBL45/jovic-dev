@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "sass:file": "sass --no-source-map --style=expanded",
+    "sass:check": "node scripts/check-scss-sync.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
@@ -20,6 +26,9 @@
     "swr": "^2.2.4"
   },
   "devDependencies": {
-    "eslint-config-next": "14.0.0"
+    "eslint-config-next": "14.0.0",
+    "prettier": "^3.10.1",
+    "sass": "^1.108.2",
+    "vitest": "^5.1.1"
   }
 }
