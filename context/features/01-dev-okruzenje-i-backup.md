@@ -42,5 +42,5 @@ Faza 0, fajl 2/2. Lokalni razvoj prestaje da koristi produkcionu bazu: dev baza 
 ## Reference
 
 - @context/project-overview.md (poglavlja 8, 13, 14)
-- @context/features/00-alati-i-radni-tok.md
+- @context/features/00-alati-i-radni-tok-done.md
 - MongoDB Atlas, Vercel i Google Cloud Console dokumentacija — proveriti aktuelni izgled UI-ja pre davanja uputstava
