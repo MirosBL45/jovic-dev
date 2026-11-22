@@ -1,9 +1,9 @@
-import styles from './Popup.module.css';
+import styles from "./Popup.module.css";
 
 // icons
-import { CgDanger } from 'react-icons/cg';
-import { FaRegTrashCan } from 'react-icons/fa6';
-import { LuFlagOff } from 'react-icons/lu';
+import { CgDanger } from "react-icons/cg";
+import { FaRegTrashCan } from "react-icons/fa6";
+import { LuFlagOff } from "react-icons/lu";
 
 function DeletePopUp({ confirmDelete, cancelDelete }) {
   return (

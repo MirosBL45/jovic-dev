@@ -1,131 +1,131 @@
 .projects {
-    gap: 50px;
-    margin: 44px 0;
-    text-align: left;
-    display: grid;
-    grid-template-columns: repeat(3, 363px);
+  gap: 50px;
+  margin: 44px 0;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(3, 363px);
 
-    @media screen and (max-width: 1320px) {
-        grid-template-columns: repeat(2, 363px);
-        gap: 3vw;
+  @media screen and (max-width: 1320px) {
+    grid-template-columns: repeat(2, 363px);
+    gap: 3vw;
+  }
+
+  @media screen and (max-width: 850px) {
+    grid-template-columns: repeat(1, 363px);
+    place-items: center;
+    gap: 70px;
+  }
+
+  article {
+    max-width: 363px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    // Get rid of extra 4px height on parent element of image
+    line-height: 0;
+
+    img {
+      width: 363px;
+      height: 210px;
+      // object-fit: cover;
     }
+  }
 
-    @media screen and (max-width: 850px) {
-        grid-template-columns: repeat(1, 363px);
-        place-items: center;
-        gap: 70px;
-    }
+  h3 {
+    font-weight: 500;
+    font-size: var(--project-font);
+    color: var(--white-color-third);
+    letter-spacing: -0.05em;
+    margin: 4px 0 16px;
+  }
 
-    article {
-        max-width: 363px;
-        display: flex;
-        flex-direction: column;
-    }
+  .technologies {
+    font-weight: 400;
+    font-size: var(--small-font);
+    color: var(--white-color-second);
+    margin-top: 18px;
+  }
 
-    .imageContainer {
-        // Get rid of extra 4px height on parent element of image
-        line-height: 0;
+  .description {
+    font-weight: 400;
+    font-size: var(--regular-font);
+  }
 
-        img {
-            width: 363px;
-            height: 210px;
-            // object-fit: cover;
-        }
-    }
-
-    h3 {
-        font-weight: 500;
-        font-size: var(--project-font);
-        color: var(--white-color-third);
-        letter-spacing: -0.05em;
-        margin: 4px 0 16px;
-    }
-
-    .technologies {
-        font-weight: 400;
-        font-size: var(--small-font);
-        color: var(--white-color-second);
-        margin-top: 18px;
-    }
-
-    .description {
-        font-weight: 400;
-        font-size: var(--regular-font);
-    }
-
-    .linksOfProjects {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-top: 15px;
-    }
+  .linksOfProjects {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 15px;
+  }
 }
 
 .containerRadius {
-    border-radius: var(--medium-border-radius);
-    overflow: hidden;
+  border-radius: var(--medium-border-radius);
+  overflow: hidden;
 
-    img {
-        object-fit: cover;
-    }
+  img {
+    object-fit: cover;
+  }
 }
 
 /* MEDIA QUERIES (large screens) */
 @media screen and (max-width: 1024px) {
-    .projects {
-        article {
-            max-width: 353px;
-        }
-
-        .imageContainer {
-            img {
-                width: 353px;
-                height: 200px;
-            }
-        }
+  .projects {
+    article {
+      max-width: 353px;
     }
+
+    .imageContainer {
+      img {
+        width: 353px;
+        height: 200px;
+      }
+    }
+  }
 }
 
 /* MEDIA QUERIES (large screens) */
 @media screen and (max-width: 850px) {
-    .projects {
-        margin: 48px 0 56px;
+  .projects {
+    margin: 48px 0 56px;
 
-        article {
-            max-width: 340px;
-        }
-
-        .imageContainer {
-            img {
-                width: 340px;
-                height: 188px;
-            }
-        }
+    article {
+      max-width: 340px;
     }
+
+    .imageContainer {
+      img {
+        width: 340px;
+        height: 188px;
+      }
+    }
+  }
 }
 
 /* MEDIA QUERIES (small screens) */
 @media screen and (max-width: 450px) {
-    .projects {
-        margin: 50px 0 36px;
+  .projects {
+    margin: 50px 0 36px;
 
-        article {
-            max-width: 330px;
-        }
-
-        .imageContainer {
-            img {
-                width: 330px;
-                height: 178px;
-            }
-        }
-
-        h3 {
-            margin: 2px 0 10px;
-        }
-
-        .technologies {
-            font-size: var(--xsmall-font);
-        }
+    article {
+      max-width: 330px;
     }
+
+    .imageContainer {
+      img {
+        width: 330px;
+        height: 178px;
+      }
+    }
+
+    h3 {
+      margin: 2px 0 10px;
+    }
+
+    .technologies {
+      font-size: var(--xsmall-font);
+    }
+  }
 }

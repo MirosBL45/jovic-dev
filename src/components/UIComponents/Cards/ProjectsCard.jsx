@@ -1,9 +1,9 @@
 // components
-import ImageCard from './ImageCard';
-import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
+import ImageCard from "./ImageCard";
+import LinkButton from "@/components/CustomInputs/Buttons/LinkButton";
 
 // style
-import styles from './cards.module.css';
+import styles from "./cards.module.css";
 
 function ProjectsCard({ projects }) {
   return (
@@ -15,7 +15,7 @@ function ProjectsCard({ projects }) {
             {project.techs.map((tech, index) => (
               <span key={index}>
                 {tech}
-                {index !== project.techs.length - 1 && ' · '}
+                {index !== project.techs.length - 1 && " · "}
               </span>
             ))}
           </p>
@@ -25,16 +25,16 @@ function ProjectsCard({ projects }) {
             <LinkButton
               openInNewTab={true}
               title={`Look at ${project.title} project of Miroslav Jovic, Frontend Developer`}
-              text={'See live'}
+              text={"See live"}
               url={project.liveUrl}
-              buttonStyle={'buttonTransparent'}
+              buttonStyle={"buttonTransparent"}
             />
             <LinkButton
               openInNewTab={true}
               title={`Look ${project.title} project of Miroslav Jovic, Frontend Developer on GitHub`}
-              text={'See on GitHub'}
+              text={"See on GitHub"}
               url={project.gitUrl}
-              buttonStyle={'flatWhite'}
+              buttonStyle={"flatWhite"}
             />
           </div>
         </article>

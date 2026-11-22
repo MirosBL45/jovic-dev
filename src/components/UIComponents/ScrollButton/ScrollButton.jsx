@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 // react/next stuff
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 // style
-import styles from './ScrollButton.module.css';
+import styles from "./ScrollButton.module.css";
 
 // icons
-import { FaArrowUpLong } from 'react-icons/fa6';
+import { FaArrowUpLong } from "react-icons/fa6";
 
 function ScrollButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,23 +18,23 @@ function ScrollButton() {
       setIsVisible(scrollY > 1000);
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   function handleButtonClick() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
     <button
       className={styles.scrollButton}
-      style={{ display: isVisible ? 'grid' : 'none' }}
+      style={{ display: isVisible ? "grid" : "none" }}
       onClick={handleButtonClick}
-      title={'Scroll to Top'}
+      title={"Scroll to Top"}
     >
       <FaArrowUpLong className={styles.arrow} />
     </button>

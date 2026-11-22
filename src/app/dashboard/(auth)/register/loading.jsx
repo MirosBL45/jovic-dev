@@ -1,6 +1,6 @@
 // components
-import Spinner from '@/components/UIComponents/Spinner/Spinner';
+import Spinner from "@/components/UIComponents/Spinner/Spinner";
 
 export default function Loading() {
-  return <Spinner text={'Loading register page...'} />;
+  return <Spinner text={"Loading register page..."} />;
 }

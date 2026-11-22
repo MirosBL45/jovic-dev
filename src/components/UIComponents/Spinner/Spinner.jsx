@@ -1,5 +1,5 @@
 // style
-import styles from './Spinner.module.css';
+import styles from "./Spinner.module.css";
 
 function Spinner({ text }) {
   return (

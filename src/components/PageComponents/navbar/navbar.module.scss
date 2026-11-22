@@ -1,226 +1,225 @@
 @mixin navbar_part {
-    background: var(--white-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
-    transition: var(--transition);
+  background: var(--white-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  transition: var(--transition);
 }
 
 .navbar {
-    @include navbar_part;
+  @include navbar_part;
 }
 
 .navbarColored {
-    @include navbar_part;
+  @include navbar_part;
 
-    background: var(--navbar-bg);
+  background: var(--navbar-bg);
 }
 
 .nav_container {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-    width: var(--max-width);
-    padding: 0 var(--big-width-padding);
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  width: var(--max-width);
+  padding: 0 var(--big-width-padding);
 
-    @media screen and (max-width: 1024px) {
-        padding: 0 var(--normal-width-padding);
-    }
+  @media screen and (max-width: 1024px) {
+    padding: 0 var(--normal-width-padding);
+  }
 
-    @media screen and (max-width: 1000px) {
-        padding: 0 var(--medium-width-padding);
-    }
+  @media screen and (max-width: 1000px) {
+    padding: 0 var(--medium-width-padding);
+  }
 
-    @media screen and (max-width: 600px) {
-        padding: 0 var(--small-width-padding);
-    }
+  @media screen and (max-width: 600px) {
+    padding: 0 var(--small-width-padding);
+  }
 
-    @media screen and (max-width: 450px) {
-        padding: 0 var(--xs-width-padding);
-    }
+  @media screen and (max-width: 450px) {
+    padding: 0 var(--xs-width-padding);
+  }
 }
 
 .links {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    transition: var(--transition);
-    font-size: var(--regular-font);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: var(--transition);
+  font-size: var(--regular-font);
 }
 
-
 .link {
-    font-weight: 500;
-    transition: var(--transition);
+  font-weight: 500;
+  transition: var(--transition);
 
-    &:hover {
-        color: var(--main-color);
-    }
+  &:hover {
+    color: var(--main-color);
+  }
 }
 
 .contactAndTheme {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .justContactButton {
-    padding: 12px 22px;
-    border: 2px solid var(--background);
-    border-radius: var(--xl-border-radius);
-    transform: var(--transition);
+  padding: 12px 22px;
+  border: 2px solid var(--background);
+  border-radius: var(--xl-border-radius);
+  transform: var(--transition);
 
-    &:hover {
-        border: 2px solid var(--main-color);
-    }
+  &:hover {
+    border: 2px solid var(--main-color);
+  }
 }
 
 .logout {
-    margin-left: 40px;
-    display: grid;
-    place-items: center;
-    padding: 9px;
-    border: none;
-    background: var(--main-color);
-    color: rgb(195, 37, 37);
-    border-radius: var(--small-border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: var(--medium-font);
+  margin-left: 40px;
+  display: grid;
+  place-items: center;
+  padding: 9px;
+  border: none;
+  background: var(--main-color);
+  color: rgb(195, 37, 37);
+  border-radius: var(--small-border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: var(--medium-font);
 
-    &:hover {
-        background: var(--dark-main-color);
-    }
+  &:hover {
+    background: var(--dark-main-color);
+  }
 
-    @media screen and (max-width: 1050px) {
-        margin-left: 10px;
-    }
+  @media screen and (max-width: 1050px) {
+    margin-left: 10px;
+  }
 }
 
 .toggleBtn {
-    display: none;
+  display: none;
 }
 
 .activeLink {
-    padding: 4px 0;
-    cursor: pointer;
-    // border-bottom: 2px solid var(--main-color);
-    transition: var(--transition);
+  padding: 4px 0;
+  cursor: pointer;
+  // border-bottom: 2px solid var(--main-color);
+  transition: var(--transition);
 
-    &:hover a {
-        color: var(--main-color);
-    }
+  &:hover a {
+    color: var(--main-color);
+  }
 }
 
 .hiddenContact {
-    display: none;
+  display: none;
 }
 
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 850px) {
-    .links {
-        gap: 15px;
-    }
+  .links {
+    gap: 15px;
+  }
 
-    .logout {
-        margin-left: 25px;
-    }
+  .logout {
+    margin-left: 25px;
+  }
 }
 
 /* MEDIA QUERIES (medium and small screens) */
 @media screen and (max-width: 990px) {
-    // @media screen and (max-width: 900px) {
-    // here the menu switches to the hamburger menu
+  // @media screen and (max-width: 900px) {
+  // here the menu switches to the hamburger menu
 
-    .contactAndTheme {
-        flex-direction: column;
+  .contactAndTheme {
+    flex-direction: column;
+  }
+
+  .justContactButton {
+    padding: 6px 16px;
+    border-radius: var(--big-border-radius);
+    // border: 2px solid var(--white-color);
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+  }
+
+  .hiddenContact {
+    display: flex;
+  }
+
+  .showContact {
+    display: none;
+  }
+
+  .show_nav {
+    transform: translateX(0);
+    transition: var(--transition);
+  }
+
+  .hide_nav {
+    transform: translateX(100vw);
+    transition: var(--transition);
+  }
+
+  .links {
+    padding-top: 45px;
+    position: absolute;
+    width: 200px;
+    height: calc(100vh - 100px);
+    top: 100px;
+    right: 0;
+    z-index: 33;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--background);
+    color: var(--white-color);
+    // background-image: linear-gradient(to bottom left, var(--white-color), var(--dark-gray-color));
+    font-size: var(--project-font);
+    font-weight: 500;
+    // border-bottom-left-radius: var(--big-border-radius);
+    border-top-left-radius: var(--big-border-radius);
+    overflow: hidden;
+  }
+
+  .logout {
+    margin-left: 0px;
+  }
+
+  .link,
+  .forDarkModeToggle,
+  .logout {
+    transform: translateX(100vw);
+
+    &.open {
+      transform: translateX(0);
     }
+  }
 
-    .justContactButton {
-        padding: 6px 16px;
-        border-radius: var(--big-border-radius);
-        // border: 2px solid var(--white-color);
-        border: 2px solid var(--main-color);
-        color: var(--main-color);
+  @for $i from 1 through 6 {
+    .open:nth-child(#{$i}) {
+      transition-delay: ($i * 0.1s) + 0.21;
     }
+  }
 
-    .hiddenContact {
-        display: flex;
+  .toggleBtn {
+    outline: none;
+    border: none;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    font-size: 2.2rem;
+    cursor: pointer;
+    padding: 1rem;
+
+    svg {
+      color: var(--main-color);
     }
-
-    .showContact {
-        display: none;
-    }
-
-    .show_nav {
-        transform: translateX(0);
-        transition: var(--transition);
-    }
-
-    .hide_nav {
-        transform: translateX(100vw);
-        transition: var(--transition);
-    }
-
-    .links {
-        padding-top: 45px;
-        position: absolute;
-        width: 200px;
-        height: calc(100vh - 100px);
-        top: 100px;
-        right: 0;
-        z-index: 33;
-        flex-direction: column;
-        gap: 15px;
-        background: var(--background);
-        color: var(--white-color);
-        // background-image: linear-gradient(to bottom left, var(--white-color), var(--dark-gray-color));
-        font-size: var(--project-font);
-        font-weight: 500;
-        // border-bottom-left-radius: var(--big-border-radius);
-        border-top-left-radius: var(--big-border-radius);
-        overflow: hidden;
-    }
-
-    .logout {
-        margin-left: 0px;
-    }
-
-    .link,
-    .forDarkModeToggle,
-    .logout {
-        transform: translateX(100vw);
-
-        &.open {
-            transform: translateX(0);
-        }
-    }
-
-    @for $i from 1 through 6 {
-        .open:nth-child(#{$i}) {
-            transition-delay: ($i * 0.1s) + 0.21;
-        }
-    }
-
-    .toggleBtn {
-        outline: none;
-        border: none;
-        display: grid;
-        place-items: center;
-        background: transparent;
-        font-size: 2.2rem;
-        cursor: pointer;
-        padding: 1rem;
-
-        svg {
-            color: var(--main-color);
-        }
-    }
+  }
 }

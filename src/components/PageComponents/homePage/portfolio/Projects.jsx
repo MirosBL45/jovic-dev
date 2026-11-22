@@ -1,29 +1,26 @@
-'use client';
+"use client";
 
 // react/next stuff
-import { useState } from 'react';
+import { useState } from "react";
 
 // components
-import LinkButton from '@/components/CustomInputs/Buttons/LinkButton';
-import ProjectsCard from '@/components/UIComponents/Cards/ProjectsCard';
+import LinkButton from "@/components/CustomInputs/Buttons/LinkButton";
+import ProjectsCard from "@/components/UIComponents/Cards/ProjectsCard";
 
 // data
 // this is for arrayNames
-import * as allData from '@/utils/allData/homePortfolio';
+import * as allData from "@/utils/allData/homePortfolio";
 // this is for partOfProject
-import { apps, websites, games } from '@/utils/allData/homePortfolio';
+import { apps, websites, games } from "@/utils/allData/homePortfolio";
 
 // style
-import styles from './portfolio.module.css';
+import styles from "./portfolio.module.css";
 
 function Projects() {
-  const arrayNames = Object.keys(allData).filter((key) =>
-    Array.isArray(allData[key])
-  );
+  const arrayNames = Object.keys(allData).filter((key) => Array.isArray(allData[key]));
 
-  const [project, setProject] = useState('apps');
-  const partOfProject =
-    project === 'apps' ? apps : project === 'websites' ? websites : games;
+  const [project, setProject] = useState("apps");
+  const partOfProject = project === "apps" ? apps : project === "websites" ? websites : games;
 
   return (
     <section className={styles.portfolioPart}>
@@ -35,9 +32,7 @@ function Projects() {
             onClick={() => {
               setProject(oneName);
             }}
-            className={
-              project === oneName ? `${styles.button}` : `${styles.flatButton}`
-            }
+            className={project === oneName ? `${styles.button}` : `${styles.flatButton}`}
           >
             {oneName}
           </button>
@@ -49,7 +44,7 @@ function Projects() {
         title={`See all Jovic Miroslav's ${project}`}
         text={`See all ${project}`}
         url={`/portfolio/${project}`}
-        buttonStyle={'flat'}
+        buttonStyle={"flat"}
       />
     </section>
   );

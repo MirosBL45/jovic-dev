@@ -1,269 +1,269 @@
 .container {
-    display: flex;
-    gap: 80px;
+  display: flex;
+  gap: 80px;
 
-    h3 {
-        margin-bottom: 60px;
-    }
+  h3 {
+    margin-bottom: 60px;
+  }
 }
 
 .headline {
-    text-align: center;
-    margin-bottom: 105px;
+  text-align: center;
+  margin-bottom: 105px;
 }
 
 .previousPosts {
-    flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .posts {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 50px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 50px;
 }
 
 .post {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 50px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+  position: relative;
 
-    h4 {
-        flex-basis: 60%;
-        font-size: var(--ms-font);
-    }
+  h4 {
+    flex-basis: 60%;
+    font-size: var(--ms-font);
+  }
 }
 
 .imgContainer {
-    width: 200px;
-    height: 100px;
-    position: relative;
-    border-radius: var(--sm-border-radius);
-    overflow: hidden;
+  width: 200px;
+  height: 100px;
+  position: relative;
+  border-radius: var(--sm-border-radius);
+  overflow: hidden;
 
-    img {
-        object-fit: cover;
-        // image must have width: 100% and some height
-        width: 100%;
-        height: 100%;
-    }
+  img {
+    object-fit: cover;
+    // image must have width: 100% and some height
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .delete {
-    position: absolute;
-    top: -25px;
-    left: -25px;
-    font-size: var(--mbs-font);
-    cursor: pointer;
-    color: red;
-    transition: var(--transition);
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  font-size: var(--mbs-font);
+  cursor: pointer;
+  color: red;
+  transition: var(--transition);
 
-    &:hover {
-        transform: scale(1.1);
-        color: rgb(221, 60, 221);
-    }
+  &:hover {
+    transform: scale(1.1);
+    color: rgb(221, 60, 221);
+  }
 }
 
 .new {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-    h1 {
-        margin-bottom: 40px;
-    }
+  h1 {
+    margin-bottom: 40px;
+  }
 
-    input,
-    textarea {
-        padding: var(--small-font);
-        background: transparent;
-        border: none;
-        outline: none;
-        color: var(--background);
-        border: 2px solid var(--input-border-color);
-        border-radius: var(--medium-border-radius);
-        font-size: var(--small-font);
-        font-weight: bold;
-        resize: none;
-    }
+  input,
+  textarea {
+    padding: var(--small-font);
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--background);
+    border: 2px solid var(--input-border-color);
+    border-radius: var(--medium-border-radius);
+    font-size: var(--small-font);
+    font-weight: bold;
+    resize: none;
+  }
 }
 
 .displayed {
-    margin-top: 150px;
-    font-size: var(--mb-font);
+  margin-top: 150px;
+  font-size: var(--mb-font);
 }
 
 .forImage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  p {
+    color: var(--background);
+    font-size: var(--ms-font);
+    grid-row-start: 1;
+    text-align: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+    margin-bottom: 5px;
 
-    p {
-        color: var(--background);
-        font-size: var(--ms-font);
-        grid-row-start: 1;
-        text-align: center;
-        display: grid;
-        place-items: center;
-        margin-bottom: 5px;
-
-        @media screen and (max-width: 450px) {
-            font-size: var(--regular-font);
-        }
-
-        @media screen and (max-width: 370px) {
-            font-size: var(--small-font);
-        }
+    @media screen and (max-width: 450px) {
+      font-size: var(--regular-font);
     }
 
-    .renderedImage {
-        grid-column-start: 2;
-        grid-row-end: span 2;
-        display: grid;
-        place-items: center;
+    @media screen and (max-width: 370px) {
+      font-size: var(--small-font);
+    }
+  }
 
-        // Get rid of extra 4px height on parent element of image
-        line-height: 0;
+  .renderedImage {
+    grid-column-start: 2;
+    grid-row-end: span 2;
+    display: grid;
+    place-items: center;
 
-        img {
-            width: 60%;
-            height: 90%;
-            object-fit: contain;
-        }
+    // Get rid of extra 4px height on parent element of image
+    line-height: 0;
+
+    img {
+      width: 60%;
+      height: 90%;
+      object-fit: contain;
+    }
+  }
+
+  .labelDiv {
+    grid-row-start: 2;
+    display: grid;
+    place-items: center;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  label {
+    font-size: var(--regular-font);
+    border-radius: var(--medium-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 12px;
+    cursor: pointer;
+    color: #f4f0ff;
+    background: var(--main-color);
+    transition: var(--transition);
+    width: 70%;
+
+    @media screen and (max-width: 1250px) {
+      gap: 10px;
+      width: 99%;
+      padding: 13px 6px;
     }
 
-    .labelDiv {
-        grid-row-start: 2;
-        display: grid;
-        place-items: center;
+    @media screen and (max-width: 450px) {
+      font-size: var(--small-font);
     }
 
-    input[type="file"] {
-        display: none;
+    &:hover {
+      transform: scale(1.1);
+      background: var(--dark-main-color);
     }
 
-    label {
-        font-size: var(--regular-font);
-        border-radius: var(--medium-border-radius);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 13px 12px;
-        cursor: pointer;
-        color: #F4F0FF;
-        background: var(--main-color);
-        transition: var(--transition);
-        width: 70%;
+    svg {
+      width: 27px;
+      height: 27px;
 
-        @media screen and (max-width: 1250px) {
-            gap: 10px;
-            width: 99%;
-            padding: 13px 6px;
-        }
+      @media screen and (max-width: 450px) {
+        width: 23px;
+        height: 23px;
+      }
 
-        @media screen and (max-width: 450px) {
-            font-size: var(--small-font);
-        }
-
-        &:hover {
-            transform: scale(1.1);
-            background: var(--dark-main-color);
-        }
-
-        svg {
-            width: 27px;
-            height: 27px;
-
-            @media screen and (max-width: 450px) {
-                width: 23px;
-                height: 23px;
-            }
-
-            @media screen and (max-width: 370px) {
-                width: 21px;
-                height: 21px;
-            }
-        }
+      @media screen and (max-width: 370px) {
+        width: 21px;
+        height: 21px;
+      }
     }
+  }
 }
 
 /* MEDIA QUERIES (large screens) */
 @media screen and (max-width: 1024px) {
-    .container {
-        gap: 25px;
-    }
+  .container {
+    gap: 25px;
+  }
 
-    .post {
-        gap: 20px;
+  .post {
+    gap: 20px;
 
-        h4 {
-            font-size: var(--regular-font);
-        }
+    h4 {
+      font-size: var(--regular-font);
     }
+  }
 
-    .posts {
-        gap: 40px;
-    }
+  .posts {
+    gap: 40px;
+  }
 }
 
 /* MEDIA QUERIES (medium/small screens) */
 @media screen and (max-width: 850px) {
-    .container {
-        flex-direction: column-reverse;
-        gap: 150px;
+  .container {
+    flex-direction: column-reverse;
+    gap: 150px;
 
-        h3 {
-            margin-bottom: 60px;
-        }
+    h3 {
+      margin-bottom: 60px;
     }
+  }
 
-    .post {
-        padding: 0 20px;
-        gap: 15px;
-        margin-bottom: 30px;
-    }
+  .post {
+    padding: 0 20px;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
 
-    .delete {
-        top: -16px;
-        left: 0px;
-        font-size: var(--mb-font);
-    }
+  .delete {
+    top: -16px;
+    left: 0px;
+    font-size: var(--mb-font);
+  }
 
-    .posts {
-        gap: 30px;
-    }
+  .posts {
+    gap: 30px;
+  }
 }
 
 /* MEDIA QUERIES (very small screens) */
 @media screen and (max-width: 450px) {
-    .container {
-        gap: 100px;
+  .container {
+    gap: 100px;
 
-        h3 {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+    h3 {
+      text-align: center;
+      margin-bottom: 50px;
     }
+  }
 
-    .post {
-        flex-direction: column;
-        gap: 25px;
-        padding: 0 0;
-        margin-bottom: 20px;
+  .post {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 0;
+    margin-bottom: 20px;
 
-        h4 {
-            text-align: center;
-        }
+    h4 {
+      text-align: center;
     }
+  }
 
-    .delete {
-        position: relative;
-    }
+  .delete {
+    position: relative;
+  }
 
-    .posts {
-        gap: 5px;
-    }
+  .posts {
+    gap: 5px;
+  }
 }
