@@ -44,6 +44,11 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+    ownerId: {
+      type: String,
+      required: true,
+      index: true,
+    },
     slug: {
       type: String,
       unique: true,

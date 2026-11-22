@@ -2,19 +2,21 @@
 
 // react/next stuff
 import useSWR from "swr";
-import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { signOut, useSession } from "next-auth/react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 // components
-import { TabTitle } from "@/utils/GeneralFunctions";
 import ClickButton from "@/components/CustomInputs/Buttons/ClickButton";
 import { BASE_API_URL } from "@/utils/constants";
 import Popup from "@/components/UIComponents/PopUp/PopUp";
 import DeletePopUp from "@/components/UIComponents/PopUp/DeletePopUp";
-import { areAllFieldsFilled, isInputLengthValid } from "@/utils/GeneralFunctions";
+import { areAllFieldsFilled } from "@/utils/GeneralFunctions";
 import ScrollButton from "@/components/UIComponents/ScrollButton/ScrollButton";
+import { MAX_IMAGE_BYTES, validatePost } from "@/utils/postValidation";
+import { readErrorMessage } from "@/utils/readErrorMessage";
+import { MESSAGES } from "@/utils/messages";
 
 // style
 import styles from "./page.module.css";
@@ -22,20 +24,7 @@ import styles from "./page.module.css";
 // icons
 import { IoCloseCircleOutline, IoImageOutline } from "react-icons/io5";
 
-// function for catching data to see slugs
-async function getAllPostSlugs() {
-  const response = await fetch(`${BASE_API_URL}/api/posts`);
-  const posts = await response.json();
-  const slugs = posts.map((post) => post.slug);
-  return slugs;
-}
-
-function Dashboard() {
-  // for tab title
-  useEffect(() => {
-    TabTitle("Dashboard for your blogs");
-  }, []);
-
+function DashboardClient() {
   const session = useSession();
   const router = useRouter();
 
@@ -50,14 +39,17 @@ function Dashboard() {
   const [popupMessage1, setPopupMessage1] = useState(false);
   const [popupMessage2, setPopupMessage2] = useState(false);
   const [popupMessageEmpty, setPopupMessageEmpty] = useState(false);
-  const [popupMessageRange, setPopupMessageRange] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleClose() {
     setPopupMessage1(false);
     setPopupMessage2(false);
     setPopupMessageEmpty(false);
-    setPopupMessageRange(false);
+    setErrorMessage("");
   }
+
+  // a session from before ownerId existed: the API answers 401, so the user has to log in again
+  const sessionExpired = session.status === "authenticated" && !session.data?.user?.ownerId;
 
   // for base64 image state
   const [imageBase64, setImageBase64] = useState("");
@@ -70,7 +62,7 @@ function Dashboard() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // catch data of posts
   const { data, mutate, error, isLoading } = useSWR(
-    `/api/posts?username=${session?.data?.user.name}`,
+    session.status === "authenticated" && !sessionExpired ? "/api/posts?mine=1" : null,
     fetcher
   );
 
@@ -99,21 +91,6 @@ function Dashboard() {
       return;
     }
 
-    if (
-      !isInputLengthValid(e.target[0].value, 2, 75) ||
-      !isInputLengthValid(e.target[1].value, 2, 35) ||
-      !isInputLengthValid(e.target[2].value, 2, 135) ||
-      !isInputLengthValid(e.target[3].value, 2, 2000) ||
-      !isInputLengthValid(e.target[5].value, 2, 35) ||
-      !isInputLengthValid(e.target[6].value, 2, 135) ||
-      !isInputLengthValid(e.target[7].value, 2, 2000) ||
-      !isInputLengthValid(e.target[9].value, 2, 35)
-    ) {
-      // Error message if input is out of range
-      setPopupMessageRange(true);
-      return;
-    }
-
     setButtonSend(true);
 
     const title = e.target[0].value;
@@ -127,37 +104,41 @@ function Dashboard() {
     const imagesecond = imageBase64second;
     let slug = e.target[9].value.replace(/\s+/g, "-");
 
-    // fetch all slugs
-    const existingSlugs = await getAllPostSlugs();
-
-    // if there is the same slug add number
-    if (existingSlugs.includes(slug)) {
-      let counter = 2;
-      while (existingSlugs.includes(slug + counter)) {
-        counter++;
-      }
-      slug = slug + counter;
-    }
-
     slug = slug.toLowerCase();
 
+    const post = {
+      title,
+      headline1,
+      description1,
+      content1,
+      image,
+      headline2,
+      description2,
+      content2,
+      imagesecond,
+      slug,
+    };
+
+    // the same rules as on the server; the server checks again and decides the final slug
+    const validationError = validatePost(post);
+    if (validationError) {
+      setErrorMessage(validationError);
+      setButtonSend(false);
+      return;
+    }
+
     try {
-      await fetch("/api/posts", {
+      const res = await fetch("/api/posts", {
         method: "POST",
-        body: JSON.stringify({
-          title,
-          headline1,
-          description1,
-          content1,
-          image,
-          headline2,
-          description2,
-          content2,
-          imagesecond,
-          slug,
-          username: session.data.user.name,
-        }),
+        body: JSON.stringify(post),
       });
+
+      if (!res.ok) {
+        setErrorMessage(await readErrorMessage(res, MESSAGES.POST_NOT_SAVED));
+        setButtonSend(false);
+        return;
+      }
+
       // it reloads page, so we can see that new post which was created
       mutate();
       // reset fields
@@ -167,6 +148,8 @@ function Dashboard() {
       setRenderedImage2("");
     } catch (error) {
       console.log(error);
+      setErrorMessage(MESSAGES.POST_NOT_SAVED);
+      setButtonSend(false);
     }
   }
 
@@ -177,13 +160,20 @@ function Dashboard() {
 
   async function confirmDelete() {
     try {
-      await fetch(`/api/posts/${slugToDelete}`, {
+      const res = await fetch(`/api/posts/${slugToDelete}`, {
         method: "DELETE",
       });
+
+      if (!res.ok) {
+        setErrorMessage(await readErrorMessage(res, MESSAGES.POST_NOT_DELETED));
+        return;
+      }
+
       // it reloads page, so we can see it after deleting post
       mutate();
     } catch (error) {
       console.log(error);
+      setErrorMessage(MESSAGES.POST_NOT_DELETED);
     } finally {
       // reset fields
       setSlugToDelete("");
@@ -201,7 +191,7 @@ function Dashboard() {
     const file = e.target.files[0];
 
     // check file size
-    if (file.size > 2 * 1024 * 1024) {
+    if (file.size > MAX_IMAGE_BYTES) {
       setPopupMessage1(true);
       e.target.value = "";
       return;
@@ -222,7 +212,7 @@ function Dashboard() {
     const file = e.target.files[0];
 
     // check file size
-    if (file.size > 2 * 1024 * 1024) {
+    if (file.size > MAX_IMAGE_BYTES) {
       setPopupMessage2(true);
       e.target.value = "";
       return;
@@ -425,14 +415,14 @@ function Dashboard() {
         {/* <ScrollButton /> */}
         {popupMessage1 && (
           <Popup
-            message="The first image is too large. Please select an image smaller than 2MB."
+            message="The first image is too large. Please select an image smaller than 1MB."
             onClose={handleClose}
             showPopup={popupMessage1}
           />
         )}
         {popupMessage2 && (
           <Popup
-            message="The second image is too large. Please select an image smaller than 2MB."
+            message="The second image is too large. Please select an image smaller than 1MB."
             onClose={handleClose}
             showPopup={popupMessage2}
           />
@@ -440,19 +430,22 @@ function Dashboard() {
         {popupMessageEmpty && (
           <Popup message="Fill all fileds!" onClose={handleClose} showPopup={popupMessageEmpty} />
         )}
-        {popupMessageRange && (
-          <Popup
-            message="Match pattern for fileds!"
-            onClose={handleClose}
-            showPopup={popupMessageRange}
-          />
-        )}
         {showConfirmation && (
           <DeletePopUp cancelDelete={cancelDelete} confirmDelete={confirmDelete} />
+        )}
+        {errorMessage && (
+          <Popup message={errorMessage} onClose={handleClose} showPopup={Boolean(errorMessage)} />
+        )}
+        {sessionExpired && (
+          <Popup
+            message={MESSAGES.SESSION_EXPIRED}
+            onClose={() => signOut({ callbackUrl: "/dashboard/login" })}
+            showPopup={sessionExpired}
+          />
         )}
       </>
     );
   }
 }
 
-export default Dashboard;
+export default DashboardClient;

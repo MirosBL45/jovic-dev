@@ -2,14 +2,16 @@
 
 // react/next stuff
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 // components
 import ClickButton from "@/components/CustomInputs/Buttons/ClickButton";
-import { TabTitle } from "@/utils/GeneralFunctions";
 import PasswordInput from "@/components/CustomInputs/PasswordInput/PasswordInput";
+import { validateRegistration } from "@/utils/registerValidation";
+import { readErrorMessage } from "@/utils/readErrorMessage";
+import { MESSAGES } from "@/utils/messages";
 
 // icons
 import CheckList from "public/checklist.png";
@@ -17,12 +19,7 @@ import CheckList from "public/checklist.png";
 // style
 import styles from "./page.module.css";
 
-function Register() {
-  // for tab title
-  useEffect(() => {
-    TabTitle("Register for using Dashboard");
-  }, []);
-
+function RegisterClient() {
   const [error, setError] = useState(false);
 
   // button sending text
@@ -36,6 +33,15 @@ function Register() {
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
+
+    // the same rules as on the server
+    const validationError = validateRegistration({ name, email, password });
+    if (validationError) {
+      setError(validationError);
+      setButtonSend(false);
+      return;
+    }
+    setError(false);
 
     try {
       const res = await fetch("/api/auth/register", {
@@ -52,11 +58,17 @@ function Register() {
 
       setButtonSend(false);
 
-      res.status === 201 && router.push("/dashboard/login?success=Account has been created");
+      if (res.status === 201) {
+        e.target.reset();
+        router.push("/dashboard/login?success=Account has been created");
+      } else {
+        // the form stays filled, so the user can fix it
+        setError(await readErrorMessage(res, MESSAGES.REGISTER_FAILED));
+      }
     } catch (error) {
-      setError(true);
+      setError(MESSAGES.REGISTER_FAILED);
+      setButtonSend(false);
     }
-    e.target.reset();
   }
 
   return (
@@ -79,10 +91,10 @@ function Register() {
           />
         </ClickButton>
       </form>
-      {error && "Something went wrong, there is an error"}
+      {error}
       <Link href={"/dashboard/login"}>Login with an existing account</Link>
     </main>
   );
 }
 
-export default Register;
+export default RegisterClient;

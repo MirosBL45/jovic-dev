@@ -4,8 +4,7 @@
 import { existsSync } from "node:fs";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
-import { stdin, stdout } from "node:process";
-import { createInterface } from "node:readline/promises";
+import { confirmByTyping } from "./lib/confirm.mjs";
 import {
   EJSON,
   connect,
@@ -63,19 +62,6 @@ function printPlan(plan, drop) {
     parts.push(`insert ${step.toInsert.length}`);
     if (step.skipped > 0) parts.push(`skip ${step.skipped} (same _id already exists)`);
     console.log(`  ${step.name.padEnd(width)}  ${parts.join(", ")}`);
-  }
-}
-
-async function confirmByTyping(dbName, reasons) {
-  const readline = createInterface({ input: stdin, output: stdout });
-  try {
-    console.log(`\nThis will ${reasons.join(" and ")}.`);
-    const answer = await readline.question(`Type the database name (${dbName}) to continue: `);
-    if (answer.trim() !== dbName) {
-      throw new Error("The name did not match. Nothing was written.");
-    }
-  } finally {
-    readline.close();
   }
 }
 

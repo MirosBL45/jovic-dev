@@ -1,0 +1,10 @@
+.devOwnerId {
+  margin-top: 60px;
+  font-size: var(--small-font);
+  color: var(--dark-gray-color);
+  word-break: break-all;
+
+  code {
+    color: var(--main-color);
+  }
+}

@@ -71,6 +71,7 @@ Each of these technologies plays a vital role in enhancing the functionality and
 | `npm run db:info -- --source production\|dev`                | Show collections and document counts of a database        |
 | `npm run db:backup -- --source production\|dev`              | Back up a database to `backups/`                          |
 | `npm run db:restore -- --from backups/<folder> --target dev` | Restore a backup (dry run unless `--apply` is added)      |
+| `npm run db:migrate-02 -- --target production\|dev`          | Set `ownerId` on old posts (dry run unless `--apply`)     |
 
 ### Branches
 
@@ -115,6 +116,14 @@ npm run db:restore -- --from backups/<folder> --target dev --apply
 5. Restoring to `dev` is refused when `MONGO_URL` points to the same database as `MONGO_URL_PRODUCTION`.
 
 Before every migration: back up production, try the migration on the dev database, and only then run it on production.
+
+### Auth and post ownership
+
+1. A post belongs to the login account in `ownerId`, never to the name or the email: `google:<Google account id>` or `credentials:<user id>`. The `username` on a post is only the author name shown on the blog.
+2. `ownerId` is set at login and kept in the session. Sessions from before this change have no `ownerId`, so the user has to log in again.
+3. `ADMIN_ID` is the `ownerId` of the owner's Google account. The admin can delete any post, everyone else only their own. In development the dashboard shows your `ownerId` at the bottom of the page, so you can copy it into `.env.local` and into Vercel (Production and Preview).
+4. Creating, listing your own and deleting posts need a session. The API checks the rules in `src/utils/postPermissions.js` on every request, and validates posts with `src/utils/postValidation.js`, the same module the dashboard uses (images up to 1 MB each).
+5. `npm run db:migrate-02` sets `ownerId = ADMIN_ID` on every post that has no `ownerId` yet.
 
 Backups contain email addresses and password hashes. `backups/` is in `.gitignore` and is never committed.
 

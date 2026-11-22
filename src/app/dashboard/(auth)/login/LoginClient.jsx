@@ -4,12 +4,11 @@
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 // components
 import ClickButton from "@/components/CustomInputs/Buttons/ClickButton";
-import { TabTitle } from "@/utils/GeneralFunctions";
 import PasswordInput from "@/components/CustomInputs/PasswordInput/PasswordInput";
 
 // style
@@ -19,12 +18,7 @@ import styles from "./page.module.css";
 import GoogleIcon from "public/google.svg";
 import EMailIcon from "public/email.webp";
 
-function Login() {
-  // for tab title
-  useEffect(() => {
-    TabTitle("Login to Dashboard");
-  }, []);
-
+function LoginClient({ errorMessage }) {
   const session = useSession();
   const router = useRouter();
 
@@ -76,6 +70,7 @@ function Login() {
           />
         </ClickButton>
       </form>
+      {errorMessage}
       <section className={styles.withRegister}>
         <ClickButton
           onClick={handleClick}
@@ -100,4 +95,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginClient;
