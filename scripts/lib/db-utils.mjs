@@ -66,6 +66,16 @@ export function backupFolderName(dbName, date) {
   return `${dbName}-${day}_${time}`;
 }
 
+// Feature 02: posts written before ownerId existed.
+export const POSTS_WITHOUT_OWNER = {
+  $or: [{ ownerId: { $exists: false } }, { ownerId: null }, { ownerId: "" }],
+};
+
+// ADMIN_ID is the owner's Google account: "google:" followed by the numeric Google account id.
+export function isValidAdminId(value) {
+  return typeof value === "string" && /^google:\d+$/.test(value);
+}
+
 export function formatBytes(bytes) {
   if (bytes < 1024) {
     return `${bytes} B`;

@@ -4,10 +4,26 @@ import {
   formatBytes,
   getEnvKey,
   isSameDatabase,
+  isValidAdminId,
   parseArgs,
   parseMongoUrl,
   redactSecrets,
 } from "./db-utils.mjs";
+
+describe("isValidAdminId", () => {
+  it("accepts google: with a numeric id", () => {
+    expect(isValidAdminId("google:104857263849201837465")).toBe(true);
+  });
+
+  it("rejects anything else", () => {
+    expect(isValidAdminId(undefined)).toBe(false);
+    expect(isValidAdminId("")).toBe(false);
+    expect(isValidAdminId("google:")).toBe(false);
+    expect(isValidAdminId("104857263849201837465")).toBe(false);
+    expect(isValidAdminId("credentials:665f1c2a9b1e8a0012345678")).toBe(false);
+    expect(isValidAdminId(" google:123")).toBe(false);
+  });
+});
 
 describe("parseArgs", () => {
   const spec = { values: ["from", "target"], flags: ["apply", "drop"] };
