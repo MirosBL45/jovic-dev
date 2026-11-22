@@ -87,5 +87,5 @@ Faza 1, fajl 1/2. Zatvara Critical i High propuste iz audita: `POST` i `DELETE` 
 
 - @context/project-overview.md (poglavlja 8, 9, 10, 13)
 - @context/coding-standards.md (Auth i bezbednost, Validacija, Database)
-- @context/features/01-dev-okruzenje-i-backup.md
+- @context/features/01-dev-okruzenje-i-backup-done.md
 - next-auth v4 dokumentacija (callbacks, `getServerSession`) — proveriti za instaliranu verziju

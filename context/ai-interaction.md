@@ -16,6 +16,7 @@
 - Write all comunication, explanations and findings in Serbian, ekavica, not jekavica, even you get instructions on English, always write everything in Serbian, ekavica. However, do not translate programming, code, audit, security, API, database, framework, tool, or infrastructure terms. Keep those terms in English, Latin script, and preserve their original casing when relevant.
 - Pre svake izmene koda navedi koje fajlove ćeš menjati
 - Za sve korake van koda (MongoDB Atlas, Vercel, Google Cloud Console, EmailJS, GitHub, VS Code) daj tačne korake klik po klik: gde je na ekranu, koji meni ili sekcija, kako izgleda, šta se klikne i šta treba da se desi. Ne pretpostavljaj da znam gde je neka opcija. Pre davanja uputstva proveri aktuelni izgled UI-ja u dokumentaciji tog servisa
+- Komande i korake koje možeš sam (terminal, skripte, čitanje baze, upis u dev bazu, testovi, build) radi sam i na kraju me kratko obavesti šta je urađeno. Meni daj samo ono što moram ja: komande koje traže ručni unos, upis u produkcionu bazu (uvek uz moje izričito odobrenje), browser, env fajlovi i spoljni servisi
 - Kada ti treba informacija sa mog računara koju ne možeš sam da pročitaš, daj komandu koja ispisuje tekst (ne traži screenshot)
 - Nikad ne traži da u chat nalepim lozinke, connection string-ove, ključeve ili tokene — kaži mi tačno koji deo i gde da upišem sam
 
