@@ -37,10 +37,10 @@ export default function NotFound() {
     <div className={styles.notFoundContainer}>
       <div className={styles.notFoundText}>
         <h2>Whoops!!!</h2>
-        <p>It seems you've ventured into uncharted territory.</p>
-        <p>The page you're looking for might be on a vacation or has taken a coffee break.</p>
+        <p>It seems you&apos;ve ventured into uncharted territory.</p>
+        <p>The page you&apos;re looking for might be on a vacation or has taken a coffee break.</p>
         <p>
-          In the meantime, if you're feeling adventurous, you can explore other corners of my
+          In the meantime, if you&apos;re feeling adventurous, you can explore other corners of my
           digital realm.
         </p>
         <p>

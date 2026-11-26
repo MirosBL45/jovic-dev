@@ -4,7 +4,7 @@ This project is my personal web portfolio, where you can view my works, download
 
 ### 1. **Framework and Core**
 
-- **Next.js**: Provides the foundation for building a scalable and high-performance React application with server-side rendering and static page generation.
+- **Next.js 16** (App Router, Turbopack, React 19): Provides the foundation for building a scalable and high-performance React application with server-side rendering and static page generation.
 - **JavaScript**: The primary programming language used for developing the functionality of the portfolio.
 
 ### 2. **Styling**
@@ -62,6 +62,7 @@ Each of these technologies plays a vital role in enhancing the functionality and
 | `npm run dev`                                                | Start the dev server                                      |
 | `npm run build`                                              | Create a production build                                 |
 | `npm run start`                                              | Run the production build                                  |
+| `npm run lint`                                               | Lint the project with ESLint (`eslint.config.mjs`)        |
 | `npm run test`                                               | Run the tests once                                        |
 | `npm run test:watch`                                         | Run the tests in watch mode                               |
 | `npm run format`                                             | Format the project with Prettier                          |
