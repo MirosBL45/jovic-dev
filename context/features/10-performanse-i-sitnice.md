@@ -12,6 +12,7 @@ Faza 4, fajl 4/4 — kraj plana. Blog stranice čitaju bazu direktno umesto prek
 - **Mongo konekcija**: `src/utils/db.js` kešira konekciju u globalnoj promenljivoj, da se na serverless-u ne otvara nova pri svakom pozivu. Modeli: `mongoose.models.Post || mongoose.model(...)` umesto `mongoose.models = {}` — uz te linije stoje komentari, pa pitati vlasnika pre izmene.
 - **`className` bez `undefined` i `false`**: `ImageCard` (`additionalClass` kad nije prosleđen) i Navbar (`&&` uslovi unutar template string-a) — spajanje klasa bez praznih vrednosti.
 - **Navbar logout**: `router.asPath` ne postoji u App Router-u — koristiti `pathname` koji komponenta već ima.
+- **Poruke ispod formi za login i registraciju** (odluka vlasnika 26.11.2026., iz 04): sada su goli tekst (`{errorMessage}` u `LoginClient.jsx`, `{error}` u `RegisterClient.jsx`) i teško se uočavaju. Treba da budu bold, crvene i malo većeg fonta: nova CSS varijabla za crvenu u `globals.css` (`:root` i `.dark`), `<p>` sa klasom i stil u oba `page.module.scss` (+ regenerisan `.css`). Tačne boje i veličinu fonta vlasnik potvrđuje pre upisa.
 - **`layout.js`**: `<Scroll />` iz `<html>` u `<body>`; import `ThemeProvider` preko `@/` aliasa kao ostali (ako je posle 07 i dalje relativan).
 - Pre početka proći kroz audit iz History-ja i proveriti šta je već rešeno u ranijim feature-ima; ništa van ove liste bez pitanja.
 

@@ -75,7 +75,7 @@ function Navbar() {
       <div className={styles.nav_container}>
         <Link href={"/"} onClick={() => setIsNavShowing(false)}>
           <Image
-            priority={true}
+            preload={true}
             src={mode === "light" ? logoBlack : logoWhite}
             alt="logo Miroslav Jovic Frontend Developer"
             title="Miroslav Jovic Frontend Developer"

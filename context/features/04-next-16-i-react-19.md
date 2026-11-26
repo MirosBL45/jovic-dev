@@ -34,4 +34,4 @@ Faza 2, jedini fajl. Prelazak sa Next 14.2.35 na aktuelni Next 16 i React 19, da
 
 - https://nextjs.org/docs/app/guides/upgrading/version-16
 - https://nextjs.org/docs/app/guides/upgrading/version-15
-- @context/features/03-patch-verzije.md
+- @context/features/03-patch-verzije-done.md

@@ -10,7 +10,7 @@ import { MESSAGES } from "@/utils/messages";
 import { canDeletePost, getOwnerId } from "@/utils/postPermissions";
 
 export const GET = async (request, { params }) => {
-  const { slug } = params;
+  const { slug } = await params;
 
   //fetch
   try {
@@ -26,7 +26,7 @@ export const GET = async (request, { params }) => {
 };
 
 export const DELETE = async (request, { params }) => {
-  const { slug } = params;
+  const { slug } = await params;
 
   const session = await getServerSession(authOptions);
   if (!getOwnerId(session)) {

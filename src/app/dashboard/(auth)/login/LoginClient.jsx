@@ -4,7 +4,7 @@
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 // components
@@ -25,12 +25,14 @@ function LoginClient({ errorMessage }) {
   // button sending text
   const [buttonSend, setButtonSend] = useState(false);
 
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      router?.push("/dashboard");
+    }
+  }, [session.status, router]);
+
   if (session.status === "loading") {
     return <p style={{ marginTop: "150px", fontSize: "25px" }}>Loading User...</p>;
-  }
-
-  if (session.status === "authenticated") {
-    router?.push("/dashboard");
   }
 
   function handleSubmit(e) {
