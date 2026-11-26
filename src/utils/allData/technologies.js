@@ -20,8 +20,6 @@ import {
   SiSwr,
   SiMongoose,
   SiFigma,
-  SiAdobephotoshop,
-  SiAdobepremierepro,
   SiNodedotjs,
   SiChakraui,
   SiExpress,
@@ -36,7 +34,12 @@ import {
 } from "react-icons/si";
 import { RiVuejsFill, RiFirebaseFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
-import { TbBrandFramerMotion, TbBrandAuth0 } from "react-icons/tb";
+import {
+  TbBrandFramerMotion,
+  TbBrandAuth0,
+  TbBrandAdobePhotoshop,
+  TbBrandAdobePremiere,
+} from "react-icons/tb";
 
 export const technologiesText = [
   {
@@ -316,12 +319,12 @@ export const technologiesTextBig = [
     id: 27,
     title: "Photoshop",
     text: "Refining and manipulating digital graphics with precision and creativity using Adobe Photoshop",
-    icon: <SiAdobephotoshop />,
+    icon: <TbBrandAdobePhotoshop />,
   },
   {
     id: 28,
     title: "Premiere pro",
     text: "Crafting professional video content with precision editing using Adobe Premiere Pro",
-    icon: <SiAdobepremierepro />,
+    icon: <TbBrandAdobePremiere />,
   },
 ];

@@ -1,4 +1,4 @@
-# Current Feature: 02 — Zaštita API-ja i vlasništvo postova
+# Current Feature: 03 — Patch verzije unutar istih major verzija
 
 ## Status
 
@@ -10,55 +10,34 @@ Completed
 
 <!-- Goals & requirements -->
 
-- NextAuth konfiguracija prelazi u `src/utils/authOptions.js`, a `src/app/api/auth/[...nextauth]/route.js` je samo uvozi (raspored komentara odobren, vidi Notes)
-- `ownerId` u `jwt` callback-u samo pri prijavi: Google → `google:<providerAccountId>`, email + lozinka → `credentials:<id iz baze>`; `session` callback prenosi `ownerId` i `isAdmin` (`ownerId === ADMIN_ID`, samo za UI); izvođenje `ownerId` je čista funkcija u `src/utils/` sa testom
-- Stare sesije bez `ownerId` → API 401, dashboard „Your session has expired. Please log in again."
-- U development-u dashboard prikazuje `ownerId` ulogovanog korisnika (za `ADMIN_ID`); u produkciji ne
-- `ADMIN_ID` upisan u `.env.local` i na Vercel (Production i Preview), klik po klik
-- Model Post: `ownerId` (String, required, index); `username` ostaje za prikaz, popunjava se iz sesije
-- Pravila pristupa kao čiste funkcije (`postPermissions.js`) sa testovima: pravljenje (ulogovan sa `ownerId`), brisanje (vlasnik ili admin), „moji postovi" (po `ownerId`)
-- `POST /api/posts`: bez sesije 401; `username` i `ownerId` iz sesije; whitelist polja iz body-ja; validacija → 400 sa porukom; slug normalizovan i jedinstven na serveru (isti algoritam kao sada u dashboard-u); odgovor 201 sa stvarno sačuvanim slug-om
-- `getAllPostSlugs` u dashboard-u se uklanja (brisanje i premeštanje komentara odobreno, vidi Notes)
-- `DELETE /api/posts/[slug]`: 401 bez sesije, 404 ne postoji, 403 nije vlasnik ni admin, inače briše
-- `GET /api/posts`: javna lista ostaje; `?username=` → `?mine=1` (samo ulogovan, po `ownerId` iz sesije); dashboard prelazi na `?mine=1`
-- Validacija u jednom modulu (`postValidation.js`) za browser i server, sa testovima: dužine posle trim-a (title 2–75, headline1/2 2–35, description1/2 2–135, content1/2 2–2000, slug 2–35); slika `data:image/(png|jpeg|webp|gif);base64,...` ≤ 1 MB dekodirano, obe obavezne; sva polja obavezna i stringovi
-- Dashboard: limit slike 2 MB → 1 MB (provera i dva Popup-a); posle `POST` i `DELETE` provera `res.ok`, greška iz odgovora u Popup-u, forma se ne resetuje
-- Dashboard, login i register: prvo poseban commit sa doslovnim premeštanjem koda (sa komentarima) u `DashboardClient.jsx`, `LoginClient.jsx`, `RegisterClient.jsx`; zatim serverski `page.jsx` sa `metadata` (`title` = sadašnji `TabTitle` tekstovi, `robots: { index: false, follow: false }`)
-- `TabTitle` pozivi, njihovi `useEffect`-i i komentari „// for tab title" se brišu; funkcija `TabTitle` i komentar „// TabTitle" u `GeneralFunctions.js` se brišu (odobreno)
-- Serverska login stranica čita `?error=` iz `searchParams` i prosleđuje poruku klijentskoj komponenti
-- Register: server validacija (email preko `isValidEmail`, ime 3–35, lozinka 10–72), ista pravila u formi preko istog modula; bcrypt cost 10; duplikat → 409 „An account with this name or email already exists."; stranica prikazuje poruku iz odgovora
-- `authorize` vraća samo `{ id, name, email }` (id kao string); za nepostojećeg korisnika i pogrešnu lozinku ista poruka „Wrong email or password."
-- Greške u API-ju: JSON `{ error: "..." }` sa tačnim statusom, detalji samo u server log-u
-- CORS: `headers()` blok za `/api/:path*` uklonjen iz `next.config.js`; `redirects()` i zakomentarisani kod ostaju
-- Migracija `scripts/migrate-02-owner-id.mjs`: postovima bez `ownerId` upisuje `ADMIN_ID`; dry-run, `--apply`, `--target production` sa potvrdom imena baze
-- Redosled migracije: backup produkcije → nova kopija u dev → migracija na dev → provera lokalno → migracija na produkciji neposredno pre merge-a u `master` (vlasnik pokreće ili izričito odobrava)
-- Rotacija `MONGO_URL`, `GOOGLE_CLIENT_SECRET` i `NEXTAUTH_SECRET` i ponovno dodavanje kao Secret na Vercel-u, uz `ADMIN_ID` i redeploy produkcije (odluka vlasnika iz 01)
-- Vitest: validacija, pravila pristupa, `ownerId`, jedinstvenost slug-a; `curl` bez sesije → 401; ručni testovi iz feature fajla (test korisnik, vlasnik, slike oko 1 MB, login/register poruke, tabovi i `noindex`)
+- `npm audit --omit=dev` pre i posle; brojeve upisati u Notes i u History (stanje iz audita 30.10.2026: 31 advisory — 4 Critical, 4 High, 20 Moderate, 3 Low)
+- Tačne verzije: `next@14.2.35`, `eslint-config-next@14.2.35`, `next-auth@4.24.15`, `mongoose@6.13.12`
+- `swr` i `react-icons` na najnoviju verziju u okviru iste major verzije (`npm outdated` → kolona Wanted)
+- Bez promene major verzija (Next 16 je feature 04) i bez `npm audit fix --force`
+- Pregledati release notes za `next` 14.1 i 14.2 i CHANGELOG za `mongoose` 6.11 → 6.13; ako neka izmena ponašanja pogađa projekat → pitati vlasnika
+- Ručni test lokalno na dev bazi: početna, portfolio i sve tri kategorije, blog lista i jedan post, kontakt forma (slanje), login obe vrste, logout, dashboard (pravljenje i brisanje test posta)
 - `npm run test` i `npm run build` prolaze
 
 ## Notes
 
 <!-- Any extra notes -->
 
-- Faza 1, fajl 1/2; radi se još na Next 14 — `params` čitati na jednom mestu u handler-u, da prelazak na 16 (feature 04) bude što manji
-- Zašto vlasnik nije email: register ne proverava vlasništvo email adrese, pa bi neko mogao da se registruje tuđim Gmail-om i preuzme postove tog Google korisnika
-- Google korisnici se ne upisuju u `users`, pa `ownerId` ne zavisi od te kolekcije
-- Vercel prima body do 4,5 MB; dve slike od 1 MB u base64 su oko 2,7 MB
-- Ne uvoditi biblioteku za validaciju
-- Ne uvodi se odobravanje (05) ni izmena posta (06)
-- Tekstovi poruka (odluka vlasnika 04.11.2026.): „Wrong email or password.", „An account with this name or email already exists.", „Name must be 3–35 characters.", „Please enter a valid email.", „Password must be 10–72 characters.", „Your session has expired. Please log in again.", „Something went wrong. Your post was not saved.", „Something went wrong. The post was not deleted."; prevelika slika: postojeći tekstovi Popup-a, „1MB" umesto „2MB"
-- `metadata` naslovi: „Dashboard for your blogs", „Login to Dashboard", „Register for using Dashboard" (usklađuju se sa title template-om u 08)
-- Iz 01: baza `jovicData`, dev `jovicData-dev`; svih 16 postova je vlasnikovo (Google), dashboard sada prikazuje 1 od 16 zbog promene imena — migracija na `ownerId` to rešava
+- Faza 1, fajl 2/2; kratak međukorak pre Next 16
+- Trenutne verzije u `package.json`: `next` 14.0.0, `eslint-config-next` 14.0.0, `next-auth` ^4.24.5, `mongoose` 6.11.1, `swr` ^2.2.4, `react-icons` ^5.4.0
+- `mongoose` 6.13.12 zatvara prototype pollution i search injection advisories
+- Posle 14.2.35 ostaje oko 23 advisory-ja za `next` koji su zakrpljeni tek u 15.5.x i novijim — očekivano, zatvara ih feature 04
+- `mongoose.models = {}` u modelima ostaje do feature-a 10
 - Iz 01: lokalni build se pokreće sa `$env:NEXT_PUBLIC_NAME_OF_LINK = 'https://jovic-dev.vercel.app'; npm run build` (do feature-a 10)
-- Iz 01: na Preview-u `/blog` i `/blog/[slug]` čitaju produkciju preko njenog API-ja (samo čitanje); upisi idu na preview API → dev baza. Google login na preview URL-ovima ne radi — admin delovi se testiraju lokalno
-- Iz 01: na Vercel-u `MONGO_URL` Production = `jovicData`, Preview = `jovicData-dev`; `MONGO_URL_PRODUCTION` i `NEXTAUTH_URL` se na Vercel ne dodaju
-- Pre koda koji ide uz `getServerSession` i callback-e proveriti next-auth v4 dokumentaciju za instaliranu verziju
-- Odluka vlasnika (21.11.2026.), premeštanje `authOptions`: `// react/next stuff` i `// stuff for data` prelaze u `authOptions.js` iznad svojih import-a; `// check password` ide doslovno uz `authorize`; zakomentarisan `// import Error from "next/error";` ostaje u `route.js`
-- Napredak (21.11.2026.): commit premeštanja `9db02ab`; kod, testovi (71), `sass:check`, `format:check` i build prolaze; `curl` bez sesije → 401 za `POST`, `DELETE` i `?mine=1`; login stranica ima `noindex` i naslov iz `metadata`. Čeka se: `ADMIN_ID`, nova kopija produkcije u dev, migracija na dev, ručni testovi
-- Tekstovi poruka koje je Claude Code dodao (nisu bili na listi, vlasnik ih proverava): validacija posta („All fields are required.", „Main Title must be 2–75 characters." itd., „The first image must be a PNG, JPEG, WebP or GIF image."), „This post does not exist." (404), „You can only delete your own posts." (403)
-- `confirmByTyping` premešten iz `restore-db.mjs` u `scripts/lib/confirm.mjs` (koriste ga restore i migracija); npm skripta `db:migrate-02`
-- Odluka vlasnika (21.11.2026.), `getAllPostSlugs`: `// function for catching data to see slugs` i `// fetch all slugs` se brišu zajedno sa kodom; `// if there is the same slug add number` prelazi doslovno uz isti algoritam u serversku funkciju u `src/utils/`
-- Napredak (22.11.2026.): `ADMIN_ID` u `.env.local`; nova kopija produkcije u dev i migracija na dev (16 postova dobilo `ownerId`); svi ručni testovi prošli; otvorena pitanja iz 02-a rešena po predlogu: poruke ostaju, `// matching all API routes` obrisan sa blokom, stari blok za dužine u dashboard-u (sa `// Error message if input is out of range`) i Popup „Match pattern for fileds!" obrisani, svaki `?error=` daje istu poruku, javni API ne vraća `ownerId`, register čuva ime i email bez razmaka i ne prazni formu kad server odbije. Test, `format:check`, `sass:check` i build prolaze. U dev bazi ostaje test korisnik `imgtest210028`. Commit logike `6807049`. Vercel: `ADMIN_ID` (Production i Preview) dodat; rotirane sve tri tajne (novi Atlas korisnik `jovic-app-2026`, stari obrisan; novi Google secret, stari obrisan; novi `NEXTAUTH_SECRET`), sve kao Secret, lokalno i na Vercel-u; redeploy produkcije, sajt i Google login rade. Grana push-ovana, PR ka `develop`-u otvoren. Migracija na produkciji (22.11.2026.): backup `jovicData-2026-11-22_21-58`, 16 postova dobilo `ownerId`, sajt radi; produkcija dobija novi kod kad vlasnik merge-uje u `master`
+- Iz 02: u dev bazi postoji test korisnik `imgtest210028` (može za login email + lozinka i test post)
+- Audit pre (26.11.2026.): 29 paketa sa propustima — 19 Critical, 2 High, 5 Moderate, 3 Low (npm broji pakete, ne advisory-je; Critical više nego 30.10 jer su u međuvremenu objavljeni novi advisory-ji za `next` i `fast-xml-parser` preko `@aws-sdk`)
+- Instalirano: `next` 14.2.35, `eslint-config-next` 14.2.35, `mongoose` 6.13.12 (tačne verzije, kao i ranije), `next-auth` ^4.24.15, `swr` ^2.5.1, `react-icons` ^5.7.0
+- Audit posle instalacije: 3 — 1 Critical (`next`, 26 advisory-ja, ispravka tek u 16), 1 High (`postcss` preko `next`-a), 1 Moderate (`@babel/runtime` 7.26.0 preko `next-auth`-a)
+- Odluka vlasnika (26.11.2026.): `npm audit fix` bez `--force` → `@babel/runtime` 7.29.15, menja samo `package-lock.json`. Audit posle: 2 — 1 Critical (`next`), 1 High (`postcss`), oba se zatvaraju u 04. Pun audit (sa dev) još prijavljuje `glob` i `minimatch` preko `eslint-config-next` 14 — isto 04
+- Release notes: Next 14.1 i 14.2 i mongoose 6.11 → 6.13 pregledani. Pogađa projekat: razrešavanje import-a `"public/..."` (20 import-a u 9 fajlova) u 14.2 ne radi bez `baseUrl`. Prvo je dodat `"baseUrl": "."`, ali VS Code (TypeScript 6) ga prijavljuje kao deprecated (prestaje da radi u TS 7.0), pa je zamenjen alias-om `"public/*": ["./public/*"]` u `paths` — import-i se ne menjaju, build prolazi
+- Odluka vlasnika (26.11.2026.): mongoose ostaje 6.13.12 po specu, iako postoji 6.13.13 (16.11.2026., dodatno ojačanje `sanitizeFilter`-a, koji projekat ne koristi)
+- `react-icons` 5.6.0+ više nema `SiAdobephotoshop` i `SiAdobepremierepro` (build upozorenje, sekcija Technologies bi pala u browser-u). Odluka vlasnika (26.11.2026.): 5.7.0 + `TbBrandAdobePhotoshop` i `TbBrandAdobePremiere` iz `react-icons/tb` (vizuelna izmena: konturne ikonice, kao postojeće `TbBrandFramerMotion` i `TbBrandAuth0`)
+- 14.2 menja CSS chunking (redosled po import-u); deljeni `.module.css` se uvoze samo unutar iste grupe komponenti — proverava se ručnim testom izgleda
+- mongoose: izmene u `sanitizeFilter`, `$comment`, praznim `$and`/`$or` ne pogađaju projekat (`sanitizeFilter` se ne koristi; skripte rade preko native kolekcija)
 
 ## History
 
@@ -93,3 +72,9 @@ Pravljenje i brisanje blog postova sada rade samo za ulogovane korisnike. Autor 
 Registracija proverava ime, email i dužinu lozinke i na serveru, lozinke se jače hešuju, a zauzet nalog daje čitljivu poruku. Login za nepostojeći email i pogrešnu lozinku daje istu poruku, a prijava više ne vraća hash lozinke. Stranice za dashboard, prijavu i registraciju su prešle na serversku stranicu sa klijentskom komponentom, naslov taba dolazi iz metadata, a pretraživači ih ne indeksiraju. CORS header-i na API-ju su uklonjeni.
 
 Svi postojeći postovi su migracijom dodeljeni vlasniku, prvo na dev bazi, pa na produkciji posle novog backup-a. Na Vercel-u je dodat admin nalog, a sve tri osetljive tajne (baza, Google i NextAuth) su zamenjene novim vrednostima i sačuvane kao Secret, a stare su ugašene. Testovi, provera stilova i formata i production build prolaze, a ručno su provereni test korisnik, admin, slike oko 1 MB, poruke za login i registraciju i naslovi stranica.
+
+### Thursday, 26.11.2026. | 15:39 — Patch verzije unutar istih major verzija
+
+Next.js, njegova ESLint konfiguracija, paket za prijavu, paket za bazu, SWR i paket ikonica podignuti su na najnovije zakrpe u okviru istih major verzija, bez prelaska na novu major verziju. Pre izmene npm audit je prijavljivao 29 paketa sa propustima, od toga 19 Critical, 2 High, 5 Moderate i 3 Low, a posle izmene i jedne bezbedne ispravke zavisnosti uz odobrenje vlasnika ostala su 2, sam Next.js kao Critical i PostCSS koji dolazi uz njega kao High. Oba se zatvaraju tek prelaskom na Next 16 u sledećem feature-u.
+
+Pregledane su beleške o izmenama za Next.js 14.1 i 14.2 i za paket za bazu. Nova verzija Next-a više nije pronalazila slike koje se uvoze iz javnog foldera, pa je build padao; to je rešeno jednim alias-om u podešavanjima putanja, bez izmene ijednog import-a i bez opcije koju editor prijavljuje kao zastarelu. Nova verzija paketa ikonica više nema ikonice za Photoshop i Premiere Pro, pa bi sekcija tehnologija pala u browser-u; po odluci vlasnika zamenjene su istim ikonicama iz drugog seta, u konturnom stilu. Paket za bazu ostaje na verziji iz plana. Testovi, provera stilova i formata i production build prolaze, a vlasnik je ručno proverio sajt na dev bazi.
