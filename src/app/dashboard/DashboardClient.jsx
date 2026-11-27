@@ -17,6 +17,7 @@ import ScrollButton from "@/components/UIComponents/ScrollButton/ScrollButton";
 import { MAX_IMAGE_BYTES, validatePost } from "@/utils/postValidation";
 import { readErrorMessage } from "@/utils/readErrorMessage";
 import { MESSAGES } from "@/utils/messages";
+import { sendPendingPostEmail } from "@/utils/pendingPostEmail";
 
 // style
 import styles from "./page.module.css";
@@ -144,6 +145,17 @@ function DashboardClient() {
         return;
       }
 
+      // the server decides if the post waits for approval; then the owner of the site gets an email
+      const created = await res.json().catch(() => ({}));
+      if (created.approved === false) {
+        sendPendingPostEmail({
+          title,
+          username: session.data?.user?.name,
+          slug: created.slug,
+          email: session.data?.user?.email,
+        });
+      }
+
       // it reloads page, so we can see that new post which was created
       mutate();
       // reset fields
@@ -265,7 +277,10 @@ function DashboardClient() {
                         sizes="100vw"
                       />
                     </div>
-                    <h4>{post.title}</h4>
+                    <h4>
+                      {post.title}
+                      {!post.approved && <span className={styles.awaiting}>Awaiting approval</span>}
+                    </h4>
                     <span
                       onClick={() => handleDelete(post.slug)}
                       title="Delete this post?"

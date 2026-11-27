@@ -8,4 +8,8 @@ export const MESSAGES = {
   POST_NOT_DELETED: "Something went wrong. The post was not deleted.",
   POST_NOT_FOUND: "This post does not exist.",
   DELETE_FORBIDDEN: "You can only delete your own posts.",
+  ADMIN_ONLY: "Only the admin can do this.",
+  APPROVE_INVALID: "Only { approved: true } can be sent.",
+  POST_NOT_APPROVED: "Something went wrong. The post was not approved.",
+  PENDING_NOT_LOADED: "Something went wrong. Posts awaiting approval were not loaded.",
 };

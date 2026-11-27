@@ -1,4 +1,4 @@
-# Current Feature: 04 — Next.js 16 i React 19
+# Current Feature: 05 — Odobravanje postova
 
 ## Status
 
@@ -10,53 +10,53 @@ Completed
 
 <!-- Goals & requirements -->
 
-- Prelazak sa `next` 14.2.35 na aktuelni Next 16 i sa React 18 na React 19; ponašanje i izgled sajta ostaju isti
-- Node: lokalno ≥ 20.9; na Vercel-u voditi vlasnika klik po klik da proveri i postavi Node.js verziju koju traži aktuelni Next 16
-- Pre upgrade-a pročitati zvanični vodič za 16 i delove vodiča za 15 koji važe pri skoku sa 14 (async Request APIs, caching); posle instalacije čitati `node_modules/next/dist/docs/` ako postoji
-- Upgrade preko codemod-a (`npx @next/codemod@canary upgrade latest`) ili ručno `next@latest react@latest react-dom@latest eslint-config-next@latest`; pregledati svaki fajl koji codemod promeni, bez izmena komentara
-- `await params` u `src/app/blog/[slug]/page.jsx` (`generateMetadata` i stranica), `src/app/portfolio/[category]/page.jsx` i svim handler-ima u `src/app/api/posts/[slug]/route.js`
-- `next/image`: `priority` → `preload` (logo u Navbar-u); proveriti `images.qualities`, `localPatterns` za lokalne slike sa query string-om, cache TTL, slike sa razmacima u imenu i `data:` (base64) slike na blogu i u dashboard-u
-- ESLint: `eslint` + `eslint.config.mjs` (flat config) sa `eslint-config-next` i `eslint-config-prettier`, skripta `"lint": "eslint ."`; popraviti samo error-e, warning-e popisati i pitati vlasnika; dopuniti `.vscode/settings.json` ESLint ključevima kao u camera-motion
-- Turbopack je podrazumevan; ako dev ili build prave problem → privremeno `--webpack` i pitati vlasnika
-- `next-auth` v4 ostaje; proveriti `getServerSession` u Route Handler-ima i ceo login/logout tok
-- Proveriti `peerDependencies` za React 19 (`swr`, `react-icons`, `@emailjs/browser`) i podići u okviru major verzija ako treba; `mongoose` ostaje 6.x
-- Blok „nextjs-agent-rules" koji `next dev` doda na vrh `AGENTS.md` zadržati i commit-ovati
-- README: ažurirati verzije i komande (lint)
-- `npm audit --omit=dev` posle upgrade-a, broj u History; cilj je da `next` nema poznatih advisory-ja
+- Model `Post`: polje `approved` (Boolean, default `false`)
+- Pravljenje posta: `approved = true` ako je autor admin, inače `false` — određuje server po `ownerId` iz sesije
+- Javni prikaz: `/blog` i `/blog/[slug]` prikazuju samo `approved: true`; neodobren post na `/blog/[slug]` → 404 za sve
+- Dashboard, autor: u svojim postovima vidi i neodobrene sa oznakom „Awaiting approval" i može da ih obriše
+- Dashboard, admin: sekcija „Posts awaiting approval (N)" na vrhu, iznad forme za pravljenje posta; kartica sa naslovom, autorom i datumom; „Show full post" / „Hide full post" proširuje i skuplja karticu (oba headline-a, oba opisa, oba sadržaja, obe slike); dugmad „Approve" i „Delete" (brisanje = odbijanje, potvrda kroz postojeći `DeletePopUp`)
+- Server/klijent: serverska `dashboard/page.jsx` proverava sesiju preko `getServerSession` i sekciju renderuje samo za admina; sama sekcija je posebna klijentska komponenta
+- API:
+  - `GET /api/posts` (javno) → samo odobreni
+  - `GET /api/posts?mine=1` → svoji, i odobreni i neodobreni
+  - `GET /api/posts?pending=1` → samo admin (403 za ostale), svi neodobreni
+  - `GET /api/posts/[slug]` (javno) → 404 ako nije odobren
+  - `PATCH /api/posts/[slug]` sa `{ approved: true }` → samo admin; druga polja se ne prihvataju
+  - `DELETE` po pravilima iz 02 (vlasnik ili admin)
+- Pravila i filteri kao čiste funkcije u `src/utils/`, sa Vitest testovima (ko sme da odobri: admin, ne-admin, bez sesije; filteri za javnu listu, `mine` i `pending`; vrednost `approved` pri pravljenju)
+- Obaveštenje (EmailJS): kad ne-admin uspešno napravi post (201), dashboard šalje `emailjs.send` sa istim `SERVICE_BASE`, `TEMPLATE_BASE` i `PUBLIC_BASE` kao kontakt forma; `user_name` = „Blog: new post awaiting approval", `user_email` = email autora iz sesije, `message` = naslov, autor, slug i link `https://miroslavjovic.com/dashboard`; neuspeh slanja samo log, ne obara pravljenje posta
+- Migracija `scripts/migrate-05-approved.mjs`: svim postovima bez `approved` upisuje `approved: true`; backup produkcije → kopija u dev → dry-run i `--apply` na dev → produkcija uz odobrenje vlasnika, neposredno pre merge-a u `master`
+- Ručni test: test korisnik pravi post → nema ga na `/blog` ni na `/blog/<slug>` (404), u njegovom dashboard-u stoji oznaka čekanja, vlasniku stiže mejl; vlasnik vidi ceo post na čekanju, „Approve" → post na `/blog`, drugi post „Delete" → nestaje i iz autorovog dashboard-a; vlasnikov nov post je odmah na `/blog`; kao test korisnik `fetch` iz konzole: `PATCH` → 403, `?pending=1` → 403; posle migracije na dev svi stari postovi su i dalje na `/blog`
 - `npm run lint`, `npm run test` i `npm run build` prolaze
-- Ručni test lokalno (dev baza): početna sa svim sekcijama, portfolio i sve tri kategorije, blog lista i post, kontakt slanje, 404 (odbrojavanje i redirect), stari blog slug-ovi sa `_` → novi, login Google i email + lozinka, logout, dashboard pravljenje i brisanje test posta, oba moda teme
-- Preview deployment sa `develop`-a prolazi build na Vercel-u
 
 ## Notes
 
 <!-- Any extra notes -->
 
-- Faza 2, jedini fajl; sav kasniji kod (05–10) piše se već za Next 16
-- 14.x je end of life od 26.10.2025
-- Middleware ne postoji, pa preimenovanje `middleware` → `proxy` ne pogađa projekat
-- Ne refaktorisati ništa što upgrade ne traži; problem nađen usput zabeležiti i pitati
-- Iz 03: audit posle 03 — 2 (`next` Critical, `postcss` High preko `next`-a); pun audit (sa dev) još i `glob` i `minimatch` preko `eslint-config-next` 14 — sve treba da se zatvori ovde
-- Iz 03: import-i `"public/..."` rade preko alias-a `"public/*": ["./public/*"]` u `paths` (`jsconfig.json`), bez `baseUrl` — proveriti da i dalje radi sa Turbopack-om
-- Iz 03: `react-icons` 5.7.0 sa `TbBrandAdobePhotoshop` i `TbBrandAdobePremiere`; `mongoose` 6.13.12 ostaje
-- Iz 01: lokalni build se pokreće sa `$env:NEXT_PUBLIC_NAME_OF_LINK = 'https://jovic-dev.vercel.app'; npm run build` (do feature-a 10)
-- Iz 02: u dev bazi postoji test korisnik `imgtest210028` (login email + lozinka i test post)
+- Faza 3, fajl 1/2; izmena posta nije deo ovog feature-a (06)
+- Odluke vlasnika (04.11.2026.): neodobren post se briše (nema statusa „odbijeno"); obaveštenje kroz isti EmailJS template kao kontakt forma; regruter prolazi ceo krug (napravi, vidi u svom dashboard-u, obriše) bez vlasnika; admin sekcija na vrhu dashboard-a, ceo post proširivanjem kartice, bez modala
+- Tekstovi (odobreni): „Awaiting approval", „Posts awaiting approval (N)", „Approve", „Delete", „Show full post", „Hide full post"
+- EmailJS ključevi su javni po dizajnu (browser SDK); slanje iz browser-a je prihvaćeno jer je ovo obaveštenje, ne sigurnosna mera
+- Koristiti postojeće komponente i stilove dashboard-a (`Popup`, `DeletePopUp`, `ClickButton`, kartice postova); novi stilovi u `.module.scss` + `sass:file`
+- Postojeći kod za oslonac: `src/utils/postPermissions.js` (+ test), `authOptions.js`, `ownerId.js`, `postValidation.js`, `messages.js`, `src/app/api/posts/route.js` i `[slug]/route.js`, `dashboard/page.jsx` + `DashboardClient.jsx`, `src/models/Post.js`, migracija iz 02 kao obrazac
+- Next 16: `await params` u Route Handler-ima i stranicama; pre pisanja koda čitati relevantne vodiče u `node_modules/next/dist/docs/`
+- `isAdmin` u sesiji je samo za UI; API svaki put sam proverava
+- Iz 01: lokalni build sa `$env:NEXT_PUBLIC_NAME_OF_LINK = 'https://jovic-dev.vercel.app'; npm run build` (do feature-a 10) — blog stranice čitaju preko HTTP-a, pa lokalni build i Preview prikazuju produkcione postove dok produkcija nema `approved` (proveriti ponašanje pre migracije produkcije)
+- Iz 02: u dev bazi postoji test korisnik `imgtest210028`
 - `mongoose.models = {}` u modelima ostaje do feature-a 10
-- Reference: https://nextjs.org/docs/app/guides/upgrading/version-16, https://nextjs.org/docs/app/guides/upgrading/version-15, `context/features/03-patch-verzije-done.md`
-- Pročitani vodiči za 16 i 15 (v16.4.6). Ne pogađa projekat: middleware/proxy, AMP, runtime config, PPR, parallel routes, cache API-ji, `next/font`, `experimental-edge`. Fetch na blogu već ima `cache: "no-store"`, pa promena podrazumevanog keširanja iz 15 ne menja ponašanje
-- Upgrade ručno (bez codemod-a): `next` 16.4.6 i `eslint-config-next` 16.4.6 (tačne verzije), `react` i `react-dom` ^19.3.1, novi dev paketi `eslint` ^10.15.0 i `eslint-config-prettier` ^10.1.8. Lokalno Node 24.11.1
-- Peer zavisnosti za React 19: `swr` 2.5.1, `react-icons` 5.7.0 i `next-auth` 4.24.15 podržavaju 19; `@emailjs/browser` 4.4.1 nema React peer — ništa se ne podiže
-- Odluka vlasnika (26.11.2026.): ESLint 10 umesto 9 (9.x je van podrške). Pri `npm install` ostaju 3 upozorenja „ERESOLVE overriding peer dependency" jer `eslint-plugin-react`, `-import` i `-jsx-a11y` još deklarišu `^9`; lint radi isto kao na 9
-- Async API: `await params` u blog post stranici (i `generateMetadata`), portfolio kategoriji i GET/DELETE u `api/posts/[slug]`; dodatno `await searchParams` u login stranici (nije bilo u specu, otkrio dev log)
-- `priority` → `preload` u Navbar-u i u `Keyboard.jsx` na početnoj (ista zastarela opcija, nije bila u specu)
-- `next/image` podrazumevana podešavanja (`qualities`, `localPatterns`, `minimumCacheTTL`, `imageSizes`, local IP, redirects) ne pogađaju projekat: nema `quality` prop-a, query string-ova ni remote slika; `data:` slike se ne optimizuju
-- ESLint (`eslint.config.mjs`: `core-web-vitals` + `prettier`): 4 error-a, 0 warning-a. 3× `react/no-unescaped-entities` u `not-found.js` → `'` u `&apos;` (isti tekst). 1× `react-hooks/set-state-in-effect` u `ThemeContext.js` → odluka vlasnika (26.11.2026.): `eslint-disable-next-line` iznad `setMode(stored)`, briše se u 07
-- `next dev` je dodao blok „nextjs-agent-rules" na kraj (ne na vrh) `AGENTS.md`
-- Ručni test vlasnika: console error „Cannot update a component (`LinkComponent`) while rendering a different component (`DashboardClient`)" — `router.push` tokom render-a, što React 19 / Next 16 više ne tolerišu. Odluka vlasnika (26.11.2026.): popravka u 04 — `router.push` premešten u `useEffect` u `DashboardClient.jsx` (unauthenticated → login) i `LoginClient.jsx` (authenticated → dashboard); prikaz ostaje isti
-- Next 16 više sam ne isključuje `scroll-behavior: smooth` (iz `*` u `globals.css`) pri prelasku na drugu stranicu, pa bi nova stranica glatko klizila do vrha (dev upozorenje `missing-data-scroll-behavior`). Probano `data-scroll-behavior="smooth"` na `<html>` u root layout-u; odluka vlasnika (26.11.2026.) posle probe: nije dobro, vraćeno (sa atributom linkovi na sekcije početne, npr. `/#about` sa bloga, otvarali su vrh početne umesto sekcije; tek drugi klik je skrolovao do nje) — atribut se ne dodaje, ostaje podrazumevano ponašanje Next 16 i dev upozorenje
-- Odluka vlasnika (26.11.2026.): poruke ispod formi za login i registraciju (bold, crvene, veći font) zapisane u feature 10
-- Vercel (26.11.2026.): Node.js Version promenjen sa 22.x na 24.x; upozorenje o različitoj verziji za produkcioni deployment nestaje posle sledećeg Production deployment-a
-- Build sa Turbopack-om prolazi bez `--webpack`; alias `public/*` radi. Audit posle upgrade-a: 0 (i `--omit=dev` i pun)
-- Usput uočeno (nije deo upgrade-a, ne dira se): upozorenje `metadataBase` u build-u (feature 08); mongoose `strictQuery` deprecation u dev log-u; `/portfolio/<nepostojeća>` vraća HTTP 200 sa 404 sadržajem i `noindex` jer `loading.jsx` pokreće streaming (isto ponašanje kao na 14); `router.asPath` u Navbar-u ne postoji u App Router-u (logout redirect)
+- Reference: `context/project-overview.md` (poglavlja 8, 9, 10), `context/features/02-zastita-api-ja-done.md`, EmailJS dokumentacija za `emailjs.send` (instalirana verzija `@emailjs/browser` 4.4.1)
+- Pre migracije (27.11.2026.): produkcija 16 postova, svi admina; dev 18 (17 admina + test post `novi-slug-za-post` korisnika „Rubi Spava")
+- Migracija: post bez `approved` dobija `true` ako je admina, a `false` ako nije (čeka odobrenje) — na produkciji isto kao u specu jer su svi postovi admina; odluka vlasnika (27.11.2026.): odobreno
+- Filter za čekanje je `approved: { $ne: true }`, da nijedan post ne ispadne iz obe liste
+- `GET /api/posts/[slug]` sada vraća 404 i za nepostojeći slug (ranije 200 sa `null`)
+- Ceo post u admin sekciji prikazuje se postojećim `SlugCard` sa bloga (isti izgled kao na `/blog/[slug]`). Odluka vlasnika (27.11.2026.): u 05 ostaje uvoz iz `app/blog/[slug]/`; premeštanje `SlugCard`-a sa stilovima i komentarima u `src/components/` zapisano u feature 10
+- `POST /api/posts` vraća `{ slug, approved }`; dashboard šalje mejl samo kad je `approved === false`
+- Nove poruke (`messages.js`), odluka vlasnika (27.11.2026.): odobrene — „Only the admin can do this.", „Only { approved: true } can be sent.", „Something went wrong. The post was not approved.", „Something went wrong. Posts awaiting approval were not loaded."
+- `/dashboard` je sada dinamička stranica (čita sesiju za proveru admina); odluka vlasnika (27.11.2026.): iz komentara u `dashboard/page.jsx` uklonjeno „stays static and", jer više nije tačno
+- Ručni test vlasnika (27.11.2026.): sve stavke iz Testiranja prolaze (test korisnik, mejl, 403 iz konzole, admin sekcija, Approve, Delete, vlasnikov post odmah na blogu)
+- Ostaje: migracija produkcije (`npm run db:migrate-05 -- --target production --apply`) uz odobrenje vlasnika, neposredno pre merge-a u `master`; Preview build na Vercel-u posle push-a
+- Backup produkcije `jovicData-2026-11-27_18-49`; kopija u dev nije bila potrebna (dev već ima svih 16 produkcionih postova, plan: insert 0); migracija na dev urađena (17 → `true`, 1 → `false`)
+- `/blog/<neodobren>` vraća HTTP 200 sa 404 sadržajem (`loading.jsx` streaming, isto kao portfolio u 04)
 
 ## History
 
@@ -103,3 +103,9 @@ Pregledane su beleške o izmenama za Next.js 14.1 i 14.2 i za paket za bazu. Nov
 Projekat je prešao sa Next.js 14 na aktuelni Next.js 16 i sa React 18 na React 19, pa je ponovo na podržanoj verziji. Pre izmene su pročitani zvanični vodiči za verzije 15 i 16, a upgrade je urađen ručno, bez automatskog alata, da bi svaka izmena bila pod kontrolom. Stranice i API rute sada čitaju parametre adrese na novi, asinhroni način, uključujući i stranicu za prijavu, koju je otkrio dev log. Zastarela opcija za prioritetno učitavanje slika zamenjena je novom na logou i na tastaturi na početnoj. Nova podrazumevana podešavanja za slike ne pogađaju projekat, a build radi sa novim podrazumevanim bundler-om i postojećim alias-om za javni folder. Ostali paketi već podržavaju React 19, pa nijedan nije trebalo podizati. Na Vercel-u je Node.js podignut sa 22 na 24. Posle upgrade-a npm audit ne prijavljuje nijedan propust, ni za produkcione ni za razvojne pakete.
 
 Umesto uklonjene Next komande za lint uveden je ESLint 10 sa novim oblikom konfiguracije i Prettier pravilima, a editor ga primenjuje pri čuvanju fajla. Vlasnik je izabrao verziju 10 jer verzija 9 više nije podržana, uz tri upozorenja pri instalaciji dok dodaci ne objave podršku. Lint je prijavio četiri greške i nijedno upozorenje. Apostrofi na stranici za nepostojeću adresu su zapisani na ispravan način, bez promene teksta, a jedna greška u učitavanju teme je po odluci vlasnika privremeno utišana do sređivanja teme. Pri ručnom testu vlasnik je u konzoli video grešku sa preusmeravanjem na dashboard i login, jer je preusmeravanje pokretano usred iscrtavanja stranice. To je ispravljeno uz isto ponašanje. Next 16 više sam ne isključuje glatko skrolovanje pri prelasku na drugu stranicu. Probano je podešavanje koje vraća staro ponašanje, ali su tada linkovi na sekcije početne radili tek iz drugog pokušaja, pa je vraćeno i zapisano za proveru pri sređivanju teme. Poruke ispod formi za prijavu i registraciju se teško uočavaju, pa je njihovo isticanje zapisano za poslednji feature. README je dobio novu verziju i komandu za lint. Lint, testovi, provera stilova i formata i production build prolaze, a vlasnik je ručno proverio ceo sajt na dev bazi. Preview build na Vercel-u se proverava posle push-a.
+
+### Friday, 27.11.2026. | 20:13 — Odobravanje postova
+
+Na javni blog sada ide samo ono što vlasnik odobri. Postovi vlasnika se objavljuju odmah, a postovi svih ostalih čekaju odobrenje i ne vide se ni u listi bloga ni na sopstvenoj adresi, gde posetilac dobija stranicu za nepostojeću adresu. O tome da li post čeka odlučuje server po nalogu iz sesije, a ne po podacima koje šalje browser. Autor u svom dashboard-u vidi i postove na čekanju sa oznakom „Awaiting approval" i može da ih obriše, pa regruter i dalje prolazi ceo krug bez vlasnika. Vlasnik na vrhu dashboard-a, iznad forme, ima sekciju sa postovima na čekanju; svaka kartica prikazuje naslov, autora i datum, a ceo post se otvara u istom izgledu kao na blogu. Odobravanje i brisanje sme samo vlasnik, server to proverava pri svakom zahtevu, a odobravanje prihvata isključivo promenu statusa i ništa drugo. Kad neko drugi napravi post, vlasniku stiže mejl kroz isti template kao kontakt forma, a neuspelo slanje ne obara čuvanje posta. Pravila pristupa, filteri za liste i sadržaj mejla su izdvojeni i pokriveni testovima.
+
+Postojećim postovima migracija upisuje status: postovi vlasnika ostaju javni, a tuđi čekaju odobrenje. Vlasnik je odobrio ovo pravilo umesto da svi stari postovi budu odobreni, jer na produkciji daje isti rezultat, pošto su svih 16 postova njegovi, a nijedan tuđi post ne može da bude odobren bez njega. Napravljen je backup produkcije, a na dev bazi je migracija označila 17 postova vlasnika kao javne i jedan test post kao post na čekanju. Migracija produkcije se pokreće uz odobrenje vlasnika, neposredno pre spajanja u glavnu granu. Usput je adresa nepostojećeg posta počela da vraća ispravan odgovor za nepostojeću stranicu. Odobrene su i nove poruke o greškama, a jedan postojeći komentar je uz odobrenje vlasnika skraćen jer više nije bio tačan. Komponenta za prikaz posta sa bloga koristi se i u dashboard-u, a njeno premeštanje među zajedničke komponente, zajedno sa stilovima i komentarima, zapisano je za poslednji feature. Lint, testovi, provera stilova i formata i production build prolaze, a vlasnik je ručno proverio ceo tok na dev bazi.

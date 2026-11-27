@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { canCreatePost, canDeletePost, canListOwnPosts, getOwnerId } from "./postPermissions";
+import {
+  canApprovePosts,
+  canCreatePost,
+  canDeletePost,
+  canListOwnPosts,
+  getOwnerId,
+  isApprovedOnCreate,
+} from "./postPermissions";
 
 const ADMIN_ID = "google:admin";
 const sessionOf = (ownerId) => ({ user: { name: "Someone", ownerId } });
@@ -59,5 +66,37 @@ describe("canDeletePost", () => {
 
   it("denies when the post is missing", () => {
     expect(canDeletePost(sessionOf(ADMIN_ID), null, ADMIN_ID)).toBe(false);
+  });
+});
+
+describe("canApprovePosts", () => {
+  it("allows the admin", () => {
+    expect(canApprovePosts(sessionOf(ADMIN_ID), ADMIN_ID)).toBe(true);
+  });
+
+  it("denies a user who is not the admin", () => {
+    expect(canApprovePosts(sessionOf("credentials:1"), ADMIN_ID)).toBe(false);
+    expect(canApprovePosts(sessionOf("google:2"), ADMIN_ID)).toBe(false);
+  });
+
+  it("denies without a session or without ownerId", () => {
+    expect(canApprovePosts(null, ADMIN_ID)).toBe(false);
+    expect(canApprovePosts({ user: { name: "Old session" } }, ADMIN_ID)).toBe(false);
+  });
+
+  it("denies everyone when ADMIN_ID is not set", () => {
+    expect(canApprovePosts(sessionOf(ADMIN_ID), undefined)).toBe(false);
+    expect(canApprovePosts(sessionOf(""), "")).toBe(false);
+  });
+});
+
+describe("isApprovedOnCreate", () => {
+  it("is true for a post of the admin", () => {
+    expect(isApprovedOnCreate(sessionOf(ADMIN_ID), ADMIN_ID)).toBe(true);
+  });
+
+  it("is false for a post of anyone else", () => {
+    expect(isApprovedOnCreate(sessionOf("credentials:1"), ADMIN_ID)).toBe(false);
+    expect(isApprovedOnCreate(sessionOf(ADMIN_ID), undefined)).toBe(false);
   });
 });
