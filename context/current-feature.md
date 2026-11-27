@@ -54,7 +54,7 @@ Completed
 - Nove poruke (`messages.js`), odluka vlasnika (27.11.2026.): odobrene — „Only the admin can do this.", „Only { approved: true } can be sent.", „Something went wrong. The post was not approved.", „Something went wrong. Posts awaiting approval were not loaded."
 - `/dashboard` je sada dinamička stranica (čita sesiju za proveru admina); odluka vlasnika (27.11.2026.): iz komentara u `dashboard/page.jsx` uklonjeno „stays static and", jer više nije tačno
 - Ručni test vlasnika (27.11.2026.): sve stavke iz Testiranja prolaze (test korisnik, mejl, 403 iz konzole, admin sekcija, Approve, Delete, vlasnikov post odmah na blogu)
-- Ostaje: migracija produkcije (`npm run db:migrate-05 -- --target production --apply`) uz odobrenje vlasnika, neposredno pre merge-a u `master`; Preview build na Vercel-u posle push-a
+- Produkcija (27.11.2026.): Preview sa `develop`-a Ready; backup `jovicData-2026-11-27_20-43`; vlasnik pokrenuo migraciju (16 → `true`, 0 → `false`, bez `approved`: 0); merge `develop` → `master`, Production Ready; provera sa strane: API 16 odobrenih bez `ownerId`, nepostojeći post 404, `?pending=1` i `PATCH` bez sesije 401, blog, post, stari slug (308) i dashboard rade
 - Backup produkcije `jovicData-2026-11-27_18-49`; kopija u dev nije bila potrebna (dev već ima svih 16 produkcionih postova, plan: insert 0); migracija na dev urađena (17 → `true`, 1 → `false`)
 - `/blog/<neodobren>` vraća HTTP 200 sa 404 sadržajem (`loading.jsx` streaming, isto kao portfolio u 04)
 
