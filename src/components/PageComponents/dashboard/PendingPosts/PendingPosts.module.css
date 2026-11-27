@@ -1,0 +1,58 @@
+.pending h3 {
+  margin-bottom: 50px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card {
+  padding: 25px 30px;
+  border: 2px solid var(--input-border-color);
+  border-radius: var(--medium-border-radius);
+}
+
+.cardHeader h4 {
+  font-size: var(--ms-font);
+  margin-bottom: 10px;
+}
+
+.meta {
+  color: var(--dark-gray-color);
+}
+.meta span {
+  color: var(--main-color);
+}
+
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.fullPost {
+  margin-top: 50px;
+}
+
+.loadError {
+  font-size: var(--ms-font);
+}
+
+/* MEDIA QUERIES (very small screens) */
+@media screen and (max-width: 450px) {
+  .pending h3 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .card {
+    padding: 20px 15px;
+  }
+  .buttons {
+    justify-content: center;
+    gap: 15px;
+  }
+}

@@ -16,7 +16,8 @@
     "db:info": "node --env-file=.env.local scripts/db-info.mjs",
     "db:backup": "node --env-file=.env.local scripts/backup-db.mjs",
     "db:restore": "node --env-file=.env.local scripts/restore-db.mjs",
-    "db:migrate-02": "node --env-file=.env.local scripts/migrate-02-owner-id.mjs"
+    "db:migrate-02": "node --env-file=.env.local scripts/migrate-02-owner-id.mjs",
+    "db:migrate-05": "node --env-file=.env.local scripts/migrate-05-approved.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",

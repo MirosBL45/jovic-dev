@@ -35,6 +35,14 @@
   }
 }
 
+.awaiting {
+  display: block;
+  margin-top: 8px;
+  font-size: var(--small-font);
+  font-weight: 500;
+  color: var(--main-color);
+}
+
 .imgContainer {
   width: 200px;
   height: 100px;

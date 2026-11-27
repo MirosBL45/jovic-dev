@@ -47,5 +47,5 @@ Faza 3, fajl 1/2. Blog ostaje otvoren za registraciju, ali na javni blog ide sam
 ## Reference
 
 - @context/project-overview.md (poglavlja 8, 9, 10)
-- @context/features/02-zastita-api-ja.md
+- @context/features/02-zastita-api-ja-done.md
 - EmailJS dokumentacija za `emailjs.send` (za instaliranu verziju `@emailjs/browser`)

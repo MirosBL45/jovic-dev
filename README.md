@@ -73,6 +73,7 @@ Each of these technologies plays a vital role in enhancing the functionality and
 | `npm run db:backup -- --source production\|dev`              | Back up a database to `backups/`                          |
 | `npm run db:restore -- --from backups/<folder> --target dev` | Restore a backup (dry run unless `--apply` is added)      |
 | `npm run db:migrate-02 -- --target production\|dev`          | Set `ownerId` on old posts (dry run unless `--apply`)     |
+| `npm run db:migrate-05 -- --target production\|dev`          | Set `approved` on old posts (dry run unless `--apply`)    |
 
 ### Branches
 
@@ -125,6 +126,14 @@ Before every migration: back up production, try the migration on the dev databas
 3. `ADMIN_ID` is the `ownerId` of the owner's Google account. The admin can delete any post, everyone else only their own. In development the dashboard shows your `ownerId` at the bottom of the page, so you can copy it into `.env.local` and into Vercel (Production and Preview).
 4. Creating, listing your own and deleting posts need a session. The API checks the rules in `src/utils/postPermissions.js` on every request, and validates posts with `src/utils/postValidation.js`, the same module the dashboard uses (images up to 1 MB each).
 5. `npm run db:migrate-02` sets `ownerId = ADMIN_ID` on every post that has no `ownerId` yet.
+
+### Post approval
+
+1. The admin's posts are published at once. Posts of everyone else get `approved: false` and are not on the public blog until the admin approves them. A post that is not approved is deleted, there is no "rejected" status.
+2. The public blog (`GET /api/posts` and `GET /api/posts/<slug>`) shows only posts with `approved: true`. `?mine=1` lists your own posts, approved or not. `?pending=1` lists all posts awaiting approval and is for the admin only.
+3. `PATCH /api/posts/<slug>` with exactly `{ "approved": true }` approves a post; only the admin may do it. The rules and filters are in `src/utils/postPermissions.js` and `src/utils/postApproval.js`.
+4. The admin sees "Posts awaiting approval" at the top of the dashboard. When someone else creates a post, the dashboard sends the owner an email through EmailJS, with the same template as the contact form. If the email fails, the post is still saved.
+5. `npm run db:migrate-05` sets `approved: true` on old posts of the admin and `approved: false` on old posts of anyone else.
 
 Backups contain email addresses and password hashes. `backups/` is in `.gitignore` and is never committed.
 
