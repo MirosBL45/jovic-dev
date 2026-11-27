@@ -24,5 +24,5 @@ Faza 1, fajl 2/2. Zakrpe bez promene major verzija, kao kratak međukorak pre Ne
 
 ## Reference
 
-- @context/features/02-zastita-api-ja.md
+- @context/features/02-zastita-api-ja-done.md
 - Next.js 14.1 i 14.2 release notes; mongoose CHANGELOG (6.x)

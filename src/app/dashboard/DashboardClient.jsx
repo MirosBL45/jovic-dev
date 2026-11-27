@@ -3,7 +3,7 @@
 // react/next stuff
 import useSWR from "swr";
 import { signOut, useSession } from "next-auth/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -17,6 +17,7 @@ import ScrollButton from "@/components/UIComponents/ScrollButton/ScrollButton";
 import { MAX_IMAGE_BYTES, validatePost } from "@/utils/postValidation";
 import { readErrorMessage } from "@/utils/readErrorMessage";
 import { MESSAGES } from "@/utils/messages";
+import { sendPendingPostEmail } from "@/utils/pendingPostEmail";
 
 // style
 import styles from "./page.module.css";
@@ -66,6 +67,12 @@ function DashboardClient() {
     fetcher
   );
 
+  useEffect(() => {
+    if (session.status === "unauthenticated") {
+      router?.push("/dashboard/login");
+    }
+  }, [session.status, router]);
+
   // check for url
   if (!BASE_API_URL) {
     return <p style={{ marginTop: "150px", fontSize: "45px" }}>conection failed</p>;
@@ -76,7 +83,6 @@ function DashboardClient() {
   }
 
   if (session.status === "unauthenticated") {
-    router?.push("/dashboard/login");
     return null;
   }
 
@@ -137,6 +143,17 @@ function DashboardClient() {
         setErrorMessage(await readErrorMessage(res, MESSAGES.POST_NOT_SAVED));
         setButtonSend(false);
         return;
+      }
+
+      // the server decides if the post waits for approval; then the owner of the site gets an email
+      const created = await res.json().catch(() => ({}));
+      if (created.approved === false) {
+        sendPendingPostEmail({
+          title,
+          username: session.data?.user?.name,
+          slug: created.slug,
+          email: session.data?.user?.email,
+        });
       }
 
       // it reloads page, so we can see that new post which was created
@@ -260,7 +277,10 @@ function DashboardClient() {
                         sizes="100vw"
                       />
                     </div>
-                    <h4>{post.title}</h4>
+                    <h4>
+                      {post.title}
+                      {!post.approved && <span className={styles.awaiting}>Awaiting approval</span>}
+                    </h4>
                     <span
                       onClick={() => handleDelete(post.slug)}
                       title="Delete this post?"

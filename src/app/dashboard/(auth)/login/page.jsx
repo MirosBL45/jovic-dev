@@ -8,8 +8,9 @@ export const metadata = {
 };
 
 // NextAuth sends a failed login back here with ?error=. The text from the address is never shown.
-function LoginPage({ searchParams }) {
-  const errorMessage = searchParams?.error ? MESSAGES.LOGIN_ERROR : null;
+async function LoginPage({ searchParams }) {
+  const { error } = await searchParams;
+  const errorMessage = error ? MESSAGES.LOGIN_ERROR : null;
 
   return <LoginClient errorMessage={errorMessage} />;
 }

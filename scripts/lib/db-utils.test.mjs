@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  approvedForOldPost,
   backupFolderName,
   formatBytes,
   getEnvKey,
@@ -22,6 +23,24 @@ describe("isValidAdminId", () => {
     expect(isValidAdminId("104857263849201837465")).toBe(false);
     expect(isValidAdminId("credentials:665f1c2a9b1e8a0012345678")).toBe(false);
     expect(isValidAdminId(" google:123")).toBe(false);
+  });
+});
+
+describe("approvedForOldPost", () => {
+  const ADMIN_ID = "google:123";
+
+  it("keeps a post of the admin public", () => {
+    expect(approvedForOldPost({ ownerId: ADMIN_ID }, ADMIN_ID)).toBe(true);
+  });
+
+  it("sends a post of anyone else to approval", () => {
+    expect(approvedForOldPost({ ownerId: "credentials:1" }, ADMIN_ID)).toBe(false);
+    expect(approvedForOldPost({}, ADMIN_ID)).toBe(false);
+  });
+
+  it("approves nothing without ADMIN_ID", () => {
+    expect(approvedForOldPost({ ownerId: undefined }, undefined)).toBe(false);
+    expect(approvedForOldPost({ ownerId: "" }, "")).toBe(false);
   });
 });
 

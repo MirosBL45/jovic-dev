@@ -27,6 +27,8 @@ Faza 4, fajl 1/4. Popravlja najveći nalaz iz audita: `ThemeProvider` vraća `nu
 - Kombinacija klasa `light dark` na istom elementu je bila namerna i radila je (varijable); sa next-themes je zamenjuje pravilo na `body`.
 - `<Scroll />` u `<html>` i relativan import u `layout.js` rešava feature 10, osim ako ovaj feature ionako menja te linije.
 - Komponente koje danas koriste temu samo zbog slike ne prepravljati u server komponente u ovom feature-u.
+- Iz 04: u `ThemeContext.js` stoji `// eslint-disable-next-line react-hooks/set-state-in-effect` iznad `setMode(stored)` (privremeno, da lint prođe) — kad se fajl prepravi ili ukloni, taj red se briše.
+- Iz 04 — skrol: Next 16 više sam ne isključuje `scroll-behavior: smooth` (iz `*` u `globals.css`) pri prelasku na drugu stranicu, pa u dev-u stoji upozorenje `missing-data-scroll-behavior`. Proban je `data-scroll-behavior="smooth"` na `<html>`, ali su tada linkovi na sekcije početne sa druge stranice (npr. `/#about` sa bloga) otvarali vrh početne, a tek drugi klik je skrolovao do sekcije — vlasnik ga je vratio. Verovatan uzrok: sekcija još ne postoji kad Next skroluje, jer početna čeka temu (`ThemeProvider` vraća `null`). Kad server šalje sadržaj, ponovo probati atribut (vidi Testiranje 7) i pitati vlasnika da li ostaje.
 
 ## Testiranje
 
@@ -36,7 +38,8 @@ Faza 4, fajl 1/4. Popravlja najveći nalaz iz audita: `ThemeProvider` vraća `nu
 4. Klik na toggle → tema se menja i ostaje posle reload-a; promena u OS-u više ne utiče
 5. Oba moda: logo, tastatura i miš, About slike i `hr`, linija u Technologies i kuglica toggle-a izgledaju kao pre
 6. Toggle radi i tastaturom (Tab, pa Enter ili Space)
-7. `npm run lint`, `npm run test`, `npm run build`, `npm run sass:check` prolaze
+7. Skrol, bez atributa i sa `data-scroll-behavior="smooth"` na `<html>`: sa bloga klik na sekcije početne (About me i ostale `/#...`) → prvi klik vodi pravo na sekciju; sa dna jedne stranice klik na link ka drugoj → nova stranica se otvara na vrhu; dugme za povratak na vrh i dalje glatko skroluje
+8. `npm run lint`, `npm run test`, `npm run build`, `npm run sass:check` prolaze
 
 ## Reference
 

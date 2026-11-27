@@ -24,7 +24,8 @@ async function getData(slug) {
 
 // Dynamic metadata
 export async function generateMetadata({ params }) {
-  const post = await getData(params.slug);
+  const { slug } = await params;
+  const post = await getData(slug);
   return {
     title: `Jović Miroslav's Blog: ${post.title}`,
     description: post.description1,
@@ -37,7 +38,8 @@ async function BlogPost({ params }) {
     return <p>conection failed</p>;
   }
 
-  const data = await getData(params.slug);
+  const { slug } = await params;
+  const data = await getData(slug);
 
   const articleData1 = {
     title: `${data.title}`,

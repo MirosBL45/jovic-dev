@@ -12,6 +12,8 @@ Faza 4, fajl 4/4 — kraj plana. Blog stranice čitaju bazu direktno umesto prek
 - **Mongo konekcija**: `src/utils/db.js` kešira konekciju u globalnoj promenljivoj, da se na serverless-u ne otvara nova pri svakom pozivu. Modeli: `mongoose.models.Post || mongoose.model(...)` umesto `mongoose.models = {}` — uz te linije stoje komentari, pa pitati vlasnika pre izmene.
 - **`className` bez `undefined` i `false`**: `ImageCard` (`additionalClass` kad nije prosleđen) i Navbar (`&&` uslovi unutar template string-a) — spajanje klasa bez praznih vrednosti.
 - **Navbar logout**: `router.asPath` ne postoji u App Router-u — koristiti `pathname` koji komponenta već ima.
+- **Poruke ispod formi za login i registraciju** (odluka vlasnika 26.11.2026., iz 04): sada su goli tekst (`{errorMessage}` u `LoginClient.jsx`, `{error}` u `RegisterClient.jsx`) i teško se uočavaju. Treba da budu bold, crvene i malo većeg fonta: nova CSS varijabla za crvenu u `globals.css` (`:root` i `.dark`), `<p>` sa klasom i stil u oba `page.module.scss` (+ regenerisan `.css`). Tačne boje i veličinu fonta vlasnik potvrđuje pre upisa.
+- **`SlugCard` u zajedničke komponente** (odluka vlasnika 27.11.2026., iz 05): sada je u `src/app/blog/[slug]/SlugCard.jsx`, a uvoze ga stranica posta i `PendingPostCard` u `src/components/PageComponents/dashboard/PendingPosts/`. Zajednička komponenta tako zavisi od fajla koji pripada jednoj stranici, a obično je obrnuto. Premestiti `SlugCard.jsx` u `src/components/UIComponents/Cards/` (kao `BlogsCard`), a njegove stilove (`.top`, `.info`, `.desc`, `.author`, `.username` ako postoji, `.imageContainer`, `.content` i njihove media query delove) iz `src/app/blog/[slug]/page.module.scss` u novi `SlugCard.module.scss` (+ regenerisan `.css`); u `page.module.scss` ostaje samo ono što koristi sama stranica (`.blogTitle`). Uz kod idu i svi komentari, doslovno i na istom mestu (npr. `// function for break text into parts`, `// Add 1 for the space`, `// Get rid of extra 4px height on parent element of image`) — pokazati vlasniku diff komentara pre commit-a. Ažurirati import-e u `blog/[slug]/page.jsx` i `PendingPostCard.jsx`. Ništa ne sme da ostane duplirano (ni stari fajl, ni iste klase u dva SCSS fajla), izgled bloga i admin pregleda ostaje isti, `npm run sass:check` prolazi.
 - **`layout.js`**: `<Scroll />` iz `<html>` u `<body>`; import `ThemeProvider` preko `@/` aliasa kao ostali (ako je posle 07 i dalje relativan).
 - Pre početka proći kroz audit iz History-ja i proveriti šta je već rešeno u ranijim feature-ima; ništa van ove liste bez pitanja.
 
@@ -26,8 +28,9 @@ Faza 4, fajl 4/4 — kraj plana. Blog stranice čitaju bazu direktno umesto prek
 2. Blog lista, post, dashboard (moji, na čekanju), pravljenje, izmena, odobravanje i brisanje rade kao pre
 3. U izgrađenom HTML-u nijedan `class` atribut ne sadrži reč `undefined` ni `false`
 4. Logout sa dashboard-a vodi na početnu
-5. Vitest za nove funkcije sa logikom
-6. `npm run lint`, `npm run test`, `npm run build`, `npm run sass:check`, `npm run check:ssr` prolaze
+5. Posle premeštanja `SlugCard`-a: `/blog/<slug>` i „Show full post" u admin sekciji izgledaju kao pre; `grep` po `src/` ne nalazi `app/blog/[slug]/SlugCard` ni dupliranu klasu `.imageContainer`/`.content` u dva SCSS fajla
+6. Vitest za nove funkcije sa logikom
+7. `npm run lint`, `npm run test`, `npm run build`, `npm run sass:check`, `npm run check:ssr` prolaze
 
 ## DoD plana (zbirna provera)
 

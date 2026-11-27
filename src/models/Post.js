@@ -54,6 +54,10 @@ const postSchema = new Schema(
       unique: true,
       required: true,
     },
+    approved: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

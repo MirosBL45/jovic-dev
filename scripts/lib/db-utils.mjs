@@ -71,6 +71,14 @@ export const POSTS_WITHOUT_OWNER = {
   $or: [{ ownerId: { $exists: false } }, { ownerId: null }, { ownerId: "" }],
 };
 
+// Feature 05: posts written before the approved field existed.
+export const POSTS_WITHOUT_APPROVED = { approved: { $exists: false } };
+
+// Feature 05: the admin's old posts stay public, a post of anyone else waits for approval.
+export function approvedForOldPost(post, adminId) {
+  return Boolean(adminId) && post?.ownerId === adminId;
+}
+
 // ADMIN_ID is the owner's Google account: "google:" followed by the numeric Google account id.
 export function isValidAdminId(value) {
   return typeof value === "string" && /^google:\d+$/.test(value);

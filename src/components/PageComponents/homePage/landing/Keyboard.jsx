@@ -31,7 +31,7 @@ function Keyboard() {
           width="908"
           height="308"
           sizes="(min-width: 700px) 443px, (min-width: 500px) 400px, calc(80.56vw + 13px)"
-          priority={true}
+          preload={true}
         />
       </div>
       <div className={styles.mouse}>

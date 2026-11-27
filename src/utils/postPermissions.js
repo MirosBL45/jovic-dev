@@ -22,3 +22,13 @@ export function canDeletePost(session, post, adminId) {
   }
   return post.ownerId === ownerId || isAdmin(ownerId, adminId);
 }
+
+// Only the admin may see the posts awaiting approval and approve them.
+export function canApprovePosts(session, adminId) {
+  return isAdmin(getOwnerId(session), adminId);
+}
+
+// The admin's posts are published at once, everyone else's wait for approval.
+export function isApprovedOnCreate(session, adminId) {
+  return canApprovePosts(session, adminId);
+}

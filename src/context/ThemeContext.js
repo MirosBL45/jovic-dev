@@ -14,6 +14,7 @@ export const ThemeProvider = ({ children }) => {
             // check the theme in the localStorage
             const stored = localStorage.getItem('theme');
             if (stored) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setMode(stored);
             } else {
                 // check prefers-color-scheme of system

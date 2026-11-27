@@ -25,14 +25,15 @@ function getData(categoryObject) {
   return notFound();
 }
 
-function Category({ params }) {
-  const data = getData(params.category);
+async function Category({ params }) {
+  const { category } = await params;
+  const data = getData(category);
 
   return (
     <>
       <JustLinks />
       <header>
-        <h2 className={styles.catTitle}>{params.category}</h2>
+        <h2 className={styles.catTitle}>{category}</h2>
       </header>
       <ProjectsCard projects={data} />
       {/* <ScrollButton /> */}

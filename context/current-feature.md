@@ -1,4 +1,4 @@
-# Current Feature: 02 — Zaštita API-ja i vlasništvo postova
+# Current Feature: 05 — Odobravanje postova
 
 ## Status
 
@@ -10,55 +10,53 @@ Completed
 
 <!-- Goals & requirements -->
 
-- NextAuth konfiguracija prelazi u `src/utils/authOptions.js`, a `src/app/api/auth/[...nextauth]/route.js` je samo uvozi (raspored komentara odobren, vidi Notes)
-- `ownerId` u `jwt` callback-u samo pri prijavi: Google → `google:<providerAccountId>`, email + lozinka → `credentials:<id iz baze>`; `session` callback prenosi `ownerId` i `isAdmin` (`ownerId === ADMIN_ID`, samo za UI); izvođenje `ownerId` je čista funkcija u `src/utils/` sa testom
-- Stare sesije bez `ownerId` → API 401, dashboard „Your session has expired. Please log in again."
-- U development-u dashboard prikazuje `ownerId` ulogovanog korisnika (za `ADMIN_ID`); u produkciji ne
-- `ADMIN_ID` upisan u `.env.local` i na Vercel (Production i Preview), klik po klik
-- Model Post: `ownerId` (String, required, index); `username` ostaje za prikaz, popunjava se iz sesije
-- Pravila pristupa kao čiste funkcije (`postPermissions.js`) sa testovima: pravljenje (ulogovan sa `ownerId`), brisanje (vlasnik ili admin), „moji postovi" (po `ownerId`)
-- `POST /api/posts`: bez sesije 401; `username` i `ownerId` iz sesije; whitelist polja iz body-ja; validacija → 400 sa porukom; slug normalizovan i jedinstven na serveru (isti algoritam kao sada u dashboard-u); odgovor 201 sa stvarno sačuvanim slug-om
-- `getAllPostSlugs` u dashboard-u se uklanja (brisanje i premeštanje komentara odobreno, vidi Notes)
-- `DELETE /api/posts/[slug]`: 401 bez sesije, 404 ne postoji, 403 nije vlasnik ni admin, inače briše
-- `GET /api/posts`: javna lista ostaje; `?username=` → `?mine=1` (samo ulogovan, po `ownerId` iz sesije); dashboard prelazi na `?mine=1`
-- Validacija u jednom modulu (`postValidation.js`) za browser i server, sa testovima: dužine posle trim-a (title 2–75, headline1/2 2–35, description1/2 2–135, content1/2 2–2000, slug 2–35); slika `data:image/(png|jpeg|webp|gif);base64,...` ≤ 1 MB dekodirano, obe obavezne; sva polja obavezna i stringovi
-- Dashboard: limit slike 2 MB → 1 MB (provera i dva Popup-a); posle `POST` i `DELETE` provera `res.ok`, greška iz odgovora u Popup-u, forma se ne resetuje
-- Dashboard, login i register: prvo poseban commit sa doslovnim premeštanjem koda (sa komentarima) u `DashboardClient.jsx`, `LoginClient.jsx`, `RegisterClient.jsx`; zatim serverski `page.jsx` sa `metadata` (`title` = sadašnji `TabTitle` tekstovi, `robots: { index: false, follow: false }`)
-- `TabTitle` pozivi, njihovi `useEffect`-i i komentari „// for tab title" se brišu; funkcija `TabTitle` i komentar „// TabTitle" u `GeneralFunctions.js` se brišu (odobreno)
-- Serverska login stranica čita `?error=` iz `searchParams` i prosleđuje poruku klijentskoj komponenti
-- Register: server validacija (email preko `isValidEmail`, ime 3–35, lozinka 10–72), ista pravila u formi preko istog modula; bcrypt cost 10; duplikat → 409 „An account with this name or email already exists."; stranica prikazuje poruku iz odgovora
-- `authorize` vraća samo `{ id, name, email }` (id kao string); za nepostojećeg korisnika i pogrešnu lozinku ista poruka „Wrong email or password."
-- Greške u API-ju: JSON `{ error: "..." }` sa tačnim statusom, detalji samo u server log-u
-- CORS: `headers()` blok za `/api/:path*` uklonjen iz `next.config.js`; `redirects()` i zakomentarisani kod ostaju
-- Migracija `scripts/migrate-02-owner-id.mjs`: postovima bez `ownerId` upisuje `ADMIN_ID`; dry-run, `--apply`, `--target production` sa potvrdom imena baze
-- Redosled migracije: backup produkcije → nova kopija u dev → migracija na dev → provera lokalno → migracija na produkciji neposredno pre merge-a u `master` (vlasnik pokreće ili izričito odobrava)
-- Rotacija `MONGO_URL`, `GOOGLE_CLIENT_SECRET` i `NEXTAUTH_SECRET` i ponovno dodavanje kao Secret na Vercel-u, uz `ADMIN_ID` i redeploy produkcije (odluka vlasnika iz 01)
-- Vitest: validacija, pravila pristupa, `ownerId`, jedinstvenost slug-a; `curl` bez sesije → 401; ručni testovi iz feature fajla (test korisnik, vlasnik, slike oko 1 MB, login/register poruke, tabovi i `noindex`)
-- `npm run test` i `npm run build` prolaze
+- Model `Post`: polje `approved` (Boolean, default `false`)
+- Pravljenje posta: `approved = true` ako je autor admin, inače `false` — određuje server po `ownerId` iz sesije
+- Javni prikaz: `/blog` i `/blog/[slug]` prikazuju samo `approved: true`; neodobren post na `/blog/[slug]` → 404 za sve
+- Dashboard, autor: u svojim postovima vidi i neodobrene sa oznakom „Awaiting approval" i može da ih obriše
+- Dashboard, admin: sekcija „Posts awaiting approval (N)" na vrhu, iznad forme za pravljenje posta; kartica sa naslovom, autorom i datumom; „Show full post" / „Hide full post" proširuje i skuplja karticu (oba headline-a, oba opisa, oba sadržaja, obe slike); dugmad „Approve" i „Delete" (brisanje = odbijanje, potvrda kroz postojeći `DeletePopUp`)
+- Server/klijent: serverska `dashboard/page.jsx` proverava sesiju preko `getServerSession` i sekciju renderuje samo za admina; sama sekcija je posebna klijentska komponenta
+- API:
+  - `GET /api/posts` (javno) → samo odobreni
+  - `GET /api/posts?mine=1` → svoji, i odobreni i neodobreni
+  - `GET /api/posts?pending=1` → samo admin (403 za ostale), svi neodobreni
+  - `GET /api/posts/[slug]` (javno) → 404 ako nije odobren
+  - `PATCH /api/posts/[slug]` sa `{ approved: true }` → samo admin; druga polja se ne prihvataju
+  - `DELETE` po pravilima iz 02 (vlasnik ili admin)
+- Pravila i filteri kao čiste funkcije u `src/utils/`, sa Vitest testovima (ko sme da odobri: admin, ne-admin, bez sesije; filteri za javnu listu, `mine` i `pending`; vrednost `approved` pri pravljenju)
+- Obaveštenje (EmailJS): kad ne-admin uspešno napravi post (201), dashboard šalje `emailjs.send` sa istim `SERVICE_BASE`, `TEMPLATE_BASE` i `PUBLIC_BASE` kao kontakt forma; `user_name` = „Blog: new post awaiting approval", `user_email` = email autora iz sesije, `message` = naslov, autor, slug i link `https://miroslavjovic.com/dashboard`; neuspeh slanja samo log, ne obara pravljenje posta
+- Migracija `scripts/migrate-05-approved.mjs`: svim postovima bez `approved` upisuje `approved: true`; backup produkcije → kopija u dev → dry-run i `--apply` na dev → produkcija uz odobrenje vlasnika, neposredno pre merge-a u `master`
+- Ručni test: test korisnik pravi post → nema ga na `/blog` ni na `/blog/<slug>` (404), u njegovom dashboard-u stoji oznaka čekanja, vlasniku stiže mejl; vlasnik vidi ceo post na čekanju, „Approve" → post na `/blog`, drugi post „Delete" → nestaje i iz autorovog dashboard-a; vlasnikov nov post je odmah na `/blog`; kao test korisnik `fetch` iz konzole: `PATCH` → 403, `?pending=1` → 403; posle migracije na dev svi stari postovi su i dalje na `/blog`
+- `npm run lint`, `npm run test` i `npm run build` prolaze
 
 ## Notes
 
 <!-- Any extra notes -->
 
-- Faza 1, fajl 1/2; radi se još na Next 14 — `params` čitati na jednom mestu u handler-u, da prelazak na 16 (feature 04) bude što manji
-- Zašto vlasnik nije email: register ne proverava vlasništvo email adrese, pa bi neko mogao da se registruje tuđim Gmail-om i preuzme postove tog Google korisnika
-- Google korisnici se ne upisuju u `users`, pa `ownerId` ne zavisi od te kolekcije
-- Vercel prima body do 4,5 MB; dve slike od 1 MB u base64 su oko 2,7 MB
-- Ne uvoditi biblioteku za validaciju
-- Ne uvodi se odobravanje (05) ni izmena posta (06)
-- Tekstovi poruka (odluka vlasnika 04.11.2026.): „Wrong email or password.", „An account with this name or email already exists.", „Name must be 3–35 characters.", „Please enter a valid email.", „Password must be 10–72 characters.", „Your session has expired. Please log in again.", „Something went wrong. Your post was not saved.", „Something went wrong. The post was not deleted."; prevelika slika: postojeći tekstovi Popup-a, „1MB" umesto „2MB"
-- `metadata` naslovi: „Dashboard for your blogs", „Login to Dashboard", „Register for using Dashboard" (usklađuju se sa title template-om u 08)
-- Iz 01: baza `jovicData`, dev `jovicData-dev`; svih 16 postova je vlasnikovo (Google), dashboard sada prikazuje 1 od 16 zbog promene imena — migracija na `ownerId` to rešava
-- Iz 01: lokalni build se pokreće sa `$env:NEXT_PUBLIC_NAME_OF_LINK = 'https://jovic-dev.vercel.app'; npm run build` (do feature-a 10)
-- Iz 01: na Preview-u `/blog` i `/blog/[slug]` čitaju produkciju preko njenog API-ja (samo čitanje); upisi idu na preview API → dev baza. Google login na preview URL-ovima ne radi — admin delovi se testiraju lokalno
-- Iz 01: na Vercel-u `MONGO_URL` Production = `jovicData`, Preview = `jovicData-dev`; `MONGO_URL_PRODUCTION` i `NEXTAUTH_URL` se na Vercel ne dodaju
-- Pre koda koji ide uz `getServerSession` i callback-e proveriti next-auth v4 dokumentaciju za instaliranu verziju
-- Odluka vlasnika (21.11.2026.), premeštanje `authOptions`: `// react/next stuff` i `// stuff for data` prelaze u `authOptions.js` iznad svojih import-a; `// check password` ide doslovno uz `authorize`; zakomentarisan `// import Error from "next/error";` ostaje u `route.js`
-- Napredak (21.11.2026.): commit premeštanja `9db02ab`; kod, testovi (71), `sass:check`, `format:check` i build prolaze; `curl` bez sesije → 401 za `POST`, `DELETE` i `?mine=1`; login stranica ima `noindex` i naslov iz `metadata`. Čeka se: `ADMIN_ID`, nova kopija produkcije u dev, migracija na dev, ručni testovi
-- Tekstovi poruka koje je Claude Code dodao (nisu bili na listi, vlasnik ih proverava): validacija posta („All fields are required.", „Main Title must be 2–75 characters." itd., „The first image must be a PNG, JPEG, WebP or GIF image."), „This post does not exist." (404), „You can only delete your own posts." (403)
-- `confirmByTyping` premešten iz `restore-db.mjs` u `scripts/lib/confirm.mjs` (koriste ga restore i migracija); npm skripta `db:migrate-02`
-- Odluka vlasnika (21.11.2026.), `getAllPostSlugs`: `// function for catching data to see slugs` i `// fetch all slugs` se brišu zajedno sa kodom; `// if there is the same slug add number` prelazi doslovno uz isti algoritam u serversku funkciju u `src/utils/`
-- Napredak (22.11.2026.): `ADMIN_ID` u `.env.local`; nova kopija produkcije u dev i migracija na dev (16 postova dobilo `ownerId`); svi ručni testovi prošli; otvorena pitanja iz 02-a rešena po predlogu: poruke ostaju, `// matching all API routes` obrisan sa blokom, stari blok za dužine u dashboard-u (sa `// Error message if input is out of range`) i Popup „Match pattern for fileds!" obrisani, svaki `?error=` daje istu poruku, javni API ne vraća `ownerId`, register čuva ime i email bez razmaka i ne prazni formu kad server odbije. Test, `format:check`, `sass:check` i build prolaze. U dev bazi ostaje test korisnik `imgtest210028`. Commit logike `6807049`. Vercel: `ADMIN_ID` (Production i Preview) dodat; rotirane sve tri tajne (novi Atlas korisnik `jovic-app-2026`, stari obrisan; novi Google secret, stari obrisan; novi `NEXTAUTH_SECRET`), sve kao Secret, lokalno i na Vercel-u; redeploy produkcije, sajt i Google login rade. Grana push-ovana, PR ka `develop`-u otvoren. Migracija na produkciji (22.11.2026.): backup `jovicData-2026-11-22_21-58`, 16 postova dobilo `ownerId`, sajt radi; produkcija dobija novi kod kad vlasnik merge-uje u `master`
+- Faza 3, fajl 1/2; izmena posta nije deo ovog feature-a (06)
+- Odluke vlasnika (04.11.2026.): neodobren post se briše (nema statusa „odbijeno"); obaveštenje kroz isti EmailJS template kao kontakt forma; regruter prolazi ceo krug (napravi, vidi u svom dashboard-u, obriše) bez vlasnika; admin sekcija na vrhu dashboard-a, ceo post proširivanjem kartice, bez modala
+- Tekstovi (odobreni): „Awaiting approval", „Posts awaiting approval (N)", „Approve", „Delete", „Show full post", „Hide full post"
+- EmailJS ključevi su javni po dizajnu (browser SDK); slanje iz browser-a je prihvaćeno jer je ovo obaveštenje, ne sigurnosna mera
+- Koristiti postojeće komponente i stilove dashboard-a (`Popup`, `DeletePopUp`, `ClickButton`, kartice postova); novi stilovi u `.module.scss` + `sass:file`
+- Postojeći kod za oslonac: `src/utils/postPermissions.js` (+ test), `authOptions.js`, `ownerId.js`, `postValidation.js`, `messages.js`, `src/app/api/posts/route.js` i `[slug]/route.js`, `dashboard/page.jsx` + `DashboardClient.jsx`, `src/models/Post.js`, migracija iz 02 kao obrazac
+- Next 16: `await params` u Route Handler-ima i stranicama; pre pisanja koda čitati relevantne vodiče u `node_modules/next/dist/docs/`
+- `isAdmin` u sesiji je samo za UI; API svaki put sam proverava
+- Iz 01: lokalni build sa `$env:NEXT_PUBLIC_NAME_OF_LINK = 'https://jovic-dev.vercel.app'; npm run build` (do feature-a 10) — blog stranice čitaju preko HTTP-a, pa lokalni build i Preview prikazuju produkcione postove dok produkcija nema `approved` (proveriti ponašanje pre migracije produkcije)
+- Iz 02: u dev bazi postoji test korisnik `imgtest210028`
+- `mongoose.models = {}` u modelima ostaje do feature-a 10
+- Reference: `context/project-overview.md` (poglavlja 8, 9, 10), `context/features/02-zastita-api-ja-done.md`, EmailJS dokumentacija za `emailjs.send` (instalirana verzija `@emailjs/browser` 4.4.1)
+- Pre migracije (27.11.2026.): produkcija 16 postova, svi admina; dev 18 (17 admina + test post `novi-slug-za-post` korisnika „Rubi Spava")
+- Migracija: post bez `approved` dobija `true` ako je admina, a `false` ako nije (čeka odobrenje) — na produkciji isto kao u specu jer su svi postovi admina; odluka vlasnika (27.11.2026.): odobreno
+- Filter za čekanje je `approved: { $ne: true }`, da nijedan post ne ispadne iz obe liste
+- `GET /api/posts/[slug]` sada vraća 404 i za nepostojeći slug (ranije 200 sa `null`)
+- Ceo post u admin sekciji prikazuje se postojećim `SlugCard` sa bloga (isti izgled kao na `/blog/[slug]`). Odluka vlasnika (27.11.2026.): u 05 ostaje uvoz iz `app/blog/[slug]/`; premeštanje `SlugCard`-a sa stilovima i komentarima u `src/components/` zapisano u feature 10
+- `POST /api/posts` vraća `{ slug, approved }`; dashboard šalje mejl samo kad je `approved === false`
+- Nove poruke (`messages.js`), odluka vlasnika (27.11.2026.): odobrene — „Only the admin can do this.", „Only { approved: true } can be sent.", „Something went wrong. The post was not approved.", „Something went wrong. Posts awaiting approval were not loaded."
+- `/dashboard` je sada dinamička stranica (čita sesiju za proveru admina); odluka vlasnika (27.11.2026.): iz komentara u `dashboard/page.jsx` uklonjeno „stays static and", jer više nije tačno
+- Ručni test vlasnika (27.11.2026.): sve stavke iz Testiranja prolaze (test korisnik, mejl, 403 iz konzole, admin sekcija, Approve, Delete, vlasnikov post odmah na blogu)
+- Ostaje: migracija produkcije (`npm run db:migrate-05 -- --target production --apply`) uz odobrenje vlasnika, neposredno pre merge-a u `master`; Preview build na Vercel-u posle push-a
+- Backup produkcije `jovicData-2026-11-27_18-49`; kopija u dev nije bila potrebna (dev već ima svih 16 produkcionih postova, plan: insert 0); migracija na dev urađena (17 → `true`, 1 → `false`)
+- `/blog/<neodobren>` vraća HTTP 200 sa 404 sadržajem (`loading.jsx` streaming, isto kao portfolio u 04)
 
 ## History
 
@@ -93,3 +91,21 @@ Pravljenje i brisanje blog postova sada rade samo za ulogovane korisnike. Autor 
 Registracija proverava ime, email i dužinu lozinke i na serveru, lozinke se jače hešuju, a zauzet nalog daje čitljivu poruku. Login za nepostojeći email i pogrešnu lozinku daje istu poruku, a prijava više ne vraća hash lozinke. Stranice za dashboard, prijavu i registraciju su prešle na serversku stranicu sa klijentskom komponentom, naslov taba dolazi iz metadata, a pretraživači ih ne indeksiraju. CORS header-i na API-ju su uklonjeni.
 
 Svi postojeći postovi su migracijom dodeljeni vlasniku, prvo na dev bazi, pa na produkciji posle novog backup-a. Na Vercel-u je dodat admin nalog, a sve tri osetljive tajne (baza, Google i NextAuth) su zamenjene novim vrednostima i sačuvane kao Secret, a stare su ugašene. Testovi, provera stilova i formata i production build prolaze, a ručno su provereni test korisnik, admin, slike oko 1 MB, poruke za login i registraciju i naslovi stranica.
+
+### Thursday, 26.11.2026. | 15:39 — Patch verzije unutar istih major verzija
+
+Next.js, njegova ESLint konfiguracija, paket za prijavu, paket za bazu, SWR i paket ikonica podignuti su na najnovije zakrpe u okviru istih major verzija, bez prelaska na novu major verziju. Pre izmene npm audit je prijavljivao 29 paketa sa propustima, od toga 19 Critical, 2 High, 5 Moderate i 3 Low, a posle izmene i jedne bezbedne ispravke zavisnosti uz odobrenje vlasnika ostala su 2, sam Next.js kao Critical i PostCSS koji dolazi uz njega kao High. Oba se zatvaraju tek prelaskom na Next 16 u sledećem feature-u.
+
+Pregledane su beleške o izmenama za Next.js 14.1 i 14.2 i za paket za bazu. Nova verzija Next-a više nije pronalazila slike koje se uvoze iz javnog foldera, pa je build padao; to je rešeno jednim alias-om u podešavanjima putanja, bez izmene ijednog import-a i bez opcije koju editor prijavljuje kao zastarelu. Nova verzija paketa ikonica više nema ikonice za Photoshop i Premiere Pro, pa bi sekcija tehnologija pala u browser-u; po odluci vlasnika zamenjene su istim ikonicama iz drugog seta, u konturnom stilu. Paket za bazu ostaje na verziji iz plana. Testovi, provera stilova i formata i production build prolaze, a vlasnik je ručno proverio sajt na dev bazi.
+
+### Thursday, 26.11.2026. | 23:55 — Next.js 16 i React 19
+
+Projekat je prešao sa Next.js 14 na aktuelni Next.js 16 i sa React 18 na React 19, pa je ponovo na podržanoj verziji. Pre izmene su pročitani zvanični vodiči za verzije 15 i 16, a upgrade je urađen ručno, bez automatskog alata, da bi svaka izmena bila pod kontrolom. Stranice i API rute sada čitaju parametre adrese na novi, asinhroni način, uključujući i stranicu za prijavu, koju je otkrio dev log. Zastarela opcija za prioritetno učitavanje slika zamenjena je novom na logou i na tastaturi na početnoj. Nova podrazumevana podešavanja za slike ne pogađaju projekat, a build radi sa novim podrazumevanim bundler-om i postojećim alias-om za javni folder. Ostali paketi već podržavaju React 19, pa nijedan nije trebalo podizati. Na Vercel-u je Node.js podignut sa 22 na 24. Posle upgrade-a npm audit ne prijavljuje nijedan propust, ni za produkcione ni za razvojne pakete.
+
+Umesto uklonjene Next komande za lint uveden je ESLint 10 sa novim oblikom konfiguracije i Prettier pravilima, a editor ga primenjuje pri čuvanju fajla. Vlasnik je izabrao verziju 10 jer verzija 9 više nije podržana, uz tri upozorenja pri instalaciji dok dodaci ne objave podršku. Lint je prijavio četiri greške i nijedno upozorenje. Apostrofi na stranici za nepostojeću adresu su zapisani na ispravan način, bez promene teksta, a jedna greška u učitavanju teme je po odluci vlasnika privremeno utišana do sređivanja teme. Pri ručnom testu vlasnik je u konzoli video grešku sa preusmeravanjem na dashboard i login, jer je preusmeravanje pokretano usred iscrtavanja stranice. To je ispravljeno uz isto ponašanje. Next 16 više sam ne isključuje glatko skrolovanje pri prelasku na drugu stranicu. Probano je podešavanje koje vraća staro ponašanje, ali su tada linkovi na sekcije početne radili tek iz drugog pokušaja, pa je vraćeno i zapisano za proveru pri sređivanju teme. Poruke ispod formi za prijavu i registraciju se teško uočavaju, pa je njihovo isticanje zapisano za poslednji feature. README je dobio novu verziju i komandu za lint. Lint, testovi, provera stilova i formata i production build prolaze, a vlasnik je ručno proverio ceo sajt na dev bazi. Preview build na Vercel-u se proverava posle push-a.
+
+### Friday, 27.11.2026. | 20:13 — Odobravanje postova
+
+Na javni blog sada ide samo ono što vlasnik odobri. Postovi vlasnika se objavljuju odmah, a postovi svih ostalih čekaju odobrenje i ne vide se ni u listi bloga ni na sopstvenoj adresi, gde posetilac dobija stranicu za nepostojeću adresu. O tome da li post čeka odlučuje server po nalogu iz sesije, a ne po podacima koje šalje browser. Autor u svom dashboard-u vidi i postove na čekanju sa oznakom „Awaiting approval" i može da ih obriše, pa regruter i dalje prolazi ceo krug bez vlasnika. Vlasnik na vrhu dashboard-a, iznad forme, ima sekciju sa postovima na čekanju; svaka kartica prikazuje naslov, autora i datum, a ceo post se otvara u istom izgledu kao na blogu. Odobravanje i brisanje sme samo vlasnik, server to proverava pri svakom zahtevu, a odobravanje prihvata isključivo promenu statusa i ništa drugo. Kad neko drugi napravi post, vlasniku stiže mejl kroz isti template kao kontakt forma, a neuspelo slanje ne obara čuvanje posta. Pravila pristupa, filteri za liste i sadržaj mejla su izdvojeni i pokriveni testovima.
+
+Postojećim postovima migracija upisuje status: postovi vlasnika ostaju javni, a tuđi čekaju odobrenje. Vlasnik je odobrio ovo pravilo umesto da svi stari postovi budu odobreni, jer na produkciji daje isti rezultat, pošto su svih 16 postova njegovi, a nijedan tuđi post ne može da bude odobren bez njega. Napravljen je backup produkcije, a na dev bazi je migracija označila 17 postova vlasnika kao javne i jedan test post kao post na čekanju. Migracija produkcije se pokreće uz odobrenje vlasnika, neposredno pre spajanja u glavnu granu. Usput je adresa nepostojećeg posta počela da vraća ispravan odgovor za nepostojeću stranicu. Odobrene su i nove poruke o greškama, a jedan postojeći komentar je uz odobrenje vlasnika skraćen jer više nije bio tačan. Komponenta za prikaz posta sa bloga koristi se i u dashboard-u, a njeno premeštanje među zajedničke komponente, zajedno sa stilovima i komentarima, zapisano je za poslednji feature. Lint, testovi, provera stilova i formata i production build prolaze, a vlasnik je ručno proverio ceo tok na dev bazi.
