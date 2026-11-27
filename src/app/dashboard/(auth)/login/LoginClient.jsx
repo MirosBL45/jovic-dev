@@ -41,12 +41,12 @@ function LoginClient({ errorMessage }) {
     const email = e.target[0].value;
     const password = e.target[1].value;
 
-    signIn("credentials", { email, password });
+    signIn("credentials", { email, password, callbackUrl: "/dashboard" });
   }
 
   function handleClick() {
     setButtonSend(true);
-    signIn("google");
+    signIn("google", { callbackUrl: "/dashboard" });
   }
 
   return (
